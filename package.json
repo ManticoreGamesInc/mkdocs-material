@@ -31,7 +31,6 @@
     "url": "https://github.com/squidfunk/mkdocs-material.git"
   },
   "scripts": {
-    "rebuild": "rebuild-node-sass",
     "build": "make clean build",
     "clean": "make clean",
     "lint": "make lint",
