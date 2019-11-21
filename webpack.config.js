@@ -178,6 +178,13 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
           ignore: "**/*.css"
         },
 
+        /* Copy font-awesome web font files */
+        {
+          context: "src",
+          from: "assets/webfonts/**/*",
+          ignore: "**/*.css"
+        },
+
         /* Copy and minify web font stylesheets */
         {
           context: "src",
