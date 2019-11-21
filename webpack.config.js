@@ -24,7 +24,6 @@ const fs = require("fs")
 const cssmin = require("cssmin")
 const path = require("path")
 const html = require("html-minifier")
-const uglify = require("uglify-js")
 const webpack = require("webpack")
 
 /* ----------------------------------------------------------------------------
