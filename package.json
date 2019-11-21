@@ -31,6 +31,7 @@
     "url": "https://github.com/squidfunk/mkdocs-material.git"
   },
   "scripts": {
+    "prebuild": "rebuild-node-sass",
     "build": "make clean build",
     "clean": "make clean",
     "lint": "make lint",
@@ -63,7 +64,6 @@
     "imagemin-webpack-plugin": "^2.4.2",
     "js-cookie": "^2.2.1",
     "lunr": "^2.3.8",
-    "lunr-languages": "^1.4.0",
     "material-design-color": "^2.3.2",
     "material-shadows": "^3.0.1",
     "mini-css-extract-plugin": "^0.8.0",
@@ -73,6 +73,7 @@
     "optimize-css-assets-webpack-plugin": "^5.0.3",
     "postcss-loader": "^3.0.0",
     "promise-polyfill": "^8.1.3",
+    "rebuild-node-sass": "^1.1.0",
     "sass-loader": "^7.3.1",
     "style-loader": "^1.0.0",
     "stylelint": "^11.1.1",

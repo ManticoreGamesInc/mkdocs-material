@@ -360,10 +360,6 @@
               {% if language == "ja" %}
                 <script src="{{ (path ~ 'tinyseg.js') | url }}"></script>
               {% endif %}
-              {% if language in ($md-lunr-languages$) %}
-                <script src="{{ (path ~ 'lunr.' ~ language ~ '.js') | url }}">
-                </script>
-              {% endif %}
             {% endif %}
           {% endfor %}
           {% if languages | length > 1 %}

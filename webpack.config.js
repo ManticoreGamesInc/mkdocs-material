@@ -154,23 +154,6 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
       /* Copy and transform static assets */
       new CopyPlugin([
 
-        /* Copy search language support files - we could define the languages
-           package as entrypoints, but this leads to a lot of problems because
-           the files have the structure lunr.[language].js, which some Webpack
-           plugins will complain about. For this reason we only minify */
-        {
-          context: path.resolve(__dirname, "node_modules/lunr-languages"),
-          to: "assets/javascripts/lunr",
-          from: "*.js",
-          transform: content => {
-            return uglify.minify(content.toString(), {
-              output: {
-                comments: /^!/
-              }
-            }).code
-          }
-        },
-
         /* Copy web font files */
         {
           context: "src",
@@ -230,21 +213,6 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
               /* Write theme version into template */
               .replace("$md-name$", metadata.name)
               .replace("$md-version$", metadata.version)
-
-              /* Write available search languages into template */
-              .replace("$md-lunr-languages$",
-                fs.readdirSync(
-                  path.resolve(__dirname, "node_modules/lunr-languages")
-                ).reduce((files, file) => {
-                  const matches = file.match(/lunr.(\w{2}).js$/)
-                  if (matches) {
-                    const [, language] = matches
-                    if (!["du", "jp"].includes(language))
-                      files.push(`"${language}"`)
-                  }
-                  return files
-                }, [])
-                  .join(", "))
           }
         }
       ])
