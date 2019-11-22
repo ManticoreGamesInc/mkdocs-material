@@ -62,40 +62,50 @@ $break-devices: (
 // Manticore Primary and accent colors
 --manti-color-black: #20232a;
 --manti-color-orange: #ff9000;
+--m-color-orange--lighter:            hsla(34, 100%, 50%, 0.38);
 --manti-color-blue: #3b8bd2;
+--color-md--dark: #121212;
+--color-md--light: #212121;
+--color-md--lighter: #303030;
+--color-md--lightest: #424242;
+--color-i--forgot: #00000042;
 
 // Primary and accent colors
 --color-accent: var(--manti-color-orange);
 
---color-white: #FFFFFFFF;
---color-white--light: hsla(0, 0%, 0%, 0.54);
---color-white--lighter: hsla(0, 0%, 100%, 0.3);
---color-white--lightest: hsla(0, 0%, 100%, 0.12);
---color-white--transparent: hsla(0, 0%, 100%, 0);
+// Actually white, sorry :/
+--color-black:                        hsla(0, 0%, 100%, 1);
+--color-black--light:                 hsla(0, 0%, 100%, 0.54);
+--color-black--lighter:               hsla(0, 0%, 100%, 0.38);
+--color-black--lightest:              hsla(0, 0%, 100%, 0.12);
+--color-black--transparent:           hsla(0, 0%, 100%, 0);
 
---color-background: var(--color-white);
---color-background--light:                 hsla(0, 0%, 0%, 0.54);
---color-background--lighter:               hsla(0, 0%, 0%, 0.26);
---color-background--lightest:              hsla(0, 0%, 0%, 0.07);
---color-background--transparent:           hsla(0, 0%, 0%, 0);
+// White
+--color-background:                   hsla(0, 0%, 100%, 1);
+--color-background--light:            hsla(0, 0%, 100%, 0.54);
+--color-background--lighter:          hsla(0, 0%, 100%, 0.26);
+--color-background--lightest:         hsla(0, 0%, 100%, 0.07);
+--color-background--transparent:      hsla(0, 0%, 100%, 0);
 
---color-black:                        var(--manti-color-black);
---color-black--light:                 hsla(0, 0%, 0%, 0.54);
---color-black--lighter:               hsla(0, 0%, 0%, 0.26);
---color-black--lightest:              hsla(0, 0%, 0%, 0.07);
---color-black--transparent:           hsla(0, 0%, 0%, 0);
+// #121212
+--color-white:                        hsla(0, 0%, 7%, 1);
+--color-white--light:                 hsla(0, 0%, 7%, 0.54);
+--color-white--lighter:               hsla(0, 0%, 7%, 0.26);
+--color-white--lightest:              hsla(0, 0%, 7%, 0.07);
+--color-white--transparent:           hsla(0, 0%, 7%, 0);
 
---color-text:                         var(--manti-color-black);
---color-text--light:                  hsla(0, 0%, 100%, 0.7);
---color-text--lighter:                hsla(0, 0%, 100%, 0.3);
---color-text--lightest:               hsla(0, 0%, 100%, 0.12);
---color-text--transparent:            hsla(0, 0%, 100%, 0);
-
---color-primary:                       var(--color-black);
+// Manticore Grey
+--color-text:                         hsla(222, 14%, 15%, 0.87);
+--color-text--light:                  hsla(222, 14%, 15%, 0.54);
+--color-text--lighter:                hsla(222, 14%, 15%, 0.38);
+--color-text--lightest:               hsla(222, 14%, 15%, 0.07);
+--color-text--transparent:            hsla(222, 14%, 15%, 0);
+// Black
+--color-primary:                      hsla(0, 0%, 0%, 1);
 --color-primary--light:               hsla(0, 0%, 0%, 0.54);
---color-primary--lighter:             hsla(0, 0%, 100%, 0.3);
---color-primary--lightest:            hsla(0, 0%, 100%, 0.12);
---color-primary--transparent:         hsla(0, 0%, 100%, 0);
+--color-primary--lighter:             hsla(0, 0%, 0%, 0.38);
+--color-primary--lightest:            hsla(0, 0%, 0%, 0.12);
+--color-primary--transparent:         hsla(0, 0%, 0%, 0);
 }
 
 // Dark Mode
@@ -104,36 +114,38 @@ $break-devices: (
   --manti-color-black: #20232a;
   --manti-color-orange: #ff9000;
   --manti-color-blue: #3b8bd2;
+  // #121212
+  --color-background:                    hsla(0, 0%, 7%, 1);
+  --color-background--light:             hsla(0, 0%, 7%, 0.54);
+  --color-background--lighter:           hsla(0, 0%, 7%, 0.26);
+  --color-background--lightest:          hsla(0, 0%, 7%, 0.07);
+  --color-background--transparent:       hsla(0, 0%, 7%, 0);
 
-  --color-background: #121212;
-  --color-background--light:                 hsla(0, 0%, 0%, 0.54);
-  --color-background--lighter:               hsla(0, 0%, 0%, 0.26);
-  --color-background--lightest:              hsla(0, 0%, 0%, 0.07);
-  --color-background--transparent:           hsla(0, 0%, 0%, 0);
+  // Actually black, sorry :/
+  --color-white:                         hsla(0, 0%, 0%, 1);
+  --color-white--light:                  hsla(0, 0%, 0%, 0.54);
+  --color-white--lighter:                hsla(0, 0%, 0%, 0.38);
+  --color-white--lightest:               hsla(0, 0%, 0%, 0.12);
+  --color-white--transparent:            hsla(0, 0%, 0%, 0);
 
-  --color-white: #FFFFFFFF;
-  --color-white--light: hsla(0, 0%, 0%, 0.54);
-  --color-white--lighter: hsla(0, 0%, 100%, 0.3);
-  --color-white--lightest: hsla(0, 0%, 100%, 0.12);
-  --color-white--transparent: hsla(0, 0%, 100%, 0);
+  --color-primary:                       hsla(222, 14%, 15%, 1);
+  --color-primary--light:                hsla(222, 14%, 15%, 0.54);
+  --color-primary--lighter:              hsla(222, 14%, 15%, 0.26);
+  --color-primary--lightest:             hsla(222, 14%, 15%, 0.07);
+  --color-primary--transparent:          hsla(222, 14%, 15%, 0);
 
-  --color-black:                       var(--manti-color-black);
-  --color-black--light:                 hsla(0, 0%, 0%, 0.54);
-  --color-black--lighter:               hsla(0, 0%, 0%, 0.26);
-  --color-black--lightest:              hsla(0, 0%, 0%, 0.07);
-  --color-black--transparent:           hsla(0, 0%, 0%, 0);
+  // Actually white, sorry :/
+  --color-text:                          hsla(0, 0%, 100%, 1);
+  --color-text--light:                   hsla(0, 0%, 100%, 0.7);
+  --color-text--lighter:                 hsla(0, 0%, 100%, 0.38);
+  --color-text--lightest:                hsla(0, 0%, 100%, 0.12);
+  --color-text--transparent:             hsla(0, 0%, 100%, 0);
 
-  --color-text:                          var(--color-white);
-  --color-text--light:                  hsla(0, 0%, 100%, 0.7);
-  --color-text--lighter:                hsla(0, 0%, 100%, 0.3);
-  --color-text--lightest:               hsla(0, 0%, 100%, 0.12);
-  --color-text--transparent:            hsla(0, 0%, 100%, 0);
-
-  --color-primary:                       var(--color-background);
-  --color-primary--light:               hsla(0, 0%, 100%, 0.7);
-  --color-primary--lighter:             hsla(0, 0%, 100%, 0.3);
-  --color-primary--lightest:            hsla(0, 0%, 100%, 0.12);
-  --color-primary--transparent:         hsla(0, 0%, 100%, 0);
+  --color-black:                         hsla(0, 0%, 100%, 1);
+  --color-black--light:                  hsla(0, 0%, 100%, 0.7);
+  --color-black--lighter:                hsla(0, 0%, 100%, 0.38);
+  --color-black--lightest:               hsla(0, 0%, 100%, 0.12);
+  --color-black--transparent:            hsla(0, 0%, 100%, 0);
 }
 
 .md-container, .md-main {
@@ -142,8 +154,10 @@ $break-devices: (
 }
 
 .md-nav__title,
-.md-typeset a {
-  color: var(--manti-color-blue);
+
+div.md-sidebar.md-sidebar--primary > div > div > nav > label > a {
+  color: #cc7400;
+  font-size: 18px;
 }
 
 .md-nav__item {
@@ -161,8 +175,8 @@ $md-icon-padding:                     $ms-base * 0.5;
 $md-icon-margin:                      $ms-base * 0.25;
 
 // Code blocks
-$md-code-background:                  hsla(0, 0%, 92.5%, 0.5);
-$md-code-color:                       #37474F;
+$md-code-background:                  #666666; //hsla(0, 0%, 92.5%, 0.5);
+$md-code-color:                       hsl(323, 100%, 95%); //#37474F;
 
 // Keystrokes
 $md-keyboard-background:              #FCFCFC;

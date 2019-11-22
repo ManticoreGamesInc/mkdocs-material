@@ -176,14 +176,13 @@
 
 // Social media links
 .md-footer-social {
-  margin: 0 px2rem(8px);
-  padding: px2rem(4px) 0 px2rem(12px);
-  color: var(--color-text);
+  // margin: 0 px2rem(8px);
+  // padding: px2rem(4px) 0 px2rem(12px);
 
   // [tablet portrait +]: Show next to copyright information
   @include break-from-device(tablet portrait) {
     padding: px2rem(12px) 0;
-    float: right;
+    // float: right;
 
     // Adjust for RTL languages
     [dir="rtl"] & {
@@ -198,8 +197,11 @@
     height: px2rem(32px);
     font-size: px2rem(16px);
     text-align: center;
-    color: var(--color-white);
+    color: var(--color-text);
 
+    &:hover {
+      color: var(--manti-color-orange);
+    }
     // Adjust line-height to match height for correct alignment
     &::before {
       line-height: 1.9;

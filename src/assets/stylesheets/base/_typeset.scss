@@ -421,6 +421,8 @@ kbd {
     border-radius: px2rem(4px);
     font-size: ms(-1);
     overflow: auto;
+    table-layout: auto;
+    border-bottom: 2px solid var(--manti-color-orange);
     -webkit-overflow-scrolling: touch;
 
     // Due to margin collapse because of the necessary inline-block hack, we
@@ -445,8 +447,9 @@ kbd {
     th {
       min-width: px2rem(100px);
       padding: px2rem(12px) px2rem(16px);
-      background-color: var(--color-primary--light);
-      color: var(--color-white);
+      background-color: var(--manti-color-black);
+      border-bottom: 2px solid #ff9000;
+      color: var(--color-black);
       vertical-align: top;
     }
 
@@ -455,11 +458,14 @@ kbd {
       padding: px2rem(12px) px2rem(16px);
       border-top: px2rem(1px) solid var(--color-primary--lightest);
       vertical-align: top;
+      background-color: var(--color-md--light);
     }
 
     // Table rows
     tr {
       transition: background-color 0.125s;
+      color: var(--color-black--light);
+
 
       // Add background on hover
       &:hover {

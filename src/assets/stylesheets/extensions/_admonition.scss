@@ -35,9 +35,10 @@
     margin: 1.5625em 0;
     padding: 0 px2rem(12px);
     border-left: px2rem(4px) solid $clr-blue-a200;
-    border-radius: px2rem(2px);
+    border-radius: px2rem(4px);
     font-size: ms(-1);
     overflow: auto;
+    background-color: #303030;
 
     // Adjust for RTL languages
     [dir="rtl"] & {
