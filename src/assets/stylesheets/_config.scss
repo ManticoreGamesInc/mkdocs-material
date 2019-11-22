@@ -57,25 +57,69 @@ $break-devices: (
 // Variables: base colors
 // ----------------------------------------------------------------------------
 // Manticore Primary and accent colors
-$mc-color-black: #20232a;
-$mc-color-orange: #ff9000;
+$manti-color-black: #20232a;
+$manti-color-orange: #ff9000;
+$manti-color-blue: #3b8bd2;
+
 // Primary and accent colors
-$md-color-primary:                    $clr-indigo-500 !default;
-$md-color-accent:                     $mc-color-orange !default;
+$md-color-background: #121212;
+$md-color-text-primary:                    #FFFFFFFF !default;
+$md-color-accent:                     $manti-color-orange !default;
 
 // Shades of black
-$md-color-black:                      $mc-color-black;
+$md-color-black:                      $manti-color-black;
 $md-color-black--light:               hsla(0, 0%, 0%, 0.54) !default;
 $md-color-black--lighter:             hsla(0, 0%, 0%, 0.26) !default;
 $md-color-black--lightest:            hsla(0, 0%, 0%, 0.07) !default;
 $md-color-black--transparent:         hsla(0, 0%, 0%, 0) !default;
 
 // Shades of white
-$md-color-white:                      hsla(0, 0%, 100%, 1) !default;
+$md-color-white:                      $md-color-black;
 $md-color-white--light:               hsla(0, 0%, 100%, 0.7) !default;
 $md-color-white--lighter:             hsla(0, 0%, 100%, 0.3) !default;
 $md-color-white--lightest:            hsla(0, 0%, 100%, 0.12) !default;
 $md-color-white--transparent:         hsla(0, 0%, 100%, 0) !default;
+
+// Shades of white
+$md-color-primary:                      $md-color-text-primary;
+$md-color-primary--light:               hsla(0, 0%, 0%, 0.54) !default;
+$md-color-primary--lighter:             hsla(0, 0%, 100%, 0.3) !default;
+$md-color-primary--lightest:            hsla(0, 0%, 100%, 0.12) !default;
+$md-color-primary--transparent:         hsla(0, 0%, 100%, 0) !default;
+
+.md-main {
+  background-color: $md-color-primary;
+  color: $md-color-black;
+}
+
+// Dark Mode
+:root.dark-mode {
+    // Shades of black
+  $md-color-black:                      $manti-color-black;
+  $md-color-black--light:               hsla(0, 0%, 0%, 0.54) !default;
+  $md-color-black--lighter:             hsla(0, 0%, 0%, 0.26) !default;
+  $md-color-black--lightest:            hsla(0, 0%, 0%, 0.07) !default;
+  $md-color-black--transparent:         hsla(0, 0%, 0%, 0) !default;
+
+  // Shades of white
+  $md-color-white:                      $md-color-primary;
+  $md-color-white--light:               hsla(0, 0%, 100%, 0.7) !default;
+  $md-color-white--lighter:             hsla(0, 0%, 100%, 0.3) !default;
+  $md-color-white--lightest:            hsla(0, 0%, 100%, 0.12) !default;
+  $md-color-white--transparent:         hsla(0, 0%, 100%, 0) !default;
+
+  // Shades of white
+  $md-color-primary:                      $md-color-background;
+  $md-color-primary--light:               hsla(0, 0%, 100%, 0.7) !default;
+  $md-color-primary--lighter:             hsla(0, 0%, 100%, 0.3) !default;
+  $md-color-primary--lightest:            hsla(0, 0%, 100%, 0.12) !default;
+  $md-color-primary--transparent:         hsla(0, 0%, 100%, 0) !default;
+
+  .md-main {
+    background-color:   #{$md-color-background};
+    color: #{$md-color-white};
+  }
+}
 
 // ----------------------------------------------------------------------------
 // Variables: sizing and spacing

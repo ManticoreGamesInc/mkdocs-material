@@ -183,6 +183,7 @@ $md-toggle__search--checked:
       position: relative;
       width: px2rem(230px);
       margin-right: px2rem(16px);
+      margin-top: px2rem(4px);
       padding: px2rem(2px) 0;
       float: right;
       transition: width 0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
@@ -291,6 +292,9 @@ $md-toggle__search--checked:
       // Placeholder color
       &::placeholder {
         color: $md-color-white--light;
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        font-weight: 400;
       }
 
       // Hovered search field

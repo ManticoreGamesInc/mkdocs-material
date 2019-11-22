@@ -35,8 +35,11 @@
 
 // Navigation within footer
 .md-footer-nav {
-  background-color: $md-color-black;
-  color: $md-color-white;
+  background-color: $md-color-white;
+  color: $md-color-primary;
+  font-family: 'Oswald';
+  text-transform: uppercase;
+  font-weight: 400;
 
   // Set spacing
   &__inner {
@@ -49,6 +52,7 @@
     padding-top: px2rem(28px);
     padding-bottom: px2rem(8px);
     transition: opacity 0.25s;
+    color: $md-color-white--light;
 
     // [tablet +]: Set proportional width
     @include break-from-device(tablet) {
@@ -116,9 +120,13 @@
     left: 0;
     margin-top: px2rem(-20px);
     padding: 0 px2rem(20px);
-    color: $md-color-white--light;
+    color: $manti-color-orange;
     font-size: px2rem(15px);
   }
+}
+
+:root .dark-mode .md-footer-nav {
+  background-color: $md-color-background;
 }
 
 // Non-navigational information

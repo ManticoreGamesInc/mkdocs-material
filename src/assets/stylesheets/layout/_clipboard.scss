@@ -50,13 +50,13 @@
     transition:
       color   0.25s,
       opacity 0.25s;
-    color: $md-color-black--lightest;
+    color: $md-color-primary--lightest;
     content: "\E14D"; // content_copy
 
     // Show on container hover
     pre:hover &,
     .codehilite:hover & {
-      color: $md-color-black--light;
+      color: $md-color-primary--light;
     }
   }
 
@@ -78,7 +78,7 @@
       transform 0.25s cubic-bezier(0.9, 0.1, 0.9, 0),
       opacity   0.175s;
     border-radius: px2rem(2px);
-    background-color: $md-color-black--light;
+    background-color: $md-color-primary--light;
     color: $md-color-white;
     font-size: ms(-1);
     white-space: nowrap;
@@ -110,7 +110,7 @@
       margin-top: px2rem(-4px);
       border-width: px2rem(4px) 0 px2rem(4px) px2rem(4px);
       border-style: solid;
-      border-color: transparent $md-color-black--light;
+      border-color: transparent $md-color-primary--light;
       content: "";
     }
   }

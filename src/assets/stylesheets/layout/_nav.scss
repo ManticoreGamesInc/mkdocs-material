@@ -36,6 +36,7 @@
     font-weight: 700;
     text-overflow: ellipsis;
     overflow: hidden;
+    color: $manti-color-blue;
 
     // Icon, hidden by default
     &::before {
@@ -137,13 +138,13 @@
 
     // Blurred link
     &[data-md-state="blur"] {
-      color: $md-color-black--light;
+      color: $md-color-primary--light;
     }
 
     // Active link
     &:active,
     &--active {
-      color: $md-color-primary;
+      color: $md-color-accent;
     }
 
     // Reset active color for nested list titles
@@ -154,7 +155,7 @@
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: $md-color-accent;
+      color: $manti-color-orange;
     }
   }
 
@@ -186,8 +187,12 @@
       // List title and item
       .md-nav__title,
       .md-nav__item {
-        font-size: px2rem(16px);
+        font-size: px2rem(18px);
+        font-family: 'Oswald';
+        text-transform: uppercase;
+        font-weight: 500;
         line-height: 1.5;
+
       }
 
       // List title - higher specificity is necessary to ensure that the title
@@ -196,8 +201,8 @@
         position: relative;
         height: px2rem(112px);
         padding: px2rem(60px) px2rem(16px) px2rem(4px);
-        background-color: $md-color-black--lightest;
-        color: $md-color-black--light;
+        background-color: $md-color-primary--lightest;
+        color: $md-color-primary--light;
         font-weight: 400;
         line-height: px2rem(48px);
         white-space: nowrap;
@@ -211,13 +216,13 @@
           left: px2rem(4px);
           width: px2rem(40px);
           height: px2rem(40px);
-          color: $md-color-black--light;
+          color: $md-color-primary--light;
         }
 
         // Main lists
         ~ .md-nav__list {
           background-color: $md-color-white;
-          box-shadow: 0 px2rem(1px) 0 $md-color-black--lightest inset;
+          box-shadow: 0 px2rem(1px) 0 $md-color-primary--lightest inset;
 
           // Remove border for first list item
           & > .md-nav__item:first-child {
@@ -274,7 +279,7 @@
       // List item
       .md-nav__item {
         padding: 0;
-        border-top: px2rem(1px) solid $md-color-black--lightest;
+        border-top: px2rem(1px) solid $md-color-primary--lightest;
 
         // Adjust for RTL languages
         [dir="rtl"] & {

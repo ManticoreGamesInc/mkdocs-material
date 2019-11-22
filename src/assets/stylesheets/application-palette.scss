@@ -87,6 +87,8 @@ button[data-md-color-accent] {
   "brown":       $clr-brown-500,
   "grey":        $clr-grey-600,
   "blue-grey":   $clr-blue-grey-600,
+  "manticore-blue": $manti-color-blue,
+  "manticore-orange": $manti-color-orange,
 ) {
 
   // Color tile for presentation in theme documentation
@@ -101,6 +103,12 @@ button[data-md-color-accent] {
     .md-typeset a {
       color: $color;
     }
+
+    // Links in typesetted content
+    .md-typeset a:hover {
+      color: $manti-color-orange;
+    }
+
 
     // Application header (stays always on top)
     .md-header {
