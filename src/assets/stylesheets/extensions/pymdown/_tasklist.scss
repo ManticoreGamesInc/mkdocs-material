@@ -57,7 +57,7 @@
       position: absolute;
       top: 0.15em;
       left: -1.25em;
-      color: $md-color-black--lighter;
+      color: var(--color-black--lighter);
       font-size: 1.25em;
       content: "\E835"; // check_box_outline_blank
       vertical-align: -0.25em;

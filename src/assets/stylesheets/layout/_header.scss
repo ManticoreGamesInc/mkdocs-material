@@ -34,8 +34,8 @@
   transition:
     background-color 0.25s,
     color 0.25s;
-  background-color: $manti-color-black;
-  color: $manti-color-orange;
+  background-color: var(--manti-color-black);
+  color: var(--manti-color-orange);
   border-bottom: 4px solid #ff9000;
   box-shadow: none;
   z-index: 2;
@@ -223,7 +223,7 @@
   display: inline-block;
   font-size: 16px;
   margin-top: 15px;
-  color: $md-color-white--light;
+  color: var(--color-text--light);
 }
 
 #dark-mode-toggle:hover {
@@ -237,7 +237,7 @@
   width: 60px;
   height: 30px;
   margin-right: 5px;
-  background-color: $md-color-black--lighter;
+  background-color: var(--color-black--lighter);
   border-radius: 34px;
   vertical-align: bottom
 }

@@ -28,8 +28,8 @@
 .md-tabs {
   width: 100%;
   transition: background 0.25s;
-  background-color: $md-color-primary;
-  color: $md-color-white;
+  background-color: var(--color-primary);
+  color: var(--color-white);
   overflow: auto;
 
   // [tablet -]: Hide tabs for tablet and below, as they don't make any sense

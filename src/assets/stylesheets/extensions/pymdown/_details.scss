@@ -95,7 +95,7 @@
       position: absolute;
       top: px2rem(8px);
       right: px2rem(12px);
-      color: $md-color-black--lighter;
+      color: var(--color-black--lighter);
       font-size: px2rem(20px);
       content: "\E313"; // keyboard_arrow_down
 

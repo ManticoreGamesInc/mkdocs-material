@@ -35,8 +35,8 @@
 
 // Navigation within footer
 .md-footer-nav {
-  background-color: $md-color-white;
-  color: $md-color-primary;
+  background-color: var(--color-background);
+  color: var(--color-white);
   font-family: 'Oswald';
   text-transform: uppercase;
   font-weight: 400;
@@ -52,7 +52,7 @@
     padding-top: px2rem(28px);
     padding-bottom: px2rem(8px);
     transition: opacity 0.25s;
-    color: $md-color-white--light;
+    color: var(--color-text);
 
     // [tablet +]: Set proportional width
     @include break-from-device(tablet) {
@@ -120,18 +120,17 @@
     left: 0;
     margin-top: px2rem(-20px);
     padding: 0 px2rem(20px);
-    color: $manti-color-orange;
+    color: var(--manti-color-orange);
     font-size: px2rem(15px);
   }
 }
 
-:root .dark-mode .md-footer-nav {
-  background-color: $md-color-background;
-}
-
 // Non-navigational information
 .md-footer-meta {
-  background-color: opacify($md-color-black, 0.025);
+  //background-color: opacify(#000000, 0.025);
+  background-color: var(--color-text);
+  opacity: 0.025;
+  color: var(--color-text);
 
   // Set spacing
   &__inner {
@@ -141,12 +140,12 @@
 
   // Use a decent color for non-hovered links and ensure specificity
   html &.md-typeset a {
-    color: $md-color-white--light;
+    color: var(--color-white--light);
 
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: $md-color-white;
+      color: var(--color-white);
     }
   }
 }
@@ -155,7 +154,7 @@
 .md-footer-copyright {
   margin: 0 px2rem(12px);
   padding: px2rem(8px) 0;
-  color: $md-color-white--lighter;
+  color: var(--color-text--lighter);
   font-size: ms(-1);
 
   // [tablet portrait +]: Show next to social media links
@@ -171,7 +170,7 @@
 
   // Highlight copyright information
   &__highlight {
-    color: $md-color-white--light;
+    color: var(--color-white--light);
   }
 }
 
@@ -179,6 +178,7 @@
 .md-footer-social {
   margin: 0 px2rem(8px);
   padding: px2rem(4px) 0 px2rem(12px);
+  color: var(--color-text);
 
   // [tablet portrait +]: Show next to copyright information
   @include break-from-device(tablet portrait) {
@@ -198,6 +198,7 @@
     height: px2rem(32px);
     font-size: px2rem(16px);
     text-align: center;
+    color: var(--color-white);
 
     // Adjust line-height to match height for correct alignment
     &::before {
@@ -205,3 +206,11 @@
     }
   }
 }
+
+// .dark-mode .md-footer-nav {
+//   background-color: #121212;
+// }
+
+// .dark-mode .md-footer-copyright {
+//   color: var(--color-text);
+// }

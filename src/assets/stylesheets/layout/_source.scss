@@ -182,7 +182,7 @@
   margin: 1em 0.5em 1em 0;
   padding-right: px2rem(5px);
   border-radius: px2rem(2px);
-  background-color: $md-color-black--lightest;
+  background-color: var(--color-black--lightest);
   font-size: ms(-1);
   list-style-type: none;
   cursor: pointer;
@@ -195,8 +195,8 @@
     display: inline-block;
     margin-right: px2rem(5px);
     padding: px2rem(5px);
-    background-color: $md-color-black--lighter;
-    color: $md-color-white;
+    background-color: var(--color-black--lighter);
+    color: var(--color-white);
     font-size: ms(0);
     content: "\E86F"; // code
     vertical-align: middle;
@@ -219,7 +219,7 @@
   // Color needs even higher specifity because custom color palettes are set
   // using the body and override text links inside typesetted content
   html body .md-typeset & {
-    color: $md-color-black--light;
+    color: var(--color-black--light);
   }
 
   // Hovered source file
@@ -228,7 +228,7 @@
 
     // Icon
     &::before {
-      background-color: $md-color-accent;
+      background-color: var(--color-accent);
     }
   }
 }

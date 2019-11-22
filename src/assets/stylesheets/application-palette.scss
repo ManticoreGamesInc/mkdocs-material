@@ -51,7 +51,7 @@ button[data-md-color-accent] {
     background-color 0.25s,
     opacity          0.25s;
   border-radius: px2rem(2px);
-  color: $md-color-white;
+  color: var(--color-text);
   font-size: ms(-1);
   text-align: left;
   cursor: pointer;
@@ -87,8 +87,8 @@ button[data-md-color-accent] {
   "brown":       $clr-brown-500,
   "grey":        $clr-grey-600,
   "blue-grey":   $clr-blue-grey-600,
-  "manticore-blue": $manti-color-blue,
-  "manticore-orange": $manti-color-orange,
+  "manticore-blue": #3b8bd2,
+  "manticore-orange": #ff9000,
 ) {
 
   // Color tile for presentation in theme documentation
@@ -106,7 +106,7 @@ button[data-md-color-accent] {
 
     // Links in typesetted content
     .md-typeset a:hover {
-      color: $manti-color-orange;
+      color: var(--manti-color-orange);
     }
 
 
@@ -136,7 +136,7 @@ button[data-md-color-accent] {
 
       // Repository containing source
       .md-nav__source {
-        background-color: mix($color, $md-color-black, 75%);
+        background-color: mix($color, #000000, 75%);
       }
     }
 
@@ -166,9 +166,9 @@ button[data-md-color-accent] {
 
 // Color tile for presentation in theme documentation
 button[data-md-color-primary="white"] {
-  background-color: $md-color-white;
-  color: $md-color-black;
-  box-shadow: 0 0 px2rem(1px) $md-color-black--light inset;
+  background-color: var(--color-white);
+  color: var(--color-black);
+  box-shadow: 0 0 px2rem(1px) var(--color-black--light) inset;
 }
 
 // Overrides for black color
@@ -176,18 +176,18 @@ button[data-md-color-primary="white"] {
 
   // Application header (stays always on top)
   .md-header {
-    background-color: $md-color-white;
-    color: $md-color-black;
+    background-color: var(--color-white);
+    color: var(--color-black);
   }
 
   // Hero teaser
   .md-hero {
-    background-color: $md-color-white;
-    color: $md-color-black;
+    background-color: var(--color-white);
+    color: var(--color-black);
 
     // Add a border if there are no tabs
     &--expand {
-      border-bottom: px2rem(1px) solid $md-color-black--lightest;
+      border-bottom: px2rem(1px) solid var(--color-black--lightest);
     }
   }
 
@@ -196,8 +196,8 @@ button[data-md-color-primary="white"] {
 
     // Repository containing source
     .md-nav__source {
-      background-color: $md-color-black--lightest;
-      color: $md-color-black;
+      background-color: var(--color-black--lightest);
+      color: var(--color-black);
     }
   }
 
@@ -206,11 +206,11 @@ button[data-md-color-primary="white"] {
 
     // Search input
     .md-search__input {
-      background-color: $md-color-black--lightest;
+      background-color: var(--color-black--lightest);
 
       // Search input placeholder
       &::placeholder {
-        color: $md-color-black--light;
+        color: var(--color-black--light);
       }
     }
   }
@@ -220,13 +220,13 @@ button[data-md-color-primary="white"] {
 
     // Site title in main navigation
     html & .md-nav--primary .md-nav__title--site {
-      background-color: $md-color-white;
-      color: $md-color-black;
+      background-color: var(--color-white);
+      color: var(--color-black);
     }
 
     // Hero teaser
     .md-hero {
-      border-bottom: px2rem(1px) solid $md-color-black--lightest;
+      border-bottom: px2rem(1px) solid var(--color-black--lightest);
     }
   }
 
@@ -235,9 +235,9 @@ button[data-md-color-primary="white"] {
 
     // Tabs with outline
     .md-tabs {
-      border-bottom: px2rem(1px) solid $md-color-black--lightest;
-      background-color: $md-color-white;
-      color: $md-color-black;
+      border-bottom: px2rem(1px) solid var(--color-black--lightest);
+      background-color: var(--color-white);
+      color: var(--color-black);
     }
   }
 }
@@ -269,7 +269,7 @@ button[data-md-color-primary="black"] {
 
     // Repository containing source
     .md-nav__source {
-      background-color: mix($clr-black, $md-color-white, 75%);
+      background-color: mix($clr-black, #ffffff, 75%);
     }
   }
 
@@ -278,7 +278,7 @@ button[data-md-color-primary="black"] {
 
     // Search input
     .md-search__input {
-      background-color: $md-color-white--lighter;
+      background-color: var(--color-white--lighter);
     }
   }
 
@@ -399,4 +399,8 @@ button[data-md-color-primary="black"] {
       background-color: $color;
     }
   }
+}
+
+.md-typeset h1 {
+  color: var(--color-text);
 }

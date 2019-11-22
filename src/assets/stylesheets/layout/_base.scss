@@ -154,7 +154,7 @@ hr {
     width   0s 0.25s,
     height  0s 0.25s,
     opacity 0.25s;
-  background-color: $md-color-black--light;
+  background-color: var(--color-black--light);
   opacity: 0;
   z-index: 3;
 
@@ -223,8 +223,8 @@ hr {
   padding: px2rem(6px) px2rem(10px);
   transform: translateY(px2rem(8px));
   border-radius: px2rem(2px);
-  background-color: $md-color-black;
-  color: $md-color-white;
+  background-color: var(--color-black);
+  color: var(--color-white);
   font-size: ms(-1);
   opacity: 0;
   overflow: hidden;

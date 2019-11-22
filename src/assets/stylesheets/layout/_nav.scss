@@ -36,7 +36,7 @@
     font-weight: 700;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: $manti-color-blue;
+    color: var(--color-blue);
 
     // Icon, hidden by default
     &::before {
@@ -138,13 +138,13 @@
 
     // Blurred link
     &[data-md-state="blur"] {
-      color: $md-color-primary--light;
+      color: var(--color-text--light);
     }
 
     // Active link
     &:active,
     &--active {
-      color: $md-color-accent;
+      color: var(--color-accent);
     }
 
     // Reset active color for nested list titles
@@ -155,7 +155,7 @@
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: $manti-color-orange;
+      color: var(--manti-color-orange);
     }
   }
 
@@ -166,7 +166,7 @@
 
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
-    background-color: $md-color-white;
+    background-color: var(--color-white);
 
     // Stretch primary navigation to drawer
     &--primary,
@@ -201,8 +201,8 @@
         position: relative;
         height: px2rem(112px);
         padding: px2rem(60px) px2rem(16px) px2rem(4px);
-        background-color: $md-color-primary--lightest;
-        color: $md-color-primary--light;
+        background-color: var(--color-background--lightest);
+        color: var(--color-text--light);
         font-weight: 400;
         line-height: px2rem(48px);
         white-space: nowrap;
@@ -216,13 +216,13 @@
           left: px2rem(4px);
           width: px2rem(40px);
           height: px2rem(40px);
-          color: $md-color-primary--light;
+          color: var(--color-text--light);
         }
 
         // Main lists
         ~ .md-nav__list {
-          background-color: $md-color-white;
-          box-shadow: 0 px2rem(1px) 0 $md-color-primary--lightest inset;
+          background-color: var(--color-white);
+          box-shadow: 0 px2rem(1px) 0 var(--color-text--lightest) inset;
 
           // Remove border for first list item
           & > .md-nav__item:first-child {
@@ -233,8 +233,8 @@
         // Site title in main navigation
         &--site {
           position: relative;
-          background-color: $md-color-primary;
-          color: $md-color-white;
+          background-color: var(--color-background);
+          color: var(--color-text);
 
           // Site logo
           .md-nav__button {
@@ -279,7 +279,7 @@
       // List item
       .md-nav__item {
         padding: 0;
-        border-top: px2rem(1px) solid $md-color-primary--lightest;
+        border-top: px2rem(1px) solid var(--color-primary--lightest);
 
         // Adjust for RTL languages
         [dir="rtl"] & {
@@ -462,8 +462,8 @@
     &__source {
       display: block;
       padding: 0 px2rem(4px);
-      background-color: mix($md-color-primary, $md-color-black, 75%);
-      color: $md-color-white;
+      background-color: mix(#121212, #000000, 75%);
+      color: var(--color-text);
     }
   }
 
@@ -528,3 +528,4 @@
     }
   }
 }
+// .dark-mode .md-nav__item {color: var(--color-text);}

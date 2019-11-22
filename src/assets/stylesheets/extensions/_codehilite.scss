@@ -233,7 +233,6 @@ $codehilite-whitespace: transparent;
       padding: px2rem(10.5px) px2rem(12px);
       background-color: transparent;
       overflow: auto;
-      vertical-align: top;
 
       // Override native scrollbar styles
       &::-webkit-scrollbar {
@@ -243,11 +242,11 @@ $codehilite-whitespace: transparent;
 
       // Style scrollbar thumb
       &::-webkit-scrollbar-thumb {
-        background-color: $md-color-primary--lighter;
+        background-color: var(--color-black--lighter);
 
         // Hovered scrollbar thumb
         &:hover {
-          background-color: $md-color-accent;
+          background-color: var(--color-accent);
         }
       }
     }
@@ -304,8 +303,8 @@ $codehilite-whitespace: transparent;
     // Disable user selection, so code can be easily copied without
     // accidentally also copying the line numbers
     .linenos {
-      background-color: $md-color-primary--lightest;
-      color: $md-color-primary--lighter;
+      background-color: var(--color-black--lightest);
+      color: var(--color-text);
       user-select: none;
 
       // Reset spacings
@@ -372,10 +371,3 @@ $codehilite-whitespace: transparent;
     @extend .codehilitetable;
   }
 }
-
-:root .dark-mode pre,
-.dark-mode code,
-.dark-mode .md-typeset .code {
-  filter: invert(100%)
-}
-

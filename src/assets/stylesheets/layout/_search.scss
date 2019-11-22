@@ -62,7 +62,7 @@ $md-toggle__search--checked:
         transform 0.3s 0.1s,
         opacity   0.2s 0.2s;
       border-radius: px2rem(20px);
-      background-color: $md-color-white;
+      background-color: var(--color-white);
       overflow: hidden;
       pointer-events: none;
 
@@ -111,7 +111,7 @@ $md-toggle__search--checked:
         width   0s 0.25s,
         height  0s 0.25s,
         opacity 0.25s;
-      background-color: $md-color-black--light;
+      background-color: var(--color-black--light);
       cursor: pointer;
 
       // Adjust for RTL languages
@@ -251,7 +251,7 @@ $md-toggle__search--checked:
     // Placeholder and icon color in active state
     ~ .md-search__icon,
     &::placeholder {
-      color: $md-color-black--light;
+      color: var(--color-text--light);
     }
 
     // Remove the "x" rendered by Internet Explorer
@@ -275,7 +275,7 @@ $md-toggle__search--checked:
         background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
         color            0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
       border-radius: px2rem(2px);
-      background-color: $md-color-black--lighter;
+      background-color: var(--color-black--lighter);
       color: inherit;
       font-size: ms(0);
 
@@ -291,7 +291,7 @@ $md-toggle__search--checked:
 
       // Placeholder color
       &::placeholder {
-        color: $md-color-white--light;
+        color: var(--color-text--light);
         font-family: 'Oswald';
         text-transform: uppercase;
         font-weight: 400;
@@ -299,20 +299,20 @@ $md-toggle__search--checked:
 
       // Hovered search field
       &:hover {
-        background-color: $md-color-white--lightest;
+        background-color: var(--color-white--lightest);
       }
 
       // Set light background on active search field
       #{$md-toggle__search--checked} & {
         border-radius: px2rem(2px) px2rem(2px) 0 0;
-        background-color: $md-color-white;
-        color: $md-color-black;
+        background-color: var(--color-white);
+        color: var(--color-black);
         text-overflow: clip;
 
         // Placeholder and icon color in active state
         + .md-search__icon,
         &::placeholder {
-          color: $md-color-black--light;
+          color: var(--color-black--light);
         }
       }
     }
@@ -434,8 +434,8 @@ $md-toggle__search--checked:
   // Wrapper for scrolling on overflow
   &__scrollwrap {
     height: 100%;
-    background-color: $md-color-white;
-    box-shadow: 0 px2rem(1px) 0 $md-color-black--lightest inset;
+    background-color: var(--color-white);
+    box-shadow: 0 px2rem(1px) 0 var(--color-black--lightest) inset;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
 
@@ -466,11 +466,11 @@ $md-toggle__search--checked:
 
       // Style scrollbar thumb
       &::-webkit-scrollbar-thumb {
-        background-color: $md-color-black--lighter;
+        background-color: var(--color-black--lighter);
 
         // Hovered scrollbar thumb
         &:hover {
-          background-color: $md-color-accent;
+          background-color: var(--color-accent);
         }
       }
     }
@@ -479,14 +479,14 @@ $md-toggle__search--checked:
 
 // Search result
 .md-search-result {
-  color: $md-color-black;
+  color: var(--color-black);
   word-break: break-word;
 
   // Search metadata
   &__meta {
     padding: 0 px2rem(16px);
-    background-color: $md-color-black--lightest;
-    color: $md-color-black--light;
+    background-color: var(--color-black--lightest);
+    color: var(--color-black--light);
     font-size: ms(-1);
     line-height: px2rem(36px);
 
@@ -506,13 +506,13 @@ $md-toggle__search--checked:
   &__list {
     margin: 0;
     padding: 0;
-    border-top: px2rem(1px) solid $md-color-black--lightest;
+    border-top: px2rem(1px) solid var(--color-black--lightest);
     list-style: none;
   }
 
   // List item
   &__item {
-    box-shadow: 0 px2rem(-1px) 0 $md-color-black--lightest;
+    box-shadow: 0 px2rem(-1px) 0 var(--color-black--lightest);
   }
 
   // Link inside item
@@ -525,7 +525,7 @@ $md-toggle__search--checked:
     // Active or hovered link
     &[data-md-state="active"],
     &:hover {
-      background-color: transparentize($md-color-accent, 0.9);
+      background-color: transparentize(#ff9000, 0.9);
 
       // Slightly transparent icon
       .md-search-result__article::before {
@@ -567,7 +567,7 @@ $md-toggle__search--checked:
         left: 0;
         margin: px2rem(2px);
         transition: opacity 0.25s;
-        color: $md-color-black--light;
+        color: var(--color-black--light);
         content: "\E880"; // find_in_page
 
         // Adjust for RTL languages
@@ -607,7 +607,7 @@ $md-toggle__search--checked:
     display: -webkit-box;
     max-height: px2rem(33px);
     margin: 0.5em 0;
-    color: $md-color-black--light;
+    color: var(--color-black--light);
     font-size: ms(-1);
     line-height: 1.4;
     text-overflow: ellipsis;
