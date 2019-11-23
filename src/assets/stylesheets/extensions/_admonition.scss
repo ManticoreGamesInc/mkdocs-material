@@ -38,7 +38,7 @@
     border-radius: px2rem(4px);
     font-size: ms(-1);
     overflow: auto;
-    background-color: #303030;
+    color: var(--color-text);
 
     // Adjust for RTL languages
     [dir="rtl"] & {
@@ -142,4 +142,7 @@
       }
     }
   }
+}
+.dark-mode .admonition {
+  background-color: #303030;
 }

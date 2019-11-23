@@ -47,6 +47,13 @@ kbd {
   font-family: "Courier New", Courier, monospace;
 }
 
+// Custom nav items font
+.md-nav__item {
+  font-family: Oswald, Helvetica, Arial, sans-serif;
+  font-weight: 400;
+  text-transform: uppercase;
+}
+
 // ----------------------------------------------------------------------------
 // Rules: typesetted content
 // ----------------------------------------------------------------------------
@@ -418,11 +425,11 @@ kbd {
 
     display: inline-block;
     max-width: 100%;
+    border-bottom: 2px solid var(--manti-color-orange);
     border-radius: px2rem(4px);
     font-size: ms(-1);
     overflow: auto;
     table-layout: auto;
-    border-bottom: 2px solid var(--manti-color-orange);
     -webkit-overflow-scrolling: touch;
 
     // Due to margin collapse because of the necessary inline-block hack, we
@@ -447,8 +454,8 @@ kbd {
     th {
       min-width: px2rem(100px);
       padding: px2rem(12px) px2rem(16px);
+      border-bottom: 2px solid var(--manti-color-orange);
       background-color: var(--manti-color-black);
-      border-bottom: 2px solid #ff9000;
       color: var(--color-black);
       vertical-align: top;
     }
@@ -457,8 +464,8 @@ kbd {
     td {
       padding: px2rem(12px) px2rem(16px);
       border-top: px2rem(1px) solid var(--color-primary--lightest);
-      vertical-align: top;
       background-color: var(--color-md--light);
+      vertical-align: top;
     }
 
     // Table rows
