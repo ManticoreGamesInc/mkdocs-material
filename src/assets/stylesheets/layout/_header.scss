@@ -30,13 +30,13 @@
   top: 0;
   right: 0;
   left: 0;
-  height: px2rem(64px);
+  height: px2rem(48px);
   transition:
     background-color 0.25s,
     color 0.25s;
   background-color: var(--manti-color-black);
   color: var(--manti-color-orange);
-  border-bottom: 4px solid #ff9000;
+  // border-bottom: 4px solid var(--manti-color-orange);
   box-shadow: none;
   z-index: 2;
   // Hack: putting the header on the GPU avoids unnecessary repaints
@@ -63,6 +63,17 @@
   @media print {
     display: none;
   }
+  &::after {
+    content: "";
+    background-color: var(--manti-color-orange);
+    position: absolute;
+    display: block;
+    height: 4px;
+    top: px2rem(48px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 // Navigation within header
@@ -76,7 +87,7 @@
     position: relative;
     transition: opacity 0.25s;
     z-index: 1;
-    margin: 0;
+    padding: 0;
 
     // Hovered icon
     &:hover {
@@ -126,16 +137,14 @@
   &__topic {
     display: block;
     position: absolute;
-    top: 5px;
     transition:
       transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
       opacity   0.15s;
     text-overflow: ellipsis;
     white-space: nowrap;
     overflow: hidden;
-    font-family: 'Oswald';
+    font-family: var(--font-oswald);
     text-transform: uppercase;
-    font-weight: 400;
 
     // Page title
     & + & {
@@ -222,12 +231,12 @@
 #dark-mode-toggle {
   display: inline-block;
   font-size: 16px;
-  margin-top: 15px;
-  color: var(--color-text--light);
+  margin-top: 13px;
+  color: $md-color-white--light;
 }
 
 #dark-mode-toggle:hover {
-  color: #fff;
+  color: $md-color-white;
   text-decoration: none
 }
 
@@ -237,7 +246,7 @@
   width: 60px;
   height: 30px;
   margin-right: 5px;
-  background-color: var(--color-black--lighter);
+  background-color: $md-color-white--lightest;  // #333333;
   border-radius: 34px;
   vertical-align: bottom
 }

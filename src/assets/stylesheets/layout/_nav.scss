@@ -188,7 +188,7 @@
       .md-nav__title,
       .md-nav__item {
         font-size: px2rem(18px);
-        font-family: 'Oswald';
+        font-family: var(--font-oswald);
         text-transform: uppercase;
         font-weight: 500;
         line-height: 1.5;

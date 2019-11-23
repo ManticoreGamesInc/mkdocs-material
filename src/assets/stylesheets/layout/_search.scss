@@ -62,7 +62,8 @@ $md-toggle__search--checked:
         transform 0.3s 0.1s,
         opacity   0.2s 0.2s;
       border-radius: px2rem(20px);
-      background-color: var(--color-white);
+      // background-color: var(--color-white);
+      background-color: brighten($manticore-black, 10%);
       overflow: hidden;
       pointer-events: none;
 
@@ -111,7 +112,7 @@ $md-toggle__search--checked:
         width   0s 0.25s,
         height  0s 0.25s,
         opacity 0.25s;
-      background-color: var(--color-black--light);
+      background-color: $md-color-black--light;
       cursor: pointer;
 
       // Adjust for RTL languages
@@ -182,8 +183,6 @@ $md-toggle__search--checked:
     @include break-from-device(tablet landscape) {
       position: relative;
       width: px2rem(230px);
-      margin-right: px2rem(16px);
-      margin-top: px2rem(4px);
       padding: px2rem(2px) 0;
       float: right;
       transition: width 0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
@@ -251,7 +250,7 @@ $md-toggle__search--checked:
     // Placeholder and icon color in active state
     ~ .md-search__icon,
     &::placeholder {
-      color: var(--color-text--light);
+      color: $md-color-black--light;
     }
 
     // Remove the "x" rendered by Internet Explorer
@@ -274,8 +273,8 @@ $md-toggle__search--checked:
       transition:
         background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
         color            0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
-      border-radius: px2rem(2px);
-      background-color: var(--color-black--lighter);
+      border-radius: px2rem(34px);
+      background-color: $md-color-black--lighter;
       color: inherit;
       font-size: ms(0);
 
@@ -291,15 +290,14 @@ $md-toggle__search--checked:
 
       // Placeholder color
       &::placeholder {
-        color: var(--color-text--light);
-        font-family: 'Oswald';
+        color: $md-color-white--light;
+        font-family: var(--font-oswald);
         text-transform: uppercase;
-        font-weight: 400;
       }
 
       // Hovered search field
       &:hover {
-        background-color: var(--color-white--lightest);
+        background-color: $md-color-white--lightest;
       }
 
       // Set light background on active search field
@@ -525,7 +523,7 @@ $md-toggle__search--checked:
     // Active or hovered link
     &[data-md-state="active"],
     &:hover {
-      background-color: transparentize(#ff9000, 0.9);
+      background-color: transparentize(#FF9000, 0.9);
 
       // Slightly transparent icon
       .md-search-result__article::before {

@@ -37,8 +37,8 @@
     border-left: px2rem(4px) solid $clr-blue-a200;
     border-radius: px2rem(4px);
     font-size: ms(-1);
-    overflow: auto;
     color: var(--color-text);
+    overflow: auto;
 
     // Adjust for RTL languages
     [dir="rtl"] & {

@@ -46,7 +46,7 @@
 
     // Higher specificity for color due to palettes integration
     html body & {
-      color: var(--color-black--lighter);
+      color: var(--color-text--lighter);
     }
 
     // Hide for print

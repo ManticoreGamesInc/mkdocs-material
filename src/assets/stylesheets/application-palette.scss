@@ -89,6 +89,7 @@ button[data-md-color-accent] {
   "blue-grey":   $clr-blue-grey-600,
   "manticore-blue": #3b8bd2,
   "manticore-orange": #ff9000,
+  "manticore-black": #313233,
 ) {
 
   // Color tile for presentation in theme documentation
@@ -112,7 +113,7 @@ button[data-md-color-accent] {
 
     // Application header (stays always on top)
     .md-header {
-      background-color: $color;
+      background-color: var(--manti-color-black); // $color;
     }
 
     // Hero teaser

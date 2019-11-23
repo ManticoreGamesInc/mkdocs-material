@@ -36,8 +36,8 @@
 // Navigation within footer
 .md-footer-nav {
   background-color: var(--color-background);
-  color: var(--color-white);
-  font-family: 'Oswald';
+  color: var(--color-text--lightest);
+  font-family: var(--font-oswald);
   text-transform: uppercase;
   font-weight: 400;
 
@@ -140,7 +140,7 @@
 
   // Use a decent color for non-hovered links and ensure specificity
   html &.md-typeset a {
-    color: var(--color-white--light);
+    color: var(--color-text--light);
 
     // Focused or hovered link
     &:focus,
@@ -170,7 +170,7 @@
 
   // Highlight copyright information
   &__highlight {
-    color: var(--color-white--light);
+    color: var(--color-text--light);
   }
 }
 

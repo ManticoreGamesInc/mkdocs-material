@@ -49,7 +49,7 @@ kbd {
 
 // Custom nav items font
 .md-nav__item {
-  font-family: Oswald, Helvetica, Arial, sans-serif;
+  font-family: var(--font-oswald);
   font-weight: 400;
   text-transform: uppercase;
 }
@@ -257,6 +257,7 @@ kbd {
       &::-webkit-scrollbar {
         width: px2rem(4px);
         height: px2rem(4px);
+        // background-color: var(--color--background);
       }
 
       // Style scrollbar thumb
