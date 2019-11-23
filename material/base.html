@@ -69,7 +69,7 @@
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script src="{{ 'assets/javascripts/modernizr.268332fc.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
@@ -104,6 +104,7 @@
   {% else %}
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
+    <script src="{{ 'assets/javascripts/manticore.dd87e961.js' | url }}"></script>
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}

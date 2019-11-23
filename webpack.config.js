@@ -57,6 +57,11 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
       /* Application */
       "assets/javascripts/application": path.resolve(
         __dirname, "src/assets/javascripts/application.js"
+      ),
+
+      /* Manticore */
+      "assets/javascripts/manticore": path.resolve(
+        __dirname, "src/assets/javascripts/manticore.js"
       )
     },
 

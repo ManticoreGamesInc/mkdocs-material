@@ -115,8 +115,3 @@ export default class Abstract {
     return hash
   }
 }
-
-if (Cookies.get("__Host-dark") === "1"){
-  document.documentElement.classList.add("dark-mode")
-}
-// Cookies.set("__Host-dark", "1", { path: "/", secure: true, samesite: "lax", expires: 7776000 })

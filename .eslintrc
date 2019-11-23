@@ -38,7 +38,7 @@
     "impliedStrict": true,
     "sourceType": "module"
   },
-  "plugins": [],
+  "plugins": ["babel"],
   "rules": {
     "array-callback-return": 2,
     "array-bracket-spacing": 2,
@@ -86,9 +86,6 @@
     "lines-around-comment": 2,
     "lines-around-directive": 2,
     "max-depth": 2,
-    "max-len": [1, {
-      "ignorePattern": "\/\/ TODO"
-    }],
     "max-nested-callbacks": 2,
     "max-params": 2,
     "max-statements-per-line": 2,
