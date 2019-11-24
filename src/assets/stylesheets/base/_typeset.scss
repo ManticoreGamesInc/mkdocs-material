@@ -457,33 +457,35 @@ kbd {
       padding: px2rem(12px) px2rem(16px);
       border-bottom: 2px solid var(--manti-color-orange);
       background-color: var(--manti-color-black);
-      color: var(--color-black);
+      color: $md-color-white;
       vertical-align: top;
+      white-space: nowrap;
     }
 
     // Table cells
     td {
       padding: px2rem(12px) px2rem(16px);
-      border-top: px2rem(1px) solid var(--color-primary--lightest);
-      background-color: var(--color-md--light);
+      border-top: px2rem(1px) solid var(--color-text--lightest);
       vertical-align: top;
     }
 
     // Table rows
     tr {
       transition: background-color 0.125s;
-      color: var(--color-black--light);
-
 
       // Add background on hover
       &:hover {
-        background-color: rgba(0, 0, 0, 0.035);
-        box-shadow: 0 px2rem(1px)  0 var(--color-white) inset;
+        background-color: var(--color-text--hover);
+        box-shadow: 0 px2rem(1px)  0 var(--color-background) inset;
       }
 
       // Remove top border on first row
       &:first-child td {
         border-top: 0;
+      }
+
+      td:first-child {
+        width: 250px;
       }
     }
 
@@ -504,6 +506,7 @@ kbd {
   // Data table wrapper, in case JavaScript is available
   .md-typeset__table {
     display: inline-block;
+    width: 100%;
     margin-bottom: 0.5em;
     padding: 0 px2rem(16px);
 

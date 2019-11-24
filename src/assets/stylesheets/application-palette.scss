@@ -50,7 +50,7 @@ button[data-md-color-accent] {
   transition:
     background-color 0.25s,
     opacity          0.25s;
-  border-radius: px2rem(2px);
+  border-radius: px2rem(4px);
   color: var(--color-text);
   font-size: ms(-1);
   text-align: left;
@@ -124,7 +124,7 @@ button[data-md-color-accent] {
     // Current or active link
     .md-nav__link:active,
     .md-nav__link--active {
-      color: $color;
+      color: var(--manti-color-orange); // $color;
     }
 
     // Reset active color for nested list titles

@@ -58,7 +58,7 @@ $break-devices: (
 // ----------------------------------------------------------------------------
 
 // Manticore colors
-$manticore-black: #20232A !default;
+$manticore-black: hsl(222, 14%, 15%) !default;
 $manticore-orange:  #FF9000 !default;
 $manticore-blue: #3B8BD2 !default;
 
@@ -90,8 +90,8 @@ $md-icon-padding:                     $ms-base * 0.5;
 $md-icon-margin:                      $ms-base * 0.25;
 
 // Code blocks
-$md-code-background:                  #666666; //hsla(0, 0%, 92.5%, 0.5);
-$md-code-color:                       hsl(323, 100%, 95%); //#37474F;
+$md-code-background:                  hsla(222, 14%, 15%, 0.12); //hsla(0, 0%, 92.5%, 0.5);
+$md-code-color:                       #37474F; //#37474F hsl(323, 100%, 95%);
 
 // Keystrokes
 $md-keyboard-background:              #FCFCFC;

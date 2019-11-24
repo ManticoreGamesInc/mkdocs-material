@@ -56,16 +56,16 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.ba008c99.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.660acb83.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.91c9ae6e.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.5e1c7483.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
         {% set primary = map.primary(
           palette.primary | replace(" ", "-") | lower
         ) %}
-        <meta name="theme-color" content="{{ primary }}">
+        <meta name="theme-color" content="#20232A">
       {% endif %}
     {% endblock %}
     {% block libs %}
@@ -196,7 +196,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.fc76d19e.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.373a34af.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
