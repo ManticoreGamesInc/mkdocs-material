@@ -56,7 +56,11 @@ $break-devices: (
 // ----------------------------------------------------------------------------
 // Variables: base colors
 // ----------------------------------------------------------------------------
-$manticore-black: #20232a !default;
+
+// Manticore colors
+$manticore-black: #20232A !default;
+$manticore-orange:  #FF9000 !default;
+$manticore-blue: #3B8BD2 !default;
 
 // Primary and accent colors
 $md-color-primary:                    $clr-indigo-500 !default;

@@ -33,10 +33,13 @@
   &__title {
     display: block;
     padding: 0 px2rem(12px);
+    font-family: var(--font-oswald);
     font-weight: 700;
+    text-transform: uppercase;
     text-overflow: ellipsis;
     overflow: hidden;
-    color: var(--color-blue);
+    color: saturate($manticore-orange, 20%);
+    font-size: 18px;
 
     // Icon, hidden by default
     &::before {
@@ -55,6 +58,10 @@
     .md-nav__button {
       display: none;
     }
+  }
+
+  &__title--site {
+    padding: 0;
   }
 
   // List of items
@@ -166,7 +173,8 @@
 
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
-    background-color: var(--color-white);
+    background-color: var(--color-background);
+    color: var(--color-text);
 
     // Stretch primary navigation to drawer
     &--primary,
@@ -528,4 +536,3 @@
     }
   }
 }
-// .dark-mode .md-nav__item {color: var(--color-text);}

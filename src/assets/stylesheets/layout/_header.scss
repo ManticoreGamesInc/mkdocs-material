@@ -63,6 +63,8 @@
   @media print {
     display: none;
   }
+
+  // Fake Bottom Border
   &::after {
     content: "";
     background-color: var(--manti-color-orange);
@@ -97,6 +99,8 @@
     // Set correct display on image or icon
     &.md-logo * {
       display: block;
+      height: px2rem(38px);
+      width: px2rem(38px);
     }
 
     // Hide search icon, if JavaScript is not available.
@@ -115,6 +119,7 @@
 
     // [tablet -]: Hide the home icon or logo
     @include break-to-device(tablet) {
+      padding: px2rem(8px);
 
       // Home icon or logo
       &.md-icon--home,
@@ -210,14 +215,14 @@
   // Repository containing source
   &__source {
     display: none;
-    line-height: 30px;
+    line-height: px2rem(30px);
 
     // [tablet landscape +]: Show the reposistory from tablet
     @include break-from-device(tablet landscape) {
       display: block;
       width: px2rem(234px);
       max-width: px2rem(234px);
-      padding-right: px2rem(12px);
+      padding: px2rem(8px);
 
       // Adjust for RTL languages
       [dir="rtl"] & {
@@ -225,54 +230,86 @@
         padding-left: px2rem(12px);
       }
     }
+    // Adjust for hidden label on small size
+    @media only screen and (max-width: 1220px) {
+      width: px2rem(80px);
+    }
   }
 }
 
 #dark-mode-toggle {
   display: inline-block;
   font-size: 16px;
-  margin-top: 13px;
   color: $md-color-white--light;
-}
 
-#dark-mode-toggle:hover {
-  color: $md-color-white;
-  text-decoration: none
+  &:hover {
+    color: $md-color-white;
+    text-decoration: none
+  }
 }
 
 .dark-mode-slider {
   position: relative;
   display: inline-block;
-  width: 60px;
-  height: 30px;
-  margin-right: 5px;
+  width: px2rem(60px);
+  height: px2rem(30px);
+  margin-right: px2rem(5px);
   background-color: $md-color-white--lightest;  // #333333;
-  border-radius: 34px;
-  vertical-align: bottom
+  border-radius: px2rem(34px);
+  vertical-align: bottom;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: px2rem(22px);
+    width: px2rem(22px);
+    left: px2rem(12px);
+    bottom: px2rem(8px);
+    border-radius: 50%;
+    box-shadow: -8px 4px 0 0 currentColor
+  }
 }
 
-.dark-mode-slider:before {
-  position: absolute;
-  content: "";
-  height: 22px;
-  width: 22px;
-  left: 12px;
-  bottom: 8px;
-  border-radius: 50%;
-  box-shadow: -8px 4px 0 0 currentColor
+.dark-mode {
+  .dark-mode-slider {
+    &:before {
+      left: auto;
+      right: px2rem(12px);
+      box-shadow: 8px 4px 0 0 currentColor;
+      line-height: px2rem(30px);
+    }
+  }
+
+  .dark-mode-disabled {
+    display: none;
+    opacity: 1;
+
+    // Hide label on small size
+    @media only screen and (max-width: 1220px) {
+      opacity: 0;
+    }
+  }
+
+  .dark-mode-enabled {
+    display: inline;
+    opacity: 1;
+
+    // Hide label on small size
+    @media only screen and (max-width: 1220px) {
+      opacity: 0;
+    }
+  }
 }
 
-.dark-mode .dark-mode-slider:before {
-  left: auto;
-  right: 12px;
-  box-shadow: 8px 4px 0 0 currentColor;
-  line-height: 30px;
-}
-
-.dark-mode .dark-mode-disabled,.dark-mode-enabled {
+.dark-mode-enabled {
   display: none;
 }
 
-.dark-mode .dark-mode-enabled {
-  display: inline
+.dark-mode-disabled {
+  opacity: 1;
+
+  // Hide label on small size
+  @media only screen and (max-width: 1220px) {
+    opacity: 0;
+  }
 }

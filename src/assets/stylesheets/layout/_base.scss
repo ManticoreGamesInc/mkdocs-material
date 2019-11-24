@@ -98,7 +98,7 @@ hr {
 
 // Template-wide grid
 .md-grid {
-  max-width: px2rem(1220px);
+  max-width: px2rem(1500px);
   margin-right: auto;
   margin-left: auto;
 }
@@ -107,6 +107,8 @@ hr {
 .md-container,
 .md-main {
   overflow: auto;
+  background-color: var(--color-background);
+  color: var(--color-text);
 }
 
 // Content wrapper - use display: table to make variable-height sticky footers
