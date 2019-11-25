@@ -62,8 +62,7 @@ $md-toggle__search--checked:
         transform 0.3s 0.1s,
         opacity   0.2s 0.2s;
       border-radius: px2rem(20px);
-      // background-color: var(--color-white);
-      background-color: brighten($manticore-black, 10%);
+      background-color: $md-color-white;
       overflow: hidden;
       pointer-events: none;
 

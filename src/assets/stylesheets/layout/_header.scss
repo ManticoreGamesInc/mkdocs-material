@@ -222,7 +222,7 @@
       display: block;
       width: px2rem(234px);
       max-width: px2rem(234px);
-      padding: px2rem(8px);
+      padding: 10px;
 
       // Adjust for RTL languages
       [dir="rtl"] & {
@@ -254,7 +254,7 @@
   width: px2rem(60px);
   height: px2rem(30px);
   margin-right: px2rem(5px);
-  background-color: $md-color-white--lightest;  // #333333;
+  background-color: lighten($manticore-black, 10%);
   border-radius: px2rem(34px);
   vertical-align: bottom;
 
