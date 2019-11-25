@@ -40,6 +40,7 @@
     overflow: hidden;
     color: saturate($manticore-orange, 20%);
     font-size: 18px;
+    user-select: none;
 
     // Icon, hidden by default
     &::before {
@@ -74,6 +75,7 @@
   // List item
   &__item {
     padding: 0 px2rem(12px);
+    user-select: none;
 
     // Add bottom spacing to last item
     &:last-child {
