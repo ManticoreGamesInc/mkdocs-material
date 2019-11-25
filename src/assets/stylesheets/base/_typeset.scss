@@ -38,6 +38,15 @@ input {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+// Hack of the day to prevent jumping on scrollbar show/hide
+@media screen and (min-width: 960px) {
+  html {
+      margin-left: calc(100vw - 100%);
+      margin-right: 0;
+      background-color: var(--color-background);
+  }
+}
+
 // Proportionally spaced fonts
 pre,
 code,
