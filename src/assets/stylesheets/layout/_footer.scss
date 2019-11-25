@@ -178,6 +178,8 @@
 .md-footer-social {
   // margin: 0 px2rem(8px);
   // padding: px2rem(4px) 0 px2rem(12px);
+  margin-left: px2rem(5px);
+
 
   // [tablet portrait +]: Show next to copyright information
   @include break-from-device(tablet portrait) {
