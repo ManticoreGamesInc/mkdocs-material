@@ -59,9 +59,9 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         __dirname, "src/assets/javascripts/application.js"
       ),
 
-      /* Manticore */
-      "assets/javascripts/manticore": path.resolve(
-        __dirname, "src/assets/javascripts/manticore.js"
+      /* dark-mode */
+      "assets/javascripts/dark-mode": path.resolve(
+        __dirname, "src/assets/javascripts/dark-mode.js"
       )
     },
 
@@ -120,7 +120,8 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
                 includePaths: [
                   "node_modules/modularscale-sass/stylesheets",
                   "node_modules/material-design-color",
-                  "node_modules/material-shadows"
+                  "node_modules/material-shadows",
+                  "node_modules/simplebar/dist/simplebar.css"
                 ],
                 sourceMap: args.mode !== "production",
                 sourceMapContents: true

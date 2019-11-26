@@ -56,7 +56,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.c06dcea7.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.ddeb3e4a.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.5e1c7483.css' | url }}">
       {% endif %}
@@ -69,7 +69,7 @@
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/modernizr.d9480185.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
@@ -100,11 +100,11 @@
   {% if palette.primary or palette.accent %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
     {% set accent  = palette.accent  | replace(" ", "-") | lower %}
-    <body dir="{{ lang.t('direction') }}" data-md-color-primary="{{ primary }}" data-md-color-accent="{{ accent }}">
+    <body dir="{{ lang.t('direction') }}" data-md-color-primary="{{ primary }}" data-md-color-accent="{{ accent }}" data-simplebar>
   {% else %}
-    <body dir="{{ lang.t('direction') }}">
+    <body dir="{{ lang.t('direction') }}" data-simplebar>
   {% endif %}
-    <script src="{{ 'assets/javascripts/manticore.dd87e961.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/dark-mode.ff3312cc.js' | url }}"></script>
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}
@@ -196,7 +196,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.7fcf6b74.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.1656e3a9.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

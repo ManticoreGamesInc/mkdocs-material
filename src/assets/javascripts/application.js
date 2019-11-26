@@ -45,6 +45,8 @@ import Clipboard from "clipboard"
 
 import Material from "./components/Material"
 
+import 'simplebar';
+
 /* ----------------------------------------------------------------------------
  * Functions
  * ------------------------------------------------------------------------- */
