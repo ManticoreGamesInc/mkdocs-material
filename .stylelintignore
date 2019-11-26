@@ -20,3 +20,4 @@
 
 # Don't lint shame
 src/assets/stylesheets/_shame.scss
+material/
