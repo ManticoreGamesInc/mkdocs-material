@@ -38,6 +38,11 @@ input {
   font-family: "Helvetica Neue", Helvetica, Arial, sans-serif;
 }
 
+// Hide standard scroll bar so it does not flicker on load
+::-webkit-scrollbar {
+  display: none;
+}
+
 // Hack of the day to prevent jumping on scrollbar show/hide
 @media screen and (min-width: 960px) {
   html {
