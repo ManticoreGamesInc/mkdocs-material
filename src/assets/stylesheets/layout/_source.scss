@@ -219,7 +219,7 @@
   // Color needs even higher specifity because custom color palettes are set
   // using the body and override text links inside typesetted content
   html body .md-typeset & {
-    color: var(--color-black--light);
+    color: var(--color-black);
   }
 
   // Hovered source file
@@ -229,6 +229,64 @@
     // Icon
     &::before {
       background-color: var(--color-accent);
+    }
+  }
+}
+
+// Tag
+.md-tag {
+  display: inline-block;
+  margin: 1em 0.5em 1em 0;
+  padding-right: px2rem(5px);
+  border-radius: px2rem(4px);
+  background-color: lighten($manticore-black, 5%);
+  font-size: ms(-1);
+  list-style-type: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  // Icon
+  &::before {
+    @extend %md-icon;
+
+    display: inline-block;
+    margin-right: px2rem(5px);
+    padding: px2rem(5px);
+    background-color: lighten($manticore-black, 15%);
+    color: $md-color-white--light;
+    font-size: ms(0);
+    content: "\E54E"; // local_offer
+    vertical-align: middle;
+  }
+
+  // Some properties need to be set with higher specificity due to the default
+  // styling of text links inside typesetted content
+  html & {
+    transition:
+      background 0.4s,
+      color      0.4s,
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Icon
+    &::before {
+      transition: inherit;
+    }
+  }
+
+  // Color needs even higher specifity because custom color palettes are set
+  // using the body and override text links inside typesetted content
+  html body .md-typeset & {
+    color: $md-color-white--light;
+  }
+
+  // Hovered source file
+  &:hover {
+    @include z-depth-focus;
+    background-color: lighten($manticore-black, 15%);
+
+    // Icon
+    &::before {
+      color: var(--color-accent);
     }
   }
 }

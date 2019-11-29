@@ -315,6 +315,13 @@
                 <!-- Content -->
                 {{ page.content }}
 
+                <!-- Tags-->
+                {% for category in page.meta.categories %}
+                <a href="/generated/{{ category }}" title="{{ category }}" class="md-tag">
+                    {{ category }}
+                </a>
+                {% endfor %}
+
                 <!-- Source files -->
                 {% block source %}
                   {% if page and page.meta and page.meta.source %}

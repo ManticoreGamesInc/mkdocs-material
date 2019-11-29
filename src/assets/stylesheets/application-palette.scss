@@ -399,6 +399,11 @@ button[data-md-color-primary="black"] {
     .md-source-file:hover::before {
       background-color: $color;
     }
+
+    // Tag icon
+    .md-tag:hover::before {
+      background-color: $color;
+    }
   }
 }
 
