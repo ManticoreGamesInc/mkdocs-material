@@ -146,7 +146,8 @@ button[data-md-color-accent] {
 
       // Site title in main navigation
       html & .md-nav--primary .md-nav__title--site {
-        background-color: $color;
+        background-color: var(--manti-color-black); // $color;
+        color: var(--manti-color-orange); // $color;
       }
     }
 
