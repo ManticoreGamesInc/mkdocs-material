@@ -312,6 +312,11 @@
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
 
+                 <!-- Netlify integration -->
+                {% block netlify %}
+                  {% include "partials/integrations/netlify.html" %}
+                {% endblock %}
+
                 <!-- Content -->
                 {{ page.content }}
 
