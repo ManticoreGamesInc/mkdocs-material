@@ -16,6 +16,13 @@
 
   --manti-color-blue: #53B6FB;
 
+  --core-color-locked: #85888D;
+  --core-color-templetized: #53B6FB;
+  --core-color-deinstanced: #5DDFFB;
+  --core-color-published: #64EB45;
+  --color-color-update-pending: #FF7100;
+  --color-color-error-state: #FB3F3F;
+
   // Material Design Colors
   --color-md--dark: #121212;
   --color-md--light: #212121;
@@ -144,6 +151,12 @@
 
 .image-inline-text img {
   vertical-align: middle;
+  margin-right: 5px;
+}
+
+.image-background img {
+  background-color: var(--manti-color-black);
+  border: 1px solid darken($manticore-orange, 20%);
 }
 
 // YouTube Embed
