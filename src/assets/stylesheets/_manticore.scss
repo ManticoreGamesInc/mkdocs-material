@@ -138,6 +138,16 @@
   margin: 15px auto;
 }
 
+// Images
+
+.md-typeset img {
+  max-width: 50%;
+}
+
+.md-typeset .hero-image img {
+  max-width: 100%;
+}
+
 // Image Cluster
 
 .image-cluster {
@@ -153,6 +163,30 @@
     font-style: italic;
     display: block;
   }
+}
+
+.hero-image img {
+  width: 80%;
+}
+
+// Figure Blocks
+
+.figure-block {
+  text-align: center;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+figure {
+  display: inline-block;
+
+  img {
+    height: 210px;
+  }
+}
+
+.md-typeset figure img {
+  max-width: 100%;
 }
 
 // Image Inline Text
@@ -173,6 +207,16 @@
   width: 640px;
   height: 360px;
   border: 0px;
+}
+
+// Video
+
+.mt-video {
+  text-align: center;
+
+  video {
+    max-width: 720px
+  }
 }
 
 // Good / Bad / Exception Coloring
