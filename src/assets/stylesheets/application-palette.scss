@@ -118,7 +118,8 @@ button[data-md-color-accent] {
 
     // Hero teaser
     .md-hero {
-      background-color: $color;
+      background-color: darken($manticore-orange, 20%); //$color;
+      text-align: center;
     }
 
     // Current or active link
