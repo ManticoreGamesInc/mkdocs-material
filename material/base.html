@@ -56,7 +56,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.183b3b92.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.5c4d83ed.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.d19d0dc0.css' | url }}">
       {% endif %}
@@ -100,9 +100,9 @@
   {% if palette.primary or palette.accent %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
     {% set accent  = palette.accent  | replace(" ", "-") | lower %}
-    <body dir="{{ lang.t('direction') }}" data-md-color-primary="{{ primary }}" data-md-color-accent="{{ accent }}" data-simplebar>
+    <body dir="{{ lang.t('direction') }}" data-md-color-primary="{{ primary }}" data-md-color-accent="{{ accent }}">
   {% else %}
-    <body dir="{{ lang.t('direction') }}" data-simplebar>
+    <body dir="{{ lang.t('direction') }}">
   {% endif %}
     <script src="{{ 'assets/javascripts/dark-mode.ff3312cc.js' | url }}"></script>
     <svg class="md-svg">
@@ -204,7 +204,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.c53ebe71.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.ea1de4e5.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

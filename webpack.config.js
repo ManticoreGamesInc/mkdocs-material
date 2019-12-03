@@ -120,8 +120,7 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
                 includePaths: [
                   "node_modules/modularscale-sass/stylesheets",
                   "node_modules/material-design-color",
-                  "node_modules/material-shadows",
-                  "node_modules/simplebar/dist/simplebar.css"
+                  "node_modules/material-shadows"
                 ],
                 sourceMap: args.mode !== "production",
                 sourceMapContents: true

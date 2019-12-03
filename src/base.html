@@ -192,9 +192,9 @@
     {% set accent  = palette.accent  | replace(" ", "-") | lower %}
     <body dir="{{ lang.t('direction') }}"
         data-md-color-primary="{{ primary }}"
-        data-md-color-accent="{{ accent }}" data-simplebar>
+        data-md-color-accent="{{ accent }}">
   {% else %}
-    <body dir="{{ lang.t('direction') }}" data-simplebar>
+    <body dir="{{ lang.t('direction') }}">
   {% endif %}
     <script src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
 

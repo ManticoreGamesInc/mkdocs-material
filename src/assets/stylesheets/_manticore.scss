@@ -111,26 +111,6 @@
   display: none;
 }
 
-// Simplebar
-
-.simplebar-content {
-  height: 100%;
-}
-.simplebar-track.simplebar-vertical {
-  width: 14px;
-}
-
-.simplebar-scrollbar {
-  width: 10px;
-}
-.simplebar-scrollbar:before {
-  background-color: var(--color-text);
-}
-
-.simplebar-hover .simplebar-scrollbar:before  {
-  background-color: var(--color-accent);
-}
-
 // Generic .center
 
 .center {
