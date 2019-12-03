@@ -95,15 +95,9 @@
 <!-- Main navigation item -->
 {% else %}
   <li class="{{ class }}">
-    {% if nav_item.title == "ManticoreTV" or nav_item.title == "Discord" %}
-    <a href="{{ nav_item.url | url }}" title="{{ nav_item.title | striptags }}"
-        class="md-nav__link" target="_blank">
-      {{ nav_item.title }}
-    {% else %}
     <a href="{{ nav_item.url | url }}" title="{{ nav_item.title | striptags }}"
         class="md-nav__link">
       {{ nav_item.title }}
-    {% endif %}
     </a>
   </li>
 {% endif %}
