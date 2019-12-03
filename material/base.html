@@ -56,7 +56,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.5c4d83ed.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.fe705ae1.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.d19d0dc0.css' | url }}">
       {% endif %}
@@ -69,7 +69,7 @@
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script src="{{ 'assets/javascripts/modernizr.d9480185.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
@@ -104,7 +104,7 @@
   {% else %}
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
-    <script src="{{ 'assets/javascripts/dark-mode.ff3312cc.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/dark-mode.9fbea65c.js' | url }}"></script>
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}
@@ -204,7 +204,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.ea1de4e5.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.d971143b.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
