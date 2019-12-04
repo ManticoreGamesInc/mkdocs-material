@@ -312,20 +312,20 @@
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
 
-                 <!-- Netlify integration -->
-                {% block netlify %}
-                  {% include "partials/integrations/netlify.html" %}
-                {% endblock %}
-
-                <!-- Content -->
-                {{ page.content }}
-
                 <!-- Tags-->
                 {% for category in page.meta.categories %}
                 <a href="/generated/sitemap/#{{ category }}" title="{{ category }}" class="md-tag">
                     {{ category }}
                 </a>
                 {% endfor %}
+
+                <!-- Content -->
+                {{ page.content }}
+
+                <!-- Netlify integration -->
+                {% block netlify %}
+                  {% include "partials/integrations/netlify.html" %}
+                {% endblock %}
 
                 <!-- Source files -->
                 {% block source %}

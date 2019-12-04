@@ -94,7 +94,7 @@
     --color-text--light: hsla(0, 0%, 100%, 0.7);
     --color-text--lighter: hsla(0, 0%, 100%, 0.38);
     --color-text--lightest: hsla(0, 0%, 100%, 0.12);
-    --color-text--hover: hsla(0, 0%, 100%,0.035);
+    --color-text--hover: hsla(0, 0%, 100%, 0.035);
     --color-text--transparent: hsla(0, 0%, 100%, 0);
 
     --color-black: hsla(0, 0%, 100%, 1);
@@ -108,7 +108,68 @@
 // Netlify Form
 
 .netlify {
-  display: none;
+  background: var(--manti-color-black);
+  padding: 8px 16px;
+  border: 1px solid var(--manti-color-orange);
+  border-radius: 8px;
+  font-family: var(--font-oswald);
+  width: 80%;
+  margin-left: auto;
+  margin-right: auto;
+  margin-top: 60px;
+
+  form p {
+    text-align: center;
+  }
+
+  button {
+    background-color: var(--manti-color-blue);
+    border-radius: 4px;
+    box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
+    color: #FFFFFF;
+    cursor: pointer;
+    font-family: var(--font-oswald);
+    font-size: 20px;
+    line-height: 22px;
+    padding: 16px 45px;
+    text-shadow: 0 0 2px #000000;
+    text-transform: uppercase;
+    user-select: none;
+    width: 120px;
+  }
+
+  button:hover {
+    background-color: #0081C2;
+  }
+
+  textarea {
+    outline: none;
+    width: 100%;
+    height: 140px;
+    padding: 8px 16px;
+    font-size: 18px;
+    font-family: var(--font-oswald);
+    border-radius: 4px;
+    transition: all 0.3s ease-in-out;
+    border: 1px solid var(--color-background);
+    background: var(--color-background);
+    color: var(--color-text);
+  }
+
+  textarea::placeholder {
+    color: #999999;
+  }
+
+  textarea:focus::placeholder {
+    color: var(--manti-color-black);
+  }
+
+  textarea:focus,
+  input:focus {
+    border-color: transparent !important;
+    background-color: #999999;
+    color: var(--manti-color-black);
+  }
 }
 
 // Generic .center
@@ -195,14 +256,13 @@ figure {
   text-align: center;
 
   video {
-    max-width: 720px
+    max-width: 720px;
   }
 }
 
 // Good / Bad / Exception Coloring
 
 .md-typeset {
-
   .style-good {
     color: #008000;
     font-weight: 700;
