@@ -6,7 +6,8 @@
     <i class="fas fa-comment-dots"></i> Was this page helpful? Can it be improved? Let us know your feedback!
   </p>
   <form name="Feedback" method="POST" netlify-honeypot="bot-field" data-netlify="true">
-      <input type="hidden" name="URL" value="{{ page.title }}">
+      <input type="hidden" name="Page" value="{{ page.title }}">
+      <input type="hidden" name="URL" value="{{ page.canonical_url }}">
       <label><textarea name="message" placeholder="Your Feedback"></textarea></label>
     <p>
       <button type="submit">Send</button>

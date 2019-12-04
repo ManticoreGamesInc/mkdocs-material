@@ -46,6 +46,9 @@ build: node_modules material
 # Clean distribution files
 clean:
 	rm -rf material
+
+# Full Clean
+wipe:
 	rm -rf node_modules
 
 # Lint source files
