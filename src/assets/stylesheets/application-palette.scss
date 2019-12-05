@@ -138,7 +138,7 @@ button[data-md-color-accent] {
 
       // Repository containing source
       .md-nav__source {
-        background-color: mix($color, #000000, 75%);
+        background-color: mix($manticore-orange, #000000, 75%); // $color
       }
     }
 
