@@ -1,0 +1,270 @@
+// ----------------------------------------------------------------------------
+// Keyframes
+// ----------------------------------------------------------------------------
+
+// Show dark-mode facts
+@keyframes md-dark-mode__facts--done {
+  0% {
+    height: 0;
+  }
+
+  100% {
+    height: px2rem(13px);
+  }
+}
+
+// Show dark-mode fact
+@keyframes md-dark-mode__fact--done {
+  0% {
+    transform: translateY(100%);
+    opacity: 0;
+  }
+
+  50% {
+    opacity: 0;
+  }
+
+  100% {
+    transform: translateY(0%);
+    opacity: 1;
+  }
+}
+
+// ----------------------------------------------------------------------------
+// Rules
+// ----------------------------------------------------------------------------
+
+// dark-mode container
+.md-dark-mode {
+  display: block;
+  padding-right: px2rem(12px);
+  transition: opacity 0.25s;
+  font-size: px2rem(13px);
+  line-height: 1.2;
+  white-space: nowrap;
+
+  // Adjust for RTL languages
+  [dir="rtl"] & {
+    padding-right: initial;
+    padding-left: px2rem(12px);
+  }
+
+  // Hovered dark-mode container
+  &:hover {
+    opacity: 0.7;
+  }
+
+  // Necessary for vertical alignment
+  &::after {
+    display: inline-block;
+    height: px2rem(48px);
+    content: "";
+    vertical-align: middle;
+  }
+
+  // Repository platform icon
+  &__icon {
+    display: inline-block;
+    width: px2rem(48px);
+    height: px2rem(48px);
+    content: "";
+    vertical-align: middle;
+
+    // Align SVG, do not scale, as this will incur strange formatting bugs
+    // in Internet Explorer and Edge
+    svg {
+      width: px2rem(24px);
+      height: px2rem(24px);
+      margin-top: px2rem(12px);
+      margin-left: px2rem(12px);
+
+      // Adjust for RTL languages
+      [dir="rtl"] & {
+        margin-right: px2rem(12px);
+        margin-left: initial;
+      }
+    }
+
+    // Correct alignment, if icon is present
+    + .md-dark-mode__repository {
+      margin-left: px2rem(-40px);
+      padding-left: px2rem(40px);
+
+      // Adjust for RTL languages
+      [dir="rtl"] & {
+        margin-right: px2rem(-40px);
+        margin-left: initial;
+        padding-right: px2rem(40px);
+        padding-left: initial;
+      }
+    }
+  }
+
+  // Repository name
+  &__repository {
+    display: inline-block;
+    max-width: 100%;
+    margin-left: px2rem(12px);
+    font-weight: 700;
+    text-overflow: ellipsis;
+    overflow: hidden;
+    vertical-align: middle;
+  }
+
+  // dark-mode facts (statistics etc.)
+  &__facts {
+    margin: 0;
+    padding: 0;
+    font-size: px2rem(11px);
+    font-weight: 700;
+    list-style-type: none;
+    opacity: 0.75;
+    overflow: hidden;
+
+    // Show after the data was loaded
+    [data-md-state="done"] & {
+      animation: md-dark-mode__facts--done 0.25s ease-in;
+    }
+  }
+
+  // Fact
+  &__fact {
+    float: left;
+
+    // Adjust for RTL languages
+    [dir="rtl"] & {
+      float: right;
+    }
+
+    // Show after the data was loaded
+    [data-md-state="done"] & {
+      animation: md-dark-mode__fact--done 0.4s ease-out;
+    }
+
+    // Middle dot before fact
+    &::before {
+      margin: 0 px2rem(2px);
+      content: "\00B7";
+    }
+
+    // Remove middle dot on first fact
+    &:first-child::before {
+      display: none;
+    }
+  }
+}
+
+// dark-mode file
+.md-dark-mode-file {
+  display: inline-block;
+  margin: 1em 0.5em 1em 0;
+  padding-right: px2rem(5px);
+  border-radius: px2rem(2px);
+  background-color: var(--color-black--lightest);
+  font-size: ms(-1);
+  list-style-type: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  // Icon
+  &::before {
+    @extend %md-icon;
+
+    display: inline-block;
+    margin-right: px2rem(5px);
+    padding: px2rem(5px);
+    background-color: var(--color-black--lighter);
+    color: var(--color-white);
+    font-size: ms(0);
+    content: "\E86F"; // code
+    vertical-align: middle;
+  }
+
+  // Some properties need to be set with higher specificity due to the default
+  // styling of text links inside typesetted content
+  html & {
+    transition:
+      background 0.4s,
+      color      0.4s,
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Icon
+    &::before {
+      transition: inherit;
+    }
+  }
+
+  // Color needs even higher specifity because custom color palettes are set
+  // using the body and override text links inside typesetted content
+  html body .md-typeset & {
+    color: var(--color-black);
+  }
+
+  // Hovered dark-mode file
+  &:hover {
+    @include z-depth-focus;
+
+    // Icon
+    &::before {
+      background-color: var(--color-accent);
+    }
+  }
+}
+
+// Tag
+.md-tag {
+  display: inline-block;
+  margin: 1em 0.5em 1em 0;
+  padding-right: px2rem(5px);
+  border-radius: px2rem(4px);
+  background-color: lighten($manticore-black, 5%);
+  font-size: ms(-1);
+  list-style-type: none;
+  cursor: pointer;
+  overflow: hidden;
+
+  // Icon
+  &::before {
+    @extend %md-icon;
+
+    display: inline-block;
+    margin-right: px2rem(5px);
+    padding: px2rem(5px);
+    background-color: lighten($manticore-black, 15%);
+    color: $md-color-white--light;
+    font-size: ms(0);
+    content: "\E54E"; // local_offer
+    vertical-align: middle;
+  }
+
+  // Some properties need to be set with higher specificity due to the default
+  // styling of text links inside typesetted content
+  html & {
+    transition:
+      background 0.4s,
+      color      0.4s,
+      box-shadow 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+
+    // Icon
+    &::before {
+      transition: inherit;
+    }
+  }
+
+  // Color needs even higher specifity because custom color palettes are set
+  // using the body and override text links inside typesetted content
+  html body .md-typeset & {
+    color: $md-color-white--light;
+  }
+
+  // Hovered dark-mode file
+  &:hover {
+    @include z-depth-focus;
+    background-color: lighten($manticore-black, 15%);
+
+    // Icon
+    &::before {
+      color: var(--color-accent);
+    }
+  }
+}
