@@ -32,7 +32,7 @@
       <link rel="stylesheet" type="text/css"
         href="{{ 'assets/fonts/solid.min.css' | url }}" />
     {% for social in config.extra.social %}
-      <a href="{{ social.link }}" target="_blank" class="md-footer-social__link
+      <a href="{{ social.link }}" target="_blank" title="{{ social.type }}" class="md-footer-social__link
             fab fa-{{ social.type }}"></a>
     {% endfor %}
   </div>
