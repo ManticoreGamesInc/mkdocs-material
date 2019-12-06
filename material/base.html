@@ -56,9 +56,9 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.902a3e9b.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.2af3f432.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.28af7414.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -90,6 +90,10 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
+    <link rel="stylesheet" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
+    <link rel="stylesheet" href="{{ 'assets/fonts/brands.min.css' | url }}">
+    <link rel="stylesheet" href="{{ 'assets/fonts/regular.min.css' | url }}">
+    <link rel="stylesheet" href="{{ 'assets/fonts/solid.min.css' | url }}">
     {% block serviceworker %}
       {% include "partials/integrations/serviceworker.html" %}
     {% endblock %}
@@ -207,7 +211,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.2058dcae.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.e107c3b4.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

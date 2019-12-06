@@ -157,9 +157,9 @@
     }
 
     // Reset active color for nested list titles
-    .md-nav__item--nested > & {
-      color: inherit;
-    }
+    // .md-nav__item--nested > & {
+    //   color: inherit;
+    // }
 
     // Focused or hovered link
     &:focus,
@@ -289,7 +289,7 @@
       // List item
       .md-nav__item {
         padding: 0;
-        border-top: px2rem(1px) solid var(--color-primary--lightest);
+        border-top: px2rem(1px) solid var(--color-text--lightest);
 
         // Adjust for RTL languages
         [dir="rtl"] & {

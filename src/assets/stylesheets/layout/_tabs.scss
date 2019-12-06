@@ -28,8 +28,8 @@
 .md-tabs {
   width: 100%;
   transition: background 0.25s;
-  background-color: var(--color-primary);
-  color: var(--color-white);
+  background-color: var(--color-background);
+  color: $md-color-white;
   overflow: auto;
 
   // [tablet -]: Hide tabs for tablet and below, as they don't make any sense
@@ -57,6 +57,10 @@
     height: px2rem(48px);
     padding-right: px2rem(12px);
     padding-left: px2rem(12px);
+
+    .fab {
+      line-height: 1.5;
+    }
   }
 
   // Link inside item - could be defined as block elements and aligned via
@@ -73,7 +77,7 @@
     // Active or hovered link
     &--active,
     &:hover {
-      color: inherit;
+      color: var(--manti-color-orange); // inherit;
       opacity: 1;
     }
 

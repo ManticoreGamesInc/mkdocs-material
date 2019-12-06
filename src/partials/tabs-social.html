@@ -1,0 +1,11 @@
+<!-- Social links in tabs -->
+{% if config.extra.social %}
+    <li class="md-tabs__item">
+      <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpHIY56by19xUTSJjLiCY64SOz5SOxhJU4Cf0HvODOkB0dhg/viewform" target="_blank" title="CORE Feedback" class="md-tabs__link md-tabs__social">Feedback</a>
+    </li>
+    {% for social in config.extra.social %}
+    <li class="md-tabs__item">
+      <a href="{{ social.link }}" target="_blank" title="{{ social.type }}" class="md-tabs__link md-tabs__social fab fa-{{ social.type }}"></a>
+    </li>
+    {% endfor %}
+{% endif %}

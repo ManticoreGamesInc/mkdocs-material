@@ -129,9 +129,9 @@ button[data-md-color-accent] {
     }
 
     // Reset active color for nested list titles
-    .md-nav__item--nested > .md-nav__link {
-      color: inherit;
-    }
+    // .md-nav__item--nested > .md-nav__link {
+    //   color: inherit;
+    // }
 
     // [tablet portrait -]: Layered navigation
     @include break-to-device(tablet portrait) {
@@ -157,7 +157,10 @@ button[data-md-color-accent] {
 
       // Tabs with outline
       .md-tabs {
-        background-color: $color;
+        background-color: lighten($manticore-black, 10%); //$color;
+        color: $md-color-white;
+        font-family: var(--font-oswald);
+        text-transform: uppercase;
       }
     }
   }

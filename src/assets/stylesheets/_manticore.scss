@@ -61,13 +61,6 @@
   --color-text--hover: hsla(222, 14%, 15%, 0.035);
   --color-text--transparent: hsla(222, 14%, 15%, 0);
 
-  // Black
-  --color-primary: hsla(0, 0%, 0%, 1);
-  --color-primary--light: hsla(0, 0%, 0%, 0.54);
-  --color-primary--lighter: hsla(0, 0%, 0%, 0.38);
-  --color-primary--lightest: hsla(0, 0%, 0%, 0.12);
-  --color-primary--transparent: hsla(0, 0%, 0%, 0);
-
   &.dark-mode {
     // #121212
     --color-background: hsla(0, 0%, 7%, 1);
@@ -83,13 +76,7 @@
     --color-white--lightest: hsla(0, 0%, 0%, 0.12);
     --color-white--transparent: hsla(0, 0%, 0%, 0);
 
-    --color-primary: hsla(222, 14%, 15%, 1);
-    --color-primary--light: hsla(222, 14%, 15%, 0.54);
-    --color-primary--lighter: hsla(222, 14%, 15%, 0.26);
-    --color-primary--lightest: hsla(222, 14%, 15%, 0.07);
-    --color-primary--transparent: hsla(222, 14%, 15%, 0);
-
-    // Actually white, sorry :/
+    // White
     --color-text: hsla(0, 0%, 100%, 1);
     --color-text--light: hsla(0, 0%, 100%, 0.7);
     --color-text--lighter: hsla(0, 0%, 100%, 0.38);

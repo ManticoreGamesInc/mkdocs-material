@@ -175,6 +175,16 @@
       <link rel="stylesheet" type="text/css" href="{{ path | url }}" />
     {% endfor %}
 
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/brands.min.css' | url }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/regular.min.css' | url }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/solid.min.css' | url }}" />
+
     <!-- Service Worker -->
     {% block serviceworker %}
       {% include "partials/integrations/serviceworker.html" %}
