@@ -175,6 +175,11 @@
       <link rel="stylesheet" type="text/css" href="{{ path | url }}" />
     {% endfor %}
 
+    <!-- Service Worker -->
+    {% block serviceworker %}
+      {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
+
     <!-- Analytic scripts -->
     {% block analytics %}
       {% if config.google_analytics %}
