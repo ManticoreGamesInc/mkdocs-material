@@ -29,13 +29,14 @@
   transition: background 0.25s;
   background-color: var(--color-background);
   color: var(--color-white);
+  font-family: var(--font-oswald);
   font-size: ms(1);
   overflow: hidden;
 
   // Inner wrapper
   &__inner {
-    margin-top: px2rem(20px);
-    padding: px2rem(16px) px2rem(16px) px2rem(8px);
+    margin-top: px2rem(4px); // Was 20 when tabs were off
+    padding: px2rem(2px);
     transition:
       transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
       opacity   0.25s;
