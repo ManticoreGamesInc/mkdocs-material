@@ -113,6 +113,10 @@
       <!-- Theme-related stylesheets -->
       <link rel="stylesheet" type="text/css"
           href="{{ 'assets/stylesheets/application.css' | url }}" />
+      <link rel="stylesheet" type="text/css"
+          href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
+      <link rel="stylesheet" type="text/css"
+          href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
 
       <!-- Extra color palette -->
       {% if palette.primary or palette.accent %}
@@ -212,6 +216,7 @@
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
     <script src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
 
     <!-- Hidden container for inline SVGs -->
     <svg class="md-svg">

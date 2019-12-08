@@ -179,6 +179,34 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
           transform: content => cssmin(content.toString())
         },
 
+        /* Copy lightbox stylesheets */
+        {
+          context: "node_modules/lightgallery.js/dist/css/",
+          from: "*.css",
+          to: "assets/stylesheets/"
+        },
+
+        /* Copy lightbox js */
+        {
+          context: "node_modules/lightgallery.js/dist/js/",
+          from: "*.min.js",
+          to: "assets/javascripts/"
+        },
+
+        /* Copy lightbox js */
+        {
+          context: "node_modules/lightgallery.js/dist/fonts/",
+          from: "lg.*",
+          to: "assets/fonts/"
+        },
+
+        /* Copy lightbox js */
+        {
+          context: "node_modules/lightgallery.js/dist/img/",
+          from: "*",
+          to: "assets/img/"
+        },
+
         /* Copy images without cache busting */
         {
           context: "src",
