@@ -39,6 +39,9 @@
     font-size: ms(-1);
     color: var(--color-text);
     overflow: auto;
+    width: 75%;
+    margin-left: auto;
+    margin-right: auto;
 
     // Adjust for RTL languages
     [dir="rtl"] & {
