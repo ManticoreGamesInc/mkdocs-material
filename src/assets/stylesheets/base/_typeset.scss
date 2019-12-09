@@ -354,14 +354,15 @@ kbd {
   // Blockquotes, possibly nested
   blockquote {
     padding-left: px2rem(12px);
-    border-left: px2rem(4px) solid var(--color-background--lighter);
-    color: var(--color-background--light);
+    background-color: $md-color-white--light;
+    border-left: px2rem(4px) solid $md-color-black--lighter;
+    color: $md-color-black--light;
 
     // Adjust for RTL languages
     [dir="rtl"] & {
       padding-right: px2rem(12px);
       padding-left: initial;
-      border-right: px2rem(4px) solid var(--color-background--lighter);
+      border-right: px2rem(4px) solid $md-color-black--lighter;
       border-left: initial;
     }
   }
