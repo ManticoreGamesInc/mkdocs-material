@@ -162,14 +162,14 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         {
           context: "src",
           from: "assets/fonts/**/*",
-          ignore: "**/*.css"
+          ignore: ["**/*.css"]
         },
 
         /* Copy font-awesome web font files */
         {
           context: "src",
           from: "assets/webfonts/**/*",
-          ignore: "**/*.css"
+          ignore: ["**/*.css"]
         },
 
         /* Copy and minify web font stylesheets */
