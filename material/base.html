@@ -184,9 +184,6 @@
                 </a>
                 {% endfor %}
                 {{ page.content }}
-                {% block netlify %}
-                  {% include "partials/integrations/netlify.html" %}
-                {% endblock %}
                 {% block source %}
                   {% if page and page.meta and page.meta.source %}
                     <h2 id="__source">{{ lang.t("meta.source") }}</h2>
@@ -203,13 +200,16 @@
                 {% endblock %}
                 {% if page.meta.git_revision_date_localized %}
                   <small>
-                    {{ lang.t('last.update') }}: {{ page.meta.git_revision_date_localized }} 
+                    {{ lang.t('source.revision.date') }}: {{ page.meta.git_revision_date_localized }}
                   </small>
                 {% elif page.meta.revision_date %}
                   <small>
-                    {{ lang.t('last.update') }}: {{ page.meta.revision_date }} 
+                    {{ lang.t('source.revision.date') }}: {{ page.meta.revision_date }}
                   </small>
                 {% endif %}
+              {% endblock %}
+              {% block netlify %}
+                {% include "partials/integrations/netlify.html" %}
               {% endblock %}
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
@@ -223,7 +223,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.c413589c.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.5d5407b2.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

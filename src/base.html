@@ -342,11 +342,6 @@
                 <!-- Content -->
                 {{ page.content }}
 
-                <!-- Netlify integration -->
-                {% block netlify %}
-                  {% include "partials/integrations/netlify.html" %}
-                {% endblock %}
-
                 <!-- Source files -->
                 {% block source %}
                   {% if page and page.meta and page.meta.source %}
@@ -367,7 +362,7 @@
                 <!-- Support for mkdocs-git-revision-date-localized-plugin -->
                 {% if page.meta.git_revision_date_localized %}
                   <small>
-                    {{ lang.t('source.revision.date') }}: {{ page.meta.git_revision_date_localized }} 
+                    {{ lang.t('source.revision.date') }}: {{ page.meta.git_revision_date_localized }}
                   </small>
                 <!-- Support for mkdocs-git-revision-date-plugin -->
                 {% elif page.meta.revision_date %}
@@ -375,9 +370,12 @@
                     {{ lang.t('source.revision.date') }}: {{ page.meta.revision_date }}
                   </small>
                 {% endif %}
-                
-              {% endblock %}
 
+              {% endblock %}
+              <!-- Netlify integration -->
+              {% block netlify %}
+                {% include "partials/integrations/netlify.html" %}
+              {% endblock %}
               <!-- Disqus integration -->
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
