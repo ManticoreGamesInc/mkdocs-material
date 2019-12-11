@@ -55,6 +55,7 @@
         <title>{{ config.site_name }}</title>
       {% endif %}
     {% endblock %}
+    {% include "partials/pwa-images.html" %}
     {% block styles %}
       <link rel="stylesheet" href="{{ 'assets/stylesheets/application.ccf1aae5.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
@@ -82,7 +83,6 @@
             }}&display=fallback">
         <style>body,input{font-family:"{{ font.text }}","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}","Courier New",Courier,monospace}</style>
       {% endif %}
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
       <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=fallback">
     {% endblock %}
     <link rel="stylesheet" href="{{ 'assets/fonts/material-icons.css' | url }}">
@@ -150,7 +150,7 @@
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           {% block site_nav %}
-            {% if nav|length > 1 and not (page.is_homepage or page.meta.hide_nav) %}
+            {% if nav and not (page.is_homepage or page.meta.hide_nav) %}
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">

@@ -90,7 +90,6 @@
       <!-- Favicon -->
       <link rel="shortcut icon"
           href="{{ config.theme.favicon | url }}">
-
       <!-- Generator banner -->
       <meta name="generator"
           content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$" />
@@ -106,6 +105,9 @@
         <title>{{ config.site_name }}</title>
       {% endif %}
     {% endblock %}
+
+    <!-- PWA files integration -->
+    {% include "partials/pwa-images.html" %}
 
     <!-- Stylesheets -->
     {% block styles %}
@@ -161,7 +163,6 @@
           }
         </style>
       {% endif %}
-      <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=fallback" />
     {% endblock %}
 
@@ -285,7 +286,7 @@
           {% block site_nav %}
 
             <!-- Main navigation -->
-            {% if nav|length > 1 and not (page.is_homepage or page.meta.hide_nav) %}
+            {% if nav and not (page.is_homepage or page.meta.hide_nav) %}
               <div class="md-sidebar md-sidebar--primary"
                   data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
@@ -384,11 +385,11 @@
                 {% endif %}
               {% endblock %}
 
-              {% endblock %}
               <!-- Netlify integration -->
               {% block netlify %}
                 {% include "partials/integrations/netlify.html" %}
               {% endblock %}
+
               <!-- Disqus integration -->
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
