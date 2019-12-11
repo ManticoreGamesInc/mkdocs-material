@@ -285,7 +285,7 @@
           {% block site_nav %}
 
             <!-- Main navigation -->
-            {% if nav %}
+            {% if nav|length > 1 and not (page.is_homepage or page.meta.hide_nav) %}
               <div class="md-sidebar md-sidebar--primary"
                   data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
@@ -297,7 +297,7 @@
             {% endif %}
 
             <!-- Table of contents -->
-            {% if page.toc %}
+            {% if page.toc and not (page.is_homepage or page.meta.hide_nav) %}
               <div class="md-sidebar md-sidebar--secondary"
                   data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
@@ -333,11 +333,13 @@
                 {% endif %}
 
                 <!-- Tags-->
-                {% for category in page.meta.categories %}
-                <a href="/generated/sitemap/#{{ category }}" title="{{ category }}" class="md-tag">
-                    {{ category }}
-                </a>
-                {% endfor %}
+                {% if not (page.is_homepage or page.meta.hide_categories) %}
+                  {% for category in page.meta.categories %}
+                  <a href="/generated/sitemap/#{{ category }}" title="{{ category }}" class="md-tag">
+                      {{ category }}
+                  </a>
+                  {% endfor %}
+                {% endif %}
 
                 <!-- Content -->
                 {{ page.content }}

@@ -150,7 +150,7 @@
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           {% block site_nav %}
-            {% if nav %}
+            {% if nav|length > 1 and not (page.is_homepage or page.meta.hide_nav) %}
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -159,7 +159,7 @@
                 </div>
               </div>
             {% endif %}
-            {% if page.toc %}
+            {% if page.toc and not (page.is_homepage or page.meta.hide_nav) %}
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -178,11 +178,13 @@
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
-                {% for category in page.meta.categories %}
-                <a href="/generated/sitemap/#{{ category }}" title="{{ category }}" class="md-tag">
-                    {{ category }}
-                </a>
-                {% endfor %}
+                {% if not (page.is_homepage or page.meta.hide_categories) %}
+                  {% for category in page.meta.categories %}
+                  <a href="/generated/sitemap/#{{ category }}" title="{{ category }}" class="md-tag">
+                      {{ category }}
+                  </a>
+                  {% endfor %}
+                {% endif %}
                 {{ page.content }}
                 {% block source %}
                   {% if page and page.meta and page.meta.source %}
