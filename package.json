@@ -35,7 +35,8 @@
     "clean": "make clean",
     "lint": "make lint",
     "start": "make -j watch",
-    "watch": "make -j watch"
+    "watch": "make -j watch",
+    "watchwp": "node node_modules/.bin/webpack --watch --mode=development"
   },
   "devDependencies": {
     "@babel/cli": "^7.7.5",
