@@ -286,7 +286,7 @@
           {% block site_nav %}
 
             <!-- Main navigation -->
-            {% if nav and not (page.is_homepage or page.meta.hide_nav) %}
+            {% if nav %}
               <div class="md-sidebar md-sidebar--primary"
                   data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
@@ -298,7 +298,7 @@
             {% endif %}
 
             <!-- Table of contents -->
-            {% if page.toc and not (page.is_homepage or page.meta.hide_nav) %}
+            {% if page.toc %}
               <div class="md-sidebar md-sidebar--secondary"
                   data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">

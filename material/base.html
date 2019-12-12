@@ -57,7 +57,7 @@
     {% endblock %}
     {% include "partials/pwa-images.html" %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.b47bbf9f.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.22b84ea4.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
@@ -150,7 +150,7 @@
       <main class="md-main" role="main">
         <div class="md-main__inner md-grid" data-md-component="container">
           {% block site_nav %}
-            {% if nav and not (page.is_homepage or page.meta.hide_nav) %}
+            {% if nav %}
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -159,7 +159,7 @@
                 </div>
               </div>
             {% endif %}
-            {% if page.toc and not (page.is_homepage or page.meta.hide_nav) %}
+            {% if page.toc %}
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
@@ -232,7 +232,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.4bf16bb6.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.71bd78cf.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
