@@ -310,3 +310,46 @@ figure {
     }
   }
 }
+
+// Scroll to top button
+
+#to-top-button {
+  display: inline-block;
+  background-color: var(--manti-color-orange);
+  width: 50px;
+  height: 50px;
+  text-align: center;
+  border-radius: 4px;
+  position: fixed;
+  bottom: 30px;
+  right: 30px;
+  transition: background-color .3s,
+    opacity .5s, visibility .5s;
+  opacity: 0;
+  visibility: hidden;
+  z-index: 1000;
+}
+
+#to-top-button::after {
+  content: "\f077";
+  font-family: "Font Awesome 5 Free";
+  font-weight: 900;
+  font-style: normal;
+  font-size: 2em;
+  line-height: 50px;
+  color: #fff;
+}
+
+#to-top-button:hover {
+  cursor: pointer;
+  background-color: #333;
+}
+
+#to-top-button:active {
+  background-color: #555;
+}
+
+#to-top-button.show {
+  opacity: 1;
+  visibility: visible;
+}

@@ -316,6 +316,8 @@
 
               <!-- Content -->
               {% block content %}
+                <!-- To-top button -->
+                {% include "partials/integrations/topscroller.html" %}
 
                 <!-- Edit button, if URL was defined -->
                 {% if page.edit_url %}
