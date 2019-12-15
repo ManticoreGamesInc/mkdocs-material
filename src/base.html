@@ -138,7 +138,7 @@
 
     <!-- JavaScript libraries -->
     {% block libs %}
-      <script src="{{ 'assets/javascripts/modernizr.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.js' | url }}"></script>
     {% endblock %}
 
     <!-- Webfonts -->
@@ -216,8 +216,8 @@
   {% else %}
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
-    <script src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
-    <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
 
     <!-- Hidden container for inline SVGs -->
     <svg class="md-svg">
@@ -409,23 +409,23 @@
 
     <!-- Theme-related JavaScript -->
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.js' | url }}"></script>
 
       <!-- Load additional languages for search -->
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
           {% set path = "assets/javascripts/lunr/" %}
-          <script src="{{ (path ~ 'lunr.stemmer.support.js') | url }}"></script>
+          <script type="text/javascript" src="{{ (path ~ 'lunr.stemmer.support.js') | url }}"></script>
           {% for language in languages | map("trim") %}
             {% if language != "en" %}
               {% if language == "ja" %}
-                <script src="{{ (path ~ 'tinyseg.js') | url }}"></script>
+                <script type="text/javascript" src="{{ (path ~ 'tinyseg.js') | url }}"></script>
               {% endif %}
             {% endif %}
           {% endfor %}
           {% if languages | length > 1 %}
-            <script src="{{ (path ~ 'lunr.multi.js') | url }}"></script>
+            <script type="text/javascript" src="{{ (path ~ 'lunr.multi.js') | url }}"></script>
           {% endif %}
         {% endif %}
       {% endif %}
@@ -440,7 +440,7 @@
         });
       </script>
       {% for path in config["extra_javascript"] %}
-        <script src="{{ path | url }}"></script>
+        <script type="text/javascript" src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
   </body>
