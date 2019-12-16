@@ -99,8 +99,7 @@ kbd {
   // Default spacing
   p,
   ul,
-  ol,
-  blockquote {
+  ol {
     margin: 1em 0;
   }
 
@@ -353,10 +352,60 @@ kbd {
 
   // Blockquotes, possibly nested
   blockquote {
-    padding-left: px2rem(12px);
-    background-color: $md-color-white--light;
-    border-left: px2rem(4px) solid $md-color-black--lighter;
-    color: $md-color-black--light;
+    display:block;
+    background: #fff;
+    padding: 15px 20px 5px 45px;
+    position: relative;
+
+    font-size: 16px;
+    line-height: 1.3;
+    color: #666;
+
+    -moz-box-shadow: 2px 2px 5px #ccc;
+    -webkit-box-shadow: 2px 2px 5px #ccc;
+    box-shadow: 2px 2px 5px #ccc;
+
+    border-left-style: solid;
+    border-left-width: 15px;
+    border-right-style: solid;
+    border-right-width: 2px;
+    border-radius: 8px;
+    border-color: var(--manti-color-orange);
+
+    &::before {
+      content: "\201C"; /* Unicode for Left Double Quote */
+
+      font-family: Oswald, serif;
+      font-size: 60px;
+      font-weight: bold;
+      color: #999;
+
+      position: absolute;
+      left: 10px;
+      top:5px;
+    }
+
+    &::after {
+      content: "";
+    }
+
+    & em {
+      font-style: italic;
+    }
+
+    & strong {
+      text-align:left;
+      font-size:16px;
+      font-family: var(--font-oswald), sans-serif;
+      font-weight: 900;
+      margin: 0;
+      padding-top: 10px;
+      color: #666;
+    }
+
+    & p {
+      padding-top: 5px;
+    }
 
     // Adjust for RTL languages
     [dir="rtl"] & {
@@ -365,6 +414,12 @@ kbd {
       border-right: px2rem(4px) solid $md-color-black--lighter;
       border-left: initial;
     }
+  }
+
+  .dark-mode blockquote {
+    -moz-box-shadow: 2px 2px 5px #424242;
+    -webkit-box-shadow: 2px 2px 5px #424242;
+    box-shadow: 2px 2px 5px #424242;
   }
 
   // Unordered lists
@@ -406,8 +461,7 @@ kbd {
       }
 
       // Decrease vertical spacing
-      p,
-      blockquote {
+      p {
         margin: 0.5em 0;
       }
 
