@@ -57,7 +57,7 @@
     {% endblock %}
     {% include "partials/pwa-images.html" %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.c4c1c9e9.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.e4f3fc74.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
@@ -80,10 +80,10 @@
         <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
               font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
               font.code | replace(' ', '+')
-            }}&display=fallback">
+            }}&display=swap">
         <style>body,input{font-family:"{{ font.text }}","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}","Courier New",Courier,monospace}</style>
       {% endif %}
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=fallback">
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap">
     {% endblock %}
     <link rel="stylesheet" href="{{ 'assets/fonts/material-icons.css' | url }}">
     {% if config.extra.manifest %}
@@ -233,7 +233,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.65699d6b.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.34cca3d9.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
