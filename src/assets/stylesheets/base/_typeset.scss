@@ -353,17 +353,17 @@ kbd {
   // Blockquotes, possibly nested
   blockquote {
     display:block;
-    background: #fff;
+    background: #FFFFFF;
     padding: 15px 20px 5px 45px;
     position: relative;
 
     font-size: 16px;
     line-height: 1.3;
-    color: #666;
+    color: #666666;
 
-    -moz-box-shadow: 2px 2px 5px #ccc;
-    -webkit-box-shadow: 2px 2px 5px #ccc;
-    box-shadow: 2px 2px 5px #ccc;
+    -moz-box-shadow: 2px 2px 5px #CCCCCC;
+    -webkit-box-shadow: 2px 2px 5px #CCCCCC;
+    box-shadow: 2px 2px 5px #CCCCCC;
 
     border-left-style: solid;
     border-left-width: 15px;
@@ -378,7 +378,7 @@ kbd {
       font-family: Oswald, serif;
       font-size: 60px;
       font-weight: bold;
-      color: #999;
+      color: #999999;
 
       position: absolute;
       left: 10px;
@@ -400,7 +400,7 @@ kbd {
       font-weight: 900;
       margin: 0;
       padding-top: 10px;
-      color: #666;
+      color: #666666;
     }
 
     & p {
