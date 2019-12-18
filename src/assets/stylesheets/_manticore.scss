@@ -354,3 +354,13 @@ figure {
   opacity: 1;
   visibility: visible;
 }
+
+// Dark Mode kbd
+
+.dark-mode .md-typeset kbd {
+    background-image:linear-gradient(#202020, #181818);
+    border-bottom-color:#383838;
+    box-shadow:#383838 0px -2px 0px 0px inset;
+    color:#dcdcdc;
+    padding: 2px 6px;
+}
