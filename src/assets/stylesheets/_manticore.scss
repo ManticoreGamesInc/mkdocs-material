@@ -92,6 +92,12 @@
   }
 }
 
+// Enable smooth scrolling
+
+html {
+  scroll-behavior: smooth;
+}
+
 // External Links
 
 .external::after {
