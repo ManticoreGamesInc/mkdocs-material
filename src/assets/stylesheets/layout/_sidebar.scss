@@ -39,7 +39,7 @@ $md-toggle__drawer--checked:
   padding: px2rem(24px) 0;
   overflow: hidden;
   padding-left: 15px;
-  padding-bottom: 3rem;
+  padding-bottom: px2rem(72px);
 
   // Hide for print
   @media print {
