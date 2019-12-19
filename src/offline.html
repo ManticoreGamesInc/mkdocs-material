@@ -1,34 +1,41 @@
+<!--
+  Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
+
+  Permission is hereby granted, free of charge, to any person obtaining a copy
+  of this software and associated documentation files (the "Software"), to
+  deal in the Software without restriction, including without limitation the
+  rights to use, copy, modify, merge, publish, distribute, sublicense, and/or
+  sell copies of the Software, and to permit persons to whom the Software is
+  furnished to do so, subject to the following conditions:
+
+  The above copyright notice and this permission notice shall be included in
+  all copies or substantial portions of the Software.
+
+  THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
+  IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
+  FITNESS FOR A PARTICULAR PURPOSE AND NON-INFRINGEMENT. IN NO EVENT SHALL THE
+  AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
+  LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING
+  FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS
+  IN THE SOFTWARE.
+-->
 
 {% extends "base.html" %}
 
 <!-- Content block -->
 {% block content %}
 <style>
-  * {
-    transition: all 0.6s;
+  .md-content__inner {
+    background-image: url('{{"img/shrug_404_outlined.png" | url }}'), url('{{"img/facepalm_404_outlined.png"| url }}');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top 10vh, right top 10vh;
   }
 
-  html {
-    height: 100%;
-    background: #121212 url('{{ base_url }}/img/shrug_404_outlined.png') no-repeat left 10vh top 10vh, url('{{ base_url }}/img/facepalm_404_outlined.png') no-repeat right 10vh top 10vh;
-  }
-
-  body, a {
-    font-family: Oswald, sans-serif;
-    color: #FF9000;
-    margin: 0;
-  }
-
-  a {
-    text-decoration: underline;
-  }
-
-  #main {
+  #fourfourmain {
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     text-align: center;
-    background: url('{{ assets/icons/CoreIcon_.png | url }}') no-repeat center top 10vh;
   }
 
   .fof {
@@ -39,24 +46,16 @@
   .fof h1 {
     font-size: 50px;
     display: inline-block;
+    color: var(--manti-color-orange);
     padding-right: 12px;
-    animation: type 0.5s alternate infinite;
-  }
-
-  @keyframes type {
-    from {
-        box-shadow: inset -3px 0px 0px #FF9000;
-    }
-    to {
-        box-shadow: inset -3px 0px 0px transparent;
-    }
+    font-family: var(--font-oswald);
+    text-transform: uppercase;
   }
 </style>
-
-<div id="main">
+<div id="fourfourmain">
   <div class="fof">
-    <h1>Error: You are Offline!</h1>
+    <h1>Oh no: You are offline!</h1>
   </div>
-<div>
+</div>
 
 {% endblock %}

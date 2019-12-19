@@ -25,31 +25,17 @@
 <!-- Content block -->
 {% block content %}
 <style>
-  * {
-    transition: all 0.6s;
+  .md-content__inner {
+    background-image: url('{{"img/shrug_404_outlined.png" | url }}'), url('{{"img/facepalm_404_outlined.png"| url }}');
+    background-repeat: no-repeat, no-repeat;
+    background-position: left top 10vh, right top 10vh;
   }
 
-  html {
-    height: 100%;
-    background: #121212 url('../img/shrug_404_outlined.png') no-repeat left 10vh top 10vh, url('../img/facepalm_404_outlined.png') no-repeat right 10vh top 10vh;
-  }
-
-  body, a {
-    font-family: Oswald, sans-serif;
-    color: #FF9000;
-    margin: 0;
-  }
-
-  a {
-    text-decoration: underline;
-  }
-
-  #main {
+  #fourfourmain {
     display: table;
     width: 100%;
-    height: 100vh;
+    height: 60vh;
     text-align: center;
-    background: url('{{ assets/icons/CoreIcon_.png | url }}') no-repeat center top 10vh;
   }
 
   .fof {
@@ -60,25 +46,16 @@
   .fof h1 {
     font-size: 50px;
     display: inline-block;
+    color: var(--manti-color-orange);
     padding-right: 12px;
-    animation: type 0.5s alternate infinite;
-  }
-
-  @keyframes type {
-    from {
-        box-shadow: inset -3px 0px 0px #FF9000;
-    }
-    to {
-        box-shadow: inset -3px 0px 0px transparent;
-    }
+    font-family: var(--font-oswald);
+    text-transform: uppercase;
   }
 </style>
-
-<div id="main">
+<div id="fourfourmain">
   <div class="fof">
-    <h1>Error 404: Page not found!</h1>
-    <h2>Sorry about that, please let us know about it <a href="https://docs.google.com/forms/d/e/1FAIpQLSdpHIY56by19xUTSJjLiCY64SOz5SOxhJU4Cf0HvODOkB0dhg/viewform">here</a>.</h2>
+      <h1>Error 404: Page not found!</h1>
   </div>
-<div>
+</div>
 
 {% endblock %}
