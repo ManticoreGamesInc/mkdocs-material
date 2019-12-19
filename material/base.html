@@ -57,7 +57,7 @@
     {% endblock %}
     {% include "partials/pwa-images.html" %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.ae9de8e1.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.bc096bfa.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
@@ -131,7 +131,7 @@
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
     {% if page.toc | first is defined %}
-      <a href="{{ (page.toc | first).url }}" tabindex="1" class="md-skip">
+      <a href="{{ (page.toc | first).url }}" tabindex="0" class="md-skip">
         {{ lang.t('skip.link.title') }}
       </a>
     {% endif %}
@@ -233,7 +233,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.ad475e98.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/application.c83d18e3.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
