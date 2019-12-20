@@ -43,7 +43,10 @@
       ] %}
         <meta name="lang:{{ key }}" content="{{ lang.t(key) }}">
       {% endfor %}
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/CoreIcon_32x32.png' | url }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/CoreIcon_16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
+      {% include "partials/pwa-images.html" %}
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-4.6.0">
     {% endblock %}
     {% block htmltitle %}
@@ -55,7 +58,6 @@
         <title>{{ config.site_name }}</title>
       {% endif %}
     {% endblock %}
-    {% include "partials/pwa-images.html" %}
     {% block styles %}
       <link rel="stylesheet" href="{{ 'assets/stylesheets/application.bc096bfa.css' | url }}">
       <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
@@ -69,6 +71,8 @@
           palette.primary | replace(" ", "-") | lower
         ) %}
         <meta name="theme-color" content="#20232A">
+        <meta name="msapplication-TileColor" content="#20232A">
+        <meta name="msapplication-TileImage" content="{{ 'assets/icons/apple-icon-152.png' | url }}">
       {% endif %}
     {% endblock %}
     {% block libs %}

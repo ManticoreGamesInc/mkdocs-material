@@ -88,8 +88,12 @@
       {% endfor %}
 
       <!-- Favicon -->
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/CoreIcon_32x32.png' | url }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/CoreIcon_16x16.png' | url }}">
       <link rel="shortcut icon"
           href="{{ config.theme.favicon | url }}">
+      <!-- PWA files integration -->
+      {% include "partials/pwa-images.html" %}
       <!-- Generator banner -->
       <meta name="generator"
           content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$" />
@@ -105,9 +109,6 @@
         <title>{{ config.site_name }}</title>
       {% endif %}
     {% endblock %}
-
-    <!-- PWA files integration -->
-    {% include "partials/pwa-images.html" %}
 
     <!-- Stylesheets -->
     {% block styles %}
@@ -133,6 +134,8 @@
           palette.primary | replace(" ", "-") | lower
         ) %}
         <meta name="theme-color" content="#20232A" />
+        <meta name="msapplication-TileColor" content="#20232A">
+        <meta name="msapplication-TileImage" content="{{ 'assets/icons/apple-icon-152.png' | url }}">
       {% endif %}
     {% endblock %}
 
