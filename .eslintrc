@@ -39,7 +39,7 @@
     "impliedStrict": true,
     "sourceType": "module"
   },
-  "plugins": ["babel"],
+  "plugins": ["babel", "html"],
   "rules": {
     "array-callback-return": 2,
     "array-bracket-spacing": 2,
