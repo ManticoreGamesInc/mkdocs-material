@@ -290,8 +290,17 @@
           {% block site_nav %}
 
             <!-- Main navigation -->
-            {% if nav %}
+            {% if nav and not (page.is_homepage or (page.meta and page.meta.hide_nav)) %}
               <div class="md-sidebar md-sidebar--primary"
+                  data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    {% include "partials/nav.html" %}
+                  </div>
+                </div>
+              </div>
+              {% else %}
+              <div class="md-sidebar md-sidebar--primary flag-hidden"
                   data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">

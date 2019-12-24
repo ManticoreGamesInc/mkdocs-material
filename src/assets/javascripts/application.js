@@ -284,6 +284,7 @@ function initialize(config) { // eslint-disable-line func-style
     new Material.Event.Listener("[data-md-component=query]", [
       "focus", "keyup", "change"
     ], new Material.Search.Result("[data-md-component=result]", () => {
+      config.url.base = config.url.base.replace(/\/$/, "")
       return fetch(`${config.url.base}/search/search_index.json`, {
         credentials: "same-origin"
       }).then(response => response.json())

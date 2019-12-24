@@ -458,6 +458,10 @@
       }
     }
 
+    .flag-hidden > div > div > nav > label {
+      display: none;
+    }
+
     // Adjust for RTL languages
     html [dir="rtl"] &__link {
       padding-right: px2rem(16px);
