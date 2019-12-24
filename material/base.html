@@ -43,8 +43,9 @@
       ] %}
         <meta name="lang:{{ key }}" content="{{ lang.t(key) }}">
       {% endfor %}
-      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/CoreIcon_32x32.png' | url }}">
-      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/CoreIcon_16x16.png' | url }}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
+      <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg?v=rMJYKkJO7j" color="#20232a">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
       {% include "partials/pwa-images.html" %}
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-4.6.0">
@@ -72,7 +73,7 @@
         ) %}
         <meta name="theme-color" content="#20232A">
         <meta name="msapplication-TileColor" content="#20232A">
-        <meta name="msapplication-TileImage" content="{{ 'assets/icons/apple-icon-152.png' | url }}">
+        <meta name="msapplication-config" content="/assets/icons/browserconfig.xml?v=rMJYKkJO7j">
       {% endif %}
     {% endblock %}
     {% block libs %}
