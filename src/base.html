@@ -177,6 +177,8 @@
     <!-- Progressive Web App Manifest -->
     {% if config.extra.manifest %}
       <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
+    {% else %}
+      <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.json' | url }}" crossorigin="use-credentials">
     {% endif %}
 
     <!-- Custom stylesheets -->
