@@ -26,9 +26,9 @@
 {% block content %}
 <style>
   .md-content__inner {
-    background-image: url('{{"img/shrug_404_outlined.png" | url }}'), url('{{"img/facepalm_404_outlined.png"| url }}');
+    background-image: url("{{ 'img/shrug_404_outlined.png' | url }}"), url("{{ 'img/facepalm_404_outlined.png'| url }}");
     background-repeat: no-repeat, no-repeat;
-    background-position: left top 10vh, right top 10vh;
+    background-position: left -5vh top 10vh, right -5vh top 10vh;
   }
 
   #fourfourmain {

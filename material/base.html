@@ -45,7 +45,7 @@
       {% endfor %}
       <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
       <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
-      <link rel="mask-icon" href="/assets/icons/safari-pinned-tab.svg?v=rMJYKkJO7j" color="#20232a">
+      <link rel="mask-icon" href="{{ 'assets/icons/safari-pinned-tab.svg' | url }}" color="#20232a">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
       {% include "partials/pwa-images.html" %}
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-4.6.0">
@@ -60,11 +60,11 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/application.c2f5e97f.css' | url }}">
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.c2f5e97f.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -73,34 +73,34 @@
         ) %}
         <meta name="theme-color" content="#20232A">
         <meta name="msapplication-TileColor" content="#20232A">
-        <meta name="msapplication-config" content="/assets/icons/browserconfig.xml?v=rMJYKkJO7j">
+        <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
-        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
+        <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family={{
               font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
               font.code | replace(' ', '+')
             }}&display=fallback">
         <style>body,input{font-family:"{{ font.text }}","Helvetica Neue",Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}","Courier New",Courier,monospace}</style>
       {% endif %}
-      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap">
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap">
     {% endblock %}
-    <link rel="stylesheet" href="{{ 'assets/fonts/material-icons.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/material-icons.css' | url }}">
     {% if config.extra.manifest %}
       <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
     {% endif %}
     {% for path in config["extra_css"] %}
-      <link rel="stylesheet" href="{{ path | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ path | url }}">
     {% endfor %}
-    <link rel="stylesheet" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
-    <link rel="stylesheet" href="{{ 'assets/fonts/brands.min.css' | url }}">
-    <link rel="stylesheet" href="{{ 'assets/fonts/regular.min.css' | url }}">
-    <link rel="stylesheet" href="{{ 'assets/fonts/solid.min.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}">
+    <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}">
     {% block serviceworker %}
       {% include "partials/integrations/serviceworker.html" %}
     {% endblock %}
@@ -118,8 +118,8 @@
   {% else %}
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
-    <script src="{{ 'assets/javascripts/dark-mode.9fbea65c.js' | url }}"></script>
-    <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.9fbea65c.js' | url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}
@@ -194,7 +194,7 @@
                 {% endif %}
                 {% if not (page.is_homepage or page.meta.hide_categories) %}
                   {% for category in page.meta.categories %}
-                  <a href="/generated/sitemap/#{{ category }}" title="{{ category }}" class="md-tag">
+                  <a href="{{ 'generated/sitemap/' | url }}#{{ category }}" title="{{ category }}" class="md-tag">
                       {{ category }}
                   </a>
                   {% endfor %}
@@ -246,27 +246,27 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/application.10188caa.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.10188caa.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
           {% set path = "assets/javascripts/lunr/" %}
-          <script src="{{ (path ~ 'lunr.stemmer.support.js') | url }}"></script>
+          <script type="text/javascript" src="{{ (path ~ 'lunr.stemmer.support.js') | url }}"></script>
           {% for language in languages | map("trim") %}
             {% if language != "en" %}
               {% if language == "ja" %}
-                <script src="{{ (path ~ 'tinyseg.js') | url }}"></script>
+                <script type="text/javascript" src="{{ (path ~ 'tinyseg.js') | url }}"></script>
               {% endif %}
             {% endif %}
           {% endfor %}
           {% if languages | length > 1 %}
-            <script src="{{ (path ~ 'lunr.multi.js') | url }}"></script>
+            <script type="text/javascript" src="{{ (path ~ 'lunr.multi.js') | url }}"></script>
           {% endif %}
         {% endif %}
       {% endif %}
       <script>app.initialize({version:"{{ mkdocs_version }}",url:{base:"{{ base_url }}"}})</script>
       {% for path in config["extra_javascript"] %}
-        <script src="{{ path | url }}"></script>
+        <script type="text/javascript" src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
   </body>

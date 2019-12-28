@@ -235,8 +235,8 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
               minifyCSS: true,
               minifyJS: true,
               removeComments: true,
-              removeScriptTypeAttributes: true,
-              removeStyleLinkTypeAttributes: true
+              removeScriptTypeAttributes: false,
+              removeStyleLinkTypeAttributes: false
             })
 
               /* Remove empty lines without collapsing everything */
