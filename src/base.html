@@ -90,9 +90,6 @@
       <!-- Favicon -->
       <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
       <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
-      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/CoreIcon_192x192.png' | url }}">
-      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/CoreIcon_512x512.png' | url }}">
-
       <link rel="mask-icon" href="{{ 'assets/icons/safari-pinned-tab.svg' | url }}" color="#20232a">
       <link rel="shortcut icon"
           href="{{ config.theme.favicon | url }}">
@@ -200,6 +197,11 @@
     <!-- Service Worker -->
     {% block serviceworker %}
       {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
+
+    <!-- Vimeo Pre-Connect -->
+    {% block vimeo %}
+      {% include "partials/integrations/vimeo.html" %}
     {% endblock %}
 
     <!-- Analytic scripts -->

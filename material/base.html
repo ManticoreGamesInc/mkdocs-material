@@ -45,8 +45,6 @@
       {% endfor %}
       <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
       <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
-      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/CoreIcon_192x192.png' | url }}">
-      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/CoreIcon_512x512.png' | url }}">
       <link rel="mask-icon" href="{{ 'assets/icons/safari-pinned-tab.svg' | url }}" color="#20232a">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
       {% include "partials/pwa-images.html" %}
@@ -62,7 +60,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.c2f5e97f.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.883b1271.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
@@ -105,6 +103,9 @@
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}">
     {% block serviceworker %}
       {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
+    {% block vimeo %}
+      {% include "partials/integrations/vimeo.html" %}
     {% endblock %}
     {% block analytics %}
       {% if config.google_analytics %}
@@ -248,7 +249,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.10188caa.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.fedb1a95.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

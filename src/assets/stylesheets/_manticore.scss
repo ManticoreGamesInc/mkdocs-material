@@ -102,8 +102,8 @@ html {
 
 .external::after {
   content: "\f35d";
-  font-family: "Font Awesome 5 Free";
   font-display: block;
+  font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-size: 12px;
   margin-left: 4px;
@@ -216,7 +216,7 @@ html {
 
   img {
     width: 40%;
-    margin: 15px 0 auto;
+    margin: 15px auto;
   }
 
   em {
@@ -342,6 +342,7 @@ figure {
 
 #to-top-button::after {
   content: "\f077";
+  font-display: block;
   font-family: "Font Awesome 5 Free";
   font-weight: 900;
   font-style: normal;

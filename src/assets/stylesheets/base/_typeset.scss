@@ -308,7 +308,7 @@ kbd {
     border-bottom-color: darken($md-keyboard-background, 25%);
     background-color: $md-keyboard-background;
     color: $md-keyboard-color;
-    // font-size: 85%;
+    font-size: 85%;
     box-shadow: 0 px2rem(1px) 0 darken($md-keyboard-background, 30%);
     word-break: break-word;
   }
