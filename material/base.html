@@ -60,11 +60,11 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.883b1271.css' | url }}" crossorigin="use-credentials">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" crossorigin="use-credentials">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" crossorigin="use-credentials">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.883b1271.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}" crossorigin="use-credentials">
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -77,7 +77,7 @@
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}" crossorigin="use-credentials"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
@@ -251,7 +251,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.fedb1a95.js' | url }}" crossorigin="use-credentials"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.fedb1a95.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

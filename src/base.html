@@ -116,16 +116,16 @@
 
       <!-- Theme-related stylesheets -->
       <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/application.css' | url }}" crossorigin="use-credentials"/>
+          href="{{ 'assets/stylesheets/application.css' | url }}" />
       <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" crossorigin="use-credentials"/>
+          href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
       <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" crossorigin="use-credentials"/>
+          href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
 
       <!-- Extra color palette -->
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" type="text/css"
-            href="{{ 'assets/stylesheets/application-palette.css' | url }}" crossorigin="use-credentials"/>
+            href="{{ 'assets/stylesheets/application-palette.css' | url }}" />
       {% endif %}
 
       <!-- Theme-color meta tag for Android -->
@@ -142,7 +142,7 @@
 
     <!-- JavaScript libraries -->
     {% block libs %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.js' | url }}" crossorigin="use-credentials"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.js' | url }}"></script>
     {% endblock %}
 
     <!-- Webfonts -->
@@ -429,7 +429,7 @@
 
     <!-- Theme-related JavaScript -->
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.js' | url }}" crossorigin="use-credentials"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.js' | url }}"></script>
 
       <!-- Load additional languages for search -->
       {% if lang.t("search.language") != "en" %}
