@@ -10,7 +10,7 @@
   <head>
     {% block site_meta %}
       <meta charset="utf-8">
-      <meta name="viewport" content="width=device-width,initial-scale=1">
+      <meta name="viewport" content="width=device-width,initial-scale=1,viewport-fit=cover">
       <meta http-equiv="x-ua-compatible" content="ie=edge">
       {% if page and page.meta and page.meta.description %}
         <meta name="description" content="{{ page.meta.description }}">
@@ -60,8 +60,6 @@
     {% endblock %}
     {% block styles %}
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.883b1271.css' | url }}">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
       {% endif %}
@@ -89,6 +87,7 @@
       {% endif %}
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap">
     {% endblock %}
+    <link rel="preload" href="{{ 'assets/fonts/material-icons.css' | url }}" as="style">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/material-icons.css' | url }}">
     {% if config.extra.manifest %}
       <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
@@ -99,6 +98,7 @@
       <link rel="stylesheet" type="text/css" href="{{ path | url }}">
     {% endfor %}
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
+    <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}">
@@ -123,7 +123,6 @@
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
     <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.9fbea65c.js' | url }}"></script>
-    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}

@@ -1,4 +1,25 @@
 {#-
   This file was automatically generated - do not edit
 -#}
-<script type="text/javascript">"serviceWorker"in navigator&&window.addEventListener("load",function(){"localhost"===location.hostname||location.hostname,navigator.serviceWorker.register("{{ 'sw.js' | url }}")})</script>
+<script type="text/javascript">
+if ("serviceWorker" in navigator) {
+  window.addEventListener("load", function() {
+    if (location.hostname === "localhost" || location.hostname === "127.0.0.1") {
+      navigator.serviceWorker.register("{{ 'sw.js' | url }}")
+    } else {
+      navigator.serviceWorker.register("{{ 'sw.js' | url }}")
+    }
+  })
+}
+// Detects if device is on iOS
+const isIos = () => {
+  const userAgent = window.navigator.userAgent.toLowerCase();
+  return /iphone|ipad|ipod/.test( userAgent );
+}
+// Detects if device is in standalone mode
+const isInStandaloneMode = () => ('standalone' in window.navigator) && (window.navigator.standalone);
+// Checks if should display install popup notification:
+if (isIos() && !isInStandaloneMode()) {
+  this.setState({ showInstallMessage: true });
+}
+</script>
