@@ -245,12 +245,13 @@ html {
 figure {
   display: inline-block;
 
-  img {
+  img, video {
     height: 210px;
   }
 }
 
-.md-typeset figure img {
+.md-typeset figure img,
+.md-typeset figure video {
   max-width: 100%;
 }
 
