@@ -2,7 +2,7 @@
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("{{ 'sw.js' | url }}");
+    navigator.serviceWorker.register("{{ '/sw.js' | url }}");
   });
 }
 
