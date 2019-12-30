@@ -37,6 +37,7 @@ const OptimizeCSSAssetsPlugin = require("optimize-css-assets-webpack-plugin")
 const UglifyJsPlugin = require("uglifyjs-3-webpack-plugin")
 const ImageminPlugin = require("imagemin-webpack-plugin").default
 const ManifestPlugin = require("webpack-manifest-plugin")
+const WorkboxPlugin = require("workbox-webpack-plugin")
 
 /* ----------------------------------------------------------------------------
  * Configuration
@@ -149,6 +150,12 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
 
     /* Plugins */
     plugins: [
+
+      new WorkboxPlugin.InjectManifest({
+        swSrc: "src/sw.js",
+        globDirectory: "../site/",
+        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "**/*.html"]
+      }),
 
       /* Provide JSX helper */
       new webpack.ProvidePlugin({
