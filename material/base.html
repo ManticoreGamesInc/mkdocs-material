@@ -90,9 +90,9 @@
     <link rel="preload" href="{{ 'assets/fonts/material-icons.css' | url }}" as="style">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/material-icons.css' | url }}">
     {% if config.extra.manifest %}
-      <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}">
+      <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
     {% else %}
-      <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.37a8c22fa0ff3cca1a5dc62bc1b8b905.json' | url }}">
+      <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.37a8c22fa0ff3cca1a5dc62bc1b8b905.json' | url }}" crossorigin="use-credentials">
     {% endif %}
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" type="text/css" href="{{ path | url }}">
