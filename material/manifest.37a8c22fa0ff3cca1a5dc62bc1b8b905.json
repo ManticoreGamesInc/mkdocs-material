@@ -1,0 +1,21 @@
+{
+  "icons": [
+    {
+      "src": "icon_512x512.78a0ad514eaa717bb99f4397049874c6.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "icon_192x192.37e5d98289e2deff9f3a0f08b37b342f.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "CORE Creator Hub",
+  "short_name": "CORE Hub",
+  "orientation": "portrait",
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest",
+  "theme_color": "#20232A",
+  "background_color": "#20232A"
+}

@@ -1,3 +1,4 @@
+/* eslint-disable camelcase */
 /*
  * Copyright (c) 2016-2019 Martin Donath <martin.donath@squidfunk.com>
  *
@@ -38,6 +39,7 @@ const UglifyJsPlugin = require("uglifyjs-3-webpack-plugin")
 const ImageminPlugin = require("imagemin-webpack-plugin").default
 const ManifestPlugin = require("webpack-manifest-plugin")
 const WorkboxPlugin = require("workbox-webpack-plugin")
+const WebpackPwaManifest = require("webpack-pwa-manifest")
 
 /* ----------------------------------------------------------------------------
  * Configuration
@@ -155,6 +157,27 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         swSrc: "src/sw.js",
         globDirectory: "../site/",
         globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "**/*.html"]
+      }),
+
+      new WebpackPwaManifest({
+        "short_name": "CORE Hub",
+        "name": "CORE Creator Hub",
+        "start_url": "/?utm_source=web_app_manifest",
+        "icons": [
+          {
+            "src": path.resolve("src/assets/icons/CoreIcon_192x192.png"),
+            "sizes": "192x192",
+            "type": "image/png"
+          },
+          {
+            "src": path.resolve("src/assets/icons/CoreIcon_512x512.png"),
+            "sizes": "512x512",
+            "type": "image/png"
+          }
+        ],
+        "display": "standalone",
+        "theme_color": "#20232A",
+        "background_color": "#20232A"
       }),
 
       /* Provide JSX helper */
