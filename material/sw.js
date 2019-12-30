@@ -50,7 +50,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|mp4)$/,
   // Use the cache if it's available.
   new workbox.strategies.CacheFirst({
     cacheName: "image-cache",

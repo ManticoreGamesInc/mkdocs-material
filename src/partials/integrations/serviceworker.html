@@ -1,8 +1,8 @@
-<script type="text/javascript">
+<script type="text/javascript" crossorigin="use-credentials">
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    navigator.serviceWorker.register("{{ '/sw.js' | url }}");
+    navigator.serviceWorker.register("{{ 'sw.js' | url }}");
   });
 }
 
