@@ -156,7 +156,7 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
       new WorkboxPlugin.InjectManifest({
         swSrc: "src/sw.js",
         globDirectory: "../site/",
-        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "**/*.html"]
+        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*", "**/*.html"]
       }),
 
       new WebpackPwaManifest({
@@ -165,12 +165,12 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         "start_url": "/?utm_source=web_app_manifest",
         "icons": [
           {
-            "src": path.resolve("src/assets/icons/CoreIcon_192x192.png"),
+            "src": path.resolve("src/assets/icons/favicon-192x192.png"),
             "sizes": "192x192",
             "type": "image/png"
           },
           {
-            "src": path.resolve("src/assets/icons/CoreIcon_512x512.png"),
+            "src": path.resolve("src/assets/icons/favicon-512x512.png"),
             "sizes": "512x512",
             "type": "image/png"
           }
@@ -241,6 +241,11 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         {
           context: "src",
           from: "assets/images/*.{ico,png}"
+        },
+
+        {
+          context: "src",
+          from: "assets/icons/*"
         },
 
         /* Copy configuration */
