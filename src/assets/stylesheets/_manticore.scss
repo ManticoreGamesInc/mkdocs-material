@@ -108,6 +108,7 @@ html {
 
 #app-update-prompt {
   background: var(--manti-color-black);
+  color: $md-color-white;
   position: absolute;
   top: 15%;
   width: 500px;
@@ -119,6 +120,7 @@ html {
   padding: 8px 16px;
   margin-left: -250px;
   margin-top: -70px;
+  z-index: 999;
 }
 
 #app-update {
@@ -134,7 +136,6 @@ html {
   text-transform: uppercase;
   user-select: none;
   margin: 20px auto;
-  z-index: 999;
 }
 
 #app-update:hover {
