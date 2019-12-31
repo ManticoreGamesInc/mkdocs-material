@@ -1,7 +1,9 @@
+/* eslint-disable no-unused-vars */
+/* eslint-disable array-callback-return */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
-workbox.setConfig({ debug: true })
+workbox.core.clientsClaim()
 
 workbox.routing.registerRoute(
   /\.(?:js|json)$/,
@@ -95,6 +97,19 @@ addEventListener("message", event => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     skipWaiting()
   }
+})
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(cacheName => {
+        }).map(cacheName => {
+          return caches.delete(cacheName)
+        })
+      )
+    })
+  )
 })
 
 workbox.googleAnalytics.initialize()

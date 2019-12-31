@@ -1,9 +1,11 @@
-importScripts("precache-manifest.7c08fc57798924cb20a0fde17150015a.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.ed3e4790f07c5a6f1d0d32bda7437548.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
+/* eslint-disable no-unused-vars */
+/* eslint-disable array-callback-return */
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
-workbox.setConfig({ debug: true })
+workbox.core.clientsClaim()
 
 workbox.routing.registerRoute(
   /\.(?:js|json)$/,
@@ -50,7 +52,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif|mp4)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|ico|mp4)$/,
   // Use the cache if it's available.
   new workbox.strategies.CacheFirst({
     cacheName: "image-cache",
@@ -97,6 +99,19 @@ addEventListener("message", event => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     skipWaiting()
   }
+})
+
+self.addEventListener("activate", event => {
+  event.waitUntil(
+    caches.keys().then(cacheNames => {
+      return Promise.all(
+        cacheNames.filter(cacheName => {
+        }).map(cacheName => {
+          return caches.delete(cacheName)
+        })
+      )
+    })
+  )
 })
 
 workbox.googleAnalytics.initialize()
