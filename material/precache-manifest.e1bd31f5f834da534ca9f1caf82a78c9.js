@@ -1,18 +1,18 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "c0a5d49d67e48f9dfed2f9e5f1fc59b5",
+    "revision": "1e54296270de3b98846447b0abf04bf3",
     "url": "404.html"
   },
   {
-    "revision": "b028566a9a99f6849d4efd83d9140e2a",
+    "revision": "460a84c9e38f9ee9ef4fede10dc85b02",
     "url": "api/ability_bindings/index.html"
   },
   {
-    "revision": "cc09ac38d67433bd2c09b6e2e96f350f",
+    "revision": "6cdbfc6fba1ad06d263ad852de9f5738",
     "url": "api/animations/index.html"
   },
   {
-    "revision": "263012280409c8c8b96e6056e569f9db",
+    "revision": "a43f610d1634fe4068bdf9630db2e3a8",
     "url": "api/components/index.html"
   },
   {
@@ -273,35 +273,35 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/webfonts/fa-solid-900.woff2"
   },
   {
-    "revision": "8d1f65b7928b64b32597745124a56d09",
+    "revision": "dd69eb0f1949d31c768823ae7627c392",
     "url": "core_api/index.html"
   },
   {
-    "revision": "2cb2219dfe7eb8927fe25d433189b20d",
+    "revision": "69810233bad2404bdf63cbd2e6ca7a6d",
     "url": "discord/index.html"
   },
   {
-    "revision": "01c9f61b13dbf23bd2ca5bfca9ddcf29",
+    "revision": "45202b80d3f75cda4fa61840fcaa4362",
     "url": "editor_keybindings/index.html"
   },
   {
-    "revision": "1a28e0d003aa57c52075cf8d7aa9aba7",
+    "revision": "23073a085a426bc5676240b66043a7af",
     "url": "extensions/index.html"
   },
   {
-    "revision": "7b1220b592580ff9a4e1dc6a3b224bf7",
+    "revision": "ac01ec2150df923b336a9c9c341b2db0",
     "url": "faq/index.html"
   },
   {
-    "revision": "e3aad25ca0d430226c1bcba3f0c93cab",
+    "revision": "c5508ef3982f1476b6e3378ec3d49bd5",
     "url": "generated/sitemap/index.html"
   },
   {
-    "revision": "68efd433f8a4e9388b7b07e2379fe4f0",
+    "revision": "961c647068c75aa3ef50a903c4d90718",
     "url": "getting_started/community_content/index.html"
   },
   {
-    "revision": "f01ff293d277a96198d502ba24afc2ed",
+    "revision": "88422914f64f52b8d362379d9b572664",
     "url": "getting_started/editor_intro/index.html"
   },
   {
@@ -309,139 +309,139 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "getting_started/index.html"
   },
   {
-    "revision": "aba6d93ffabe91e6ff49affcf83dfb26",
+    "revision": "35d993795015d52e0b9cdfcd0833b291",
     "url": "getting_started/my_first_multiplayer_game/index.html"
   },
   {
-    "revision": "21dca82aadf491353417b17c086a9799",
+    "revision": "00872d31c070bb1ce1c63eaf0942b3dc",
     "url": "getting_started/other_engines/index.html"
   },
   {
-    "revision": "ffb67e6781cc168de83266b557220bb1",
+    "revision": "52e95ac3858abff68e779d4c2232ea15",
     "url": "getting_started/troubleshooting/index.html"
   },
   {
-    "revision": "d8f46b9c8796b7cc3f02e08808bd2468",
+    "revision": "71a8d2d6a28689cbd493e73b21abcab7",
     "url": "icons/index.html"
   },
   {
-    "revision": "cdf6af99478e22c523f7871b3e3bb1c2",
+    "revision": "9f65a319cab41d33b30bf93a08681863",
     "url": "index.html"
   },
   {
-    "revision": "c5a1c2f1ba620bdcff6e77a8123852c5",
+    "revision": "a9facb9dc139b8ac73423d39a1d1e077",
     "url": "manticoretv/index.html"
   },
   {
-    "revision": "f5b2a24e4932a4975e0539c907924996",
+    "revision": "eac0dd37092c301cc609f27fa330b74f",
     "url": "news/events/daily_challenge/index.html"
   },
   {
-    "revision": "fe91dfc9486fefc1ad3d59b5227465fd",
+    "revision": "26ae30664ef39dea2ec0aa6c8cb6a189",
     "url": "news/events/game_jam/index.html"
   },
   {
-    "revision": "acd383d68df91ce8676e6ebd8a91cafc",
+    "revision": "d667573e68397fd67763ead0b03646b1",
     "url": "news/news/index.html"
   },
   {
-    "revision": "b52f2332a6e0d5469d1c7512780a3adb",
+    "revision": "4ea63a68e3e7effb406cab3489dfa09e",
     "url": "news/patch_notes/patch_notes/index.html"
   },
   {
-    "revision": "a5d7ff856f210537d0ec1bff5a199955",
+    "revision": "1c6db24e4d901135040a310af7b7615c",
     "url": "news/showcase/showcase/index.html"
   },
   {
-    "revision": "f6c2826600969a984830d76e36647a21",
+    "revision": "69afc1ea010168f6e4ef704eb59311e2",
     "url": "offline.html"
   },
   {
-    "revision": "c9af6a26227cf2616954d824b2e6d128",
+    "revision": "c8d4b0bccdae8853e6185e1d6c32093e",
     "url": "tutorials/art/art_reference/index.html"
   },
   {
-    "revision": "0217a9e579fb504bcaaf5d54c0c8dadb",
+    "revision": "4b3bb93440c0e24e6aad12fcae0e8cb5",
     "url": "tutorials/art/audio_reference/index.html"
   },
   {
-    "revision": "423796ef3b4f83aacd93ed93dc4c68ac",
+    "revision": "5ff72ba570c294e7d977716e4cd352bc",
     "url": "tutorials/art/costumes/index.html"
   },
   {
-    "revision": "67a2448f68cb818b21fdd8b286191cc3",
+    "revision": "74ac03a2e65696dcbf01e1bb22c596df",
     "url": "tutorials/art/custom_materials/index.html"
   },
   {
-    "revision": "541f1811472d306a8500a918111e9dad",
+    "revision": "a6f1fc32e7910771311c2c3e5b92ba54",
     "url": "tutorials/art/environ_art_intro/index.html"
   },
   {
-    "revision": "4593fe49cd0a164797d86a79e4e1f727",
+    "revision": "bee19c6b4ed9d3257280e9530663e08e",
     "url": "tutorials/art/modeling_basics/index.html"
   },
   {
-    "revision": "8566e55f35accfaf872f85c20ebf4868",
+    "revision": "f6a74e8fdfbb5365d0f1e7e6d8fab968",
     "url": "tutorials/art/scene_creation/index.html"
   },
   {
-    "revision": "3d0430ad8f877d049128ce5f80c60e67",
+    "revision": "74ff845d92f8b7d8a78652f986245a2c",
     "url": "tutorials/community_created/community_created/index.html"
   },
   {
-    "revision": "6de34ea87cfd11016aa0780663ba32cd",
+    "revision": "20f9930da9cc863f48534419cf8d218d",
     "url": "tutorials/examples/index.html"
   },
   {
-    "revision": "09bb109940803512301b13d9cb135c6a",
+    "revision": "b3684b7983920ea3ae7ae2d8d4fbe2ad",
     "url": "tutorials/gameplay/abilities/index.html"
   },
   {
-    "revision": "f8809a27c5a98091a81ff9c3e29cb1c3",
+    "revision": "5eb3ee607972695a95d8c7fe7c037127",
     "url": "tutorials/gameplay/abilities_advanced/index.html"
   },
   {
-    "revision": "bec28b56b2388c837624a76c0f605f55",
+    "revision": "1b2546d29ebf3ee632bd093529e06df8",
     "url": "tutorials/gameplay/collaboration_reference/index.html"
   },
   {
-    "revision": "8746f100d7e529e0699adc8f380e09fd",
+    "revision": "714a342a800a68f94af78e41ab62b865",
     "url": "tutorials/gameplay/lua_basics_lightbulb/index.html"
   },
   {
-    "revision": "526ab6197682b3079f46c71307339693",
+    "revision": "aa86b3275f73eb9258778151082d1def",
     "url": "tutorials/gameplay/lua_basics_manticoin/index.html"
   },
   {
-    "revision": "784f099c309ceb40ae1de8a4f65875fa",
+    "revision": "bc0f8fb7ef030d3b8ad4364ae2cbd27f",
     "url": "tutorials/gameplay/lua_reference/index.html"
   },
   {
-    "revision": "3e6b4e026edefea4f2712b5d30c421e0",
+    "revision": "df221311b495322c3e2293c00538a88f",
     "url": "tutorials/gameplay/lua_style_guide/index.html"
   },
   {
-    "revision": "bb06db456d9340f07f8b07439c128d56",
+    "revision": "a734fec219f1a8be7a7ffa08f6c2ba08",
     "url": "tutorials/gameplay/networking_reference/index.html"
   },
   {
-    "revision": "a1c533c42f114da16f6d9b0765dda5ae",
+    "revision": "32c5f6b575144137142278441a5237f8",
     "url": "tutorials/gameplay/performance_reference/index.html"
   },
   {
-    "revision": "575b4189e4af56c3e48105ec4e2e8020",
+    "revision": "727f6f61f68becc29a75293e2b4d7814",
     "url": "tutorials/gameplay/ui_reference/index.html"
   },
   {
-    "revision": "5d4dfc77ea5a00122d1a9af6f28b09db",
+    "revision": "512e8c3a0583a038784c9b2f02365c7a",
     "url": "tutorials/gameplay/weapons/index.html"
   },
   {
-    "revision": "e944b5dc4612e539b20175c51f10c748",
+    "revision": "c74413d49bd173c38e6cb7333a3ca17a",
     "url": "tutorials/tutorials/index.html"
   },
   {
-    "revision": "81b4b081b8b7b10f4d3bac84e68506fa",
+    "revision": "55a266fcc6e7e39130c5bf98f67f9725",
     "url": "tutorials/videos/pistol_shooter/index.html"
   }
 ]);

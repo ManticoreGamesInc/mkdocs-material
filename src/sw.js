@@ -91,4 +91,5 @@ workbox.routing.registerRoute(
   })
 )
 
+workbox.precaching.cleanupOutdatedCaches()
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])

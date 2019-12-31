@@ -1,4 +1,4 @@
-importScripts("precache-manifest.a5b8bf362b3dd3b5104dff2829876b4b.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.e1bd31f5f834da534ca9f1caf82a78c9.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
@@ -93,5 +93,6 @@ workbox.routing.registerRoute(
   })
 )
 
+workbox.precaching.cleanupOutdatedCaches()
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
 
