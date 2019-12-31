@@ -13,7 +13,6 @@
   ],
   "name": "CORE Creator Hub",
   "short_name": "CORE Hub",
-  "orientation": "portrait",
   "display": "standalone",
   "start_url": ".?utm_source=web_app_manifest",
   "description": "Documentation for the CORE Platform",

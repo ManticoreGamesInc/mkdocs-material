@@ -169,9 +169,8 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         theme_color: "#20232A",
         background_color: "#20232A",
         crossorigin: "use-credentials",
-        includeDirectory: true,
         inject: true,
-        ios: true,
+        orientation: "omit",
         icons: [
           {
             src: "https://i.imgur.com/iqNiYlm.png",

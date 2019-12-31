@@ -3,7 +3,10 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
+workbox.precaching.cleanupOutdatedCaches()
+workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
 workbox.core.clientsClaim()
+workbox.googleAnalytics.initialize()
 
 workbox.routing.registerRoute(
   /\.(?:js|json)$/,
@@ -98,20 +101,3 @@ addEventListener("message", event => {
     skipWaiting()
   }
 })
-
-self.addEventListener("activate", event => {
-  event.waitUntil(
-    caches.keys().then(cacheNames => {
-      return Promise.all(
-        cacheNames.filter(cacheName => {
-        }).map(cacheName => {
-          return caches.delete(cacheName)
-        })
-      )
-    })
-  )
-})
-
-workbox.googleAnalytics.initialize()
-workbox.precaching.cleanupOutdatedCaches()
-workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
