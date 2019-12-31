@@ -43,6 +43,8 @@
       ] %}
         <meta name="lang:{{ key }}" content="{{ lang.t(key) }}">
       {% endfor %}
+      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
+      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
       <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
       <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
@@ -250,7 +252,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.853adc67.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.d4ebc8fd.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
