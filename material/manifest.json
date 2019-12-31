@@ -15,7 +15,7 @@
   "short_name": "CORE Hub",
   "orientation": "portrait",
   "display": "standalone",
-  "start_url": "/?utm_source=web_app_manifest",
+  "start_url": ".?utm_source=web_app_manifest",
   "description": "Documentation for the CORE Platform",
   "theme_color": "#20232A",
   "background_color": "#20232A"

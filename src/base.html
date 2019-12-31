@@ -201,6 +201,11 @@
     <link rel="stylesheet" type="text/css"
         href="{{ 'assets/fonts/solid.min.css' | url }}" />
 
+    <!-- Service Worker -->
+    {% block serviceworker %}
+      {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
+
     <!-- Vimeo Pre-Connect -->
     {% block vimeo %}
       {% include "partials/integrations/vimeo.html" %}

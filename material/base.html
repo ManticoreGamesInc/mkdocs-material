@@ -104,6 +104,9 @@
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}">
+    {% block serviceworker %}
+      {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
     {% block vimeo %}
       {% include "partials/integrations/vimeo.html" %}
     {% endblock %}
@@ -252,7 +255,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.853adc67.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.a5eb5551.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
