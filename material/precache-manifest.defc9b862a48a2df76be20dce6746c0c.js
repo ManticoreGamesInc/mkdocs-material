@@ -208,7 +208,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/icons/gitlab.6dd19c00.svg"
   },
   {
-    "url": "assets/javascripts/application.d4ebc8fd.js"
+    "url": "assets/javascripts/application.853adc67.js"
   },
   {
     "url": "assets/javascripts/dark-mode.9fbea65c.js"
