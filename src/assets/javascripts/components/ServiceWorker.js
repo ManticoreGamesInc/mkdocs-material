@@ -5,7 +5,7 @@ import { Workbox } from "workbox-window"
 
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    const wb = new Workbox(window.location.hostname === "127.0.0.1" ? "/sw.js" : "docs/sw.js")
+    const wb = new Workbox(window.location.hostname === "127.0.0.1" ? "sw.js" : "sw.js")
     const updateButton = document.querySelector("#app-update-prompt")
     // Fires when the registered service worker has installed but is waiting to activate.
     wb.addEventListener("waiting", event => {
