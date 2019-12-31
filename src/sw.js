@@ -4,7 +4,7 @@
 workbox.setConfig({ debug: true })
 
 workbox.routing.registerRoute(
-  /\.js$/,
+  /\.(?:js|json)$/,
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: "js-cache",
     fetchOptions: {
@@ -48,7 +48,7 @@ workbox.routing.registerRoute(
 )
 
 workbox.routing.registerRoute(
-  /\.(?:png|jpg|jpeg|svg|gif|mp4)$/,
+  /\.(?:png|jpg|jpeg|svg|gif|ico|mp4)$/,
   // Use the cache if it's available.
   new workbox.strategies.CacheFirst({
     cacheName: "image-cache",
@@ -91,5 +91,12 @@ workbox.routing.registerRoute(
   })
 )
 
+addEventListener("message", event => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    skipWaiting()
+  }
+})
+
+workbox.googleAnalytics.initialize()
 workbox.precaching.cleanupOutdatedCaches()
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])

@@ -199,11 +199,6 @@
     <link rel="stylesheet" type="text/css"
         href="{{ 'assets/fonts/solid.min.css' | url }}" />
 
-    <!-- Service Worker -->
-    {% block serviceworker %}
-      {% include "partials/integrations/serviceworker.html" %}
-    {% endblock %}
-
     <!-- Vimeo Pre-Connect -->
     {% block vimeo %}
       {% include "partials/integrations/vimeo.html" %}
@@ -366,7 +361,10 @@
                   </a>
                   {% endfor %}
                 {% endif %}
-
+                <div id="app-update-prompt" class="hide">
+                  <label for=button><i class="fas fa-sync-alt"></i> An update for the site is available!</label>
+                  <button id="app-update">Click to Refresh</button>
+                </div>
                 <!-- Content -->
                 {{ page.content }}
 

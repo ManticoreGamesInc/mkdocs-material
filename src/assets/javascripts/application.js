@@ -44,6 +44,7 @@ window.Promise = window.Promise || Promise
 import Clipboard from "clipboard"
 
 import Material from "./components/Material"
+import "./components/ServiceWorker"
 
 /* ----------------------------------------------------------------------------
  * Functions

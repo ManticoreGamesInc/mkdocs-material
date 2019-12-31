@@ -1,4 +1,4 @@
-importScripts("precache-manifest.e1bd31f5f834da534ca9f1caf82a78c9.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
+importScripts("precache-manifest.7c08fc57798924cb20a0fde17150015a.js", "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-sw.js");
 
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
@@ -6,7 +6,7 @@ importScripts("precache-manifest.e1bd31f5f834da534ca9f1caf82a78c9.js", "https://
 workbox.setConfig({ debug: true })
 
 workbox.routing.registerRoute(
-  /\.js$/,
+  /\.(?:js|json)$/,
   new workbox.strategies.StaleWhileRevalidate({
     cacheName: "js-cache",
     fetchOptions: {
@@ -93,6 +93,13 @@ workbox.routing.registerRoute(
   })
 )
 
+addEventListener("message", event => {
+  if (event.data && event.data.type === "SKIP_WAITING") {
+    skipWaiting()
+  }
+})
+
+workbox.googleAnalytics.initialize()
 workbox.precaching.cleanupOutdatedCaches()
 workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
 

@@ -59,7 +59,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.2a405271.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.f6be75f5.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
       {% endif %}
@@ -92,7 +92,7 @@
     {% if config.extra.manifest %}
       <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
     {% else %}
-      <link rel="manifest" type="application/manifest+json" href="{{ '/manifest.37a8c22fa0ff3cca1a5dc62bc1b8b905.json' | url }}" crossorigin="use-credentials">
+      <link rel="manifest" type="application/manifest+json" href="{{ '/manifest.json' | url }}" crossorigin="use-credentials">
     {% endif %}
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" type="text/css" href="{{ path | url }}">
@@ -102,9 +102,6 @@
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}">
     <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}">
-    {% block serviceworker %}
-      {% include "partials/integrations/serviceworker.html" %}
-    {% endblock %}
     {% block vimeo %}
       {% include "partials/integrations/vimeo.html" %}
     {% endblock %}
@@ -202,6 +199,10 @@
                   </a>
                   {% endfor %}
                 {% endif %}
+                <div id="app-update-prompt" class="hide">
+                  <label for="button"><i class="fas fa-sync-alt"></i> An update for the site is available!</label>
+                  <button id="app-update">Click to Refresh</button>
+                </div>
                 {{ page.content }}
                 {% block source %}
                   {% if page and page.meta and page.meta.source %}
@@ -249,7 +250,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.c8d02aca.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.b06072ef.js' | url }}"></script>
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}

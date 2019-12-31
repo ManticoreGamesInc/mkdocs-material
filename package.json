@@ -92,5 +92,8 @@
   "engines": {
     "node": ">= 8"
   },
-  "private": true
+  "private": true,
+  "dependencies": {
+    "workbox-window": "^4.3.1"
+  }
 }

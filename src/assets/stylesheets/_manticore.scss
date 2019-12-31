@@ -98,6 +98,49 @@ html {
   scroll-behavior: smooth;
 }
 
+.show {
+  display: block !important;
+}
+
+.hide {
+  display: none;
+}
+
+#app-update-prompt {
+  background: var(--manti-color-black);
+  position: absolute;
+  top: 15%;
+  width: 500px;
+  height: 140px;
+  left: 50%;
+  text-align: center;
+  border: 1px solid var(--manti-color-orange);
+  border-radius: 8px;
+  padding: 8px 16px;
+  margin-left: -250px;
+  margin-top: -70px;
+}
+
+#app-update {
+  background-color: var(--manti-color-orange);
+  display: block;
+  color: #000000;
+  border-radius: 4px;
+  cursor: pointer;
+  font-family: var(--font-oswald);
+  font-size: 20px;
+  line-height: 22px;
+  padding: 16px 45px;
+  text-transform: uppercase;
+  user-select: none;
+  margin: 20px auto;
+  z-index: 999;
+}
+
+#app-update:hover {
+  background-color: #0081C2;
+}
+
 // External Links
 
 .external::after {

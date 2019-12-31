@@ -160,24 +160,28 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
       }),
 
       new WebpackPwaManifest({
-        "short_name": "CORE Hub",
-        "name": "CORE Creator Hub",
-        "start_url": "/?utm_source=web_app_manifest",
-        "icons": [
+        filename: "manifest.json",
+        name: "CORE Creator Hub",
+        short_name: "CORE Hub",
+        start_url: ".?utm_source=web_app_manifest",
+        display: "standalone",
+        description: "Documentation for the CORE Platform",
+        theme_color: "#20232A",
+        background_color: "#20232A",
+        crossorigin: "use-credentials",
+        includeDirectory: true,
+        inject: true,
+        ios: true,
+        icons: [
           {
-            "src": path.resolve("src/assets/icons/favicon-192x192.png"),
-            "sizes": "192x192",
-            "type": "image/png"
+            src: path.resolve("src/assets/icons/favicon-192x192.png"),
+            size: "192x192"
           },
           {
-            "src": path.resolve("src/assets/icons/favicon-512x512.png"),
-            "sizes": "512x512",
-            "type": "image/png"
+            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            size: "512x512"
           }
-        ],
-        "display": "standalone",
-        "theme_color": "#20232A",
-        "background_color": "#20232A"
+        ]
       }),
 
       /* Provide JSX helper */
