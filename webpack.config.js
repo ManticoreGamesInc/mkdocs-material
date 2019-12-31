@@ -174,11 +174,11 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         ios: true,
         icons: [
           {
-            src: path.resolve("src/assets/icons/favicon-192x192.png"),
+            src: "https://i.imgur.com/iqNiYlm.png",
             size: "192x192"
           },
           {
-            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            src: "https://i.imgur.com/fkPEFvF.png",
             size: "512x512"
           }
         ]
