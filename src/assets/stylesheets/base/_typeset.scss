@@ -59,7 +59,16 @@ input {
   html {
     margin-right: calc(100% - 100vw);
     background-color: var(--color-background);
-}
+  }
+
+  .md-header, .md-tabs {
+    margin-right: calc(100% - 100vw);
+  }
+
+  .md-tabs {
+    height: px2rem(48px)
+  }
+
   body {
     margin-right: calc(100vw - 100%);
   }
