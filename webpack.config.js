@@ -156,7 +156,7 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
       new WorkboxPlugin.InjectManifest({
         swSrc: "src/sw.js",
         globDirectory: "../site/",
-        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*", "**/*.html"]
+        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*"]
       }),
 
       new WebpackPwaManifest({
