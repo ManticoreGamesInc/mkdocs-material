@@ -62,6 +62,8 @@
     {% endblock %}
     {% block styles %}
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.0aeb87e7.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
       {% endif %}
@@ -125,6 +127,7 @@
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
     <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.9fbea65c.js' | url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
     <svg class="md-svg">
       <defs>
         {% set platform = config.extra.repo_icon or config.repo_url %}

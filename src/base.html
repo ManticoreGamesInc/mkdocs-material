@@ -94,8 +94,10 @@
       <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon"
           href="{{ config.theme.favicon | url }}">
+
       <!-- PWA files integration -->
       {% include "partials/pwa-images.html" %}
+
       <!-- Generator banner -->
       <meta name="generator"
           content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$" />
@@ -118,12 +120,12 @@
       <!-- Theme-related stylesheets -->
       <link rel="stylesheet" type="text/css"
           href="{{ 'assets/stylesheets/application.css' | url }}" />
-      <!--
+
+      <!-- Lightgallery -->
       <link rel="stylesheet" type="text/css"
           href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
       <link rel="stylesheet" type="text/css"
           href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
-      -->
 
       <!-- Extra color palette -->
       {% if palette.primary or palette.accent %}
@@ -233,7 +235,7 @@
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
     <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
-    <!-- <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script> -->
+    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
 
     <!-- Hidden container for inline SVGs -->
     <svg class="md-svg">
@@ -341,6 +343,7 @@
 
               <!-- Content -->
               {% block content %}
+
                 <!-- To-top button -->
                 {% include "partials/integrations/topscroller.html" %}
 
@@ -368,10 +371,13 @@
                   </a>
                   {% endfor %}
                 {% endif %}
+
+                <!-- Update Prompt -->
                 <div id="app-update-prompt" class="hide">
                   <label for=button><i class="fas fa-sync-alt"></i> An update for the site is available!</label>
                   <button id="app-update">Click to Refresh</button>
                 </div>
+
                 <!-- Content -->
                 {{ page.content }}
 
