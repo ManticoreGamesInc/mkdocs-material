@@ -445,6 +445,9 @@
     {% block scripts %}
       <script type="text/javascript" src="{{ 'assets/javascripts/application.js' | url }}"></script>
 
+      <!-- Lightgallery -->
+      {% include "partials/lightgallery.html" %}
+
       <!-- Load additional languages for search -->
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}

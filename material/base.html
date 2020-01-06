@@ -259,6 +259,7 @@
     </div>
     {% block scripts %}
       <script type="text/javascript" src="{{ 'assets/javascripts/application.1b5c66eb.js' | url }}"></script>
+      {% include "partials/lightgallery.html" %}
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
         {% if languages | length and languages[0] != "" %}
