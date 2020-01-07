@@ -1,3 +1,4 @@
+/* eslint-disable require-jsdoc */
 /* eslint-disable no-unused-vars */
 /* eslint-disable array-callback-return */
 /* eslint-disable no-underscore-dangle */
@@ -18,27 +19,32 @@ workbox.routing.registerRoute(
   })
 )
 
-const docsHandler = new workbox.strategies.NetworkFirst({
+function cacheKeyWillBeUsed({ request }) {
+  const url = new URL(request.url)
+  url.pathname = url.pathname.replace(/\/index\.html$/, "/")
+  url.pathname = url.pathname.replace(/\.html$/, "/")
+  return url.href
+}
+
+const networkFirstStrategy = new workbox.strategies.NetworkFirst({
   cacheName: "docs-cache",
   fetchOptions: {
     credentials: "include"
   },
-  plugins: [
-    new workbox.expiration.Plugin({
-      maxEntries: 100
-    })
-  ]
+  plugins: [{ cacheKeyWillBeUsed }]
 })
 
-workbox.routing.registerRoute(/\.html$/, args => {
-  return docsHandler.handle(args).then(response => {
-    if (!response) {
-      return caches.match("offline.html")
-    } else if (response.status === 404) {
-      return caches.match("404.html")
-    }
-    return response
-  })
+const navigationRoute = new workbox.routing.NavigationRoute(networkFirstStrategy)
+workbox.routing.registerRoute(navigationRoute)
+workbox.routing.setCatchHandler(({ event }) => {
+  switch (event.request.destination) {
+    case "document":
+      return caches.match(workbox.precaching.getCacheKeyForURL("offline.html"))
+
+    default:
+      // If we don't have a fallback, just return an error response.
+      return Response.error()
+  }
 })
 
 workbox.routing.registerRoute(
@@ -72,10 +78,9 @@ workbox.routing.registerRoute(
 )
 
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
-workbox.routing.registerRoute(
-  /^https:\/\/fonts\.googleapis\.com/,
+workbox.routing.registerRoute(/.*(?:googleapis)\.com.*$/,
   new workbox.strategies.StaleWhileRevalidate({
-    cacheName: "google-fonts-stylesheets"
+    cacheName: "googleapis-cache"
   })
 )
 

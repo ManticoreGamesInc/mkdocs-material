@@ -163,14 +163,16 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         filename: "manifest.json",
         name: "CORE Creator Hub",
         short_name: "CORE Hub",
-        start_url: ".?utm_source=web_app_manifest",
+        start_url: "/?utm_source=web_app_manifest",
+        scope: "/docs/",
         display: "standalone",
         description: "Documentation for the CORE Platform",
         theme_color: "#20232A",
         background_color: "#20232A",
         crossorigin: "use-credentials",
         inject: true,
-        orientation: "omit",
+        orientation: "any",
+        fingerprints: false,
         icons: [
           {
             src: "https://i.imgur.com/iqNiYlm.png",

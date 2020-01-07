@@ -13,8 +13,10 @@
   ],
   "name": "CORE Creator Hub",
   "short_name": "CORE Hub",
+  "orientation": "any",
   "display": "standalone",
-  "start_url": ".?utm_source=web_app_manifest",
+  "start_url": "/?utm_source=web_app_manifest",
+  "scope": "/docs/",
   "description": "Documentation for the CORE Platform",
   "theme_color": "#20232A",
   "background_color": "#20232A"

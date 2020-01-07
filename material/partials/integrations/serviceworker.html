@@ -5,7 +5,12 @@
 import { Workbox } from "https://storage.googleapis.com/workbox-cdn/releases/4.3.1/workbox-window.prod.mjs"
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    const wb = new Workbox("{{ 'sw.js' | url }}")
+    let wb
+    if (window.location.hostname != "127.0.0.1") {
+      wb = new Workbox("{{ 'sw.js' | url }}, { scope: '/docs/' }")
+    } else {
+      wb = new Workbox("{{ 'sw.js' | url }}")
+    }
     const updateButton = document.querySelector("#app-update-prompt")
     // Fires when the registered service worker has installed but is waiting to activate.
     wb.addEventListener("waiting", event => {
