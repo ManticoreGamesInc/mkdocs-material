@@ -6,7 +6,7 @@ if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
     let wb
     if (window.location.hostname != "127.0.0.1") {
-      wb = new Workbox("{{ 'sw.js' | url }}, { scope: '/docs/' }")
+      wb = new Workbox("{{ 'sw.js' | url }}", { scope: '/docs/' })
     } else {
       wb = new Workbox("{{ 'sw.js' | url }}")
     }
