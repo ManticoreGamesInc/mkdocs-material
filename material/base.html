@@ -126,6 +126,7 @@
   {% else %}
     <body dir="{{ lang.t('direction') }}">
   {% endif %}
+    <script src="https://identity.netlify.com/v1/netlify-identity-widget.js"></script>
     <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.9fbea65c.js' | url }}"></script>
     <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
     <svg class="md-svg">
@@ -282,5 +283,16 @@
         <script type="text/javascript" src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
+    <script>
+    if (window.netlifyIdentity) {
+      window.netlifyIdentity.on("init", user => {
+        if (!user) {
+          window.netlifyIdentity.on("login", () => {
+            document.location.href = "/admin/";
+          });
+        }
+      });
+    }
+  </script>
   </body>
 </html>
