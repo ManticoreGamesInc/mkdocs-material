@@ -220,7 +220,7 @@
     // [tablet landscape +]: Show the reposistory from tablet
     @include break-from-device(tablet landscape) {
       display: block;
-      width: 100%; //px2rem(234px);
+      width: px2rem(234px);
       max-width: px2rem(234px);
       padding: 10px;
 
@@ -229,10 +229,6 @@
         padding-right: initial;
         padding-left: px2rem(12px);
       }
-    }
-    // Adjust for hidden label on small size
-    @media only screen and (max-width: 1220px) {
-      width: 100% //px2rem(80px);
     }
   }
 }

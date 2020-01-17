@@ -182,6 +182,7 @@ $md-toggle__search--checked:
     @include break-from-device(tablet landscape) {
       position: relative;
       width: px2rem(230px);
+      margin-right: px2rem(16px);
       padding: px2rem(2px) 0;
       float: right;
       transition: width 0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
@@ -272,7 +273,7 @@ $md-toggle__search--checked:
       transition:
         background-color 0.25s cubic-bezier(0.1, 0.7, 0.1, 1),
         color            0.25s cubic-bezier(0.1, 0.7, 0.1, 1);
-      border-radius: px2rem(34px);
+      border-radius: px2rem(2px);
       background-color: $md-color-black--lighter;
       color: inherit;
       font-size: ms(0);
@@ -292,6 +293,7 @@ $md-toggle__search--checked:
         color: $md-color-white--light;
         font-family: var(--font-oswald);
         text-transform: uppercase;
+        line-height: 1.5;
       }
 
       // Hovered search field
@@ -435,6 +437,11 @@ $md-toggle__search--checked:
     box-shadow: 0 px2rem(1px) 0 var(--color-black--lightest) inset;
     overflow-y: auto;
     -webkit-overflow-scrolling: touch;
+
+    // Mitigiate excessive repaints on non-retina devices
+    @media (max-resolution: 1dppx) {
+      transform: translateZ(0);
+    }
 
     // [tablet landscape]: Set absolute width to omit unnecessary reflow
     @include break-at-device(tablet landscape) {

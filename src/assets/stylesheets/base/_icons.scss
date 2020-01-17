@@ -42,7 +42,7 @@
   // Icon rendered as button
   &__button {
     display: inline-block;
-    margin: $md-icon-margin;
+    width: #{$md-icon-size + 2 * $md-icon-padding};
     padding: $md-icon-padding;
     font-size: $md-icon-size;
     cursor: pointer;
