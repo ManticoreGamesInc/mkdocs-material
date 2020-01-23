@@ -89,7 +89,6 @@
     position: relative;
     transition: opacity 0.25s;
     z-index: 1;
-    padding: 0;
 
     // Hovered icon
     &:hover {
@@ -99,8 +98,6 @@
     // Set correct display on image or icon
     &.md-logo * {
       display: block;
-      height: px2rem(38px);
-      width: px2rem(38px);
     }
 
     // Hide search icon, if JavaScript is not available.
@@ -119,12 +116,16 @@
 
     // [tablet -]: Hide the home icon or logo
     @include break-to-device(tablet) {
-      padding: px2rem(8px);
 
       // Home icon or logo
       &.md-icon--home,
       &.md-logo {
         display: none;
+      }
+
+      // Menu icon
+      &.md-icon--menu {
+        padding-top: px2rem(12px);
       }
     }
 
@@ -142,6 +143,7 @@
   &__topic {
     display: block;
     position: absolute;
+    width: calc(100% - #{px2rem(20px)});
     transition:
       transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
       opacity   0.15s;

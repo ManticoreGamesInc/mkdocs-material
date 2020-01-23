@@ -252,7 +252,7 @@ $codehilite-whitespace: transparent;
     }
   }
 
-   // If not using Pygments, code will be under pre > code
+  // If not using Pygments, code will be under pre > code
   pre.codehilite {
     overflow: visible;
 
@@ -316,6 +316,7 @@ $codehilite-whitespace: transparent;
         text-align: right;
       }
     }
+
     // The table cell containing the code container wrapper and code should
     // stretch horizontally to the remaining space
     .code {
@@ -324,7 +325,7 @@ $codehilite-whitespace: transparent;
     }
   }
 
-    // Full-width container
+  // Full-width container
   > .codehilite {
 
     // [mobile -]: Stretch to whole width
