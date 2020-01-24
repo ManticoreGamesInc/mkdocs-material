@@ -413,3 +413,26 @@ figure {
     color: #DCDCDC;
     padding: 2px 6px;
 }
+
+// Lua Color Enums
+
+.Color_WHITE { border: 1px solid var(--color-text); color: #FFFFFFFF; }
+.Color_GRAY { border: 1px solid var(--color-text); color: #7F7F7FFF; }
+.Color_BLACK { border: 1px solid var(--color-text); color: #000000FF; }
+.Color_TRANSPARENT { border: 1px solid var(--color-text); color: #FFFFFF00; }
+.Color_RED { border: 1px solid var(--color-text); color: #FF0000FF; }
+.Color_GREEN { border: 1px solid var(--color-text); color: #00FF00FF; }
+.Color_BLUE { border: 1px solid var(--color-text); color: #0000FFFF; }
+.Color_CYAN { border: 1px solid var(--color-text); color: #00FFFFFF; }
+.Color_MAGENTA { border: 1px solid var(--color-text); color: #FF00FFFF; }
+.Color_YELLOW { border: 1px solid var(--color-text); color: #FFFF00FF; }
+.Color_ORANGE { border: 1px solid var(--color-text); color: #CC4C00FF; }
+.Color_PURPLE { border: 1px solid var(--color-text); color: #4C0099FF; }
+.Color_BROWN { border: 1px solid var(--color-text); color: #721400FF; }
+.Color_PINK { border: 1px solid var(--color-text); color: #FF6666FF; }
+.Color_TAN { border: 1px solid var(--color-text); color: #E5BF4CFF; }
+.Color_RUBY { border: 1px solid var(--color-text); color: #660101FF; }
+.Color_EMERALD { border: 1px solid var(--color-text); color: #0C660CFF; }
+.Color_SAPPHIRE { border: 1px solid var(--color-text); color: #02024CFF; }
+.Color_SILVER { border: 1px solid var(--color-text); color: #B2B2B2FF; }
+.Color_SMOKE { border: 1px solid var(--color-text); color: #191919FF; }
