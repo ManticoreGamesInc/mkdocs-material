@@ -20,4 +20,5 @@
 
 # Don't lint shame
 src/assets/stylesheets/_shame.scss
+src/assets/stylesheets/_manticore.scss
 material/
