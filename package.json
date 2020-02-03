@@ -39,10 +39,10 @@
     "watchwp": "node node_modules/.bin/webpack --watch --mode=development"
   },
   "devDependencies": {
-    "@babel/cli": "^7.8.3",
-    "@babel/core": "^7.8.3",
+    "@babel/cli": "^7.8.4",
+    "@babel/core": "^7.8.4",
     "@babel/plugin-transform-react-jsx": "^7.8.3",
-    "@babel/preset-env": "^7.8.3",
+    "@babel/preset-env": "^7.8.4",
     "autoprefixer": "^9.7.4",
     "babel-eslint": "^10.0.3",
     "babel-loader": "^8.0.6",
@@ -59,7 +59,7 @@
     "eslint-plugin-html": "^6.0.0",
     "event-hooks-webpack-plugin": "^2.1.5",
     "expose-loader": "^0.7.4",
-    "extract-loader": "^3.1.0",
+    "extract-loader": "^4.0.3",
     "file-loader": "^5.0.2",
     "html-minifier": "^4.0.0",
     "html-webpack-plugin": "^3.2.0",
