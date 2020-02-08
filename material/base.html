@@ -49,7 +49,7 @@
       <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
       {% include "partials/pwa-images.html" %}
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-4.6.0">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-4.6.1">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -61,7 +61,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.4ad4b2f7.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.5f580218.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
@@ -78,7 +78,7 @@
       {% endif %}
     {% endblock %}
     {% block libs %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.830e312a.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.6649c84c.js' | url }}"></script>
     {% endblock %}
     {% block fonts %}
       {% if font != false %}
@@ -258,7 +258,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.bd790790.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.7ea79214.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
