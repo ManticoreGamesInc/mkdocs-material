@@ -67,9 +67,11 @@
           {% endif %}
         </div>
       </div>
-      <div class="md-flex__cell" style="width: 200px">
+      <div class="md-flex__cell" style="width: 270px">
         <!-- Social links -->
         {% include "partials/tabs-social.html" %}
+        <!-- Theme Toggle -->
+        {% include "partials/theme-toggle.html" %}
       </div>
 
       <!-- Button to open search dialogue -->
@@ -81,9 +83,6 @@
           {% include "partials/search.html" %}
         {% endif %}
       </div>
-
-      <!-- Dark Mode Toggle -->
-      {% include "partials/darkmode-toggle.html" %}
     </div>
   </nav>
 </header>
