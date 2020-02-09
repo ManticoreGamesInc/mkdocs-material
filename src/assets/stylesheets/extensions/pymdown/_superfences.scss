@@ -35,7 +35,7 @@
     background-color: var(--color-white);
 
     // Actual content
-    > * {
+    pre {
       margin: 0;
       border-radius: 0
     }
@@ -91,9 +91,13 @@
       border-radius: 0;
 
       // Actual container with code, overflowing
-      pre,
       code {
         padding: px2rem(10.5px) px2rem(16px);
+      }
+
+      // First tab label
+      input:first-child + label {
+        margin-left: px2rem(4px);
       }
     }
   }

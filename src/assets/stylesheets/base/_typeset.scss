@@ -266,12 +266,6 @@ kbd {
     line-height: 1.4;
     -webkit-overflow-scrolling: touch;
 
-    // [mobile -]: Stretch to whole width
-    @include break-to-device(mobile) {
-      margin: 1em px2rem(-16px);
-      border-radius: 0;
-    }
-
     // Actual container with code, overflowing
     > code {
       display: block;
@@ -282,11 +276,6 @@ kbd {
       box-shadow: none;
       box-decoration-break: slice;
       overflow: auto;
-
-      // [mobile -]: Increase padding to match text
-      @include break-to-device(mobile) {
-        padding: px2rem(10.5px) px2rem(16px);
-      }
 
       // Override native scrollbar styles
       &::-webkit-scrollbar {
@@ -303,6 +292,21 @@ kbd {
         &:hover {
           background-color: var(--color-accent);
         }
+      }
+    }
+  }
+
+  // [mobile -]: Stretch to whole width
+  @include break-to-device(mobile) {
+
+    // Stretch top-level containers
+    > pre {
+      margin: 1em px2rem(-16px);
+      border-radius: 0;
+
+      // Actual container with code, overflowing
+      > code {
+        padding: px2rem(10.5px) px2rem(16px);
       }
     }
   }
