@@ -91,7 +91,7 @@ $md-icon-margin:                      $ms-base * 0.25;
 
 // Code blocks
 $md-code-background:                  hsla(222, 14%, 15%, 0.12); //hsla(0, 0%, 92.5%, 0.5);
-$md-code-color:                       #37474F; //#37474F hsl(323, 100%, 95%);
+$md-code-color:                       var(--font-color-background--light);
 
 // Keystrokes
 $md-keyboard-background:              #FCFCFC;
