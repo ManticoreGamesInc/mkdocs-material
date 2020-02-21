@@ -161,12 +161,12 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
 
       new WebpackPwaManifest({
         filename: "manifest.json",
-        name: "CORE Creator Hub",
-        short_name: "CORE Hub",
+        name: "Core Creator Hub",
+        short_name: "Core Hub",
         start_url: "/docs/?utm_source=web_app_manifest",
         scope: "/docs/",
         display: "standalone",
-        description: "Documentation for the CORE Platform",
+        description: "Documentation for the Core Platform",
         theme_color: "#20232A",
         background_color: "#20232A",
         crossorigin: "use-credentials",
