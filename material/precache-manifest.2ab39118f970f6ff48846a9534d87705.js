@@ -1,6 +1,6 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "fd7f2b766ccbe94e77e6bac583ca09ca",
+    "revision": "69a744ffd6e64353b046bac82bfa58bd",
     "url": "404.html"
   },
   {
@@ -272,13 +272,13 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/icons/gitlab.6dd19c00.svg"
   },
   {
-    "url": "assets/javascripts/application.c64331ed.js"
+    "url": "assets/javascripts/application.15bb824b.js"
   },
   {
     "url": "assets/javascripts/dark-mode.9fbea65c.js"
   },
   {
-    "url": "assets/javascripts/modernizr.6649c84c.js"
+    "url": "assets/javascripts/modernizr.2588b67d.js"
   },
   {
     "revision": "a23d5981ce989b90359e3d3cb8eaa81a",
@@ -337,7 +337,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/webfonts/fa-solid-900.woff2"
   },
   {
-    "revision": "9ec3fcc13682504e9980015add43e6a2",
+    "revision": "aae2cff9512997b237f70b3e31006bcd",
     "url": "offline.html"
   }
 ]);
