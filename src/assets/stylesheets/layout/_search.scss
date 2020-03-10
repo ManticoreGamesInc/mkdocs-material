@@ -529,7 +529,7 @@ $md-toggle__search--checked:
     // Active or hovered link
     &[data-md-state="active"],
     &:hover {
-      background-color: transparentize(#E57E17, 0.9);
+      background-color: transparentize(#E67E17, 0.9);
 
       // Slightly transparent icon
       .md-search-result__article::before {

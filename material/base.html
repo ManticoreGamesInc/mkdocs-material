@@ -61,11 +61,11 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.5e57e049.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.d2483493.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.4e55c50a.css' | url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.13d39992.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -200,10 +200,10 @@
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
-                {% if not (page.is_homepage or page.meta.hide_categories) %}
-                  {% for category in page.meta.categories %}
-                  <a href="{{ 'generated/sitemap/' | url }}#{{ category }}" title="{{ category }}" class="md-tag">
-                      {{ category }}
+                {% if not (page.is_homepage or page.meta.hide_tags) %}
+                  {% for tag in page.meta.tags %}
+                  <a href="{{ 'generated/sitemap/' | url }}#{{ tag }}" title="{{ tag }}" class="md-tag">
+                      {{ tag }}
                   </a>
                   {% endfor %}
                 {% endif %}
@@ -258,7 +258,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.9de4ac0f.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.63ec7c3a.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}

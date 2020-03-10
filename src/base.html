@@ -364,10 +364,10 @@
                 {% endif %}
 
                 <!-- Tags-->
-                {% if not (page.is_homepage or page.meta.hide_categories) %}
-                  {% for category in page.meta.categories %}
-                  <a href="{{ 'generated/sitemap/' | url }}#{{ category }}" title="{{ category }}" class="md-tag">
-                      {{ category }}
+                {% if not (page.is_homepage or page.meta.hide_tags) %}
+                  {% for tag in page.meta.tags %}
+                  <a href="{{ 'generated/sitemap/' | url }}#{{ tag }}" title="{{ tag }}" class="md-tag">
+                      {{ tag }}
                   </a>
                   {% endfor %}
                 {% endif %}
