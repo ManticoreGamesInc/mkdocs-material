@@ -61,11 +61,11 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.dcb87a4e.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.5e57e049.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.a8043e67.css' | url }}">
+        <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application-palette.4e55c50a.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -258,7 +258,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.15bb824b.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.9de4ac0f.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}
