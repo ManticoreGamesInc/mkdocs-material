@@ -18,6 +18,6 @@
   "start_url": "/docs/?utm_source=web_app_manifest",
   "scope": "/docs/",
   "description": "Documentation for the Core Platform",
-  "theme_color": "#20232A",
-  "background_color": "#20232A"
+  "theme_color": "#16191F",
+  "background_color": "#16191F"
 }

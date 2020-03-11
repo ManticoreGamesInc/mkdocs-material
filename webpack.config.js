@@ -167,19 +167,19 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         scope: "/docs/",
         display: "standalone",
         description: "Documentation for the Core Platform",
-        theme_color: "#20232A",
-        background_color: "#20232A",
+        theme_color: "#16191F",
+        background_color: "#16191F",
         crossorigin: "use-credentials",
         inject: true,
         orientation: "any",
         fingerprints: false,
         icons: [
           {
-            src: "https://i.imgur.com/iqNiYlm.png",
+            src: "https://i.imgur.com/AR8SRO3.png",
             size: "192x192"
           },
           {
-            src: "https://i.imgur.com/fkPEFvF.png",
+            src: "https://i.imgur.com/lOVpqVq.png",
             size: "512x512"
           }
         ]
