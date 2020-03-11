@@ -62,12 +62,19 @@
   --color-text--transparent: hsla(222, 14%, 15%, 0);
 
   &.dark-mode {
-    // #121212
-    --color-background: hsla(0, 0%, 7%, 1);
-    --color-background--light: hsla(0, 0%, 7%, 0.54);
-    --color-background--lighter: hsla(0, 0%, 7%, 0.26);
-    --color-background--lightest: hsla(0, 0%, 7%, 0.07);
-    --color-background--transparent: hsla(0, 0%, 7%, 0);
+    // #33373f
+    --color-core-gradient-start: hsla(220, 11%, 22%, 1);
+    --color-core-gradient-start--light: hsla(220, 11%, 22%, 0.54);
+    --color-core-gradient-start--lighter: hsla(220, 11%, 22%, 0.26);
+    --color-core-gradient-start--lightest: hsla(220, 11%, 22%, 0.07);
+    --color-core-gradient-start--transparent: hsla(220, 11%, 22%, 0);
+
+    // #16191F
+    --color-background: hsla(220, 17%, 10%, 1);
+    --color-background--light: hsla(220, 17%, 10%, 0.54);
+    --color-background--lighter: hsla(220, 17%, 10%, 0.26);
+    --color-background--lightest: hsla(220, 17%, 10%, 0.07);
+    --color-background--transparent: hsla(220, 17%, 10%, 0);
 
     // Actually black, sorry :/
     --color-white: hsla(0, 0%, 0%, 1);
