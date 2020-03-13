@@ -411,6 +411,17 @@ figure {
   visibility: visible;
 }
 
+.md-header-social {
+  display: table-cell;
+  position: relative;
+  vertical-align: top;
+  width: 440px;
+
+  ul {
+    margin: 0;
+  }
+}
+
 // Dark Mode kbd
 
 .dark-mode .md-typeset kbd {
