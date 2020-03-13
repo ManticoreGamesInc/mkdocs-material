@@ -61,7 +61,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.7137c019.css' | url }}">
+      <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/application.83f86aa5.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
       <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
@@ -72,8 +72,8 @@
         {% set primary = map.primary(
           palette.primary | replace(" ", "-") | lower
         ) %}
-        <meta name="theme-color" content="#20232A">
-        <meta name="msapplication-TileColor" content="#20232A">
+        <meta name="theme-color" content="#16191F">
+        <meta name="msapplication-TileColor" content="#16191F">
         <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
@@ -258,7 +258,7 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.9cf2ee1e.js' | url }}"></script>
+      <script type="text/javascript" src="{{ 'assets/javascripts/application.58ad943c.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {% if lang.t("search.language") != "en" %}
         {% set languages = lang.t("search.language").split(",") %}

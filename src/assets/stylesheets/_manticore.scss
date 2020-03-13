@@ -9,19 +9,19 @@
   --manti-color-black: #20232A;
 
   --manti-color-orange: #E67E17;
-  --manti-color-orange--light: hsla(34, 100%, 50%, 0.54);
-  --manti-color-orange--lighter: hsla(34, 100%, 50%, 0.38);
-  --manti-color-orange--lightest: hsla(34, 100%, 50%, 0.12);
+  --manti-color-orange--light: hsla(30, 82%, 50%, 0.54);
+  --manti-color-orange--lighter: hsla(30, 82%, 50%, 0.38);
+  --manti-color-orange--lightest: hsla(30, 82%, 50%, 0.12);
   --manti-color-orange--transparent: hsla(0, 0%, 100%, 0);
 
   --manti-color-blue: #17A1E6;
 
-  --core-color-locked: #85888D;
+  --core-color-locked: #646770;
   --core-color-templetized: #17A1E6;
-  --core-color-deinstanced: #5DDFFB;
-  --core-color-published: #64EB45;
-  --core-color-update-pending: #FF7100;
-  --core-color-error-state: #FB3F3F;
+  --core-color-deinstanced: #17E6D5;
+  --core-color-published: #45C434;
+  --core-color-update-pending: #E67E17;
+  --core-color-error-state: #C43434;
 
   // Material Design Colors
   --color-md--dark: #121212;
@@ -422,7 +422,7 @@ figure {
 }
 
 // Lua Color Enums
-
+// stylelint-disable selector-class-pattern
 .Color_WHITE { border: 1px solid var(--color-text); color: #FFFFFFFF; }
 .Color_GRAY { border: 1px solid var(--color-text); color: #7F7F7FFF; }
 .Color_BLACK { border: 1px solid var(--color-text); color: #000000FF; }

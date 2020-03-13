@@ -163,8 +163,8 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         filename: "manifest.json",
         name: "Core Creator Hub",
         short_name: "Core Hub",
-        start_url: "/docs/?utm_source=web_app_manifest",
-        scope: "/docs/",
+        start_url: "/?utm_source=web_app_manifest",
+        publicPath: "https://docs.coregames.com/",
         display: "standalone",
         description: "Documentation for the Core Platform",
         theme_color: "#16191F",
@@ -175,12 +175,17 @@ module.exports = (_env, args) => { // eslint-disable-line complexity
         fingerprints: false,
         icons: [
           {
-            src: "https://i.imgur.com/AR8SRO3.png",
+            src: path.resolve("src/assets/icons/favicon-192x192.png"),
             size: "192x192"
           },
           {
-            src: "https://i.imgur.com/lOVpqVq.png",
+            src: path.resolve("src/assets/icons/favicon-512x512.png"),
             size: "512x512"
+          },
+          {
+            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            size: "512x512",
+            purpose: "maskable"
           }
         ]
       }),

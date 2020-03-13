@@ -272,7 +272,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/images/icons/gitlab.6dd19c00.svg"
   },
   {
-    "url": "assets/javascripts/application.9cf2ee1e.js"
+    "url": "assets/javascripts/application.58ad943c.js"
   },
   {
     "url": "assets/javascripts/dark-mode.9fbea65c.js"
@@ -285,8 +285,8 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/stylesheets/application-palette.13d39992.css"
   },
   {
-    "revision": "5e3b0f6cfd2c1923e9b31ad344b40a58",
-    "url": "assets/stylesheets/application.7137c019.css"
+    "revision": "153905d80cc6f6a0121f7f6ff38c8267",
+    "url": "assets/stylesheets/application.83f86aa5.css"
   },
   {
     "revision": "5063b105c7646c8043d58c5289f02cca",
