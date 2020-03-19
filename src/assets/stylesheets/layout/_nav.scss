@@ -152,7 +152,7 @@
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
     background-color: var(--md-default-bg-color);
-    color: var(--color-text);
+    color: var(--md-primary-fg-color);
 
     // Stretch primary navigation to drawer
     &--primary,

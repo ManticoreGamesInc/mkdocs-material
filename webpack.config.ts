@@ -32,6 +32,8 @@ import { minify as minjs } from "terser"
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin"
 import { Configuration } from "webpack"
 import * as AssetsManifestPlugin from "webpack-assets-manifest"
+const WorkboxPlugin = require("workbox-webpack-plugin")
+const WebpackPwaManifest = require("webpack-pwa-manifest")
 
 /* ----------------------------------------------------------------------------
  * Data
@@ -182,7 +184,43 @@ function config(args: Configuration): Configuration {
             value
           }
         }
-      })
+      }),
+      new WorkboxPlugin.InjectManifest({
+        swSrc: "src/sw.js",
+        globDirectory: "../site/",
+        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*"]
+      }),
+
+      new WebpackPwaManifest({
+        filename: "manifest.json",
+        name: "Core Creator Hub",
+        short_name: "Core Hub",
+        start_url: "/?utm_source=web_app_manifest",
+        publicPath: "https://docs.coregames.com/",
+        display: "standalone",
+        description: "Documentation for the Core Platform",
+        theme_color: "#16191F",
+        background_color: "#16191F",
+        crossorigin: "use-credentials",
+        inject: true,
+        orientation: "any",
+        fingerprints: false,
+        icons: [
+          {
+            src: path.resolve("src/assets/icons/favicon-192x192.png"),
+            size: "192x192"
+          },
+          {
+            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            size: "512x512"
+          },
+          {
+            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            size: "512x512",
+            purpose: "maskable"
+          }
+        ]
+      }),
     ],
 
     /* Source maps */
@@ -236,6 +274,74 @@ export default (_env: never, args: Configuration): Configuration[] => {
       /* Plugins */
       plugins: [
         ...base.plugins,
+
+        /* Copy and transform static assets */
+        new CopyPlugin([
+
+          /* Copy web font files */
+          {
+            context: "src",
+            from: "assets/fonts/**/*",
+            ignore: ["**/*.css"]
+          },
+
+          /* Copy font-awesome web font files */
+          {
+            context: "src",
+            from: "assets/webfonts/**/*",
+            ignore: ["**/*.css"]
+          },
+
+          /* Copy and minify web font stylesheets */
+          {
+            context: "src",
+            from: "assets/fonts/*.css",
+          },
+
+          /* Copy lightbox stylesheets */
+          {
+            context: "node_modules/lightgallery.js/dist/css/",
+            from: "*.css",
+            to: "assets/stylesheets/"
+          },
+
+          /* Copy lightbox js */
+          {
+            context: "node_modules/lightgallery.js/dist/js/",
+            from: "*.min.js",
+            to: "assets/javascripts/"
+          },
+
+          /* Copy lightbox fonts */
+          {
+            context: "node_modules/lightgallery.js/dist/fonts/",
+            from: "lg.*",
+            to: "assets/fonts/"
+          },
+
+          /* Copy lightbox img */
+          {
+            context: "node_modules/lightgallery.js/dist/img/",
+            from: "*",
+            to: "assets/img/"
+          },
+
+          /* Copy images without cache busting */
+          {
+            context: "src",
+            from: "assets/images/*.{ico,png}"
+          },
+
+          {
+            context: "src",
+            from: "assets/icons/*"
+          }
+        ]),
+
+        /* Dark Mode */
+        new CopyPlugin([
+          { to: "assets/javascripts/dark-mode.js", from: "src/assets/javascripts/dark-mode.js" }
+        ]),
 
         /* FontAwesome icons */
         new CopyPlugin([

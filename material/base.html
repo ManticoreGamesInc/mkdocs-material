@@ -28,7 +28,12 @@
       {% elif config.site_author %}
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
+      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
+      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
+      {% include "partials/pwa-images.html" %}
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.0.0rc3">
     {% endblock %}
     {% block htmltitle %}
@@ -41,16 +46,20 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.02c0bdda.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.64ea62d5.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.31180ff2.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.05003629.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
         {% set primary = map.primary(
           palette.primary | replace(" ", "-") | lower
         ) %}
-        <meta name="theme-color" content="{{ primary }}">
+        <meta name="theme-color" content="#16191F">
+        <meta name="msapplication-TileColor" content="#16191F">
+        <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
     {% block libs %}{% endblock %}
@@ -63,6 +72,7 @@
           }}&display=fallback">
         <style>body,input{font-family:"{{ font.text }}",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}",SFMono-Regular,Consolas,Menlo,monospace}</style>
       {% endif %}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap">
     {% endblock %}
     {% if config.extra.manifest %}
       <link rel="manifest" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
@@ -70,6 +80,17 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
+    <link rel="stylesheet" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
+    <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
+    <link rel="stylesheet" href="{{ 'assets/fonts/brands.min.css' | url }}">
+    <link rel="stylesheet" href="{{ 'assets/fonts/regular.min.css' | url }}">
+    <link rel="stylesheet" href="{{ 'assets/fonts/solid.min.css' | url }}">
+    {% block serviceworker %}
+      {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
+    {% block vimeo %}
+      {% include "partials/integrations/vimeo.html" %}
+    {% endblock %}
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -85,6 +106,8 @@
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
+    <script src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -126,6 +149,14 @@
                   </div>
                 </div>
               </div>
+              {% else %}
+              <div class="md-sidebar md-sidebar--primary flag-hidden" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    {% include "partials/nav.html" %}
+                  </div>
+                </div>
+              </div>
             {% endif %}
             {% if page.toc %}
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
@@ -140,6 +171,7 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               {% block content %}
+                {% include "partials/integrations/topscroller.html" %}
                 {% if page.edit_url %}
                   <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
                     {% include ".icons/material/pencil.svg" %}
@@ -153,6 +185,17 @@
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
+                {% if not (page.is_homepage or page.meta.hide_tags) %}
+                  {% for tag in page.meta.tags %}
+                  <a href="{{ 'generated/sitemap/' | url }}#{{ tag }}" title="{{ tag }}" class="md-tag">
+                      {{ tag }}
+                  </a>
+                  {% endfor %}
+                {% endif %}
+                <div id="app-update-prompt" class="hide">
+                  <label for="button"><i class="fas fa-sync-alt"></i> An update for the site is available!</label>
+                  <button id="app-update">Click to Refresh</button>
+                </div>
                 {{ page.content }}
                 {% if page and page.meta %}
                   {% if page.meta.git_revision_date_localized or
@@ -161,6 +204,9 @@
                     {% include "partials/source-date.html" %}
                   {% endif %}
                 {% endif %}
+              {% endblock %}
+              {% block netlify %}
+                {% include "partials/integrations/netlify.html" %}
               {% endblock %}
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
@@ -178,7 +224,8 @@
     {% endblock %}
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.0c35f0aa.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.9ba506a9.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.d3794fa5.min.js' | url }}"></script>
+      {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
       {%- for key in [
         "clipboard.copy",

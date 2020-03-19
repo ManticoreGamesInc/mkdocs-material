@@ -28,8 +28,8 @@
 .md-tabs {
   width: 100%;
   overflow: auto;
-  color: var(--md-primary-bg-color);
-  background-color: var(--md-primary-fg-color);
+  color: var(--md-primary-fg-color);
+  background-color: var(--md-primary-bg-color);
   transition: background 250ms;
 
   // Omit transitions, in case JavaScript is not available

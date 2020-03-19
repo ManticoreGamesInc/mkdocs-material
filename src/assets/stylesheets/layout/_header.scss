@@ -32,8 +32,8 @@
   left: 0;
   z-index: 2;
   height: px2rem(48px);
-  color: var(--md-primary-bg-color);
-  background-color: var(--md-primary-fg-color);
+  color: var(--manti-color-orange);
+  background-color: var(--manti-color-black);
   // Hack: reduce jitter by adding a transparent box shadow of the same size
   // so the size of the layer doesn't change during animation
   box-shadow:

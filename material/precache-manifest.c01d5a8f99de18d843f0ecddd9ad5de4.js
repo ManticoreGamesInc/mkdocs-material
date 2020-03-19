@@ -260,33 +260,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/safari-pinned-tab.svg"
   },
   {
-    "revision": "1b09e088404ac566a16d49754ead0096",
-    "url": "assets/images/icons/bitbucket.1b09e088.svg"
+    "url": "assets/javascripts/worker/search.2613054f.min.js"
   },
   {
-    "revision": "f0b8504aa08a4d474899f78802e022dc",
-    "url": "assets/images/icons/github.f0b8504a.svg"
-  },
-  {
-    "revision": "6dd19c00bff2834b0acb0053ae507f99",
-    "url": "assets/images/icons/gitlab.6dd19c00.svg"
-  },
-  {
-    "url": "assets/javascripts/application.c6990034.js"
-  },
-  {
-    "url": "assets/javascripts/dark-mode.9fbea65c.js"
-  },
-  {
-    "url": "assets/javascripts/modernizr.2588b67d.js"
-  },
-  {
-    "revision": "041bc4bbb85fbdd517fc6376a93b3289",
-    "url": "assets/stylesheets/application-palette.13d39992.css"
-  },
-  {
-    "revision": "b6ec68e9af497d029a8b63f9844bc91e",
-    "url": "assets/stylesheets/application.e3fb3d33.css"
+    "revision": "c89c0a05e6eb01d83be27532d203361d",
+    "url": "assets/manifest.json"
   },
   {
     "revision": "5063b105c7646c8043d58c5289f02cca",

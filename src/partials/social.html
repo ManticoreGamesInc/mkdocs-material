@@ -23,14 +23,6 @@
 <!-- Social links in footer -->
 {% if config.extra.social %}
   <div class="md-footer-social">
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
-      <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/brands.min.css' | url }}" />
-      <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/regular.min.css' | url }}" />
-      <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/solid.min.css' | url }}" />   
     {% for social in config.extra.social %}
       {% set _,rest = social.link.split("//") %}
       {% set domain = rest.split("/")[0] %}
