@@ -38,6 +38,8 @@ $md-toggle__drawer--checked:
   width: px2rem(242px);
   padding: px2rem(24px) 0;
   overflow: hidden;
+  padding-left: 15px;
+  padding-bottom: px2rem(72px);
 
   // Hide for print
   @media print {
@@ -115,11 +117,11 @@ $md-toggle__drawer--checked:
 
     // [screen +]: Limit to grid
     @include break-from-device(screen) {
-      margin-left: px2rem((1220 - 242) * 1px);
+      margin-left: px2rem((1500 - 242) * 1px);
 
       // Adjust for right-to-left languages
       [dir="rtl"] & {
-        margin-right: px2rem((1220 - 242) * 1px);
+        margin-right: px2rem((1500 - 242) * 1px);
         margin-left: initial;
       }
     }

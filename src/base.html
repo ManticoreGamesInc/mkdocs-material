@@ -68,7 +68,14 @@
       {% endif %}
 
       <!-- Favicon -->
+      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
+      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
+      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
+      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}" />
+
+      <!-- PWA files integration -->
+      {% include "partials/pwa-images.html" %}
 
       <!-- Generator banner -->
       <meta
@@ -92,6 +99,12 @@
     {% block styles %}
       <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}" />
 
+      <!-- Lightgallery -->
+      <link rel="stylesheet" type="text/css"
+          href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
+      <link rel="stylesheet" type="text/css"
+          href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
+
       <!-- Extra color palette -->
       {% if palette.primary or palette.accent %}
         <link
@@ -106,7 +119,9 @@
         {% set primary = map.primary(
           palette.primary | replace(" ", "-") | lower
         ) %}
-        <meta name="theme-color" content="{{ primary }}" />
+        <meta name="theme-color" content="#16191F" />
+        <meta name="msapplication-TileColor" content="#16191F">
+        <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
 
@@ -137,6 +152,7 @@
           }
         </style>
       {% endif %}
+      <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap" />
     {% endblock %}
 
     <!-- Progressive Web App Manifest -->
@@ -153,7 +169,28 @@
       <link rel="stylesheet" href="{{ path | url }}" />
     {% endfor %}
 
-    <!-- Analytics -->
+    <!-- Font Awesome -->
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
+    <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/brands.min.css' | url }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/regular.min.css' | url }}" />
+    <link rel="stylesheet" type="text/css"
+        href="{{ 'assets/fonts/solid.min.css' | url }}" />
+
+    <!-- Service Worker -->
+    {% block serviceworker %}
+      {% include "partials/integrations/serviceworker.html" %}
+    {% endblock %}
+
+    <!-- Vimeo Pre-Connect -->
+    {% block vimeo %}
+      {% include "partials/integrations/vimeo.html" %}
+    {% endblock %}
+
+    <!-- Analytic scripts -->
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -177,6 +214,8 @@
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
+    <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
+    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
 
     <!--
       State toggles - we need to set autocomplete="off" in order to reset the
@@ -258,6 +297,15 @@
                   </div>
                 </div>
               </div>
+              {% else %}
+              <div class="md-sidebar md-sidebar--primary flag-hidden"
+                  data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    {% include "partials/nav.html" %}
+                  </div>
+                </div>
+              </div>
             {% endif %}
 
             <!-- Table of contents -->
@@ -282,7 +330,10 @@
               <!-- Content -->
               {% block content %}
 
-                <!-- Edit button -->
+                <!-- To-top button -->
+                {% include "partials/integrations/topscroller.html" %}
+
+                <!-- Edit button, if URL was defined -->
                 {% if page.edit_url %}
                   <a
                     href="{{ page.edit_url }}"
@@ -309,6 +360,21 @@
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
 
+                <!-- Tags-->
+                {% if not (page.is_homepage or page.meta.hide_tags) %}
+                  {% for tag in page.meta.tags %}
+                  <a href="{{ 'generated/sitemap/' | url }}#{{ tag }}" title="{{ tag }}" class="md-tag">
+                      {{ tag }}
+                  </a>
+                  {% endfor %}
+                {% endif %}
+
+                <!-- Update Prompt -->
+                <div id="app-update-prompt" class="hide">
+                  <label for=button><i class="fas fa-sync-alt"></i> An update for the site is available!</label>
+                  <button id="app-update">Click to Refresh</button>
+                </div>
+
                 <!-- Content -->
                 {{ page.content }}
 
@@ -320,6 +386,11 @@
                     {% include "partials/source-date.html" %}
                   {% endif %}
                 {% endif %}
+              {% endblock %}
+
+              <!-- Netlify integration -->
+              {% block netlify %}
+                {% include "partials/integrations/netlify.html" %}
               {% endblock %}
 
               <!-- Disqus integration -->
@@ -348,6 +419,9 @@
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/bundle.js' | url }}"></script>
+	  
+	  <!-- Lightgallery -->
+      {% include "partials/integrations/lightgallery.html" %}
 
       <!-- Translations -->
       {%- set translations = {} -%}
@@ -383,7 +457,7 @@
 
       <!-- Custom JavaScript -->
       {% for path in config["extra_javascript"] %}
-        <script src="{{ path | url }}"></script>
+        <script type="text/javascript" src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
   </body>

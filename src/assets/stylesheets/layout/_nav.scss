@@ -33,8 +33,9 @@
   &__title {
     display: block;
     padding: 0 px2rem(12px);
-    overflow: hidden;
+    font-family: var(--font-oswald);
     font-weight: 700;
+    text-transform: uppercase;
     text-overflow: ellipsis;
 
     // Hide buttons by default
@@ -76,6 +77,7 @@
   // List item
   &__item {
     padding: 0 px2rem(12px);
+    user-select: none;
 
     // Add bottom spacing to last item
     &:last-child {
@@ -131,14 +133,14 @@
     }
 
     // Reset active color for nested list titles
-    .md-nav__item--nested > & {
-      color: inherit;
-    }
+    // .md-nav__item--nested > & {
+    //   color: inherit;
+    // }
 
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: var(--md-accent-fg-color);
+      color: var(--manti-color-orange);
     }
   }
 
@@ -150,6 +152,7 @@
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
     background-color: var(--md-default-bg-color);
+    color: var(--color-text);
 
     // Stretch primary navigation to drawer
     &--primary,
@@ -170,8 +173,12 @@
       // List title and item
       .md-nav__title,
       .md-nav__item {
-        font-size: px2rem(16px);
+        font-size: px2rem(18px);
+        font-family: var(--font-oswald);
+        text-transform: uppercase;
+        font-weight: 500;
         line-height: 1.5;
+
       }
 
       // List title
@@ -430,7 +437,11 @@
       }
     }
 
-    // Adjust for right-to-left languages
+    .flag-hidden > div > div > nav > label {
+      display: none;
+    }
+
+    // Adjust for RTL languages
     html [dir="rtl"] &__link {
       padding-right: px2rem(16px);
       padding-left: px2rem(48px);

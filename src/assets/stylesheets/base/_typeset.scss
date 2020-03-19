@@ -38,6 +38,42 @@ input {
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 }
 
+// Custom ::-webkit-scrollbar
+::-webkit-scrollbar {
+  background-color: var(--color-background);
+  width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+  box-shadow: inset 0 0 2px var(--color-text--light);
+  border-radius: px2rem(34px);
+  background-color: var(--color-text--light);
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: var(--color-accent);
+}
+
+// Hack of the day to prevent jumping on scrollbar show/hide
+@media screen and (min-width: 960px) {
+  html {
+    margin-right: calc(100% - 100vw);
+    background-color: var(--color-background);
+  }
+
+  .md-header, .md-tabs {
+    margin-right: calc(100% - 100vw);
+  }
+
+  .md-tabs {
+    height: px2rem(48px)
+  }
+
+  body {
+    margin-right: calc(100vw - 100%);
+  }
+}
+
 // Proportionally spaced fonts
 code,
 pre,
@@ -64,8 +100,7 @@ kbd {
   // Default spacing
   p,
   ul,
-  ol,
-  blockquote {
+  ol {
     margin: 1em 0;
   }
 
@@ -220,6 +255,7 @@ kbd {
       &::-webkit-scrollbar {
         width: px2rem(4px);
         height: px2rem(4px);
+        // background-color: var(--color--background);
       }
 
       // Scrollbar thumb
@@ -315,6 +351,12 @@ kbd {
     }
   }
 
+  .dark-mode blockquote {
+    -moz-box-shadow: 2px 2px 5px #424242;
+    -webkit-box-shadow: 2px 2px 5px #424242;
+    box-shadow: 2px 2px 5px #424242;
+  }
+
   // Unordered lists
   ul {
     list-style-type: disc;
@@ -354,8 +396,7 @@ kbd {
       }
 
       // Decrease vertical spacing
-      p,
-      blockquote {
+      p {
         margin: 0.5em 0;
       }
 
@@ -434,11 +475,15 @@ kbd {
       color: var(--md-default-bg-color);
       vertical-align: top;
       background-color: var(--md-default-fg-color--light);
+      border-bottom: 2px solid var(--manti-color-orange);
+      background-color: var(--manti-color-black);
+      white-space: nowrap;
     }
 
     // Table cells
     td {
       padding: px2rem(12px) px2rem(16px);
+      border-top: px2rem(1px) solid var(--color-text--lightest);
       vertical-align: top;
       border-top: px2rem(1px) solid var(--md-default-fg-color--lightest);
     }
@@ -457,8 +502,15 @@ kbd {
       &:first-child td {
         border-top: 0;
       }
-    }
 
+      td:first-child {
+        width: 250px;
+      }
+
+      td.even-table:first-child  {
+        width: 50%;
+      }
+    }
 
     // Do not wrap links in tables
     a {
@@ -476,6 +528,7 @@ kbd {
   // Data table wrapper, in case JavaScript is available
   &__table {
     display: inline-block;
+    width: 100%;
     margin-bottom: 0.5em;
     padding: 0 px2rem(16px);
 

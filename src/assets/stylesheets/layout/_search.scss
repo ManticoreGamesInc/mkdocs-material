@@ -281,6 +281,9 @@ $md-toggle__search--checked:
       // Placeholder color
       &::placeholder {
         color: var(--md-primary-bg-color--light);
+        font-family: var(--font-oswald);
+        text-transform: uppercase;
+        line-height: 1.5;
       }
 
       // Hovered search field
@@ -290,6 +293,7 @@ $md-toggle__search--checked:
 
       // Set light background on active search field
       #{$md-toggle__search--checked} & {
+        border-radius: px2rem(2px) px2rem(2px) 0 0;
         color: var(--md-default-fg-color);
         text-overflow: clip;
         background-color: var(--md-default-bg-color);

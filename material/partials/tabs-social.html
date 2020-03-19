@@ -1,0 +1,10 @@
+{#-
+  This file was automatically generated - do not edit
+-#}
+{% if config.extra.social %}
+    {% for social in config.extra.social %}
+    <li class="md-tabs__item">
+      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ social.type }}" class="md-tabs__link md-tabs__social fab fa-{{ social.type }}"></a>
+    </li>
+    {% endfor %}
+{% endif %}

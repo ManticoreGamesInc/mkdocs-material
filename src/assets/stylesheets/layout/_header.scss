@@ -64,6 +64,19 @@
   @media print {
     display: none;
   }
+
+  // Fake Bottom Border
+  &::after {
+    content: "";
+    background-color: var(--manti-color-orange);
+    position: absolute;
+    display: block;
+    height: 4px;
+    top: px2rem(48px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 }
 
 // Navigation within header
@@ -131,6 +144,11 @@
       &.md-logo {
         display: none;
       }
+
+      // Menu icon
+      &.md-icon--menu {
+        padding-top: px2rem(12px);
+      }
     }
 
     // [screen +]: Hide the menu button
@@ -155,6 +173,8 @@
     transition:
       transform 400ms cubic-bezier(0.1, 0.7, 0.1, 1),
       opacity   150ms;
+    font-family: var(--font-oswald);
+    text-transform: uppercase;
 
     // Page title
     & + & {
@@ -227,6 +247,7 @@
   // Repository containing source
   &__source {
     display: none;
+    line-height: px2rem(30px);
 
     // [tablet landscape +]: Show the reposistory from tablet
     @include break-from-device(tablet landscape) {

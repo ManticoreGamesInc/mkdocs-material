@@ -40,6 +40,7 @@ theme:
   # 404 page
   static_templates:
     - 404.html
+    - offline.html
 
   # Don't include MkDocs' JavaScript
   include_search_page: false

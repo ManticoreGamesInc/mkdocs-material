@@ -1,0 +1,80 @@
+#dark-mode-toggle {
+  display: block;
+  font-size: px2rem(17px);
+  margin-top: px2rem(10px);
+  transition:
+    transform 0.4s cubic-bezier(0.1, 0.7, 0.1, 1),
+    opacity   0.25s;
+  color: $md-color-white--light;
+
+  &:hover {
+    color: $md-color-white;
+    text-decoration: none
+  }
+}
+
+.dark-mode-slider {
+  position: relative;
+  display: inline-block;
+  width: px2rem(60px);
+  height: px2rem(30px);
+  margin-right: px2rem(5px);
+  background-color: lighten($manticore-black, 10%);
+  border-radius: px2rem(34px);
+  vertical-align: bottom;
+
+  &:before {
+    position: absolute;
+    content: "";
+    height: px2rem(22px);
+    width: px2rem(22px);
+    left: px2rem(12px);
+    bottom: px2rem(8px);
+    border-radius: 50%;
+    box-shadow: -8px 4px 0 0 currentColor
+  }
+}
+
+.dark-mode {
+  .dark-mode-slider {
+    &:before {
+      left: auto;
+      right: px2rem(12px);
+      box-shadow: 8px 4px 0 0 currentColor;
+      line-height: px2rem(30px);
+    }
+  }
+
+  .dark-mode-disabled {
+    display: none;
+    opacity: 1;
+
+    // Hide label on small size
+    @media only screen and (max-width: 1220px) {
+      opacity: 0;
+    }
+  }
+
+  .dark-mode-enabled {
+    display: inline;
+    opacity: 1;
+
+    // Hide label on small size
+    @media only screen and (max-width: 1220px) {
+      opacity: 0;
+    }
+  }
+}
+
+.dark-mode-enabled {
+  display: none;
+}
+
+.dark-mode-disabled {
+  opacity: 1;
+
+  // Hide label on small size
+  @media only screen and (max-width: 1220px) {
+    opacity: 0;
+  }
+}

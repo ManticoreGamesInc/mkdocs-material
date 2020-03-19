@@ -1,0 +1,28 @@
+{
+  "icons": [
+    {
+      "src": "https://docs.coregames.com/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png",
+      "purpose": "maskable"
+    },
+    {
+      "src": "https://docs.coregames.com/icon_512x512.png",
+      "sizes": "512x512",
+      "type": "image/png"
+    },
+    {
+      "src": "https://docs.coregames.com/icon_192x192.png",
+      "sizes": "192x192",
+      "type": "image/png"
+    }
+  ],
+  "name": "Core Creator Hub",
+  "short_name": "Core Hub",
+  "orientation": "any",
+  "display": "standalone",
+  "start_url": "/?utm_source=web_app_manifest",
+  "description": "Documentation for the Core Platform",
+  "theme_color": "#16191F",
+  "background_color": "#16191F"
+}
