@@ -352,8 +352,6 @@ kbd {
   }
 
   .dark-mode blockquote {
-    -moz-box-shadow: 2px 2px 5px #424242;
-    -webkit-box-shadow: 2px 2px 5px #424242;
     box-shadow: 2px 2px 5px #424242;
   }
 
@@ -474,7 +472,6 @@ kbd {
       padding: px2rem(12px) px2rem(16px);
       color: var(--md-default-bg-color);
       vertical-align: top;
-      background-color: var(--md-default-fg-color--light);
       border-bottom: 2px solid var(--manti-color-orange);
       background-color: var(--manti-color-black);
       white-space: nowrap;
@@ -485,7 +482,6 @@ kbd {
       padding: px2rem(12px) px2rem(16px);
       border-top: px2rem(1px) solid var(--md-primary-fg-color--lightest);
       vertical-align: top;
-      border-top: px2rem(1px) solid var(--md-default-fg-color--lightest);
     }
 
     // Table rows
