@@ -70,8 +70,7 @@
       <ul>
         <!-- Social links -->
         {% include "partials/tabs-social.html" %}
-        <!-- Theme Toggle -->
-        {% include "partials/theme-toggle.html" %}
+
       </ul>
     </div>
 
@@ -88,11 +87,13 @@
       {% include "partials/search.html" %}
     {% endif %}
 
-    <!-- Repository containing source
+    <!-- Repository containing source -->
     {% if config.repo_url %}
       <div class="md-header-nav__source">
-        {% include "partials/source.html" %}
+        <!-- {% include "partials/source.html" %} -->
+        <!-- Theme Toggle -->
+        {% include "partials/theme-toggle.html" %}
       </div>
-    {% endif %} -->
+    {% endif %}
   </nav>
 </header>

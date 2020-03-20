@@ -252,7 +252,7 @@
     // [tablet landscape +]: Show the reposistory from tablet
     @include break-from-device(tablet landscape) {
       display: block;
-      width: px2rem(234px);
+      // width: px2rem(234px);
       max-width: px2rem(234px);
       margin-left: px2rem(20px);
 
@@ -272,5 +272,11 @@
         margin-right: px2rem(28px);
       }
     }
+  }
+
+  // Social icon
+  svg {
+    height: px2rem(24px);
+    fill: currentColor;
   }
 }

@@ -470,7 +470,7 @@ kbd {
     th {
       min-width: px2rem(100px);
       padding: px2rem(12px) px2rem(16px);
-      color: var(--md-default-bg-color);
+      color: $md-color-white;
       vertical-align: top;
       border-bottom: 2px solid var(--manti-color-orange);
       background-color: var(--manti-color-black);
