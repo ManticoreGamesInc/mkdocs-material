@@ -68,14 +68,7 @@
       {% endif %}
 
       <!-- Favicon -->
-      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
-      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
-      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
-      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}" />
-
-      <!-- PWA files integration -->
-      {% include "partials/pwa-images.html" %}
 
       <!-- Generator banner -->
       <meta
@@ -99,12 +92,6 @@
     {% block styles %}
       <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}" />
 
-      <!-- Lightgallery -->
-      <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
-      <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
-
       <!-- Extra color palette -->
       {% if palette.primary or palette.accent %}
         <link
@@ -120,8 +107,6 @@
           palette.primary | replace(" ", "-") | lower
         ) %}
         <meta name="theme-color" content="#16191F" />
-        <meta name="msapplication-TileColor" content="#16191F">
-        <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
 
@@ -169,28 +154,7 @@
       <link rel="stylesheet" href="{{ path | url }}" />
     {% endfor %}
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
-    <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/brands.min.css' | url }}" />
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/regular.min.css' | url }}" />
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/solid.min.css' | url }}" />
-
-    <!-- Service Worker -->
-    {% block serviceworker %}
-      {% include "partials/integrations/serviceworker.html" %}
-    {% endblock %}
-
-    <!-- Vimeo Pre-Connect -->
-    {% block vimeo %}
-      {% include "partials/integrations/vimeo.html" %}
-    {% endblock %}
-
-    <!-- Analytic scripts -->
+    <!-- Analytics -->
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -457,7 +421,7 @@
 
       <!-- Custom JavaScript -->
       {% for path in config["extra_javascript"] %}
-        <script type="text/javascript" src="{{ path | url }}"></script>
+        <script src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
   </body>

@@ -21,3 +21,37 @@
 -->
 
 {% extends "base.html" %}
+
+{% block extrahead %}
+  <!-- Favicon -->
+  <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
+  <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
+  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
+  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
+  <!-- PWA files integration -->
+  {% include "partials/pwa-images.html" %}
+
+  <!-- Lightgallery -->
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
+
+  <meta name="msapplication-TileColor" content="#16191F">
+  <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
+
+  <!-- Font Awesome -->
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
+  <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}" />
+  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}" />
+
+  <!-- Service Worker -->
+  {% block serviceworker %}
+    {% include "partials/integrations/serviceworker.html" %}
+  {% endblock %}
+
+  <!-- Vimeo Pre-Connect -->
+  {% block vimeo %}
+    {% include "partials/integrations/vimeo.html" %}
+  {% endblock %}
+{% endblock %}

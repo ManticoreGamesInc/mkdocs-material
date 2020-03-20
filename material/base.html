@@ -28,12 +28,7 @@
       {% elif config.site_author %}
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
-      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
-      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
-      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
-      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      {% include "partials/pwa-images.html" %}
       <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.0.0rc3">
     {% endblock %}
     {% block htmltitle %}
@@ -47,8 +42,6 @@
     {% endblock %}
     {% block styles %}
       <link rel="stylesheet" href="{{ 'assets/stylesheets/main.bd605d7c.min.css' | url }}">
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}">
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.05003629.min.css' | url }}">
       {% endif %}
@@ -58,8 +51,6 @@
           palette.primary | replace(" ", "-") | lower
         ) %}
         <meta name="theme-color" content="#16191F">
-        <meta name="msapplication-TileColor" content="#16191F">
-        <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
     {% block libs %}{% endblock %}
@@ -80,17 +71,6 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="stylesheet" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
-    <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
-    <link rel="stylesheet" href="{{ 'assets/fonts/brands.min.css' | url }}">
-    <link rel="stylesheet" href="{{ 'assets/fonts/regular.min.css' | url }}">
-    <link rel="stylesheet" href="{{ 'assets/fonts/solid.min.css' | url }}">
-    {% block serviceworker %}
-      {% include "partials/integrations/serviceworker.html" %}
-    {% endblock %}
-    {% block vimeo %}
-      {% include "partials/integrations/vimeo.html" %}
-    {% endblock %}
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
