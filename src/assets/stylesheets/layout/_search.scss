@@ -108,7 +108,7 @@ $md-toggle__search--checked:
       left: 0;
       width: 0;
       height: 0;
-      background-color: var(--md-default-fg-color--light);
+      background-color: var(--md-default-bg-color--light);
       cursor: pointer;
       transition:
         width     0ms 250ms,
@@ -262,7 +262,7 @@ $md-toggle__search--checked:
       padding-left: px2rem(44px);
       color: inherit;
       font-size: ms(0);
-      background-color: var(--md-default-fg-color--lighter);
+      background-color: var(--md-default-bg-color--lighter);
       border-radius: px2rem(2px);
       transition:
         background-color 250ms,
@@ -275,12 +275,12 @@ $md-toggle__search--checked:
 
       // Icon color
       + .md-search__icon {
-        color: var(--md-primary-bg-color);
+        color: var(--manti-color-orange);
       }
 
       // Placeholder color
       &::placeholder {
-        color: var(--md-primary-bg-color--light);
+        color: var(--md-primary-fg-color--light);
         font-family: var(--font-oswald);
         text-transform: uppercase;
         line-height: 1.5;
@@ -288,7 +288,7 @@ $md-toggle__search--checked:
 
       // Hovered search field
       &:hover {
-        background-color: var(--md-default-bg-color--lightest);
+        background-color: var(--md-default-fg-color--lightest);
       }
 
       // Set light background on active search field
