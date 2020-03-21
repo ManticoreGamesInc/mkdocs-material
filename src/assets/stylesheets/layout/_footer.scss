@@ -38,7 +38,7 @@
 // Navigation within footer
 .md-footer-nav {
   background-color: var(--md-primary-bg-color);
-  color: var(--md-primary-fg-color--lightest);
+  color: var(--md-primary-fg-color--light);
   font-family: var(--font-oswald);
   text-transform: uppercase;
   font-weight: 400;
@@ -156,12 +156,12 @@
 
   // Use a decent color for non-hovered links and ensure specificity
   html &.md-typeset a {
-    color: var(--md-default-bg-color--light);
+    color: $md-color-white--light;
 
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: var(--md-default-bg-color);
+      color: var(--color-accent);
     }
   }
 }
@@ -171,18 +171,18 @@
   width: 100%;
   margin: auto px2rem(12px);
   padding: px2rem(8px) 0;
-  color: var(--md-default-bg-color--lighter);
+  // color: var(--md-default-bg-color--lighter);
   font-size: ms(-1);
   text-align: center;
 
   // [tablet portrait +]: Show next to social media links
   @include break-from-device(tablet portrait) {
-    width: auto;
+    // width: auto;
   }
 
   // Highlight copyright information
   &__highlight {
-    color: var(--md-default-bg-color--light);
+    color: $md-color-white--light;
   }
 }
 

@@ -110,15 +110,15 @@
 
     // Logo
     &.md-logo {
-      margin: px2rem(4px);
+      margin: px2rem(2px);
       padding: px2rem(8px);
 
       // Image or icon
       img,
       svg {
         display: block;
-        width: px2rem(24px);
-        height: px2rem(24px);
+        width: px2rem(28px);
+        height: px2rem(28px);
         fill: currentColor;
       }
     }
