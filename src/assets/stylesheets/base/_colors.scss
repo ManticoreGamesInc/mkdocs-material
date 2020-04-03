@@ -87,4 +87,8 @@
   --color-black--lighter: hsla(0, 0%, 100%, 0.38);
   --color-black--lightest: hsla(0, 0%, 100%, 0.12);
   --color-black--transparent: hsla(0, 0%, 100%, 0);
+
+  // Code block color shades
+  --md-code-bg-color:                  var(--manti-color-black);
+  --md-code-fg-color:                  var(--md-primary-fg-color);
 }
