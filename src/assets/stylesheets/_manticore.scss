@@ -367,7 +367,7 @@ figure {
 // [tablet -]: Trigger overlay
 @include break-to-device(tablet) {
   .fab:not(#dark-mode-toggle) {
-    visibility: hidden;
+    display: none;
   }
 }
 
