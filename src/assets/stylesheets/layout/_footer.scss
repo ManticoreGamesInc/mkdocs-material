@@ -173,11 +173,10 @@
   padding: px2rem(8px) 0;
   // color: var(--md-default-bg-color--lighter);
   font-size: ms(-1);
-  text-align: center;
 
   // [tablet portrait +]: Show next to social media links
   @include break-from-device(tablet portrait) {
-    // width: auto;
+    width: auto;
   }
 
   // Highlight copyright information
@@ -188,10 +187,8 @@
 
 // Social links
 .md-footer-social {
-  // margin: 0 px2rem(8px);
-  // padding: px2rem(4px) 0 px2rem(12px);
-  margin-left: px2rem(5px);
-
+  margin: 0 px2rem(8px);
+  padding: px2rem(4px) 0 px2rem(12px);
 
   // [tablet portrait +]: Show next to copyright information
   @include break-from-device(tablet portrait) {

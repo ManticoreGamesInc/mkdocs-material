@@ -1,12 +1,10 @@
 .theme-switch-wrapper {
-  display: flex;
-  align-items: center;
-  margin-top: 10px;
+  display: inline-block;
+  margin-bottom: 20px;
 }
 
 .theme-switch {
-  display: inline-block;
-  height: px2rem(34px);
+  height: px2rem(40px);
   position: relative;
   width: px2rem(60px);
 }
