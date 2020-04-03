@@ -260,10 +260,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/safari-pinned-tab.svg"
   },
   {
-    "url": "assets/javascripts/worker/search.2613054f.min.js"
+    "url": "assets/javascripts/worker/search.3bc815f0.min.js"
   },
   {
-    "revision": "c89c0a05e6eb01d83be27532d203361d",
+    "revision": "68e2efc1eafc7d0a6865845d4b431d3d",
     "url": "assets/manifest.json"
   },
   {

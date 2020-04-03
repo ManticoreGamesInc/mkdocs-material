@@ -265,8 +265,8 @@ $md-toggle__search--checked:
       background-color: $md-color-black--lighter;
       border-radius: px2rem(2px);
       transition:
-        background-color 250ms,
-        color            250ms;
+        color            250ms,
+        background-color 250ms;
 
       // Adjust for right-to-left languages
       [dir="rtl"] & {
@@ -397,7 +397,8 @@ $md-toggle__search--checked:
       }
 
       // Show reset button if search is active and input non-empty
-      #{$md-toggle__search--checked} .md-search__input:valid ~ & {
+      #{$md-toggle__search--checked}
+      .md-search__input:not(:placeholder-shown) ~ & {
         transform: scale(1);
         opacity: 1;
         pointer-events: initial;

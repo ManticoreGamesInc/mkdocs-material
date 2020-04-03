@@ -1,3 +1,7 @@
+---
+template: overrides/main.html
+---
+
 # Getting started
 
 ## Installation
@@ -26,8 +30,8 @@ those packages separately.
 !!! tip "Installation in a virtual environment"
 
     The best way to make sure that you end up with the correct versions and
-    without any incompatibility problems between packages it to use a __virtual
-    environment__. Don't know what this is or how to set it up? We recommend
+    without any incompatibility problems between packages it to use a **virtual
+    environment**. Don't know what this is or how to set it up? We recommend
     to start by reading a [tutorial on virtual environments][6] for Python.
 
 !!! warning "Installation on macOS"
@@ -69,7 +73,7 @@ minutes, as it comes with all dependencies pre-installed. Pull the image for the
 docker pull squidfunk/mkdocs-material
 ```
 
-The `mkdocs` executable is provided as an entrypoint and `serve` is the default
+The `mkdocs` executable is provided as an entry point and `serve` is the default
 command. Start the development server in your project root – the folder where
 `mkdocs.yml` resides — with:
 
@@ -113,9 +117,8 @@ Material for MkDocs can be installed with [Chocolatey][9]:
 choco install mkdocs-material
 ```
 
-Note that this is an [unofficial package][10] of Material for MkDocs, so please
-understand that the maintainers cannot provide any support for when using this
-method.
+As this is an [unofficial package][10] of Material for MkDocs, please understand
+that the maintainers cannot provide any support for when using this method.
 
   [9]: https://chocolatey.org
   [10]: https://chocolatey.org/packages/mkdocs-material
@@ -124,7 +127,7 @@ method.
 
 Depending on your installation method, you can now add the following lines to
 `mkdocs.yml` in your project root. If you installed Material for MkDocs using
-a package manager add:
+a package manager, add:
 
 ``` yaml
 theme:
@@ -320,8 +323,8 @@ The following language codes are supported:
 </ul>
 
 While many languages are read `ltr` (left-to-right), Material for MkDocs also
-supports `rtl` (right-to-left) directionality which is deduced from the selected
-language, but can also be set with:
+supports `rtl` (right-to-left) directionality which is inferred from the
+selected language, but can also be set with:
 
 ``` yaml
 theme:
@@ -384,7 +387,7 @@ from the template.
     ```
 
   [12]: http://www.materialui.co/colors
-  [13]: customization.md/#additional-stylesheets
+  [13]: customization.md#additional-stylesheets
 
 #### Primary color
 
@@ -640,9 +643,9 @@ extra:
 
 ### Google Analytics
 
-MkDocs makes it easy to integrate site tracking with Google Analytics. Besides
-basic page views, site search is tracked to better understand how people use
-your documentation. Google Analytics can be activated with:
+MkDocs makes it easy to integrate site tracking with Google Analytics. To enable
+tracking, which is disabled by default, you must add your tracking identifier
+to `mkdocs.yml`:
 
 ``` yaml
 google_analytics:
@@ -650,11 +653,21 @@ google_analytics:
   - auto
 ```
 
+Besides basic page views, *site search* can also be tracked to better understand
+how people use your documentation and what they expect to find. To enable
+search tracking:
+
+1. Go to your Google Analytics **admin settings**
+2. Select the property for the respective tracking code
+3. Go to the **view settings** tab.
+4. Scroll down and enable **site search settings**
+5. Set the **query parameter** to `q`.
+
 ### Disqus
 
 Material for MkDocs is integrated with [Disqus][24], so if you want to add a
-comments section to your documentation set the shortname of your Disqus project
-in `mkdocs.yml`:
+comments section to your documentation set the *shortname* of your Disqus
+project in `mkdocs.yml`:
 
 ``` yaml
 extra:
@@ -716,11 +729,13 @@ including more information regarding installation and usage:
 * [Search][32] (enabled by default)
 * [Minification][33]
 * [Revision date][34]
+* [Awesome pages][35]
 
 For further reference, the MkDocs wiki contains a list of all
-[available plugins][35].
+[available plugins][36].
 
   [32]: plugins/search.md
   [33]: plugins/minification.md
   [34]: plugins/revision-date.md
-  [35]: https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins
+  [35]: plugins/awesome-pages.md
+  [36]: https://github.com/mkdocs/mkdocs/wiki/MkDocs-Plugins

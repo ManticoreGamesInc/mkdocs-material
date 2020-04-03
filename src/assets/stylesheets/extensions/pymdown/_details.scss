@@ -70,6 +70,7 @@
   summary {
     @extend .admonition-title;
 
+    display: block;
     min-height: px2rem(20px);
     padding: px2rem(8px) px2rem(36px) px2rem(8px) px2rem(40px);
     border-top-right-radius: px2rem(2px);
@@ -92,7 +93,8 @@
       right: px2rem(8px);
       width: px2rem(20px);
       height: px2rem(20px);
-      background-image: var(--md-details-icon);
+      background-color: currentColor;
+      mask-image: var(--md-details-icon);
       transform: rotate(0deg);
       transition: transform 250ms;
       content: "";

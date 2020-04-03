@@ -456,7 +456,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
       ...base,
       entry: {
         "assets/javascripts/worker/search":
-          "src/assets/javascripts/workers/search/main"
+          "src/assets/javascripts/integrations/search/worker/main"
       },
       output: {
         path: path.resolve(__dirname, "material"),

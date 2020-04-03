@@ -20,47 +20,72 @@
  * IN THE SOFTWARE.
  */
 
-import { NEVER, Observable, fromEvent, merge } from "rxjs"
-import { mapTo, shareReplay } from "rxjs/operators"
-
-import { watchDocumentSwitch } from "../switch"
+import { SearchIndexConfig } from "../_"
+import { SearchDocument } from "../document"
 
 /* ----------------------------------------------------------------------------
- * Helper types
+ * Types
  * ------------------------------------------------------------------------- */
 
 /**
- * Watch options
+ * Search highlight function
+ *
+ * @template T - Search document type
+ *
+ * @param document - Search document
+ *
+ * @return Highlighted document
  */
-interface WatchOptions {
-  location$?: Observable<URL>          /* Location observable */
-}
+export type SearchHighlightFn = <
+  T extends SearchDocument
+>(document: Readonly<T>) => T
+
+/**
+ * Search highlight factory function
+ *
+ * @param value - Query value
+ *
+ * @return Search highlight function
+ */
+export type SearchHighlightFactoryFn = (value: string) => SearchHighlightFn
 
 /* ----------------------------------------------------------------------------
  * Functions
  * ------------------------------------------------------------------------- */
 
 /**
- * Watch document
+ * Create a search highlighter
  *
- * If the location observable is passed, instant loading will be enabled which
- * means that new values will be emitted every time the location changes.
+ * @param config - Search index configuration
  *
- * @return Document observable
+ * @return Search highlight factory function
  */
-export function watchDocument(
-  { location$ }: WatchOptions = {}
-): Observable<Document> {
-  return merge(
-    fromEvent(document, "DOMContentLoaded")
-      .pipe(
-        mapTo(document)
-      ),
-    typeof location$ !== "undefined"
-      ? watchDocumentSwitch({ location$ })
-      : NEVER
-  )
-    .pipe(
-      shareReplay(1)
-    )
+export function setupSearchHighlighter(
+  config: SearchIndexConfig
+): SearchHighlightFactoryFn {
+  const separator = new RegExp(config.separator, "img")
+  const highlight = (_: unknown, data: string, term: string) => {
+    return `${data}<em>${term}</em>`
+  }
+
+  /* Return factory function */
+  return (value: string) => {
+    value = value
+      .replace(/[\s*+-:~^]+/g, " ")
+      .trim()
+
+    /* Create search term match expression */
+    const match = new RegExp(`(^|${config.separator})(${
+      value
+        .replace(/[|\\{}()[\]^$+*?.-]/g, "\\$&")
+        .replace(separator, "|")
+    })`, "img")
+
+    /* Highlight document */
+    return document => ({
+      ...document,
+      title: document.title.replace(match, highlight),
+      text:  document.text.replace(match, highlight)
+    })
+  }
 }
