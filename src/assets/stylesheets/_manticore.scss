@@ -451,3 +451,9 @@ figure {
     }
   }
 }
+
+// Focus / Selected Typeset Fix
+
+.md-typeset details > summary:focus {
+  outline-style: none;
+}
