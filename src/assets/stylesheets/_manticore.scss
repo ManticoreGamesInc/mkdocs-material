@@ -374,13 +374,18 @@ figure {
 // Dark Mode kbd
 
 [data-theme="dark"] .md-typeset kbd {
-    background-image:linear-gradient(#202020, #181818);
-    border-bottom-color:#383838;
-    box-shadow:#383838 0px -2px 0px 0px inset;
-    color: #DCDCDC;
-    padding: 2px 6px;
+  background-image:linear-gradient(#202020, #181818);
+  border-bottom-color:#383838;
+  box-shadow:#383838 0px -2px 0px 0px inset;
+  color: #DCDCDC;
+  padding: 2px 6px;
 }
 
+// Dark Mode table
+
+[data-theme="dark"] table:not([class]) {
+  box-shadow: 0 2px 2px 0 rgba(255,255,255,.14), 0 1px 5px 0 rgba(255,255,255,.12), 0 3px 1px -2px rgba(255,255,255,.2);
+}
 // Lua Color Enums
 // stylelint-disable selector-class-pattern
 .Color_WHITE { border: 1px solid var(--color-text); color: #FFFFFFFF; }
@@ -421,7 +426,7 @@ figure {
   &::before {
     display: inline-block;
     margin-right: px2rem(5px);
-    padding: px2rem(5px);
+    padding: px2rem(2px) px2rem(8px);
     background-color: lighten($manticore-black, 15%);
     color: $md-color-white--light;
     font-size: ms(0);
