@@ -20,10 +20,12 @@
 
 # Project information
 site_name: Material for MkDocs
-site_description: A Material Design theme for MkDocs
+site_url: https://squidfunk.github.io/mkdocs-material/
 site_author: Martin Donath
-site_url: https://deploy-preview-1486--mkdocs-material-preview.netlify.com/
-#site_url: https://squidfunk.github.io/mkdocs-material/
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project – customizable,
+  searchable, mobile-friendly, 40+ languages
 
 # Repository
 repo_name: squidfunk/mkdocs-material
@@ -139,8 +141,8 @@ nav:
     - Revision date: plugins/revision-date.md
     - Awesome pages: plugins/awesome-pages.md
   - Releases:
-    - Material for MkDocs 5: releases/5.md
-    - Material for MkDocs 4: releases/4.md
+    - Upgrading to 5.x: releases/5.md
+    - Upgrading to 4.x: releases/4.md
     - Changelog: releases/changelog.md
   - Customization: customization.md
   - Data privacy: data-privacy.md
