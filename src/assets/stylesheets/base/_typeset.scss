@@ -33,7 +33,7 @@ body {
 // Default fonts
 body,
 input {
-  color: var(--md-primary-fg-color);
+  color: var(--md-default-fg-color);
   font-feature-settings: "kern", "liga";
   font-family: -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
 }
@@ -99,7 +99,8 @@ kbd {
   // Default spacing
   p,
   ul,
-  ol {
+  ol,
+  blockquote {
     margin: 1em 0;
   }
 
@@ -245,7 +246,6 @@ kbd {
       &::-webkit-scrollbar {
         width: px2rem(4px);
         height: px2rem(4px);
-        // background-color: var(--color--background);
       }
 
       // Scrollbar thumb
@@ -380,7 +380,8 @@ kbd {
       }
 
       // Decrease vertical spacing
-      p {
+      p,
+      blockquote {
         margin: 0.5em 0;
       }
 
@@ -468,8 +469,8 @@ kbd {
     // Table cells
     td {
       padding: px2rem(12px) px2rem(16px);
-      border-top: px2rem(1px) solid var(--md-primary-fg-color--lightest);
       vertical-align: top;
+      border-top: px2rem(1px) solid var(--md-default-fg-color--lightest);
     }
 
     // Table rows

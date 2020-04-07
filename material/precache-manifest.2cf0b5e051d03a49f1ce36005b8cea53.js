@@ -260,11 +260,22 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/safari-pinned-tab.svg"
   },
   {
-    "url": "assets/javascripts/worker/search.7f7c8775.min.js"
+    "url": "assets/javascripts/bundle.1a28d623.min.js"
   },
   {
-    "revision": "ab58783dbc55553ee64b2048ff8c8a04",
+    "url": "assets/javascripts/vendor.9a866447.min.js"
+  },
+  {
+    "revision": "228a24e82739a49eabe6fe5695fe20d7",
     "url": "assets/manifest.json"
+  },
+  {
+    "revision": "84a563bf28d62c1ca9c277e0028b0099",
+    "url": "assets/stylesheets/main.84a563bf.min.css"
+  },
+  {
+    "revision": "5a2f04b597c9369069fc3619889fb49c",
+    "url": "assets/stylesheets/palette.5a2f04b5.min.css"
   },
   {
     "revision": "5063b105c7646c8043d58c5289f02cca",
