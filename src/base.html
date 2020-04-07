@@ -23,7 +23,6 @@
 {% import "partials/language.html" as lang with context %}
 
 <!-- Theme options -->
-{% set feature = config.theme.feature %}
 {% set palette = config.theme.palette %}
 {% set font = config.theme.font %}
 
@@ -34,15 +33,11 @@
     <!-- Metatags -->
     {% block site_meta %}
       <meta charset="utf-8" />
-      <meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover"/>
-
-      <!-- Keep for compatibility, see http://bit.ly/2tMB6ag -->
-      <meta http-equiv="x-ua-compatible" content="ie=edge" />
+      <meta name="viewport" content="width=device-width,initial-scale=1" />
 
       <!-- Page description -->
       {% if page and page.meta and page.meta.description %}
-        <meta name="description"
-            content="{{ page.meta.description }}" />
+        <meta name="description" content="{{ page.meta.description }}" />
       {% elif config.site_description %}
         <meta name="description" content="{{ config.site_description }}" />
       {% endif %}
@@ -55,7 +50,7 @@
             (anchor ? '#' + anchor : '')
         </script>
 
-        <!-- no-js fallback -->
+        <!-- Fallback in case JavaScript is not available -->
         <meta http-equiv="refresh" content="0; url={{ page.meta.redirect }}" />
         <meta name="robots" content="noindex" />
         <link rel="canonical" href="{{ page.meta.redirect }}" />
@@ -72,35 +67,14 @@
         <meta name="author" content="{{ config.site_author }}" />
       {% endif %}
 
-      <!-- Localization -->
-      {% for key in [
-        "clipboard.copy",
-        "clipboard.copied",
-        "search.language",
-        "search.pipeline.stopwords",
-        "search.pipeline.trimmer",
-        "search.result.none",
-        "search.result.one",
-        "search.result.other",
-        "search.tokenizer"
-      ] %}
-        <meta name="lang:{{ key }}" content="{{ lang.t(key) }}" />
-      {% endfor %}
-
       <!-- Favicon -->
-      <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
-      <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
-      <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
-      <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
-      <link rel="shortcut icon"
-          href="{{ config.theme.favicon | url }}">
-
-      <!-- PWA files integration -->
-      {% include "partials/pwa-images.html" %}
+      <link rel="shortcut icon" href="{{ config.theme.favicon | url }}" />
 
       <!-- Generator banner -->
-      <meta name="generator"
-          content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$" />
+      <meta
+        name="generator"
+        content="mkdocs-{{ mkdocs_version }}, $md-name$-$md-version$"
+      />
     {% endblock %}
 
     <!-- Site title -->
@@ -114,23 +88,16 @@
       {% endif %}
     {% endblock %}
 
-    <!-- Stylesheets -->
+    <!-- Theme-related stylesheets -->
     {% block styles %}
-
-      <!-- Theme-related stylesheets -->
-      <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/application.css' | url }}" />
-
-      <!-- Lightgallery -->
-      <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
-      <link rel="stylesheet" type="text/css"
-          href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}" />
 
       <!-- Extra color palette -->
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" type="text/css"
-            href="{{ 'assets/stylesheets/application-palette.css' | url }}" />
+        <link
+          rel="stylesheet"
+          href="{{ 'assets/stylesheets/palette.css' | url }}"
+        />
       {% endif %}
 
       <!-- Theme-color meta tag for Android -->
@@ -140,15 +107,11 @@
           palette.primary | replace(" ", "-") | lower
         ) %}
         <meta name="theme-color" content="#16191F" />
-        <meta name="msapplication-TileColor" content="#16191F">
-        <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
       {% endif %}
     {% endblock %}
 
     <!-- JavaScript libraries -->
-    {% block libs %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/modernizr.js' | url }}"></script>
-    {% endblock %}
+    {% block libs %}{% endblock %}
 
     <!-- Webfonts -->
     {% block fonts %}
@@ -156,64 +119,42 @@
       <!-- Load fonts from Google -->
       {% if font != false %}
         <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin />
-        <link rel="stylesheet" type="text/css"
-            href="https://fonts.googleapis.com/css?family={{
-              font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
-              font.code | replace(' ', '+')
-            }}&display=fallback" />
+        <link
+          rel="stylesheet"
+          href="https://fonts.googleapis.com/css?family={{
+            font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
+            font.code | replace(' ', '+')
+          }}&display=fallback"
+        />
         <style>
           body, input {
-            font-family: "{{ font.text }}", "Helvetica Neue",
-              Helvetica, Arial, sans-serif;
+            font-family: "{{ font.text }}",
+              -apple-system, BlinkMacSystemFont, Helvetica, Arial, sans-serif;
           }
           pre, code, kbd {
-            font-family: "{{ font.code }}", "Courier New",
-              Courier, monospace;
+            font-family: "{{ font.code }}",
+              SFMono-Regular, Consolas, Menlo, monospace;
           }
         </style>
       {% endif %}
       <link rel="stylesheet" type="text/css" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap" />
     {% endblock %}
 
-    <!-- Material icons as iconset -->
-    <link rel="preload" href="{{ 'assets/fonts/material-icons.css' | url }}" as="style">
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/material-icons.css' | url }}" />
-
     <!-- Progressive Web App Manifest -->
     {% if config.extra.manifest %}
-      <link rel="manifest" type="application/manifest+json" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
-    {% else %}
-      <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.json' | url }}" crossorigin="use-credentials">
+      <link
+        rel="manifest"
+        href="{{ config.extra.manifest | url }}"
+        crossorigin="use-credentials"
+      />
     {% endif %}
 
-    <!-- Custom stylesheets -->
+    <!-- Custom stylesheets, might contain media query after URL -->
     {% for path in config["extra_css"] %}
-      <link rel="stylesheet" type="text/css" href="{{ path | url }}" />
+      <link rel="stylesheet" href="{{ path | url }}" />
     {% endfor %}
 
-    <!-- Font Awesome -->
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
-    <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/brands.min.css' | url }}" />
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/regular.min.css' | url }}" />
-    <link rel="stylesheet" type="text/css"
-        href="{{ 'assets/fonts/solid.min.css' | url }}" />
-
-    <!-- Service Worker -->
-    {% block serviceworker %}
-      {% include "partials/integrations/serviceworker.html" %}
-    {% endblock %}
-
-    <!-- Vimeo Pre-Connect -->
-    {% block vimeo %}
-      {% include "partials/integrations/vimeo.html" %}
-    {% endblock %}
-
-    <!-- Analytic scripts -->
+    <!-- Analytics -->
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -225,56 +166,63 @@
   </head>
 
   <!-- Text direction and color palette, if defined -->
+  {% set direction = config.theme.direction or lang.t('direction') %}
   {% if palette.primary or palette.accent %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
     {% set accent  = palette.accent  | replace(" ", "-") | lower %}
-    <body dir="{{ lang.t('direction') }}"
-        data-md-color-primary="{{ primary }}"
-        data-md-color-accent="{{ accent }}">
+    <body
+      dir="{{ direction }}"
+      data-md-color-primary="{{ primary }}"
+      data-md-color-accent="{{ accent }}"
+    >
   {% else %}
-    <body dir="{{ lang.t('direction') }}">
+    <body dir="{{ direction }}">
   {% endif %}
     <script type="text/javascript" src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
     <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
-
-    <!-- Hidden container for inline SVGs -->
-    <svg class="md-svg">
-      <defs>
-
-        <!--
-          Check whether the repository is hosted on one of the supported code
-          hosting platforms (GitHub, GitLab or Bitbucket) to show icon.
-        -->
-        {% set platform = config.extra.repo_icon or config.repo_url %}
-        {% if "github" in platform %}
-          {% include "assets/images/icons/github.svg" %}
-        {% elif "gitlab" in platform %}
-          {% include "assets/images/icons/gitlab.svg" %}
-        {% elif "bitbucket" in platform %}
-          {% include "assets/images/icons/bitbucket.svg" %}
-        {% endif %}
-      </defs>
-    </svg>
 
     <!--
       State toggles - we need to set autocomplete="off" in order to reset the
       drawer on back button invocation in some browsers
     -->
-    <input class="md-toggle" data-md-toggle="drawer"
-        type="checkbox" id="__drawer" autocomplete="off" />
-    <input class="md-toggle" data-md-toggle="search"
-        type="checkbox" id="__search" autocomplete="off" />
+    <input
+      class="md-toggle"
+      data-md-toggle="drawer"
+      type="checkbox"
+      id="__drawer"
+      autocomplete="off"
+    />
+    <input
+      class="md-toggle"
+      data-md-toggle="search"
+      type="checkbox"
+      id="__search"
+      autocomplete="off"
+    />
 
     <!-- Overlay for expanded drawer -->
-    <label class="md-overlay" data-md-component="overlay" for="__drawer"></label>
+    <label class="md-overlay" for="__drawer"></label>
 
-    <!-- Render "skip to content" link -->
-    {% if page.toc | first is defined %}
-      <a href="{{ (page.toc | first).url }}" tabindex="0"
-          class="md-skip">
-        {{ lang.t('skip.link.title') }}
-      </a>
-    {% endif %}
+    <!-- Link to skip to content -->
+    <div data-md-component="skip">
+      {% if page.toc | first is defined %}
+        {% set skip = page.toc | first %}
+        <a href="{{ skip.url | url }}" class="md-skip">
+          {{ lang.t('skip.link.title') }}
+        </a>
+      {% endif %}
+    </div>
+
+    <!-- Announcement bar -->
+    <div data-md-component="announce">
+      {% if self.announce() %}
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            {% block announce %}{% endblock %}
+          </div>
+        </aside>
+      {% endif %}
+    </div>
 
     <!-- Application header -->
     {% block header %}
@@ -282,7 +230,7 @@
     {% endblock %}
 
     <!-- Container, necessary for web-application context -->
-    <div class="md-container">
+    <div class="md-container" data-md-component="container">
 
       <!-- Hero teaser -->
       {% block hero %}
@@ -292,21 +240,25 @@
       {% endblock %}
 
       <!-- Tabs with outline -->
-      {% if feature.tabs %}
-        {% include "partials/tabs.html" %}
-      {% endif %}
+      {% block tabs %}
+        {% if "tabs" in config.theme.features %}
+          {% include "partials/tabs.html" %}
+        {% endif %}
+      {% endblock %}
 
-      <!-- Main container -->
-      <main class="md-main" role="main">
-        <div class="md-main__inner md-grid" data-md-component="container">
+      <!-- Main area -->
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
 
           <!-- Navigation -->
           {% block site_nav %}
 
             <!-- Main navigation -->
-            {% if nav and not (page.is_homepage or (page.meta and page.meta.hide_nav)) %}
-              <div class="md-sidebar md-sidebar--primary"
-                  data-md-component="navigation">
+            {% if nav %}
+              <div
+                class="md-sidebar md-sidebar--primary"
+                data-md-component="navigation"
+              >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     {% include "partials/nav.html" %}
@@ -326,8 +278,10 @@
 
             <!-- Table of contents -->
             {% if page.toc %}
-              <div class="md-sidebar md-sidebar--secondary"
-                  data-md-component="toc">
+              <div
+                class="md-sidebar md-sidebar--secondary"
+                data-md-component="toc"
+              >
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     {% include "partials/toc.html" %}
@@ -349,10 +303,21 @@
 
                 <!-- Edit button, if URL was defined -->
                 {% if page.edit_url %}
-                  <a href="{{ page.edit_url }}"
-                      title="{{ lang.t('edit.link.title') }}"
-                      class="md-icon md-content__icon">&#xE3C9;<!-- edit --></a>
+                  <a
+                    href="{{ page.edit_url }}"
+                    title="{{ lang.t('edit.link.title') }}"
+                    class="md-content__button md-icon"
+                  >
+                    {% include ".icons/material/pencil.svg" %}
+                  </a>
                 {% endif %}
+
+                <!-- Link to source file -->
+                {% block source %}
+                  {% if page and page.meta and page.meta.source %}
+                    {% include "partials/source-link.html" %}
+                  {% endif %}
+                {% endblock %}
 
                 <!--
                   Hack: check whether the content contains a h1 headline. If it
@@ -381,43 +346,13 @@
                 <!-- Content -->
                 {{ page.content }}
 
-                <!-- Source files -->
-                {% block source %}
-                  {% if page and page.meta and page.meta.source %}
-                    <h2 id="__source">{{ lang.t("meta.source") }}</h2>
-                    {% set repo = config.repo_url %}
-                    {% if repo | last == "/" %}
-                      {% set repo = repo[:-1] %}
-                    {% endif %}
-                    {% set path = page.meta.path | default([""]) %}
-                    {% set file = page.meta.source %}
-                    <a href="{{ [repo, path, file] | join('/') }}"
-                        title="{{ file }}" class="md-source-file">
-                      {{ file }}
-                    </a>
+                <!-- Last update of source file -->
+                {% if page and page.meta %}
+                  {% if page.meta.git_revision_date_localized or
+                        page.meta.revision_date
+                  %}
+                    {% include "partials/source-date.html" %}
                   {% endif %}
-                {% endblock %}
-
-                <!-- Support for mkdocs-git-revision-date-localized-plugin -->
-                {% if page and page.meta and (
-                      page.meta.git_revision_date_localized or
-                      page.meta.revision_date
-                ) %}
-                  {% set label = lang.t("source.revision.date") %}
-                  <hr />
-                  <div class="md-source-date">
-                    <small>
-
-                      <!-- mkdocs-git-revision-date-localized-plugin -->
-                      {% if page.meta.git_revision_date_localized %}
-                        {{ label }}: {{ page.meta.git_revision_date_localized }}
-
-                      <!-- mkdocs-git-revision-date-plugin -->
-                      {% elif page.meta.revision_date %}
-                        {{ label }}: {{ page.meta.revision_date }}
-                      {% endif %}
-                    </small>
-                  </div>
                 {% endif %}
               {% endblock %}
 
@@ -443,41 +378,48 @@
 
     <!-- Theme-related JavaScript -->
     {% block scripts %}
-      <script type="text/javascript" src="{{ 'assets/javascripts/application.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/vendor.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.js' | url }}"></script>
 
-      <!-- Lightgallery -->
+	  <!-- Lightgallery -->
       {% include "partials/integrations/lightgallery.html" %}
 
-      <!-- Load additional languages for search -->
-      {% if lang.t("search.language") != "en" %}
-        {% set languages = lang.t("search.language").split(",") %}
-        {% if languages | length and languages[0] != "" %}
-          {% set path = "assets/javascripts/lunr/" %}
-          <script type="text/javascript" src="{{ (path ~ 'lunr.stemmer.support.js') | url }}"></script>
-          {% for language in languages | map("trim") %}
-            {% if language != "en" %}
-              {% if language == "ja" %}
-                <script type="text/javascript" src="{{ (path ~ 'tinyseg.js') | url }}"></script>
-              {% endif %}
-            {% endif %}
-          {% endfor %}
-          {% if languages | length > 1 %}
-            <script type="text/javascript" src="{{ (path ~ 'lunr.multi.js') | url }}"></script>
-          {% endif %}
-        {% endif %}
-      {% endif %}
-
-      <!-- Initialize application -->
-      <script>
-        app.initialize({
-          version: "{{ mkdocs_version }}",
-          url: {
-            base: "{{ base_url }}"
-          }
-        });
+      <!-- Translations -->
+      {%- set translations = {} -%}
+      {%- for key in [
+        "clipboard.copy",
+        "clipboard.copied",
+        "search.config.lang",
+        "search.config.pipeline",
+        "search.config.separator",
+        "search.result.placeholder",
+        "search.result.none",
+        "search.result.one",
+        "search.result.other"
+      ] -%}
+        {%- set _ = translations.update({ key: lang.t(key) }) -%}
+      {%- endfor -%}
+      <script id="__lang" type="application/json">
+        {{- translations | tojson -}}
       </script>
+
+      <!-- Application configuration -->
+      {% block config %}{% endblock %}
+
+      <!-- Application initialization -->
+      <script>
+        app = initialize({
+          base: "{{ base_url }}",
+          features: {{ config.theme.features | tojson }},
+          search: Object.assign({
+            worker: "{{ 'assets/javascripts/worker/search.js' | url }}"
+          }, typeof search !== "undefined" && search)
+        })
+      </script>
+
+      <!-- Custom JavaScript -->
       {% for path in config["extra_javascript"] %}
-        <script type="text/javascript" src="{{ path | url }}"></script>
+        <script src="{{ path | url }}"></script>
       {% endfor %}
     {% endblock %}
   </body>

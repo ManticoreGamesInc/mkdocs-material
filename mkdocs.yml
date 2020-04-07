@@ -20,9 +20,12 @@
 
 # Project information
 site_name: Material for MkDocs
-site_description: A Material Design theme for MkDocs
-site_author: Martin Donath
 site_url: https://squidfunk.github.io/mkdocs-material/
+site_author: Martin Donath
+site_description: >-
+  Create a branded static site from a set of Markdown files to host the
+  documentation of your Open Source or commercial project – customizable,
+  searchable, mobile-friendly, 40+ languages
 
 # Repository
 repo_name: squidfunk/mkdocs-material
@@ -30,7 +33,7 @@ repo_url: https://github.com/squidfunk/mkdocs-material
 edit_uri: ""
 
 # Copyright
-copyright: 'Copyright &copy; 2016 - 2020 Martin Donath'
+copyright: Copyright &copy; 2016 - 2020 Martin Donath
 
 # Configuration
 theme:
@@ -48,17 +51,18 @@ theme:
 
   # Default values, taken from mkdocs_theme.yml
   language: en
-  feature:
-    tabs: true
+  features:
+    - tabs
+    #- instant
   palette:
     primary: indigo
     accent: indigo
   font:
     text: Roboto
     code: Roboto Mono
-  favicon: assets/images/favicon.png
-  logo:
-    icon: "\uE80C"
+  icon:
+    logo: logo
+  favicon: assets/favicon.png
 
 # Plugins
 plugins:
@@ -69,18 +73,23 @@ plugins:
 # Customization
 extra:
   social:
-    - type: globe
-      link: http://struct.cc
-    - type: github-alt
+    - icon: fontawesome/brands/github
       link: https://github.com/squidfunk
-    - type: twitter
+    - icon: fontawesome/brands/gitter
+      link: https://gitter.im/squidfunk/mkdocs-material
+    - icon: fontawesome/brands/docker
+      link: https://hub.docker.com/r/squidfunk/mkdocs-material/
+    - icon: fontawesome/brands/twitter
       link: https://twitter.com/squidfunk
-    - type: linkedin
-      link: https://www.linkedin.com/in/squidfunk/
+    - icon: fontawesome/brands/linkedin
+      link: https://linkedin.com/in/squidfunk/
+    - icon: fontawesome/brands/instagram
+      link: https://instagram.com/squidfunk
 
 # Extensions
 markdown_extensions:
   - markdown.extensions.admonition
+  - markdown.extensions.attr_list
   - markdown.extensions.codehilite:
       guess_lang: false
   - markdown.extensions.def_list
@@ -97,6 +106,8 @@ markdown_extensions:
   - pymdownx.emoji:
       emoji_index: !!python/name:pymdownx.emoji.twemoji
       emoji_generator: !!python/name:pymdownx.emoji.to_svg
+  # - pymdownx.highlight:
+  #     linenums_style: pymdownx-inline
   - pymdownx.inlinehilite
   - pymdownx.keys
   - pymdownx.magiclink:
@@ -105,14 +116,17 @@ markdown_extensions:
       repo: mkdocs-material
   - pymdownx.mark
   - pymdownx.smartsymbols
+  - pymdownx.snippets:
+      check_paths: true
   - pymdownx.superfences
+  - pymdownx.tabbed
   - pymdownx.tasklist:
       custom_checkbox: true
   - pymdownx.tilde
 
 # Page tree
 nav:
-  - Material: index.md
+  - Home: index.md
   - Getting started: getting-started.md
   - Extensions:
     - Admonition: extensions/admonition.md
@@ -122,14 +136,16 @@ nav:
     - Permalinks: extensions/permalinks.md
     - PyMdown: extensions/pymdown.md
   - Plugins:
-    - Minify HTML: plugins/minify-html.md
-    - Revision date: plugins/revision-date.md
     - Search: plugins/search.md
-  - Specimen: specimen.md
+    - Minification: plugins/minification.md
+    - Revision date: plugins/revision-date.md
+    - Awesome pages: plugins/awesome-pages.md
+  - Releases:
+    - Upgrading to 5.x: releases/5.md
+    - Upgrading to 4.x: releases/4.md
+    - Changelog: releases/changelog.md
   - Customization: customization.md
-  - Compliance with GDPR: compliance.md
-  - Release notes: release-notes.md
-  - Author's notes: authors-notes.md
+  - Data privacy: data-privacy.md
   - Contributing: contributing.md
   - License: license.md
 

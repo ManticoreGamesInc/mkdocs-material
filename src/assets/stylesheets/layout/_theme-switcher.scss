@@ -1,0 +1,56 @@
+.theme-switch-wrapper {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+
+.theme-switch {
+  height: px2rem(40px);
+  position: relative;
+  width: px2rem(60px);
+}
+
+.theme-switch input {
+  display:none;
+}
+
+.slider {
+  background-color: $md-color-black--lighter;
+  bottom: 0;
+  cursor: pointer;
+  left: 0;
+  position: absolute;
+  right: 0;
+  top: 0;
+  transition: 400ms;
+  width: px2rem(60px);
+  height: px2rem(30px);
+}
+
+.slider:before {
+  bottom: 8px;
+  box-shadow: -10px 2px 0 0 currentColor;
+  content: "";
+  height: 26px;
+  left: 16px;
+  position: absolute;
+  transition: 400ms;
+  width: px2rem(26px);
+}
+
+input:checked + .slider {
+  background-color: $md-color-black--lighter;
+}
+
+input:checked + .slider:before {
+  transform: translateX(26px);
+  box-shadow: 10px 2px 0 0 currentColor;
+  left: 0;
+}
+
+.slider.round {
+  border-radius: 4px;
+}
+
+.slider.round:before {
+  border-radius: 50%;
+}

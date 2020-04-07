@@ -24,19 +24,19 @@
 {% set analytics = config.google_analytics %}
 <link rel="preconnect dns-prefetch" href="https://www.google-analytics.com">
 
-<script type="text/javascript">
+<script type="application/javascript">
   window.ga = window.ga || function() {
     (ga.q = ga.q || []).push(arguments)
   }
   ga.l = +new Date
 
-  /* Setup integration and send page view */
+  /* Set up integration and send page view */
   ga("create", "{{ analytics[0] }}", "{{ analytics[1] }}")
   ga("set", "anonymizeIp", true)
   ga("send", "pageview")
 
   /* Register handler to log search on blur */
-  document.addEventListener("DOMContentLoaded", () => {
+  document.addEventListener("DOMContentLoaded", function() {
     if (document.forms.search) {
       var query = document.forms.search.query
       query.addEventListener("blur", function() {
@@ -46,6 +46,11 @@
         }
       })
     }
+  })
+
+  /* Send page view on document switch (instant loading, custom event) */
+  document.addEventListener("DOMContentSwitch", function() {
+    ga("send", "pageview")
   })
 </script>
 <script async src="https://www.google-analytics.com/analytics.js"></script>

@@ -3,12 +3,13 @@
 -#}
 {% if config.extra.social %}
   <div class="md-footer-social">
-    <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/fontawesome.min.css' | url }}">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}">
-      <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}">
     {% for social in config.extra.social %}
-      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ social.type }}" class="md-footer-social__link fab fa-{{ social.type }}"></a>
+      {% set _,rest = social.link.split("//") %}
+      {% set domain = rest.split("/")[0] %}
+      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ domain }}" class="md-footer-social__link">
+        {% include ".icons/" ~ social.icon ~ ".svg" %}
+      </a>
     {% endfor %}
+    {% include "partials/theme-toggle.html" %}
   </div>
 {% endif %}
