@@ -32,8 +32,8 @@
   left: 0;
   z-index: 2;
   height: px2rem(48px);
-  color: var(--manti-color-orange);
-  background-color: var(--manti-color-black);
+  color: var(--core-color-orange);
+  background-color: var(--core-color-black);
   // Hack: reduce jitter by adding a transparent box shadow of the same size
   // so the size of the layer doesn't change during animation
   box-shadow:
@@ -68,7 +68,7 @@
   // Fake Bottom Border
   &::after {
     content: "";
-    background-color: var(--manti-color-orange);
+    background-color: var(--core-color-orange);
     position: absolute;
     display: block;
     height: 4px;

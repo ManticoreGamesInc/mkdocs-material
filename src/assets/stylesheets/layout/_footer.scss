@@ -134,7 +134,7 @@
     left: 0;
     margin-top: px2rem(-20px);
     padding: 0 px2rem(20px);
-    color: var(--manti-color-orange);
+    color: var(--core-color-orange);
     font-size: ms(-1);
   }
 }
@@ -142,7 +142,7 @@
 // Non-navigational information
 .md-footer-meta {
   //background-color: opacify(#000000, 0.025);
-  background-color: var(--manti-color-black);
+  background-color: var(--core-color-black);
   color: $md-color-white;
   border-top: 1px solid var(--color-accent);
 
@@ -204,7 +204,7 @@
     color: var(--md-primary-fg-color);
 
     &:hover {
-      color: var(--manti-color-orange);
+      color: var(--core-color-orange);
     }
     // Adjust line-height to match height for correct alignment
     &::before {

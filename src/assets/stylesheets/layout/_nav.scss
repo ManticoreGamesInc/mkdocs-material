@@ -37,7 +37,7 @@
     font-weight: 700;
     text-transform: uppercase;
     text-overflow: ellipsis;
-    color: var(--manti-color-orange);
+    color: var(--core-color-orange);
 
     // Hide buttons by default
     .md-nav__button {
@@ -130,7 +130,7 @@
 
     // Active link
     .md-nav__item &--active {
-      color: var(--manti-color-orange);
+      color: var(--core-color-orange);
     }
 
     // Reset active color for nested list titles
@@ -141,7 +141,7 @@
     // Focused or hovered link
     &:focus,
     &:hover {
-      color: var(--manti-color-orange);
+      color: var(--core-color-orange);
     }
   }
 

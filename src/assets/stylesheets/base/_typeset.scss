@@ -168,7 +168,7 @@ kbd {
 
   // Links
   a {
-    color: var(--manti-color-blue);
+    color: var(--core-color-blue);
     word-break: break-word;
 
     // Also enable color transition on pseudo elements
@@ -430,7 +430,7 @@ kbd {
     font-size: ms(-1);
     background: var(--md-default-bg-color);
     border-radius: px2rem(4px);
-    border-bottom: 2px solid var(--manti-color-orange);
+    border-bottom: 2px solid var(--core-color-orange);
     box-shadow:
       0 px2rem(4px) px2rem(10px) hsla(0, 0%, 0%, 0.05),
       0 0           px2rem(1px)  hsla(0, 0%, 0%, 0.1);
@@ -461,8 +461,8 @@ kbd {
       padding: px2rem(12px) px2rem(16px);
       color: $md-color-white;
       vertical-align: top;
-      border-bottom: 2px solid var(--manti-color-orange);
-      background-color: var(--manti-color-black);
+      border-bottom: 2px solid var(--core-color-orange);
+      background-color: var(--core-color-black);
       white-space: nowrap;
     }
 

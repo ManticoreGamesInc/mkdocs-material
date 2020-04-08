@@ -6,15 +6,15 @@
   --font-oswald: "Oswald", sans-serif;
 
   // Manticore Colors
-  --manti-color-black: #20232A;
+  --core-color-black: #20232A;
 
-  --manti-color-orange: #E67E17;
-  --manti-color-orange--light: hsla(30, 82%, 50%, 0.54);
-  --manti-color-orange--lighter: hsla(30, 82%, 50%, 0.38);
-  --manti-color-orange--lightest: hsla(30, 82%, 50%, 0.12);
-  --manti-color-orange--transparent: hsla(0, 0%, 100%, 0);
+  --core-color-orange: #E67E17;
+  --core-color-orange--light: hsla(30, 82%, 50%, 0.54);
+  --core-color-orange--lighter: hsla(30, 82%, 50%, 0.38);
+  --core-color-orange--lightest: hsla(30, 82%, 50%, 0.12);
+  --core-color-orange--transparent: hsla(0, 0%, 100%, 0);
 
-  --manti-color-blue: #17A1E6;
+  --core-color-blue: #17A1E6;
 
   --core-color-locked: #646770;
   --core-color-templetized: #17A1E6;
@@ -24,7 +24,7 @@
   --core-color-error-state: #C43434;
 
   // Primary and accent colors
-  --color-accent: var(--manti-color-orange);
+  --color-accent: var(--core-color-orange);
 
   // Actually white, sorry :/
   --color-black: hsla(0, 0%, 100%, 1);
@@ -50,7 +50,7 @@
 }
 
 #app-update-prompt {
-  background: var(--manti-color-black);
+  background: var(--core-color-black);
   color: $md-color-white;
   position: absolute;
   top: 15%;
@@ -58,7 +58,7 @@
   height: 140px;
   left: 50%;
   text-align: center;
-  border: 1px solid var(--manti-color-orange);
+  border: 1px solid var(--core-color-orange);
   border-radius: 8px;
   padding: 8px 16px;
   margin-left: -250px;
@@ -67,7 +67,7 @@
 }
 
 #app-update {
-  background-color: var(--manti-color-orange);
+  background-color: var(--core-color-orange);
   display: block;
   color: #000000;
   border-radius: 4px;
@@ -99,9 +99,9 @@
 // Netlify Form
 
 .netlify {
-  background: var(--manti-color-black);
+  background: var(--core-color-black);
   padding: 8px 16px;
-  border: 1px solid var(--manti-color-orange);
+  border: 1px solid var(--core-color-orange);
   border-radius: 8px;
   box-shadow: 0 0.2rem 0.5rem rgba(0,0,0,.05), 0 0 0.05rem rgba(0,0,0,.1);
   color: #FFFFFF;
@@ -120,7 +120,7 @@
   }
 
   button {
-    background-color: var(--manti-color-blue);
+    background-color: var(--core-color-blue);
     border-radius: 4px;
     // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
@@ -168,7 +168,7 @@
 }
 
 [data-theme="dark"] .netlify {
-  background-color: var(--manti-color-black);
+  background-color: var(--core-color-black);
   box-shadow: 0 2px 2px 0 rgba(255, 255, 255,.14), 0 1px 5px 0 rgba(255, 255, 255,.12), 0 3px 1px -2px rgba(255, 255, 255,.2);
 }
 
@@ -187,7 +187,7 @@
 }
 
 .md-typeset a img:hover {
-  border: 1px solid var(--manti-color-orange);
+  border: 1px solid var(--core-color-orange);
   transition: all 0.3s ease-in-out;
 }
 
@@ -250,7 +250,7 @@ figure {
 }
 
 .image-background img {
-  background-color: var(--manti-color-black);
+  background-color: var(--core-color-black);
   border: 1px solid darken($manticore-orange, 20%);
 }
 
@@ -313,7 +313,7 @@ figure {
 
 #to-top-button {
   display: inline-block;
-  background-color: var(--manti-color-orange);
+  background-color: var(--core-color-orange);
   width: 50px;
   height: 50px;
   text-align: center;
