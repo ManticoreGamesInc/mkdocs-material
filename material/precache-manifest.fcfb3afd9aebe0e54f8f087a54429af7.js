@@ -1,14 +1,14 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "1ed49eba81fead59513f2fb7fa365634",
+    "revision": "f9f65354681b3f990e917c1bf24b3641",
     "url": "404.html"
   },
   {
-    "revision": "59f4a7e117765c676805f7e4a1473edb",
+    "revision": "7f48614a568c2c4a2b3cc47e2727de2b",
     "url": "assets/fonts/brands.min.css"
   },
   {
-    "revision": "c4b0abc8616bec65cbfecdeff8193605",
+    "revision": "22d85286c513f3d4038c42b486ea1bf6",
     "url": "assets/fonts/fontawesome.min.css"
   },
   {
@@ -16,7 +16,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/fonts/lg.eot"
   },
   {
-    "revision": "48ade592cc361950aa458f244c934aed",
+    "revision": "c066c5448562b3ccaefb6408ce4b4ae1",
     "url": "assets/fonts/lg.svg"
   },
   {
@@ -28,31 +28,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/fonts/lg.woff"
   },
   {
-    "revision": "7bb434d2c612be840a2bd0669c27dd65",
-    "url": "assets/fonts/material-icons.css"
-  },
-  {
-    "revision": "e80ea13bae3612351a649a1453024873",
+    "revision": "fa6a7083e56fcb67df350a5a323a2b38",
     "url": "assets/fonts/regular.min.css"
   },
   {
-    "revision": "ebc100b6883c63850c305eaa4ef2b299",
+    "revision": "2b98e9fe1c909f528fb0d123c9373a76",
     "url": "assets/fonts/solid.min.css"
   },
   {
-    "revision": "a37b0c01c0baf1888ca812cc0508f6e2",
-    "url": "assets/fonts/specimen/MaterialIcons-Regular.ttf"
-  },
-  {
-    "revision": "012cf6a10129e2275d79d6adac7f3b02",
-    "url": "assets/fonts/specimen/MaterialIcons-Regular.woff"
-  },
-  {
-    "revision": "570eb83859dc23dd0eec423a49e147fe",
-    "url": "assets/fonts/specimen/MaterialIcons-Regular.woff2"
-  },
-  {
-    "revision": "b7dc087e414e7a2e487f18836cd4f7f9",
+    "revision": "bdee926e07d18f28da1844e1a5ac7c43",
     "url": "assets/icons/apple-splash-1125-2436.png"
   },
   {
@@ -60,11 +44,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/apple-splash-1136-640.png"
   },
   {
-    "revision": "48ec461564e2f56ffb191bff447f91db",
+    "revision": "b9208832cd50032efcea09714e94b1ab",
     "url": "assets/icons/apple-splash-1242-2208.png"
   },
   {
-    "revision": "3add0dabfa7d7b5df2855abca81ca731",
+    "revision": "b51e11cbca0277e7783dfdcf948da737",
     "url": "assets/icons/apple-splash-1242-2688.png"
   },
   {
@@ -80,11 +64,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/apple-splash-1668-2224.png"
   },
   {
-    "revision": "50377c886163949febd038d7df1696c6",
+    "revision": "bde6c627e1a565feaaa45023d20e4de0",
     "url": "assets/icons/apple-splash-1668-2388.png"
   },
   {
-    "revision": "0c65a72a77e8b778721c67204dcb3511",
+    "revision": "a7adc24440409f65106f8208153dda6a",
     "url": "assets/icons/apple-splash-1792-828.png"
   },
   {
@@ -92,11 +76,11 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/apple-splash-2048-1536.png"
   },
   {
-    "revision": "aea1d9d19eaed580d8817c1d88e16653",
+    "revision": "e9f6f39830c744939eb4f9f0d71033d9",
     "url": "assets/icons/apple-splash-2048-2732.png"
   },
   {
-    "revision": "2827b0f7e0cb5d8510706fc3c2d1d357",
+    "revision": "952f6499b82aa7f027120eba8810139b",
     "url": "assets/icons/apple-splash-2208-1242.png"
   },
   {
@@ -108,15 +92,15 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/apple-splash-2388-1668.png"
   },
   {
-    "revision": "63d77dbb740554b9bbd765e02a13f799",
+    "revision": "3710c65a1bef50f39fb43328dffe7417",
     "url": "assets/icons/apple-splash-2436-1125.png"
   },
   {
-    "revision": "c323dee3a7ac371a33f03a3200567c91",
+    "revision": "701fc1826c55a9b2958e5e5860eef179",
     "url": "assets/icons/apple-splash-2688-1242.png"
   },
   {
-    "revision": "803495641abe6a8c3b4d7dca2a88acba",
+    "revision": "67191c26bdc5daf77f006b551b934a97",
     "url": "assets/icons/apple-splash-2732-2048.png"
   },
   {
@@ -260,73 +244,85 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/icons/safari-pinned-tab.svg"
   },
   {
-    "url": "assets/javascripts/bundle.e17244f0.min.js"
+    "url": "assets/javascripts/bundle.5da493b1.min.js"
   },
   {
-    "url": "assets/javascripts/vendor.9a866447.min.js"
+    "url": "assets/javascripts/vendor.8a8bec1a.min.js"
   },
   {
-    "revision": "3c132a43297b93cac914ee520ae10934",
+    "revision": "e672dbc23f23b28ae6a9a04741b42ceb",
     "url": "assets/manifest.json"
   },
   {
-    "revision": "b521562193a3c7da84cf363f310ae7e3",
-    "url": "assets/stylesheets/main.b5215621.min.css"
+    "revision": "18faea04a2c4ebb82a984642b6ba77c8",
+    "url": "assets/stylesheets/main.18faea04.min.css"
   },
   {
     "revision": "5a2f04b597c9369069fc3619889fb49c",
     "url": "assets/stylesheets/palette.5a2f04b5.min.css"
   },
   {
-    "revision": "5063b105c7646c8043d58c5289f02cca",
+    "revision": "c1868c9545d2de1cf8488f1dadd8c9d0",
     "url": "assets/webfonts/fa-brands-400.eot"
   },
   {
-    "revision": "06147b6cd88c7346cecd1edd060cd5de",
+    "revision": "0cb5a5c0d251c109458c85c6afeffbaa",
+    "url": "assets/webfonts/fa-brands-400.svg"
+  },
+  {
+    "revision": "13685372945d816a2b474fc082fd9aaa",
     "url": "assets/webfonts/fa-brands-400.ttf"
   },
   {
-    "revision": "c5e0f14f88a828261ba01558ce2bf26f",
+    "revision": "ec3cfddedb8bebd2d7a3fdf511f7c1cc",
     "url": "assets/webfonts/fa-brands-400.woff"
   },
   {
-    "revision": "cccc9d29470e879e40eb70249d9a2705",
+    "revision": "a06da7f0950f9dd366fc9db9d56d618a",
     "url": "assets/webfonts/fa-brands-400.woff2"
   },
   {
-    "revision": "c1a866ec0e04a5e1915b41fcf261457c",
+    "revision": "261d666b0147c6c5cda07265f98b8f8c",
     "url": "assets/webfonts/fa-regular-400.eot"
   },
   {
-    "revision": "65b286af947c0d982ca01b40e1fcab38",
+    "revision": "89ffa3aba80d30ee0a9371b25c968bbb",
+    "url": "assets/webfonts/fa-regular-400.svg"
+  },
+  {
+    "revision": "db78b9359171f24936b16d84f63af378",
     "url": "assets/webfonts/fa-regular-400.ttf"
   },
   {
-    "revision": "c4f508e7c4f01a9eeba7f08155cde04e",
+    "revision": "f89ea91ecd1ca2db7e09baa2c4b156d1",
     "url": "assets/webfonts/fa-regular-400.woff"
   },
   {
-    "revision": "f5f2566b93e89391da4db79462b8078b",
+    "revision": "c20b5b7362d8d7bb7eddf94344ace33e",
     "url": "assets/webfonts/fa-regular-400.woff2"
   },
   {
-    "revision": "8e4a6dcc692b3887f9f542cd6894d6d4",
+    "revision": "a0369ea57eb6d3843d6474c035111f29",
     "url": "assets/webfonts/fa-solid-900.eot"
   },
   {
-    "revision": "0bff33a5fd7ec390235476b4859747a0",
+    "revision": "ec763292e583294612f124c0b0def500",
+    "url": "assets/webfonts/fa-solid-900.svg"
+  },
+  {
+    "revision": "1ab236ed440ee51810c56bd16628aef0",
     "url": "assets/webfonts/fa-solid-900.ttf"
   },
   {
-    "revision": "333bae208dc363746961b234ff6c2500",
+    "revision": "bea989e82b07e9687c26fc58a4805021",
     "url": "assets/webfonts/fa-solid-900.woff"
   },
   {
-    "revision": "44d537ab79f921fde5a28b2c1636f397",
+    "revision": "b15db15f746f29ffa02638cb455b8ec0",
     "url": "assets/webfonts/fa-solid-900.woff2"
   },
   {
-    "revision": "df5761406f7336a6d82ce79c3ffe65e5",
+    "revision": "f18c034beafde125eaacc268d6e475b0",
     "url": "offline.html"
   }
 ]);
