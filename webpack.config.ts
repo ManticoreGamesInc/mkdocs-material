@@ -185,11 +185,6 @@ function config(args: Configuration): Configuration {
           }
         }
       }),
-      new WorkboxPlugin.InjectManifest({
-        swSrc: "src/sw.js",
-        globDirectory: "../site/",
-        globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*"]
-      }),
 
       new WebpackPwaManifest({
         filename: "manifest.json",
@@ -349,6 +344,12 @@ export default (_env: never, args: Configuration): Configuration[] => {
           { to: ".icons/fontawesome", from: "../LICENSE.txt" }
         ], {
           context: "node_modules/@fortawesome/fontawesome-free/svgs"
+        }),
+
+        new WorkboxPlugin.InjectManifest({
+          swSrc: "src/sw.js",
+          globDirectory: "../site/",
+          globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*"]
         }),
 
         /* Material icons */
