@@ -26,6 +26,8 @@ import * as CopyPlugin from "copy-webpack-plugin"
 import * as EventHooksPlugin from "event-hooks-webpack-plugin"
 import * as fs from "fs"
 import { minify as minhtml } from "html-minifier"
+import IgnoreEmitPlugin from "ignore-emit-webpack-plugin"
+import MiniCssExtractPlugin = require("mini-css-extract-plugin")
 import * as path from "path"
 import { toPairs } from "ramda"
 import { minify as minjs } from "terser"
@@ -88,22 +90,12 @@ function config(args: Configuration): Configuration {
         {
           test: /\.scss$/,
           use: [
-            {
-              loader: "file-loader",
-              options: {
-                name: `[name]${
-                  args.mode === "production" ? ".[md5:hash:hex:8].min" : ""
-                }.css`,
-                outputPath: "assets/stylesheets",
-                publicPath: path.resolve(__dirname, "material")
-              }
-            },
-            "extract-loader",
+            MiniCssExtractPlugin.loader,
             {
               loader: "css-loader",
               options: {
                 url: false,
-                sourceMap: args.mode !== "production"
+                sourceMap: true
               }
             },
             {
@@ -139,7 +131,7 @@ function config(args: Configuration): Configuration {
                   require("autoprefixer")(),
                   require("css-mqpacker")
                 ],
-                sourceMap: args.mode !== "production"
+                sourceMap: true
               }
             },
             {
@@ -153,7 +145,7 @@ function config(args: Configuration): Configuration {
                     "node_modules/material-shadows"
                   ]
                 },
-                sourceMap: args.mode !== "production"
+                sourceMap: true
               }
             }
           ]
@@ -175,6 +167,7 @@ function config(args: Configuration): Configuration {
 
     /* Plugins */
     plugins: [
+      new IgnoreEmitPlugin(/\/stylesheets\/.*?\.js/),
       new AssetsManifestPlugin({
         output: "assets/manifest.json",
         assets,
@@ -219,7 +212,7 @@ function config(args: Configuration): Configuration {
     ],
 
     /* Source maps */
-    devtool: "source-map",
+    devtool: args.mode === "production" ? "source-map" : "eval",
 
     /* Filter false positives and omit verbosity */
     stats: {
@@ -257,7 +250,9 @@ export default (_env: never, args: Configuration): Configuration[] => {
     {
       ...base,
       entry: {
-        "assets/javascripts/bundle": "src/assets/javascripts"
+        "assets/javascripts/bundle":  "src/assets/javascripts",
+        "assets/stylesheets/main":    "src/assets/stylesheets/main.scss",
+        "assets/stylesheets/palette": "src/assets/stylesheets/palette.scss"
       },
       output: {
         path: path.resolve(__dirname, "material"),
@@ -337,6 +332,10 @@ export default (_env: never, args: Configuration): Configuration[] => {
         new CopyPlugin([
           { to: "assets/javascripts/dark-mode.js", from: "src/assets/javascripts/dark-mode.js" }
         ]),
+        /* Stylesheets */
+        new MiniCssExtractPlugin({
+          filename: `[name]${hash}.css`
+        }),
 
         /* FontAwesome icons */
         new CopyPlugin([
@@ -445,7 +444,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
       optimization: {
         splitChunks: {
           cacheGroups: {
-            commons: {
+            vendor: {
               test: /\/node_modules\//,
               name: "assets/javascripts/vendor",
               chunks: "all"

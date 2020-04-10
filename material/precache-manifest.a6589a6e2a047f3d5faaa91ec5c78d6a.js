@@ -6368,7 +6368,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": ".icons/fontawesome/solid/yin-yang.svg"
   },
   {
-    "revision": "30fae4a50b3549c6c9b83ac8dae77b91",
+    "revision": "a14dd1c25d2994c9994f2f4a1b8b2219",
     "url": "404.html"
   },
   {
@@ -6872,7 +6872,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/img/youtube-play.png"
   },
   {
-    "url": "assets/javascripts/bundle.8b888d5a.min.js"
+    "url": "assets/javascripts/bundle.481a099d.min.js"
   },
   {
     "revision": "fbf5f29e41be25b2c74a1536bec8affa",
@@ -6883,10 +6883,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/javascripts/lightgallery.min.js"
   },
   {
-    "url": "assets/javascripts/vendor.8a8bec1a.min.js"
+    "url": "assets/javascripts/vendor.de8b95d0.min.js"
   },
   {
-    "revision": "e3773971b382005db5903578b8ab8a73",
+    "revision": "7885a9412def23ecbd21518fb74c54a3",
     "url": "assets/manifest.json"
   },
   {
@@ -6914,12 +6914,16 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/stylesheets/lightgallery.min.css"
   },
   {
-    "revision": "2efa6339396b3e22f0d26c5bcf3d949a",
-    "url": "assets/stylesheets/main.2efa6339.min.css"
+    "url": "assets/stylesheets/main.da8d0d62.min.css"
   },
   {
-    "revision": "5a2f04b597c9369069fc3619889fb49c",
-    "url": "assets/stylesheets/palette.5a2f04b5.min.css"
+    "url": "assets/stylesheets/main.da8d0d62.min.js"
+  },
+  {
+    "url": "assets/stylesheets/palette.d16eb856.min.css"
+  },
+  {
+    "url": "assets/stylesheets/palette.d16eb856.min.js"
   },
   {
     "revision": "c1868c9545d2de1cf8488f1dadd8c9d0",
@@ -7054,7 +7058,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "manifest.json"
   },
   {
-    "revision": "769af7b97ab4d63f66aaa72ca07aabcc",
+    "revision": "0d3761bcf2021fc9d14f68fedbcfcd8d",
     "url": "offline.html"
   }
 ]);
