@@ -151,19 +151,20 @@
     color: var(--color-text--light);
   }
 
-  textarea::placeholder {
-    color: var(--color-text--light);
-  }
-
-  textarea:focus::placeholder {
-    color: var(--color-text);
-  }
-
   textarea:focus,
   input:focus {
     border-color: transparent !important;
     background: var(--color-background);
     color: var(--color-text);
+  }
+
+  // Icon
+  svg {
+    display: inline-block;
+    width: 42px;
+    height: 42px;
+    vertical-align: middle;
+    fill: $md-color-white--light;
   }
 }
 
