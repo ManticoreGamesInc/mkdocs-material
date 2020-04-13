@@ -170,13 +170,7 @@ function config(args: Configuration): Configuration {
       new IgnoreEmitPlugin(/\/stylesheets\/.*?\.js/),
       new AssetsManifestPlugin({
         output: "assets/manifest.json",
-        assets,
-        customize({ key, value }) {
-          return {
-            key: key.replace(/\.scss$/, ".css"),
-            value
-          }
-        }
+        assets
       }),
 
       new WebpackPwaManifest({
