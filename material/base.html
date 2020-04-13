@@ -173,7 +173,7 @@
                 {% endif %}
                 {% if not (page.is_homepage or page.meta.hide_tags) %}
                   {% for tag in page.meta.tags %}
-                  <a href="{{ '/tags' | url }}#{{ tag.lower() }}" title="{{ tag }}" class="md-tag">
+                  <a href="{{ '/generated/tags' | url }}#{{ tag.lower() }}" title="{{ tag }}" class="md-tag">
                     {% include ".icons/material/tag.svg" %}
                     {{ tag }}
                   </a>
