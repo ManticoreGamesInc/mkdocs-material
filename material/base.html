@@ -29,7 +29,7 @@
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.0.2">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.1.0">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -41,16 +41,16 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.d35c4a9f.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.da1cc92e.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.fdbf4049.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.d16eb856.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
         {% set primary = map.primary(
           palette.primary | replace(" ", "-") | lower
         ) %}
-        <meta name="theme-color" content="{{ primary }}">
+        <meta name="theme-color" content="#16191F">
       {% endif %}
     {% endblock %}
     {% block libs %}{% endblock %}
@@ -63,9 +63,12 @@
           }}&display=fallback">
         <style>body,input{font-family:"{{ font.text }}",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}",SFMono-Regular,Consolas,Menlo,monospace}</style>
       {% endif %}
+      <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Oswald:300,400,400i,700&display=swap">
     {% endblock %}
     {% if config.extra.manifest %}
       <link rel="manifest" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
+    {% else %}
+      <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.json' | url }}" crossorigin="use-credentials">
     {% endif %}
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
@@ -85,6 +88,8 @@
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
+    <script src="{{ 'assets/javascripts/dark-mode.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -130,6 +135,14 @@
                   </div>
                 </div>
               </div>
+              {% else %}
+              <div class="md-sidebar md-sidebar--primary flag-hidden" data-md-component="navigation">
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    {% include "partials/nav.html" %}
+                  </div>
+                </div>
+              </div>
             {% endif %}
             {% if page.toc %}
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
@@ -144,6 +157,7 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               {% block content %}
+                {% include "partials/integrations/topscroller.html" %}
                 {% if page.edit_url %}
                   <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
                     {% include ".icons/material/pencil.svg" %}
@@ -157,6 +171,18 @@
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
+                {% if not (page.is_homepage or page.meta.hide_tags) %}
+                  {% for tag in page.meta.tags %}
+                  <a href="{{ 'generated/sitemap/' | url }}#{{ tag }}" title="{{ tag }}" class="md-tag">
+                    {% include ".icons/material/tag.svg" %}
+                    {{ tag }}
+                  </a>
+                  {% endfor %}
+                {% endif %}
+                <div id="app-update-prompt" class="hide">
+                  <label for="button"><i class="fas fa-sync-alt"></i> An update for the site is available!</label>
+                  <button id="app-update">Click to Refresh</button>
+                </div>
                 {{ page.content }}
                 {% if page and page.meta %}
                   {% if page.meta.git_revision_date_localized or
@@ -165,6 +191,9 @@
                     {% include "partials/source-date.html" %}
                   {% endif %}
                 {% endif %}
+              {% endblock %}
+              {% block netlify %}
+                {% include "partials/integrations/netlify.html" %}
               {% endblock %}
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
@@ -178,8 +207,9 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/vendor.606193c2.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.b90b6d1d.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/vendor.de8b95d0.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.481a099d.min.js' | url }}"></script>
+      {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
       {%- for key in [
         "clipboard.copy",

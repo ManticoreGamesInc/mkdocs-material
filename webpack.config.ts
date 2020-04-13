@@ -268,26 +268,6 @@ export default (_env: never, args: Configuration): Configuration[] => {
         /* Copy and transform static assets */
         new CopyPlugin([
 
-          /* Copy web font files */
-          {
-            context: "src",
-            from: "assets/fonts/**/*",
-            ignore: ["**/*.css"]
-          },
-
-          /* Copy font-awesome web font files */
-          {
-            context: "src",
-            from: "assets/webfonts/**/*",
-            ignore: ["**/*.css"]
-          },
-
-          /* Copy and minify web font stylesheets */
-          {
-            context: "src",
-            from: "assets/fonts/*.css",
-          },
-
           /* Copy lightbox stylesheets */
           {
             context: "node_modules/lightgallery.js/dist/css/",

@@ -39,13 +39,6 @@
   <meta name="msapplication-TileColor" content="#16191F">
   <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
 
-  <!-- Font Awesome -->
-  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/fontawesome.min.css' | url }}" />
-  <link rel="preload" href="{{ 'assets/fonts/brands.min.css' | url }}" as="style">
-  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/brands.min.css' | url }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/regular.min.css' | url }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'assets/fonts/solid.min.css' | url }}" />
-
   <!-- Service Worker -->
   {% block serviceworker %}
     {% include "partials/integrations/serviceworker.html" %}
