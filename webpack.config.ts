@@ -312,9 +312,17 @@ export default (_env: never, args: Configuration): Configuration[] => {
         new CopyPlugin([
           { to: "assets/javascripts/dark-mode.js", from: "src/assets/javascripts/dark-mode.js" }
         ]),
+
         /* Stylesheets */
         new MiniCssExtractPlugin({
           filename: `[name]${hash}.css`
+        }),
+
+        // Workbox Manifest Cache
+        new WorkboxPlugin.InjectManifest({
+          swSrc: "src/sw.js",
+          globDirectory: "../site/",
+          globPatterns: ["404.html", "offline.html", "assets/icons/*"]
         }),
 
         /* FontAwesome icons */
@@ -323,12 +331,6 @@ export default (_env: never, args: Configuration): Configuration[] => {
           // { to: ".icons/fontawesome", from: "../LICENSE.txt" }
         ], {
           context: "node_modules/@fortawesome/fontawesome-free/svgs"
-        }),
-
-        new WorkboxPlugin.InjectManifest({
-          swSrc: "src/sw.js",
-          globDirectory: "../site/",
-          globPatterns: ["404.html", "offline.html", "assets/fonts/**/*", "assets/webfonts/**/*", "assets/icons/*"]
         }),
 
         /* Material icons */
