@@ -1,12 +1,13 @@
 {#-
   This file was automatically generated - do not edit
 -#}
- <div class="netlify">
+<style>.modal{position:fixed;left:0;top:0;width:100%;height:100%;background-color:rgba(0,0,0,.5);opacity:0;visibility:hidden;transform:scale(1.1);transition:visibility 0s linear .25s,opacity .25s 0s,transform .25s}.modal-content{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);background:var(--core-color-black);color:#fff;border:2px solid var(--core-color-orange);border-radius:8px;box-shadow:0 .2rem .5rem rgba(0,0,0,.05),0 0 .05rem rgba(0,0,0,.1);padding:1rem 1.5rem;width:24rem;text-align:center}.modal-content svg{fill:red}.show-modal{opacity:1;visibility:visible;transform:scale(1);transition:visibility 0s linear 0s,opacity .25s 0s,transform .25s}</style>
+<div class="netlify">
   <p>
     {% include ".icons/material/comment-text.svg" %}
     Was this page helpful? Can it be improved? Please let us know your feedback!
   </p>
-  <form name="Feedback" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+  <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
       <label><textarea name="message" placeholder="Your Feedback"></textarea></label>
@@ -14,18 +15,43 @@
       <button type="submit">Send</button>
     </p>
   </form>
+  <div class="modal">
+    <div class="modal-content">
+        <h1>Thank you for your submission! {% include ".icons/material/heart.svg" %}</h1>
+        <button class="close-button">Close</button>
+    </div>
+  </div>
 </div>
-{#
-<div class="netlify">
-  <p>
-    <i class="fas fa-comment-dots"></i> Was this page helpful? Can it be improved? Please let us know your feedback!
-  </p>
-  <p style="text-align:center">
-    <button type="submit" style="width:250px">
-      <a href="https://github.com/ManticoreGamesInc/platform-documentation/issues/" target="_blank" rel="noopener" title="Core Documentation Feedback">
-        Send Feedback
-      </a>
-    </button>
-  </p>
-</div>
-#}
+<script>
+const netlifyForm = document.querySelector("#netlify-form")
+const modal = document.querySelector(".modal")
+const trigger = document.querySelector(".trigger")
+const closeButton = document.querySelector(".close-button")
+function toggleModal() {
+  modal.classList.toggle("show-modal")
+}
+function windowOnClick(event) {
+  if (event.target === modal) {
+    toggleModal()
+  }
+}
+netlifyForm.addEventListener('submit', e => {
+  e.preventDefault()
+  const formData = new FormData(netlifyForm)
+  fetch(netlifyForm.getAttribute('action'), {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(res => {
+    if (res) {
+      toggleModal()
+    }
+  })
+})
+window.addEventListener("click", windowOnClick);
+closeButton.addEventListener("click", toggleModal);
+</script>

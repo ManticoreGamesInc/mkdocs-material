@@ -470,7 +470,7 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/javascripts/vendor.de8b95d0.min.js"
   },
   {
-    "revision": "59f6c23f9753f99bf169a3c6df197dd1",
+    "revision": "d856ac3babd6df3beda5a896abefe5f0",
     "url": "assets/manifest.json"
   },
   {
@@ -498,10 +498,10 @@ self.__precacheManifest = (self.__precacheManifest || []).concat([
     "url": "assets/stylesheets/lightgallery.min.css"
   },
   {
-    "url": "assets/stylesheets/main.af1b640e.min.css"
+    "url": "assets/stylesheets/main.29c910b9.min.css"
   },
   {
-    "url": "assets/stylesheets/main.af1b640e.min.js"
+    "url": "assets/stylesheets/main.29c910b9.min.js"
   },
   {
     "url": "assets/stylesheets/palette.d16eb856.min.css"
