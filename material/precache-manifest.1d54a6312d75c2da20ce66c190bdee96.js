@@ -1,9 +1,5 @@
 self.__precacheManifest = (self.__precacheManifest || []).concat([
   {
-    "revision": "2e3494502db283e8891d4886fe445912",
-    "url": ".icons/fontawesome/LICENSE.txt"
-  },
-  {
     "revision": "e3046539308ff5570e6f10ac678da7d1",
     "url": ".icons/fontawesome/brands/500px.svg"
   },

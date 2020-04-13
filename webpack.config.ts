@@ -320,7 +320,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
         /* FontAwesome icons */
         new CopyPlugin([
           { to: ".icons/fontawesome", from: "**/*.svg" },
-          { to: ".icons/fontawesome", from: "../LICENSE.txt" }
+          // { to: ".icons/fontawesome", from: "../LICENSE.txt" }
         ], {
           context: "node_modules/@fortawesome/fontawesome-free/svgs"
         }),
@@ -346,7 +346,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
         /* GitHub octicons */
         new CopyPlugin([
           { to: ".icons/octicons", from: "*.svg" },
-          { to: ".icons/octicons", from: "../../LICENSE" }
+          // { to: ".icons/octicons", from: "../../LICENSE" }
         ], {
           context: "node_modules/@primer/octicons/build/svg"
         }),
