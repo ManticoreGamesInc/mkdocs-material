@@ -6,7 +6,7 @@
       {% set _,rest = social.link.split("//") %}
       {% set domain = rest.split("/")[0] %}
       <li class="md-tabs__item">
-        <a href="{{ social.link }}" target="_blank" rel="noopener" title="Check us out on {{ domain }}" class="md-tabs__link md-tabs__social fab">
+        <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ domain }}" aria-label="{{ domain }} Link" class="md-tabs__link md-tabs__social fab">
           {% include ".icons/" ~ social.icon ~ ".svg" %}
         </a>
       </li>

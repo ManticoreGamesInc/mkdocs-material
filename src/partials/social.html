@@ -29,7 +29,8 @@
       <a
         href="{{ social.link }}"
         target="_blank" rel="noopener"
-        title="Check us out on {{ domain }}"
+        title="{{ domain }}"
+        aria-label="{{ domain }} Link"
         class="md-footer-social__link"
       >
         {% include ".icons/" ~ social.icon ~ ".svg" %}

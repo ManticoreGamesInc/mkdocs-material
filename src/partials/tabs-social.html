@@ -8,7 +8,8 @@
           href="{{ social.link }}"
           target="_blank"
           rel="noopener"
-          title="Check us out on {{ domain }}"
+          title="{{ domain }}"
+          aria-label="{{ domain }} Link"
           class="md-tabs__link md-tabs__social fab"
         >
           {% include ".icons/" ~ social.icon ~ ".svg" %}
