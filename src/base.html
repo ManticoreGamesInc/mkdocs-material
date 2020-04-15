@@ -170,7 +170,8 @@
     {% endblock %}
 
     <!-- Custom front matter -->
-    {% block extrahead %}{% endblock %}
+    {% block extrahead %}
+    {% endblock %}
   </head>
 
   <!-- Text direction and color palette, if defined -->
@@ -314,6 +315,7 @@
                   <a
                     href="{{ page.edit_url }}"
                     title="{{ lang.t('edit.link.title') }}"
+                    aria-label="{{ lang.t('edit.link.title') }}"
                     class="md-content__button md-icon"
                   >
                     {% include ".icons/material/pencil.svg" %}
@@ -390,7 +392,7 @@
       <script src="{{ 'assets/javascripts/vendor.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/bundle.js' | url }}"></script>
 
-	  <!-- Lightgallery -->
+	    <!-- Lightgallery -->
       {% include "partials/integrations/lightgallery.html" %}
 
       <!-- Translations -->

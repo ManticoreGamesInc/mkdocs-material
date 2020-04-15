@@ -179,7 +179,6 @@
         text-transform: uppercase;
         font-weight: 500;
         line-height: 1.5;
-
       }
 
       // List title
@@ -229,8 +228,8 @@
         // Site title in main navigation
         &[for="__drawer"] {
           position: relative;
-          color: var(--md-primary-bg-color);
-          background-color: var(--md-primary-fg-color);
+          color: var(--core-color-orange);
+          background-color: var(--core-color-black);
 
           // Site logo
           .md-nav__button {

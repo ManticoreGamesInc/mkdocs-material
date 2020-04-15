@@ -41,7 +41,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.cca26b17.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.ece3746d.min.css' | url }}">
       {% if palette.primary or palette.accent %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.d16eb856.min.css' | url }}">
       {% endif %}
@@ -77,7 +77,8 @@
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
-    {% block extrahead %}{% endblock %}
+    {% block extrahead %}
+    {% endblock %}
   </head>
   {% set direction = config.theme.direction or lang.t('direction') %}
   {% if palette.primary or palette.accent %}
@@ -158,7 +159,7 @@
               {% block content %}
                 {% include "partials/integrations/topscroller.html" %}
                 {% if page.edit_url %}
-                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" aria-label="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
                     {% include ".icons/material/pencil.svg" %}
                   </a>
                 {% endif %}
