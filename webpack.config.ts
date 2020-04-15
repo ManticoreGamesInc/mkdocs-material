@@ -315,8 +315,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
         // Workbox Manifest Cache
         new WorkboxPlugin.InjectManifest({
           swSrc: "src/sw.js",
-          globDirectory: "../site/",
-          globPatterns: ["404.html", "offline.html", "assets/icons/*"]
+          additionalManifestEntries: [ {url: "404.html", revision: "1" }, {url: "offline.html", revision: "1" } ]
         }),
 
         /* FontAwesome icons */

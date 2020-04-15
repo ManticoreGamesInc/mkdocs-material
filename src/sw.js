@@ -4,8 +4,10 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/5.1.2/workbox-sw.js")
+
 workbox.precaching.cleanupOutdatedCaches()
-workbox.precaching.precacheAndRoute(self.__precacheManifest || [])
+workbox.precaching.precacheAndRoute(self.__WB_MANIFEST)
 workbox.core.clientsClaim()
 workbox.googleAnalytics.initialize()
 
@@ -39,7 +41,7 @@ workbox.routing.registerRoute(navigationRoute)
 workbox.routing.setCatchHandler(({ event }) => {
   switch (event.request.destination) {
     case "document":
-      return caches.match(workbox.precaching.getCacheKeyForURL("offline.html"))
+      return caches.match(workbox.precaching.createHandlerBoundToURL("offline.html"))
 
     default:
       // If we don't have a fallback, just return an error response.
@@ -67,7 +69,7 @@ workbox.routing.registerRoute(
       credentials: "include"
     },
     plugins: [
-      new workbox.expiration.Plugin({
+      new workbox.expiration.ExpirationPlugin({
         // Cache only 50 images.
         maxEntries: 50,
         // Cache for a maximum of a day.
@@ -90,10 +92,10 @@ workbox.routing.registerRoute(
   new workbox.strategies.CacheFirst({
     cacheName: "google-fonts-webfonts",
     plugins: [
-      new workbox.cacheableResponse.Plugin({
+      new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [0, 200]
       }),
-      new workbox.expiration.Plugin({
+      new workbox.expiration.ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 365,
         maxEntries: 30
       })
