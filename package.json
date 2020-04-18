@@ -1,6 +1,6 @@
 {
   "name": "mkdocs-material",
-  "version": "5.1.0",
+  "version": "5.1.1",
   "description": "A Material Design theme for MkDocs",
   "keywords": [
     "mkdocs",
@@ -27,8 +27,8 @@
     "build": "npm run clean && npx webpack --mode production",
     "clean": "npx rimraf material",
     "lint": "npm run lint:ts && npm run lint:scss",
-    "lint:scss": "npx stylelint `find src/assets -name *.scss`",
-    "lint:ts": "npx tslint -p tsconfig.json 'src/**/*.ts'",
+    "lint:scss": "npx stylelint \"src/assets/**/*.scss\"",
+    "lint:ts": "npx tslint -p tsconfig.json \"src/**/*.ts\"",
     "start": "npx webpack --mode development --watch"
   },
   "dependencies": {
@@ -40,7 +40,7 @@
     "rxjs": "^7.0.0-beta.0"
   },
   "devDependencies": {
-    "@fortawesome/fontawesome-free": "^5.12.1",
+    "@fortawesome/fontawesome-free": "^5.13.0",
     "@primer/octicons": "^9.6.0",
     "@types/clipboard": "^2.0.1",
     "@types/copy-webpack-plugin": "^5.0.0",

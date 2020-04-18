@@ -18,11 +18,18 @@ pip show mkdocs-material
 
 ## Changelog
 
+### 5.1.1 <small>_ April 17, 2020</small>
+
+* Added new FontAwesome icons
+* Fixed #1609: Instant loading doesn't honor `target=_blank`
+* Fixed GitHub stars count rounding errors
+* Fixed GitLab stars count retrieval
+
 ### 5.1.0 <small>_ April 12, 2020</small>
 
 * Added support for icons from Markdown through [mkdocs-material-extensions][1]
 
-  [1]: https://github.com/facelessuer/mkdocs-material-extensions
+  [1]: https://github.com/facelessuser/mkdocs-material-extensions
 
 ### 5.0.2 <small>_ April 10, 2020</small>
 
@@ -597,7 +604,7 @@ pip show mkdocs-material
 
 ### 1.5.1 <small>_ March 30, 2017</small>
 
-* Fixed rendering and offset of targetted footnotes
+* Fixed rendering and offset of targeted footnotes
 * Fixed #238: Link on logo is not set to `site_url`
 
 ### 1.5.0 <small>_ March 24, 2017</small>
