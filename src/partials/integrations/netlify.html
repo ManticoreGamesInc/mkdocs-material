@@ -47,7 +47,7 @@
   <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
-      <label for="message">Your Feedback<textarea name="message" placeholder="Your Feedback"></textarea></label>
+      <label for="message">Your Feedback<textarea name="message" placeholder="Your Feedback" required></textarea></label>
     <p>
       <button type="submit">Send</button>
     </p>
