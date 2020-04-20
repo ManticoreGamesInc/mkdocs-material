@@ -178,27 +178,31 @@ function config(args: Configuration): Configuration {
         name: "Core Creator Hub",
         short_name: "Core Hub",
         start_url: "/?utm_source=web_app_manifest&utm_medium=web_app_manifest&utm_campaign=web_app_manifest",
-        publicPath: "https://docs.coregames.com/",
         display: "standalone",
         description: "Documentation for the Core Platform",
         theme_color: "#16191F",
         background_color: "#16191F",
-        crossorigin: "use-credentials",
         inject: true,
         orientation: "any",
         fingerprints: false,
         icons: [
           {
             src: path.resolve("src/assets/icons/favicon-192x192.png"),
-            size: "192x192"
+            destination: "assets/icons",
+            size: "192x192",
+            type: "image/png",
           },
           {
             src: path.resolve("src/assets/icons/favicon-512x512.png"),
-            size: "512x512"
-          },
-          {
-            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            destination: "assets/icons",
             size: "512x512",
+            type: "image/png",
+          },
+          {
+            src: path.resolve("src/assets/icons/favicon-512x512.png"),
+            destination: "assets/icons",
+            size: "512x512",
+            type: "image/png",
             purpose: "maskable"
           }
         ]
