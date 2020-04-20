@@ -302,9 +302,9 @@ export default (_env: never, args: Configuration): Configuration[] => {
           }
         ]),
 
-        /* Dark Mode */
+        /* Theme Switcher */
         new CopyPlugin([
-          { to: "assets/javascripts/dark-mode.js", from: "src/assets/javascripts/dark-mode.js" }
+          { to: "assets/javascripts/theme-switcher.js", from: "src/assets/javascripts/theme-switcher.js" }
         ]),
 
         /* Stylesheets */
