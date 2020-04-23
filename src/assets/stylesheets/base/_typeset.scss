@@ -200,8 +200,8 @@ kbd {
   // Inline code blocks
   code {
     padding: 0 px2em(4px, 13.6px);
-    font-size: px2em(13.6px);
-    word-break: break-word;
+    font-size: px2em(16px);
+    // word-break: break-word;
     background-color: var(--md-code-bg-color);
     border-radius: px2rem(2px);
     box-decoration-break: clone;
