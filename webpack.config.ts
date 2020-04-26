@@ -128,8 +128,7 @@ function config(args: Configuration): Configuration {
               options: {
                 ident: "postcss",
                 plugins: () => [
-                  require("autoprefixer")(),
-                  require("css-mqpacker")
+                  require("autoprefixer")()
                 ],
                 sourceMap: true
               }

@@ -396,9 +396,6 @@ Click on a color name to change the primary color of the theme:
     display: block;
     color: var(--md-primary-bg-color);
     background-color: var(--md-primary-fg-color);
-    box-shadow:
-       0.2941176471em 0 0 var(--md-primary-fg-color), 
-      -0.2941176471em 0 0 var(--md-primary-fg-color);
   }
 </style>
 
@@ -530,9 +527,9 @@ theme:
 All icons are directly inlined as `*.svg` files, so no further requests will be
 made. Icon sets which are bundled with Material for MkDocs:
 
-* [Material Design icons][16]: 3.8k icons
-* [FontAwesome icons][17]: 1.5k icons
-* [GitHub's Octicons][18]: 200 icons
+* [Material Design icons][16] (`material`): 3.8k icons
+* [FontAwesome icons][17] (`fontawesome`): 1.5k icons
+* [GitHub's Octicons][18] (`octicons`): 200 icons
 
 __You can use all those icons [directly from :fontawesome-brands-markdown:
 Markdown][19]!__
