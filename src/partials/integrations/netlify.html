@@ -49,7 +49,7 @@
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
       <label for="message">Your Feedback<textarea name="message" placeholder="Your Feedback" required></textarea></label>
     <p>
-      <button type="submit">Send</button>
+      <button type="submit" onclick="disableButton(this)">Send</button>
     </p>
   </form>
   <div class="modal">
@@ -69,6 +69,12 @@ var closeButton = document.querySelector(".close-button")
 
 function toggleModal() {
   modal.classList.toggle("show-modal")
+}
+
+function disableButton(b) {
+  b.disabled = true;
+  b.value = 'Submitted';
+  b.form.submit();
 }
 
 function windowOnClick(event) {

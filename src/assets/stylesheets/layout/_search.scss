@@ -551,6 +551,11 @@ $md-toggle__search--checked:
       }
     }
 
+    // &:nth-child(odd) {
+    //   background-color: rgba(0,0,0,0.2);
+    //   color: var(--md-default-fg-color--light);
+    // }
+
     // Add a little spacing on the teaser of the last link
     &:last-child .md-search-result__teaser {
       margin-bottom: px2rem(12px);
@@ -628,7 +633,7 @@ $md-toggle__search--checked:
     max-height: px2rem(33px);
     margin: 0.5em 0;
     overflow: hidden;
-    color: var(--md-default-fg-color--light);
+    color: var(--md-default-fg-color--lighter);
     font-size: ms(-1);
     line-height: 1.4;
     text-overflow: ellipsis;
@@ -655,5 +660,6 @@ $md-toggle__search--checked:
     font-weight: 700;
     font-style: normal;
     text-decoration: underline;
+    color: var(--core-color-orange);
   }
 }

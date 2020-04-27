@@ -31,12 +31,12 @@
 
   // [tablet landscape]: Decrease horizontal width
   @include break-at-device(tablet landscape) {
-    max-width: calc(100% - #{px2rem(242px)});
+    max-width: calc(100% - #{px2rem(342px)});
   }
 
   // [screen +]: Decrease horizontal width
   @include break-from-device(screen) {
-    max-width: calc(100% - #{px2rem(242px)} * 2);
+    max-width: calc(100% - #{px2rem(342px)} * 2);
   }
 
   // Define spacing

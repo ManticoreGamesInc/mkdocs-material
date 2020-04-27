@@ -91,7 +91,7 @@ $md-toggle__drawer--checked:
   &--secondary {
     display: none;
     order: 2;
-
+    width: px2rem(342px);
     // [tablet landscape +]: Show table of contents next to body copy
     @include break-from-device(tablet landscape) {
       display: block;
