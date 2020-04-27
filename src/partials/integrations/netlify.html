@@ -37,6 +37,16 @@
   transform: scale(1.0);
   transition: visibility 0s linear 0s, opacity 0.25s 0s, transform 0.25s;
 }
+
+.disabled {
+  background-color: var(--core-color-locked) !important;
+  cursor: not-allowed !important;
+}
+
+.disabled:hover {
+  background-color: rgba(0,0,0,0.2) !important;
+}
+
 </style>
 
 <div class="netlify">
@@ -45,11 +55,12 @@
     Was this page helpful? Can it be improved? Please let us know!
   </p>
   <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+      <input type="hidden" name="bot-field">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
       <label for="message">Your Feedback<textarea name="message" placeholder="Your Feedback" required></textarea></label>
     <p>
-      <button type="submit" onclick="disableButton(this)">Send</button>
+      <button type="submit">Send</button>
     </p>
   </form>
   <div class="modal">
@@ -71,12 +82,6 @@ function toggleModal() {
   modal.classList.toggle("show-modal")
 }
 
-function disableButton(b) {
-  b.disabled = true;
-  b.value = 'Submitted';
-  b.form.submit();
-}
-
 function windowOnClick(event) {
   if (event.target === modal) {
     toggleModal()
@@ -85,6 +90,10 @@ function windowOnClick(event) {
 
 netlifyForm.addEventListener('submit', e => {
   e.preventDefault()
+  console.log(e)
+  e.submitter.disabled = true
+  e.submitter.textContent = "Submitted"
+  e.submitter.classList.toggle("disabled")
 
   const formData = new FormData(netlifyForm)
   fetch(netlifyForm.getAttribute('action'), {
