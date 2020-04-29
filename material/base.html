@@ -41,9 +41,9 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.33204ae7.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.84837d5f.min.css' | url }}">
       {% if palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.e0f3a144.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.27ffcaa0.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -207,8 +207,8 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/vendor.ff4ef43d.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.21ebb02d.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/vendor.8caa27b7.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.193efd2f.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
       {%- for key in [
@@ -233,7 +233,7 @@
           base: "{{ base_url }}",
           features: {{ config.theme.features | tojson }},
           search: Object.assign({
-            worker: "{{ 'assets/javascripts/worker/search.58d22e8e.min.js' | url }}"
+            worker: "{{ 'assets/javascripts/worker/search.37585f48.min.js' | url }}"
           }, typeof search !== "undefined" && search)
         })
       </script>
