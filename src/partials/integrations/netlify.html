@@ -46,7 +46,6 @@
 .disabled:hover {
   background-color: rgba(0,0,0,0.2) !important;
 }
-
 </style>
 
 <div class="netlify">
@@ -58,7 +57,7 @@
       <input type="hidden" name="bot-field">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
-      <label for="message">Your Feedback<textarea name="message" placeholder="Your Feedback" required></textarea></label>
+      <textarea type="text" title="Your Feedback" placeholder="Your Feedback" required></textarea>
     <p>
       <button type="submit">Send</button>
     </p>
@@ -70,7 +69,6 @@
     </div>
   </div>
 </div>
-
 
 <script>
 var netlifyForm = document.querySelector("#netlify-form")
@@ -111,6 +109,6 @@ netlifyForm.addEventListener('submit', e => {
   })
 })
 
-window.addEventListener("click", windowOnClick);
-closeButton.addEventListener("click", toggleModal);
+window.addEventListener("click", windowOnClick)
+closeButton.addEventListener("click", toggleModal)
 </script>
