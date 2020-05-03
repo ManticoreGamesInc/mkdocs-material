@@ -9,9 +9,10 @@
         {% set _,url = social.link.split("//") %}
         {% set title = url.split("/")[0] %}
       {% endif %}
-      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ title }}" class="md-footer-social__link">
+      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ title }}" aria-label="Link to {{ title }}" class="md-footer-social__link">
         {% include ".icons/" ~ social.icon ~ ".svg" %}
       </a>
     {% endfor %}
+    {% include "partials/theme-toggle.html" %}
   </div>
 {% endif %}
