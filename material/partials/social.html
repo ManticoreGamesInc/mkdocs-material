@@ -4,12 +4,14 @@
 {% if config.extra.social %}
   <div class="md-footer-social">
     {% for social in config.extra.social %}
-      {% set _,rest = social.link.split("//") %}
-      {% set domain = rest.split("/")[0] %}
-      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ domain }}" aria-label="{{ domain }} Link" class="md-footer-social__link">
+      {% set title = social.name %}
+      {% if not title and "//" in social.link %}
+        {% set _,url = social.link.split("//") %}
+        {% set title = url.split("/")[0] %}
+      {% endif %}
+      <a href="{{ social.link }}" target="_blank" rel="noopener" title="{{ title }}" class="md-footer-social__link">
         {% include ".icons/" ~ social.icon ~ ".svg" %}
       </a>
     {% endfor %}
-    {% include "partials/theme-toggle.html" %}
   </div>
 {% endif %}
