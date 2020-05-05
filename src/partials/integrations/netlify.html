@@ -57,7 +57,16 @@
       <input type="hidden" name="bot-field">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
-      <textarea type="text" name="Message" title="Your Feedback" placeholder="Your Feedback" required minlength="5"></textarea>
+      <label>Your Feedback:
+        <textarea
+          type="text"
+          name="Message"
+          title="Your Feedback"
+          placeholder="For issues with Core itself, please use the feedback link at the top instead!"
+          required
+          minlength="5"
+        ></textarea>
+      </label>
     <p>
       <button type="submit">Send</button>
     </p>
@@ -88,7 +97,6 @@ function windowOnClick(event) {
 
 netlifyForm.addEventListener('submit', e => {
   e.preventDefault()
-  console.log(e)
   e.submitter.disabled = true
   e.submitter.textContent = "Submitted"
   e.submitter.classList.toggle("disabled")
