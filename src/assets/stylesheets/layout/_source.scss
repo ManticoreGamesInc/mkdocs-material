@@ -108,7 +108,7 @@
   // Repository name
   &__repository {
     display: inline-block;
-    max-width: calc(100% - #{px2rem(24px)});
+    max-width: 100%;
     margin-left: px2rem(12px);
     overflow: hidden;
     font-weight: 700;
