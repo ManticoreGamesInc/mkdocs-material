@@ -109,7 +109,7 @@
     overflow: hidden;
     text-overflow: ellipsis;
     cursor: pointer;
-    transition: color 125ms;
+    transition: color 250ms;
     scroll-snap-align: start;
 
     // Hide link to table of contents by default - this will only match the
@@ -125,7 +125,7 @@
 
     // Blurred link
     &[data-md-state="blur"] {
-      color: var(--md-default-fg-color--light);
+      color: var(--md-default-fg-color--lighter);
     }
 
     // Active link
@@ -282,7 +282,7 @@
 
         // Active parent item
         &--active > .md-nav__link {
-          color: var(--md-primary-fg-color);
+          color: var(--md-text-link-color);
 
           // Focused or hovered linl
           &:focus,
