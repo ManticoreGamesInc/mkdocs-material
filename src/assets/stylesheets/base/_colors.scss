@@ -49,12 +49,12 @@
   --md-accent-bg-color:                hsla(0, 0%, 100%, 1);
   --md-accent-bg-color--light:         hsla(0, 0%, 100%, 0.7);
 
+  // Code block color shades
+  --md-code-bg-color:                  hsla(0, 0%, 96%, 1);
+  --md-code-fg-color:                  hsla(200, 18%, 26%, 1);
+
   // Light theme (default)
   > * {
-
-    // Code color shades
-    --md-code-bg-color:                  hsla(0, 0%, 96%, 1);
-    --md-code-fg-color:                  hsla(200, 18%, 26%, 1);
 
     // Text color shades
     --md-text-color:                     var(--md-default-fg-color);
