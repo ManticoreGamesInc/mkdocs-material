@@ -7,6 +7,15 @@
 
   // Manticore Colors
   --core-color-black: #20232A;
+  --core-color-purple: #6536D1;
+  --core-color-green: #5FCC29;
+  --core-color-dungeon-grey: #11141A;
+  --core-color-basement-grey: #1A1E26;
+  --core-color-foyer-grey: #2C3038;
+  --core-color-foyer-grey-dark: #292C33;
+  --core-color-clickme-grey-dark: #1C2029;
+  --core-color-clickme-grey: #384254;
+  --core-color-clickme-highlight: #7182A8;
 
   --core-color-orange: #E67E17;
   --core-color-orange--light: hsla(30, 82%, 50%, 0.54);
@@ -120,14 +129,12 @@
   button {
     background-color: var(--core-color-blue);
     border-radius: 4px;
-    // box-shadow: 0 1px 4px rgba(0, 0, 0, 0.5);
     cursor: pointer;
     color: #000000;
     font-family: var(--font-oswald);
     font-size: 20px;
     line-height: 22px;
     padding: 16px 45px;
-    // text-shadow: 0 0 2px #000000;
     text-transform: uppercase;
     user-select: none;
   }
