@@ -132,6 +132,7 @@ For other installation methods, configuration options, and a demo, visit
   [AutoKeras](https://autokeras.com/),
   [BFE](https://www.bfe-networks.net/),
   [FastAPI](https://fastapi.tiangolo.com/),
+  [Kubernetes](https://kops.sigs.k8s.io/),
   [OpenFaaS](https://docs.openfaas.com/),
   [Pi-Hole](https://docs.pi-hole.net/),
   [Pydantic](https://pydantic-docs.helpmanual.io/),
@@ -140,6 +141,12 @@ For other installation methods, configuration options, and a demo, visit
   [ZeroNet](https://zeronet.io/docs/)
 
 ## Sponsors
+
+<p>
+  <a href="https://cirrus-ci.org/" target=_blank>
+    <img src="https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/.github/assets/sponsors/cirrus-ci.svg" height=40 />
+  </a>
+</p>
 
 If you're using this project a lot, consider [sponsoring][2] it! This will give
 me the opportunity to sustain my efforts maintaining it. Every contribution

@@ -29,7 +29,7 @@
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.2.0">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.2.1">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -41,8 +41,8 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.0e0daa90.min.css' | url }}">
-      {% if palette.primary or palette.accent %}
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.7f983137.min.css' | url }}">
+      {% if palette.scheme or palette.primary or palette.accent %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.75fb1892.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}

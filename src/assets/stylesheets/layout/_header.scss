@@ -172,12 +172,6 @@
     font-family: var(--font-oswald);
     text-transform: uppercase;
 
-    // Adjust for right-to-left languages
-    [dir="rtl"] & {
-      padding-right: px2rem(20px);
-      padding-left: initial;
-    }
-
     // Page title
     & + & {
       z-index: -1;
