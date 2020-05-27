@@ -13,7 +13,7 @@
 }
 
 .slider {
-  background-color: $md-color-black--lighter;
+  background-color: var(--core-color-clickme-grey);
   bottom: 0;
   cursor: pointer;
   left: 0;
@@ -37,7 +37,7 @@
 }
 
 input:checked + .slider {
-  background-color: $md-color-black--lighter;
+  background-color: var(--core-color-clickme-grey);
 }
 
 input:checked + .slider:before {

@@ -244,7 +244,7 @@ $md-toggle__search--checked:
     // Placeholder and icon color in active state
     ~ .md-search__icon,
     &::placeholder {
-      color: $md-color-black--light;
+      color: var(--md-default-fg-color--light);
     }
 
     // Remove the "x" rendered by Internet Explorer
@@ -294,15 +294,15 @@ $md-toggle__search--checked:
 
       // Set light background on active search field
       #{$md-toggle__search--checked} & {
-        background-color: var(--color-white);
-        border-radius: px2rem(2px) px2rem(2px) 0 0;
-        color: var(--color-black);
+        color: var(--md-default-fg-color);
         text-overflow: clip;
+        background-color: var(--md-default-bg-color);
+        border-radius: px2rem(2px) px2rem(2px) 0 0;
 
-        // Icon and placeholder color in active state
+         // Icon and placeholder color in active state
         + .md-search__icon,
         &::placeholder {
-          color: var(--color-black--light);
+          color: var(--md-default-fg-color--light);
         }
       }
     }
@@ -403,6 +403,7 @@ $md-toggle__search--checked:
         transform: scale(1);
         opacity: 1;
         pointer-events: initial;
+        color: var(--md-default-fg-color--light);
 
         // Hovered icon
         &:hover {

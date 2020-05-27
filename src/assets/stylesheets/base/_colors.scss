@@ -74,6 +74,7 @@
 }
 
 [data-theme="dark"] {
+
   // Default color shades #16191F
   --md-default-fg-color:               hsla(0, 0%, 100%, 1);
   --md-default-fg-color--light:        hsla(0, 0%, 100%, 0.7);
@@ -93,19 +94,6 @@
   --md-primary-bg-color--light:        hsla(220, 17%, 10%, 0.54);
   --md-primary-bg-color--lighter:      hsla(220, 17%, 10%, 0.26);
   --md-primary-bg-color--lightest:     hsla(220, 17%, 10%, 0.07);
-
-  // Actually black, sorry :/
-  --color-white: hsla(0, 0%, 0%, 1);
-  --color-white--light: hsla(0, 0%, 0%, 0.54);
-  --color-white--lighter: hsla(0, 0%, 0%, 0.38);
-  --color-white--lightest: hsla(0, 0%, 0%, 0.12);
-  --color-white--transparent: hsla(0, 0%, 0%, 0);
-
-  --color-black: hsla(0, 0%, 100%, 1);
-  --color-black--light: hsla(0, 0%, 100%, 0.7);
-  --color-black--lighter: hsla(0, 0%, 100%, 0.38);
-  --color-black--lightest: hsla(0, 0%, 100%, 0.12);
-  --color-black--transparent: hsla(0, 0%, 100%, 0);
 
   // Code block color shades
   --md-code-bg-color:                  var(--core-color-black);

@@ -6,7 +6,9 @@
   --font-oswald: "Oswald", sans-serif;
 
   // Manticore Colors
-  --core-color-black: #20232A;
+  --core-color-black: hsl(222, 14%, 15%); // #20232A;
+  --core-color-black--light: hsla(222, 14%, 15%, 0.8);
+  --core-color-black--lighter: hsla(222, 14%, 15%, 0.5);
   --core-color-purple: #6536D1;
   --core-color-green: #5FCC29;
   --core-color-dungeon-grey: #11141A;
@@ -34,20 +36,6 @@
 
   // Primary and accent colors
   --color-accent: var(--core-color-orange);
-
-  // Actually white, sorry :/
-  --color-black: hsla(0, 0%, 100%, 1);
-  --color-black--light: hsla(0, 0%, 100%, 0.54);
-  --color-black--lighter: hsla(0, 0%, 100%, 0.38);
-  --color-black--lightest: hsla(0, 0%, 100%, 0.12);
-  --color-black--transparent: hsla(0, 0%, 100%, 0);
-
-  // #121212
-  --color-white: hsla(0, 0%, 7%, 1);
-  --color-white--light: hsla(0, 0%, 7%, 0.54);
-  --color-white--lighter: hsla(0, 0%, 7%, 0.26);
-  --color-white--lightest: hsla(0, 0%, 7%, 0.07);
-  --color-white--transparent: hsla(0, 0%, 7%, 0);
 }
 
 .show {
@@ -153,14 +141,14 @@
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     background-color: var(--color-background--light);
-    color: var(--color-text--light);
+    color: var(--md-default-fg-color--light);
   }
 
   textarea:focus,
   input:focus {
     border-color: transparent !important;
     background: var(--color-background);
-    color: var(--color-text);
+    color: var(--md-default-fg-color);
   }
 
   // Icon
@@ -257,7 +245,7 @@ figure {
 
 .image-background img {
   background-color: var(--core-color-black);
-  border: 1px solid darken($manticore-orange, 20%);
+  border: 1px solid var(--core-color-orange--lighter);
 }
 
 // Video Embed
@@ -399,26 +387,26 @@ video {
 
 // Lua Color Enums
 // stylelint-disable selector-class-pattern
-.Color_WHITE { border: 1px solid var(--color-text); color: #FFFFFFFF; }
-.Color_GRAY { border: 1px solid var(--color-text); color: #7F7F7FFF; }
-.Color_BLACK { border: 1px solid var(--color-text); color: #000000FF; }
-.Color_TRANSPARENT { border: 1px solid var(--color-text); color: #FFFFFF00; }
-.Color_RED { border: 1px solid var(--color-text); color: #FF0000FF; }
-.Color_GREEN { border: 1px solid var(--color-text); color: #00FF00FF; }
-.Color_BLUE { border: 1px solid var(--color-text); color: #0000FFFF; }
-.Color_CYAN { border: 1px solid var(--color-text); color: #00FFFFFF; }
-.Color_MAGENTA { border: 1px solid var(--color-text); color: #FF00FFFF; }
-.Color_YELLOW { border: 1px solid var(--color-text); color: #FFFF00FF; }
-.Color_ORANGE { border: 1px solid var(--color-text); color: #CC4C00FF; }
-.Color_PURPLE { border: 1px solid var(--color-text); color: #4C0099FF; }
-.Color_BROWN { border: 1px solid var(--color-text); color: #721400FF; }
-.Color_PINK { border: 1px solid var(--color-text); color: #FF6666FF; }
-.Color_TAN { border: 1px solid var(--color-text); color: #E5BF4CFF; }
-.Color_RUBY { border: 1px solid var(--color-text); color: #660101FF; }
-.Color_EMERALD { border: 1px solid var(--color-text); color: #0C660CFF; }
-.Color_SAPPHIRE { border: 1px solid var(--color-text); color: #02024CFF; }
-.Color_SILVER { border: 1px solid var(--color-text); color: #B2B2B2FF; }
-.Color_SMOKE { border: 1px solid var(--color-text); color: #191919FF; }
+.Color_WHITE { color: #FFFFFFFF; }
+.Color_GRAY { color: #7F7F7FFF; }
+.Color_BLACK { color: #000000FF; }
+.Color_TRANSPARENT { color: #FFFFFF00; }
+.Color_RED { color: #FF0000FF; }
+.Color_GREEN { color: #00FF00FF; }
+.Color_BLUE { color: #0000FFFF; }
+.Color_CYAN { color: #00FFFFFF; }
+.Color_MAGENTA { color: #FF00FFFF; }
+.Color_YELLOW { color: #FFFF00FF; }
+.Color_ORANGE { color: #CC4C00FF; }
+.Color_PURPLE { color: #4C0099FF; }
+.Color_BROWN { color: #721400FF; }
+.Color_PINK { color: #FF6666FF; }
+.Color_TAN { color: #E5BF4CFF; }
+.Color_RUBY { color: #660101FF; }
+.Color_EMERALD { color: #0C660CFF; }
+.Color_SAPPHIRE { color: #02024CFF; }
+.Color_SILVER { color: #B2B2B2FF; }
+.Color_SMOKE { color: #191919FF; }
 
 // Tag
 .md-tag {
@@ -426,7 +414,8 @@ video {
   margin: px2rem(9px) 0;
   padding-right: px2rem(10px);
   border-radius: px2rem(4px);
-  background-color: lighten($manticore-black, 5%);
+  background-color: var(--core-color-black);
+  filter: brightness(105%);
   font-size: ms(-1);
   list-style-type: none;
   cursor: pointer;
@@ -440,7 +429,8 @@ video {
     padding: px2rem(2px) px2rem(8px);
     width: 38px;
     height: 38px;
-    background-color: lighten($manticore-black, 15%);
+    background-color: var(--core-color-black);
+    filter: brightness(115%);
     vertical-align: middle;
     fill: $md-color-white--light;
   }
@@ -448,12 +438,12 @@ video {
   // Hovered tag
   &:hover {
     @include z-depth-focus;
-    // background-color: lighten($manticore-black, 15%);
 
     // Icon
     svg {
       fill: var(--color-accent);
-      background-color: lighten($manticore-black, 5%);
+      background-color: var(--core-color-black);
+      filter: brightness(105%);
     }
   }
 }
