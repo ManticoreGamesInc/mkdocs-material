@@ -8,4 +8,13 @@ jobs:
       - uses: actions/setup-node@v1
       - run: npm install && npm install -g @lhci/cli@0.4.x
       - run: npm run build
+      # Install Python runtime and dependencies
+      - uses: actions/setup-python@v1
+        with:
+          python-version: ${{ env.PYTHON_VERSION }}
+      - run: pip install -r requirements.txt
+      # Install theme and dependencies
+      - run: |
+          pip install .
+          pip install mkdocs-minify-plugin>=0.2
       - run: lhci autorun --upload.target=temporary-public-storage --collect.start-server-command="mkdocs serve" --collect.url=http://localhost:8080/
