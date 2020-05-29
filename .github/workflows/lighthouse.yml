@@ -24,4 +24,4 @@ jobs:
       - run: |
           pip install .
           pip install mkdocs-minify-plugin>=0.2
-      - run: lhci autorun --upload.target=temporary-public-storage --collect.start-server-command="mkdocs serve" --collect.url=http://localhost:8080/
+      - run: lhci autorun --upload.target=temporary-public-storage --collect.start-server-command="mkdocs serve" --collect.url=http://localhost:8000/
