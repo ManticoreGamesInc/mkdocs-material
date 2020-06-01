@@ -240,62 +240,64 @@ export default (_env: never, args: Configuration): Configuration[] => {
         ...base.plugins,
 
         /* Copy and transform static assets */
-        new CopyPlugin([
+        new CopyPlugin({
+          patterns:[
+            /* Copy lightbox stylesheets */
+            {
+              context: "node_modules/lightgallery.js/dist/css/",
+              from: "*.min.css",
+              to: "assets/stylesheets/"
+            },
 
-          /* Copy lightbox stylesheets */
-          {
-            context: "node_modules/lightgallery.js/dist/css/",
-            from: "*.css",
-            to: "assets/stylesheets/"
-          },
+            /* Copy lightbox js */
+            {
+              context: "node_modules/lightgallery.js/dist/js/",
+              from: "*.min.js",
+              to: "assets/javascripts/"
+            },
 
-          /* Copy lightbox js */
-          {
-            context: "node_modules/lightgallery.js/dist/js/",
-            from: "*.min.js",
-            to: "assets/javascripts/"
-          },
+            /* Copy lightbox fonts */
+            {
+              context: "node_modules/lightgallery.js/dist/fonts/",
+              from: "lg.*",
+              to: "assets/fonts/"
+            },
 
-          /* Copy lightbox fonts */
-          {
-            context: "node_modules/lightgallery.js/dist/fonts/",
-            from: "lg.*",
-            to: "assets/fonts/"
-          },
+            /* Copy lightbox img */
+            {
+              context: "node_modules/lightgallery.js/dist/img/",
+              from: "*",
+              to: "assets/img/"
+            },
 
-          /* Copy lightbox img */
-          {
-            context: "node_modules/lightgallery.js/dist/img/",
-            from: "*",
-            to: "assets/img/"
-          },
+            /* Copy images without cache busting */
+            {
+              context: "src",
+              from: "assets/images/*.{ico,png}"
+            },
 
-          /* Copy images without cache busting */
-          {
-            context: "src",
-            from: "assets/images/*.{ico,png}"
-          },
-
-          {
-            context: "src",
-            from: "assets/icons/*"
-          }
-        ]),
-
-        /* Theme Switcher */
-        new CopyPlugin([
-          { to: "assets/javascripts/theme-switcher.js", from: "src/assets/javascripts/theme-switcher.js" }
-        ]),
-
-        /* Stylesheets */
-        new MiniCssExtractPlugin({
-          filename: `[name]${hash}.css`
+            {
+              context: "src",
+              from: "assets/icons/*"
+            }]
         }),
 
         // Workbox Manifest Cache
         new WorkboxPlugin.InjectManifest({
           swSrc: "src/sw.js",
+          include: ["assets"],
           additionalManifestEntries: [ {url: "404.html", revision: "1" }, {url: "offline.html", revision: "1" } ]
+        }),
+
+        /* Theme Switcher */
+        new CopyPlugin({
+          patterns: [
+          { to: "assets/javascripts/theme-switcher.js", from: "src/assets/javascripts/theme-switcher.js" }
+        ]}),
+
+        /* Stylesheets */
+        new MiniCssExtractPlugin({
+          filename: `[name]${hash}.css`
         }),
 
         /* FontAwesome icons */

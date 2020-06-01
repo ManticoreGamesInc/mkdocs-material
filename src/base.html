@@ -202,7 +202,6 @@
     <body dir="{{ direction }}">
   {% endif %}
     <script type="text/javascript" src="{{ 'assets/javascripts/theme-switcher.js' | url }}"></script>
-    <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
 
     <!--
       State toggles - we need to set autocomplete="off" in order to reset the
@@ -406,7 +405,8 @@
       <script src="{{ 'assets/javascripts/vendor.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/bundle.js' | url }}"></script>
 
-	    <!-- Lightgallery -->
+      <!-- Lightgallery -->
+      <script type="text/javascript" src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
 
       <!-- Translations -->
