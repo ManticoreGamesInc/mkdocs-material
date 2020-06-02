@@ -76,6 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
+    <link rel="preload" href="{{ 'assets/javascripts/worker/search.27c6a5e6.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
