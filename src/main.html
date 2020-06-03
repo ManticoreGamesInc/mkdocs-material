@@ -33,8 +33,8 @@
   {% include "partials/pwa-images.html" %}
 
   <!-- Lightgallery -->
-  <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" />
-  <link rel="stylesheet" type="text/css" href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" />
+  <link rel=preload as=style href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" onload="this.rel='stylesheet'">
+  <link rel=preload as=style href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" onload="this.rel='stylesheet'">
 
   <meta name="msapplication-TileColor" content="#16191F">
   <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
