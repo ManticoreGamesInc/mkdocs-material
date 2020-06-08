@@ -29,7 +29,7 @@
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.2.2">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.2.3">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -76,7 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.27c6a5e6.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.c03f0417.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -95,6 +95,9 @@
     <body dir="{{ direction }}">
   {% endif %}
     <script src="{{ 'assets/javascripts/theme-switcher.js' | url }}"></script>
+    {% if "prefers" == palette.scheme %}
+      <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
+    {% endif %}
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -213,7 +216,7 @@
     </div>
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.de50e36d.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.ff925e8b.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.594f2bf6.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
@@ -239,7 +242,7 @@
           base: "{{ base_url }}",
           features: {{ config.theme.features | tojson }},
           search: Object.assign({
-            worker: "{{ 'assets/javascripts/worker/search.27c6a5e6.min.js' | url }}"
+            worker: "{{ 'assets/javascripts/worker/search.c03f0417.min.js' | url }}"
           }, typeof search !== "undefined" && search)
         })
       </script>
