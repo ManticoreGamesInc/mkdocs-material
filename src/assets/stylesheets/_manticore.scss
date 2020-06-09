@@ -141,14 +141,14 @@
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     background-color: var(--color-background--light);
-    color: var(--md-default-fg-color--light);
+    color: var(--core-color-clickme-grey);
   }
 
   textarea:focus,
   input:focus {
     border-color: transparent !important;
     background: var(--color-background);
-    color: var(--md-default-fg-color);
+    color: #FFFFFF;
   }
 
   // Icon
