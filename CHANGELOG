@@ -1,3 +1,12 @@
+mkdocs-material-5.3.2 (2020-06-21)
+
+  * Improved search type-ahead experience with non-Latin characters
+  * Fixed #1753: Japanese search doesn't work anymore
+
+mkdocs-material-5.3.1 (2020-06-20)
+
+  * Fixed #1761: Duplication of search worker when subscribing to observable
+
 mkdocs-material-5.3.0 (2020-06-15)
 
   * Added support for color schemes based on user preference
