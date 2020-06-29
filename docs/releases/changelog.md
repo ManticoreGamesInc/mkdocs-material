@@ -18,6 +18,16 @@ pip show mkdocs-material
 
 ## Changelog
 
+### 5.4.0 <small>_ June 29, 2020</small>
+
+* Added support to wrap searches in quotes to switch from `OR` to `AND`
+* Fixed highlighting of numbers in search results
+
+### 5.3.3 <small>_ June 24, 2020</small>
+
+* Added Bengali translations
+* Fixed #1773: Search for numbers does not return any result (regression)
+
 ### 5.3.2 <small>_ June 21, 2020</small>
 
 * Improved search type-ahead experience with non-Latin characters

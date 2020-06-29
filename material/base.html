@@ -29,7 +29,7 @@
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.3.2">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.4.0">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -76,7 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.9b3611bd.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.a68abb33.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -216,7 +216,7 @@
     </div>
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.de50e36d.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.38f5c9b5.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.fc9c3121.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
@@ -242,7 +242,7 @@
           base: "{{ base_url }}",
           features: {{ config.theme.features | tojson }},
           search: Object.assign({
-            worker: "{{ 'assets/javascripts/worker/search.9b3611bd.min.js' | url }}"
+            worker: "{{ 'assets/javascripts/worker/search.a68abb33.min.js' | url }}"
           }, typeof search !== "undefined" && search)
         })
       </script>
