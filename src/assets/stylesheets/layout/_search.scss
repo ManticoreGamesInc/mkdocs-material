@@ -299,7 +299,7 @@ $md-toggle__search--checked:
         background-color: var(--md-default-bg-color);
         border-radius: px2rem(2px) px2rem(2px) 0 0;
 
-         // Icon and placeholder color in active state
+        // Icon and placeholder color in active state
         + .md-search__icon,
         &::placeholder {
           color: var(--md-default-fg-color--light);
@@ -403,7 +403,6 @@ $md-toggle__search--checked:
         transform: scale(1);
         opacity: 1;
         pointer-events: initial;
-        color: var(--md-default-fg-color--light);
 
         // Hovered icon
         &:hover {
@@ -564,11 +563,6 @@ $md-toggle__search--checked:
       }
     }
 
-    // &:nth-child(odd) {
-    //   background-color: rgba(0,0,0,0.2);
-    //   color: var(--md-default-fg-color--light);
-    // }
-
     // Add a little spacing on the teaser of the last link
     &:last-child .md-search-result__teaser {
       margin-bottom: px2rem(12px);
@@ -646,7 +640,7 @@ $md-toggle__search--checked:
     max-height: px2rem(33px);
     margin: 0.5em 0;
     overflow: hidden;
-    color: var(--md-default-fg-color--lighter);
+    color: var(--md-default-fg-color--light);
     font-size: ms(-1);
     line-height: 1.4;
     text-overflow: ellipsis;
