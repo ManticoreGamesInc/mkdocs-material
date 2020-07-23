@@ -36,7 +36,9 @@
 
 @import "config";
 
-@import "overrides/admonition";
-@import "overrides/announce";
-@import "overrides/sponsor";
 @import "overrides/typeset";
+
+@import "overrides/layout/announce";
+@import "overrides/layout/base";
+@import "overrides/layout/hero";
+@import "overrides/layout/sponsor";

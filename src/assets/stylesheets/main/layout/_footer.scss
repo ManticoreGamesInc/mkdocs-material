@@ -70,7 +70,6 @@
     // Link to previous page
     &--prev {
       float: left;
-      width: 25%;
 
       // Adjust for right-to-left languages
       [dir="rtl"] & {
@@ -82,11 +81,12 @@
         }
       }
 
-      // Title
-      .md-footer-nav__title {
+      // [mobile -]: Hide title for previous page
+      @include break-to-device(mobile) {
+        width: 25%;
 
-        // [mobile -]: Hide title for previous page
-        @include break-to-device(mobile) {
+        // Title
+        .md-footer-nav__title {
           display: none;
         }
       }
@@ -95,7 +95,6 @@
     // Link to next page
     &--next {
       float: right;
-      width: 75%;
       text-align: right;
 
       // Adjust for right-to-left languages
@@ -107,6 +106,11 @@
         svg {
           transform: scaleX(-1);
         }
+      }
+
+      // [mobile -]: Hide title for previous page
+      @include break-to-device(mobile) {
+        width: 75%;
       }
     }
   }

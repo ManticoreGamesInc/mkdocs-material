@@ -21,46 +21,30 @@
 ////
 
 // ----------------------------------------------------------------------------
-// Keyframes
-// ----------------------------------------------------------------------------
-
-// Heart animation
-@keyframes tx-sponsor {
-  0%, 40%, 80%, 100% {
-    transform: scale(1);
-  }
-  20%, 60% {
-    transform: scale(1.1);
-  }
-}
-
-// ----------------------------------------------------------------------------
 // Rules
 // ----------------------------------------------------------------------------
 
-// Sponsor banner
-.tx-sponsor {
-  margin-top: px2rem(20px);
-  text-align: center;
+// Landing page container
+.tx-container {
+  padding-top: px2rem(20px);
+  background:
+    url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: hsla(0, 0%, 100%, 1)' /></svg>") no-repeat bottom,
+    linear-gradient(
+      to bottom,
+      var(--md-primary-fg-color),
+      hsla(280, 67%, 55%, 1) 99%,
+      var(--md-default-bg-color) 99%
+    );
 
-  // Sponsor link
-  a {
-    color: $clr-pink-500;
-    font-variant: all-petite-caps;
-  }
-
-  // Horizontal separators
-  hr {
-    display: inline-block;
-    width: px2rem(40px);
-    margin: px2em(16px);
-    vertical-align: middle;
-    background-color: currentColor;
-    border: none;
-  }
-
-  // Pumping heart
-  &__heart {
-    animation: tx-sponsor 1000ms infinite;
+  // Adjust background for slate theme
+  [data-md-color-scheme="slate"] & {
+    background:
+      url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 1123 258'><path d='M1124,2c0,0 0,256 0,256l-1125,0l0,-48c0,0 16,5 55,5c116,0 197,-92 325,-92c121,0 114,46 254,46c140,0 214,-167 572,-166Z' style='fill: hsla(232, 15%, 21%, 1)' /></svg>") no-repeat bottom,
+      linear-gradient(
+        to bottom,
+        var(--md-primary-fg-color),
+        hsla(280, 67%, 55%, 1) 99%,
+        var(--md-default-bg-color) 99%
+      );
   }
 }
