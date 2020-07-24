@@ -29,7 +29,7 @@
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.4.0">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.5.0">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -41,9 +41,9 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.decf3c82.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.1d4367cf.min.css' | url }}">
       {% if palette.scheme or palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.de22fc29.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.7c85540e.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -216,7 +216,7 @@
     </div>
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.877163d5.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.1b3af799.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.1688372e.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
