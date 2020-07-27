@@ -31,7 +31,7 @@ import * as path from "path"
 import { toPairs } from "ramda"
 import { minify as minjs } from "terser"
 import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin"
-import { Configuration } from "webpack"
+import { Configuration, ProvidePlugin } from "webpack"
 import * as AssetsManifestPlugin from "webpack-assets-manifest"
 const WorkboxPlugin = require("workbox-webpack-plugin")
 const WebpackPwaManifest = require("webpack-pwa-manifest-contrib")
@@ -463,7 +463,17 @@ export default (_env: never, args: Configuration): Configuration[] => {
         filename: `[name]${hash}.js`,
         hashDigestLength: 8,
         libraryTarget: "var"
-      }
+      },
+
+      /* Plugins */
+      plugins: [
+        ...base.plugins,
+
+        /* Search implementation */
+        new ProvidePlugin({
+          lunr: "lunr"
+        })
+      ]
     }
   ]
 }

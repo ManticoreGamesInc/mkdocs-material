@@ -4,10 +4,10 @@ template: overrides/main.html
 
 # Setting up site search
 
-Material for MkDocs provides a great, client-side search implementation,
+Material for MkDocs provides an excellent, client-side search implementation,
 omitting the need for the integration of third-party services, which might
-violate data privacy regulations. Furthermore, with some effort, search can
-be made available [offline][1].
+violate data privacy regulations. Moreover, with some effort, search can be
+made available [offline][1].
 
   [1]: #offline-search
 
@@ -15,8 +15,9 @@ be made available [offline][1].
 
 ### Built-in search
 
-[:octicons-file-code-24: Source][2] · 
-[:octicons-cpu-24: Plugin][3]
+[:octicons-file-code-24: Source][2] ·
+[:octicons-cpu-24: Plugin][3] ·
+[:octicons-heart-fill-24:{: .tx-heart } Insiders: new search UI/UX](../insiders.md){: .tx-insiders }
 
 The [built-in search plugin][3] integrates seamlessly with Material for MkDocs,
 adding multilingual client-side search with [lunr][4] and [lunr-languages][5].
@@ -35,7 +36,7 @@ The following options are supported:
 :   :octicons-milestone-24: Default: _automatically set_ – This option allows
     to include the language-specific stemmers provided by [lunr-languages][5].
     Note that Material for MkDocs will set this automatically based on the
-    [site language][6], but it may be overriden, e.g. to support multiple
+    [site language][6], but it may be overridden, e.g. to support multiple
     languages:
 
     === "A single language"
@@ -80,8 +81,8 @@ The following options are supported:
       <li><code>vi</code> – Vietnamese</li>
     </ul>
 
-    _Material for MkDocs also tries to support languages which are not part of
-    this list, by automatically chosing the best-matching stemmer_.
+    _Material for MkDocs also tries to support languages that are not part of
+    this list by choosing the stemmer yielding the best result automatically_.
 
     !!! warning "Only specify the languages you really need"
 
@@ -92,9 +93,9 @@ The following options are supported:
 `separator`{: #separator }
 
 :   :octicons-milestone-24: Default: _automatically set_ – The separator for
-    indexing and query tokenization can be customized, which makes it possible
-    to index parts of words that are separated by other characters than
-    whitespace and `-`, e.g. by including `.`:
+    indexing and query tokenization can be customized, making it possible to
+    index parts of words separated by other characters than whitespace and `-`,
+    e.g. by including `.`:
 
     ``` yaml
     plugins:
@@ -151,10 +152,11 @@ For setup instructions, refer to the [official documentation][11].
 
 The search implementation of Material for MkDocs is probably its most
 sophisticated feature, as it tries to balance a _great typeahead experience_,
-_good performance_, _accessibility_ and a result list that is _easy to scan_.
-This is where it deviates from other themes.
+_good performance_, _accessibility_, and a result list that is _easy to scan_.
+This is where Material for MkDocs deviates from other themes.
 
-This section explains how search can be customized to tailor it to your needs.
+The following section explains how search can be customized to tailor it to
+your needs.
 
 ### Query transformation
 
@@ -211,7 +213,7 @@ template, both of which don't transform the query prior to submission, or
 customize the `transform` function, you can do this by [overriding the 
 `config` block][14]:
 
-``` jinja
+``` html
 {% block config %}
   <script>
     var search = {
@@ -240,7 +242,7 @@ want to switch the web worker with your own implementation, e.g. to submit
 search to an external service, you can add a custom JavaScript file to the `docs`
 directory and [override the `config` block][14]:
 
-``` jinja
+``` html
 {% block config %}
   <script>
     var search = {
@@ -255,15 +257,15 @@ message format using _discriminated unions_, i.e. through the `type` property
 of the message. See the following interface definitions to learn about the
 message formats:
 
-- [:octicons-file-code-24: `SearchMessage`][17]
-- [:octicons-file-code-24: `SearchIndex` and `SearchResult`][18]
+* [:octicons-file-code-24: `SearchMessage`][17]
+* [:octicons-file-code-24: `SearchIndex` and `SearchResult`][18]
 
 The sequence and direction of messages is rather intuitive:
 
-- :octicons-arrow-right-24: `SearchSetupMessage` 
-- :octicons-arrow-left-24: `SearchReadyMessage`
-- :octicons-arrow-right-24: `SearchQueryMessage` 
-- :octicons-arrow-left-24: `SearchResultMessage`
+* :octicons-arrow-right-24: `SearchSetupMessage`
+* :octicons-arrow-left-24: `SearchReadyMessage`
+* :octicons-arrow-right-24: `SearchQueryMessage`
+* :octicons-arrow-left-24: `SearchResultMessage`
 
   [15]: https://github.com/squidfunk/mkdocs-material/blob/master/src/assets/javascripts/integrations/search/worker
   [16]: https://developer.mozilla.org/en-US/docs/Web/API/Web_Workers_API/Using_web_workers

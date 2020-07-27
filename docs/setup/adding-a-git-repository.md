@@ -6,7 +6,7 @@ template: overrides/main.html
 
 If your documentation is related to source code, Material for MkDocs provides
 the ability to display information to the project's repository as part of the
-static site, including statistics like stars and forks. Furthermore, certain
+static site, including statistics like stars and forks. Furthermore, individual
 documents can be linked to specific source files.
 
 ## Configuration
@@ -59,16 +59,16 @@ theme:
 
 Some popular choices:
 
-- :fontawesome-brands-git: – `fontawesome/brands/git`
-- :fontawesome-brands-git-alt: – `fontawesome/brands/git-alt`
-- :fontawesome-brands-git-square: – `fontawesome/brands/git-square`
-- :fontawesome-brands-github: – `fontawesome/brands/github`
-- :fontawesome-brands-github-alt: – `fontawesome/brands/github-alt`
-- :fontawesome-brands-github-square: – `fontawesome/brands/github-square`
-- :fontawesome-brands-gitlab: – `fontawesome/brands/gitlab`
-- :fontawesome-brands-gitkraken: – `fontawesome/brands/gitkraken`
-- :fontawesome-brands-bitbucket: – `fontawesome/brands/bitbucket`
-- :fontawesome-solid-trash: – `fontawesome/solid/trash`
+* :fontawesome-brands-git: – `fontawesome/brands/git`
+* :fontawesome-brands-git-alt: – `fontawesome/brands/git-alt`
+* :fontawesome-brands-git-square: – `fontawesome/brands/git-square`
+* :fontawesome-brands-github: – `fontawesome/brands/github`
+* :fontawesome-brands-github-alt: – `fontawesome/brands/github-alt`
+* :fontawesome-brands-github-square: – `fontawesome/brands/github-square`
+* :fontawesome-brands-gitlab: – `fontawesome/brands/gitlab`
+* :fontawesome-brands-gitkraken: – `fontawesome/brands/gitkraken`
+* :fontawesome-brands-bitbucket: – `fontawesome/brands/bitbucket`
+* :fontawesome-solid-trash: – `fontawesome/solid/trash`
 
   [4]: https://github.com/squidfunk/mkdocs-material/tree/master/material/.icons
 

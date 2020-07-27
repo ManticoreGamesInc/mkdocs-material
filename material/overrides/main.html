@@ -35,8 +35,8 @@
 {% endblock %}
 {% block content %}
   {{ super() }}
-  <aside class="tx-sponsor md-typeset">
-    <a href="{{ 'sponsorship/' | url }}" title="Become a sponsor">
+  <footer class="tx-content__footer md-typeset">
+    <a href="{{ 'insiders/' | url }}" title="Material for MkDocs Insiders">
       <hr>
       <span class="twemoji">
         {% include ".icons/logo.svg" %}
@@ -49,7 +49,7 @@
       </span>
       <hr>
     </a>
-  </aside>
+  </footer>
 {% endblock %}
 {% block analytics %}
   {{ super() }}

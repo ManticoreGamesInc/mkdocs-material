@@ -33,7 +33,7 @@
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
-        <title>{{ page.meta.title }}</title>
+        <title>{{ page.meta.title }} - {{ config.site_name }}</title>
       {% elif page and page.title and not page.is_homepage %}
         <title>{{ page.title | striptags }} - {{ config.site_name }}</title>
       {% else %}
@@ -41,9 +41,9 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.98219c26.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.18dbb20c.min.css' | url }}">
       {% if palette.scheme or palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.7c85540e.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.0ec9b792.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -242,7 +242,7 @@
           base: "{{ base_url }}",
           features: {{ config.theme.features | tojson }},
           search: Object.assign({
-            worker: "{{ 'assets/javascripts/worker/search.a68abb33.min.js' | url }}"
+            worker: "{{ 'assets/javascripts/worker/search.1b3b2620.min.js' | url }}"
           }, typeof search !== "undefined" && search)
         })
       </script>

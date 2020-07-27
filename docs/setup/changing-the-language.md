@@ -6,7 +6,8 @@ template: overrides/main.html
 
 Material for MkDocs supports internationalization (i18n) and provides
 translations for template variables and labels in 40+ languages. Additionally,
-search can be configured to use a language-specific stemmer (if available).
+the site search can be configured to use a language-specific stemmer (if
+available).
 
 ## Configuration
 
@@ -105,7 +106,7 @@ theme:
   direction: ltr
 ```
 
-:material-cursor-default-click-outline: click on a tile to change the
+:material-cursor-default-click-outline: Click on a tile to change the
 directionality:
 
 <div class="tx-switch">
@@ -141,7 +142,7 @@ want to change in the [base translation][1] and add it to the partial.
 
 Let's say you want to change "__Table of contents__" to "__On this page__":
 
-``` jinja
+``` html
 {% macro t(key) %}{{ {
   "toc.title": "On this page"
 }[key] }}{% endmacro %}
