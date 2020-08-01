@@ -247,17 +247,6 @@
       {% endif %}
     </div>
 
-    <!-- Announcement bar -->
-    <div data-md-component="announce">
-      {% if self.announce() %}
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
-            {% block announce %}{% endblock %}
-          </div>
-        </aside>
-      {% endif %}
-    </div>
-
     <!-- Application header -->
     {% block header %}
       {% include "partials/header.html" %}
@@ -279,6 +268,17 @@
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
+
+      <!-- Announcement bar -->
+      <div data-md-component="announce">
+        {% if self.announce() %}
+          <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+              {% block announce %}{% endblock %}
+            </div>
+          </aside>
+        {% endif %}
+      </div>
 
       <!-- Main area -->
       <main class="md-main" data-md-component="main">

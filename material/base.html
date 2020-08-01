@@ -109,15 +109,6 @@
         </a>
       {% endif %}
     </div>
-    <div data-md-component="announce">
-      {% if self.announce() %}
-        <aside class="md-announce">
-          <div class="md-announce__inner md-grid md-typeset">
-            {% block announce %}{% endblock %}
-          </div>
-        </aside>
-      {% endif %}
-    </div>
     {% block header %}
       {% include "partials/header.html" %}
     {% endblock %}
@@ -132,6 +123,15 @@
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
+      <div data-md-component="announce">
+        {% if self.announce() %}
+          <aside class="md-announce">
+            <div class="md-announce__inner md-grid md-typeset">
+              {% block announce %}{% endblock %}
+            </div>
+          </aside>
+        {% endif %}
+      </div>
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           {% block site_nav %}

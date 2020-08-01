@@ -87,11 +87,13 @@
     /* Add background color transition */
     .md-announce {
       transition: background-color 125ms;
+      background-color: var(--md-primary-bg-color);
+      text-align: center;
     }
 
     /* Change background color on link focus */
     .md-announce:focus-within {
-      background-color: var(--md-accent-fg-color);
+      background-color: var(--core-color-green);
     }
 
     /* Preserve link color */
@@ -99,6 +101,10 @@
     .md-announce a:focus,
     .md-announce a:hover {
       color: currentColor;
+      color: var(--core-color-blue);
+      text-transform: uppercase;
+      font-size: 1.9em;
+      font-family: var(--font-oswald)
     }
 
     /* Don't wrap name of blog article */
@@ -106,10 +112,10 @@
       white-space: nowrap;
     }
   </style>
-  <a href="https://ginseng.ai/blog/the-cognitive-complexity-of-css/">
-    Check out <strong>squidfunk</strong>'s latest blog post â€“
+  <a href="/tutorials/overview/">
+    Check out our amazing new
     <strong>
-      The Cognitive Complexity of CSS
+      Content!
     </strong>
   </a>
 {% endblock %}
