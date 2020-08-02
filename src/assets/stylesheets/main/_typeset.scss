@@ -290,9 +290,9 @@ kbd {
   // Keyboard key
   kbd {
     display: inline-block;
-    padding: 0 px2em(8px, 12px);
+    padding: 2px px2em(6px, 12px);
     color: var(--md-default-fg-color);
-    font-size: px2em(12px);
+    font-size: px2em(14px);
     vertical-align: text-top;
     word-break: break-word;
     background-color: var(--md-typeset-kbd-color);
@@ -530,7 +530,7 @@ kbd {
       border-bottom: 2px solid var(--core-color-orange);
       background-color: var(--core-color-black);
       white-space: nowrap;
-      
+
       // Links in table headings
       a {
         color: inherit;
