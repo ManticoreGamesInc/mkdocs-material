@@ -1,27 +1,7 @@
-<script type="module">
-
-import { Workbox } from "https://storage.googleapis.com/workbox-cdn/releases/5.1.3/workbox-window.prod.mjs"
-
+<script>
 if ("serviceWorker" in navigator) {
   window.addEventListener("load", () => {
-    const wb = new Workbox("{{ 'sw.js' | url }}")
-
-    const updateButton = document.querySelector("#app-update-prompt")
-    // Fires when the registered service worker has installed but is waiting to activate.
-    wb.addEventListener("waiting", event => {
-      updateButton.classList.add("show")
-      updateButton.addEventListener("click", () => {
-        // Set up a listener that will reload the page as soon as the previously waiting service worker has taken control.
-        wb.addEventListener("controlling", event => {
-          window.location.reload()
-        })
-
-        // Send a message telling the service worker to skip waiting.
-        // This will trigger the `controlling` event handler above.
-        wb.messageSW({ type: "SKIP_WAITING" })
-      })
-    })
-    wb.register()
+    navigator.serviceWorker.register("{{ 'sw.js' | url }}")
   })
 }
 </script>
