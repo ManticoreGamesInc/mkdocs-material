@@ -160,14 +160,14 @@
       <link
         rel="manifest"
         href="{{ config.extra.manifest | url }}"
-        crossorigin="use-credentials"
+        crossorigin
       />
     {% else %}
       <link
         rel="manifest"
         type="application/manifest+json"
         href="{{ 'manifest.json' | url }}"
-        crossorigin="use-credentials"
+        crossorigin
       />
     {% endif %}
 

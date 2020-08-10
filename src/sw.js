@@ -91,9 +91,6 @@ workbox.routing.registerRoute(
   /^https:\/\/fonts\.gstatic\.com/,
   new workbox.strategies.CacheFirst({
     cacheName: "google-fonts-webfonts",
-    fetchOptions: {
-      credentials: "include"
-    },
     plugins: [
       new workbox.cacheableResponse.CacheableResponsePlugin({
         statuses: [0, 200]
