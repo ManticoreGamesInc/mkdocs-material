@@ -53,7 +53,7 @@
     {% include ".icons/material/comment-text.svg" %}
     Was this page helpful? Can it be improved? Please let us know!
   </p>
-  <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true">
+  <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-netlify-recaptcha="true">
       <input type="hidden" name="bot-field">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
@@ -67,6 +67,7 @@
           minlength="5"
         ></textarea>
       </label>
+    <div data-netlify-recaptcha="true"></div>
     <p>
       <button type="submit">Send</button>
     </p>
