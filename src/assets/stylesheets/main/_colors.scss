@@ -104,7 +104,7 @@
   }
 }
 
-[data-theme="dark"] {
+[data-theme="dark"] > * {
 
   // Default color shades #16191F
   --md-default-fg-color:               hsla(0, 0%, 100%, 1);

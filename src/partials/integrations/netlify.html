@@ -57,7 +57,10 @@
       <input type="hidden" name="bot-field">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
-      <label>Your Feedback:
+      <label>Name:
+      <input type="text" name="Name" placeholder="Your Core Username" minlength="4" required>
+      </label>
+      <label>Feedback:
         <textarea
           type="text"
           name="Message"
@@ -74,7 +77,7 @@
   </form>
   <div class="modal">
     <div class="modal-content">
-        <h1>Thank you for your submission! {% include ".icons/material/heart.svg" %}</h1>
+        <h1 class="modal-message">Thank you for your submission! {% include ".icons/material/heart.svg" %}</h1>
         <button class="close-button">Close</button>
     </div>
   </div>
@@ -98,24 +101,36 @@ function windowOnClick(event) {
 
 netlifyForm.addEventListener('submit', e => {
   e.preventDefault()
-  e.submitter.disabled = true
-  e.submitter.textContent = "Submitted"
-  e.submitter.classList.toggle("disabled")
-
+  var modalMessage = document.querySelector(".modal-message")
   const formData = new FormData(netlifyForm)
-  fetch(netlifyForm.getAttribute('action'), {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    body: new URLSearchParams(formData).toString()
-  })
-  .then(res => {
-    if (res) {
-      toggleModal()
-    }
-  })
+  const captcha = window.grecaptcha.getResponse() || ""
+
+  if (captcha == "") {
+    modalMessage.innerHTML = "Please complete the captcha!"
+    toggleModal()
+  } else {
+    e.submitter.disabled = true
+    e.submitter.textContent = "Submitted"
+    e.submitter.classList.toggle("disabled")
+
+    modalMessage.innerHTML = "Thank you for your submission! {% include ".icons/material/heart.svg" %}"
+
+    formData.append("g-recaptcha-response", captcha)
+
+    fetch(netlifyForm.getAttribute('action'), {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+      },
+      body: new URLSearchParams(formData).toString()
+    })
+    .then(res => {
+      if (res) {
+        toggleModal()
+      }
+    })
+  }
 })
 
 window.addEventListener("click", windowOnClick)

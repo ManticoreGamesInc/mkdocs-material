@@ -28,7 +28,11 @@
   .md-content__inner {
     background-image: url("{{ 'img/shrug_404_outlined.png' | url }}"), url("{{ 'img/facepalm_404_outlined.png'| url }}");
     background-repeat: no-repeat, no-repeat;
-    background-position: left -5vh top 10vh, right -5vh top 10vh;
+    background-position: left -5vh top 5vh, right -5vh top 5vh;
+  }
+
+  .md-sidebar, .netlify {
+    visibility: hidden;
   }
 
   #fourfourmain {
@@ -51,10 +55,15 @@
     font-family: var(--font-oswald);
     text-transform: uppercase;
   }
+
+  .fof a {
+    display: block;
+  }
 </style>
 <div id="fourfourmain">
   <div class="fof">
       <h1>Error 404: Page not found!</h1>
+      <a href="/" title="Go Home">Return to Safety</a>
   </div>
 </div>
 
