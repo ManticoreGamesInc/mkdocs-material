@@ -53,7 +53,7 @@
     {% include ".icons/material/comment-text.svg" %}
     Was this page helpful? Can it be improved? Please let us know!
   </p>
-  <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true" data-netlify-recaptcha="true">
+  <form name="Feedback" id="netlify-form" method="POST" netlify-honeypot="bot-field" data-netlify="true">
       <input type="hidden" name="bot-field">
       <input type="hidden" name="Page" value="{{ page.title }}">
       <input type="hidden" name="URL" value="{{ page.canonical_url }}">
@@ -70,7 +70,6 @@
           minlength="5"
         ></textarea>
       </label>
-    <div data-netlify-recaptcha="true"></div>
     <p>
       <button type="submit">Send</button>
     </p>
@@ -101,36 +100,25 @@ function windowOnClick(event) {
 
 netlifyForm.addEventListener('submit', e => {
   e.preventDefault()
-  var modalMessage = document.querySelector(".modal-message")
+
   const formData = new FormData(netlifyForm)
-  const captcha = window.grecaptcha.getResponse() || ""
 
-  if (captcha == "") {
-    modalMessage.innerHTML = "Please complete the captcha!"
-    toggleModal()
-  } else {
-    e.submitter.disabled = true
-    e.submitter.textContent = "Submitted"
-    e.submitter.classList.toggle("disabled")
-
-    modalMessage.innerHTML = "Thank you for your submission! {% include ".icons/material/heart.svg" %}"
-
-    formData.append("g-recaptcha-response", captcha)
-
-    fetch(netlifyForm.getAttribute('action'), {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-        'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-      },
-      body: new URLSearchParams(formData).toString()
-    })
-    .then(res => {
-      if (res) {
-        toggleModal()
-      }
-    })
-  }
+  fetch(netlifyForm.getAttribute('action'), {
+    method: 'POST',
+    headers: {
+      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
+      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
+    },
+    body: new URLSearchParams(formData).toString()
+  })
+  .then(res => {
+    if (res) {
+      e.submitter.disabled = true
+      e.submitter.textContent = "Submitted"
+      e.submitter.classList.toggle("disabled")
+      toggleModal()
+    }
+  })
 })
 
 window.addEventListener("click", windowOnClick)
