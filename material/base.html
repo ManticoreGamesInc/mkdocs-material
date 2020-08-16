@@ -29,7 +29,7 @@
         <meta name="author" content="{{ config.site_author }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.5.6">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-5.5.7">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -41,49 +41,41 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.594d2d6c.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.42d6186f.min.css' | url }}">
       {% if palette.scheme or palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.a7acca03.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.2c2767bb.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
         {% set primary = map.primary(
           palette.primary | replace(" ", "-") | lower
         ) %}
-        <meta name="theme-color" content="#16191F">
+        <meta name="theme-color" content="{{ primary }}">
       {% endif %}
     {% endblock %}
     {% block libs %}{% endblock %}
     {% block fonts %}
       {% if font != false %}
-        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-        <link rel="preload" as="style" href="https://fonts.googleapis.com/css?family={{
+        <link href="https://fonts.gstatic.com" rel="preconnect" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family={{
             font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
             font.code | replace(' ', '+')
-          }}%7COswald:300,400,400i,700&display=swap" crossorigin>
-        <link rel="stylesheet" media="print" onload='this.media="all"' href="https://fonts.googleapis.com/css?family={{
-            font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
-            font.code | replace(' ', '+')
-          }}%7COswald:300,400,400i,700&display=swap" crossorigin>
+          }}&display=fallback">
         <style>body,input{font-family:"{{ font.text }}",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}",SFMono-Regular,Consolas,Menlo,monospace}</style>
       {% endif %}
     {% endblock %}
     {% if config.extra.manifest %}
-      <link rel="manifest" href="{{ config.extra.manifest | url }}" crossorigin>
-    {% else %}
-      <link rel="manifest" type="application/manifest+json" href="{{ 'manifest.json' | url }}" crossorigin>
+      <link rel="manifest" href="{{ config.extra.manifest | url }}" crossorigin="use-credentials">
     {% endif %}
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.fae956e7.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
-    {% block extrahead %}
-    {% endblock %}
+    {% block extrahead %}{% endblock %}
   </head>
   {% set direction = config.theme.direction or lang.t('direction') %}
   {% if palette.scheme or palette.primary or palette.accent %}
@@ -94,7 +86,6 @@
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
-    <script src="{{ 'assets/javascripts/theme-switcher.js' | url }}"></script>
     {% if "preference" == palette.scheme %}
       <script>matchMedia("(prefers-color-scheme: dark)").matches&&document.body.setAttribute("data-md-color-scheme","slate")</script>
     {% endif %}
@@ -107,6 +98,15 @@
         <a href="{{ skip.url | url }}" class="md-skip">
           {{ lang.t('skip.link.title') }}
         </a>
+      {% endif %}
+    </div>
+    <div data-md-component="announce">
+      {% if self.announce() %}
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            {% block announce %}{% endblock %}
+          </div>
+        </aside>
       {% endif %}
     </div>
     {% block header %}
@@ -123,28 +123,11 @@
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
-      <div data-md-component="announce">
-        {% if self.announce() %}
-          <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-              {% block announce %}{% endblock %}
-            </div>
-          </aside>
-        {% endif %}
-      </div>
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           {% block site_nav %}
             {% if nav %}
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
-                <div class="md-sidebar__scrollwrap">
-                  <div class="md-sidebar__inner">
-                    {% include "partials/nav.html" %}
-                  </div>
-                </div>
-              </div>
-              {% else %}
-              <div class="md-sidebar md-sidebar--primary flag-hidden" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
                     {% include "partials/nav.html" %}
@@ -165,9 +148,8 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               {% block content %}
-                {% include "partials/integrations/topscroller.html" %}
                 {% if page.edit_url %}
-                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" aria-label="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
                     {% include ".icons/material/pencil.svg" %}
                   </a>
                 {% endif %}
@@ -179,14 +161,6 @@
                 {% if not "\x3ch1" in page.content %}
                   <h1>{{ page.title | default(config.site_name, true)}}</h1>
                 {% endif %}
-                {% if not (page.is_homepage or page.meta.hide_tags) %}
-                  {% for tag in page.meta.tags %}
-                  <a href="{{ '/generated/tags' | url }}#{{ tag.lower() }}" title="{{ tag }}" class="md-tag">
-                    {% include ".icons/material/tag.svg" %}
-                    {{ tag }}
-                  </a>
-                  {% endfor %}
-                {% endif %}
                 {{ page.content }}
                 {% if page and page.meta %}
                   {% if page.meta.git_revision_date_localized or
@@ -195,9 +169,6 @@
                     {% include "partials/source-date.html" %}
                   {% endif %}
                 {% endif %}
-              {% endblock %}
-              {% block netlify %}
-                {% include "partials/integrations/netlify.html" %}
               {% endblock %}
               {% block disqus %}
                 {% include "partials/integrations/disqus.html" %}
@@ -213,8 +184,6 @@
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.d1f5a259.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/bundle.b7ed72fe.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
-      {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
       {%- for key in [
         "clipboard.copy",
