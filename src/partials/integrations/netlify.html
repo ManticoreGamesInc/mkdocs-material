@@ -71,7 +71,7 @@
         ></textarea>
       </label>
     <p>
-      <button type="submit">Send</button>
+      <button type="submit" name="submit-button">Send</button>
     </p>
   </form>
   <div class="modal">
@@ -100,6 +100,9 @@ function windowOnClick(event) {
 
 netlifyForm.addEventListener('submit', e => {
   e.preventDefault()
+  e.submitter.disabled = true
+  e.submitter.textContent = "Submitted"
+  e.submitter.classList.toggle("disabled")
 
   const formData = new FormData(netlifyForm)
 
@@ -113,9 +116,6 @@ netlifyForm.addEventListener('submit', e => {
   })
   .then(res => {
     if (res) {
-      e.submitter.disabled = true
-      e.submitter.textContent = "Submitted"
-      e.submitter.classList.toggle("disabled")
       toggleModal()
     }
   })
