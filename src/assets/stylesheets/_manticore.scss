@@ -110,7 +110,7 @@
     border-radius: 4px;
     transition: all 0.3s ease-in-out;
     background-color: var(--color-background--light);
-    color: var(--md-code-fg-color);
+    color: var(--md-code-fg-color) !important;
   }
 
   textarea {
