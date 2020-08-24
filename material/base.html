@@ -41,9 +41,9 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.1ee3b4c1.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.8353e6c9.min.css' | url }}">
       {% if palette.scheme or palette.primary or palette.accent %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.ef637733.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.0d28bc07.min.css' | url }}">
       {% endif %}
       {% if palette.primary %}
         {% import "partials/palette.html" as map %}
@@ -167,8 +167,13 @@
               {% block content %}
                 {% include "partials/integrations/topscroller.html" %}
                 {% if page.edit_url %}
-                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" aria-label="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon">
+                  <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" aria-label="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon" target="_blank" rel="noopener">
                     {% include ".icons/material/pencil.svg" %}
+                  </a>
+                {% endif %}
+                {% if config.extra.feedback_url %}
+                  <a href="{{ config.extra.feedback_url + '?labels=' + 'page-' + page.title|replace(' ', '-')|lower + '&title=' + page.title + ' Feedback' }}" title="Provide feedback about this page" aria-label="Provide feedback about this page" class="md-content__button md-icon" target="_blank" rel="noopener">
+                    {% include ".icons/material/comment-text.svg" %}
                   </a>
                 {% endif %}
                 {% block source %}

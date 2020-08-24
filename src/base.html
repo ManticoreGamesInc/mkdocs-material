@@ -342,8 +342,24 @@
                     title="{{ lang.t('edit.link.title') }}"
                     aria-label="{{ lang.t('edit.link.title') }}"
                     class="md-content__button md-icon"
+                    target="_blank"
+                    rel="noopener"
                   >
                     {% include ".icons/material/pencil.svg" %}
+                  </a>
+                {% endif %}
+
+                <!-- Feedback button, if URL was defined -->
+                {% if config.extra.feedback_url %}
+                  <a
+                    href="{{ config.extra.feedback_url + '?labels=' + 'page-' + page.title|replace(' ', '-')|lower + '&title=' + page.title + ' Feedback' }}"
+                    title="Provide feedback about this page"
+                    aria-label="Provide feedback about this page"
+                    class="md-content__button md-icon"
+                    target="_blank"
+                    rel="noopener"
+                  >
+                    {% include ".icons/material/comment-text.svg" %}
                   </a>
                 {% endif %}
 
