@@ -8,7 +8,7 @@ template: overrides/main.html
 
 ### 1.3.0 <small>_ August 26, 2020</small>
 
-* Added support for user-selectable color schemes
+* Added support for user-selectable color palettes
 
 ### 1.2.0 <small>_ August 11, 2020</small>
 
@@ -25,6 +25,15 @@ template: overrides/main.html
 * Improved search result relevance and scoring
 
 ## Material for MkDocs
+
+### 5.5.11 <small>_ August 28, 2020</small>
+
+  * Fixed Disqus integration, as the minifier killed the config
+
+### 5.5.10 <small>_ August 28, 2020</small>
+
+* Improved rendering by moving Disqus integration after page load
+* Fixed #1887: Moved navigation icons to CSS to reduce size of HTML
 
 ### 5.5.9 <small>_ August 26, 2020</small>
 
