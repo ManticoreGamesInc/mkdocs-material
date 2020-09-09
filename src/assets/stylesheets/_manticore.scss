@@ -156,11 +156,10 @@
 
 .md-typeset img {
   max-width: 50%;
-  border: 1px solid var(--color-background);
 }
 
 .md-typeset a img:hover {
-  border: 1px solid var(--core-color-orange);
+  border: 3px solid var(--core-color-orange);
   transition: all 0.3s ease-in-out;
 }
 
@@ -222,9 +221,10 @@ figure {
   margin-right: 5px;
 }
 
+.image-frame,
 .image-background img {
   background-color: var(--core-color-black);
-  border: 1px solid var(--core-color-orange--lighter);
+  border: 2px solid var(--core-color-orange--lighter);
 }
 
 // Video Embed
