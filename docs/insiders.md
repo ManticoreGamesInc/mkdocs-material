@@ -74,7 +74,7 @@ in Material for MkDocs Insiders.
 
 ### Madame Jeanette
 
-[:octicons-fire-24: Funding goal: __$500__][6] ·
+[:octicons-flame-24: Funding goal: __$500__][6] ·
 :octicons-lock-24: Status: _exclusive_
 
 New features and improvements for _search_, including:
@@ -87,7 +87,7 @@ New features and improvements for _search_, including:
 
 ### Prairie Fire
 
-[:octicons-fire-24: Funding goal: __$1,000__][6] ·
+[:octicons-flame-24: Funding goal: __$1,000__][6] ·
 :octicons-lock-24: Status: _exclusive_
 
 New features and improvements for _content and toc_, including:
@@ -95,15 +95,16 @@ New features and improvements for _content and toc_, including:
 - [x] Highlighting of matched search terms in content area
 - [x] Navigation can always be expanded via configuration
 - [x] Header can be automatically hidden on scrolling
-- [ ] Better support for wide screens, i.e. more horizontal space
+- [x] Table of contents can be automatically hidden when empty
 - [ ] Table of contents can be moved into navigation for more space
 - [ ] Table of contents shows which sections have search results
 - [ ] Table of contents auto-collapses and expands only the active section
+- [ ] Better support for wide screens, i.e. more horizontal space
 - [ ] ... more to come
 
 ### Bhut Jolokia
 
-[:octicons-fire-24: Funding goal: __$1,500__][6] ·
+[:octicons-flame-24: Funding goal: __$1,500__][6] ·
 :octicons-lock-24: Status: _exclusive_
 
 New features and improvements for _hosting multiple versions_, including:
@@ -115,7 +116,7 @@ New features and improvements for _hosting multiple versions_, including:
 
 ### Black Pearl
 
-[:octicons-fire-24: Funding goal: __$2,000__][6] ·
+[:octicons-flame-24: Funding goal: __$2,000__][6] ·
 :octicons-lock-24: Status: _exclusive_
 
 New features and improvements for _user preferences_, including:
@@ -127,7 +128,7 @@ New features and improvements for _user preferences_, including:
 
 ### Caribbean Red
 
-[:octicons-fire-24: Funding goal: __$3,000__][6] ·
+[:octicons-flame-24: Funding goal: __$3,000__][6] ·
 :octicons-lock-24: Status: _exclusive_
 
 Alternative, completely different _vertical layout_, optimized to read
