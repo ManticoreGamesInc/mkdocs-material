@@ -20,4 +20,7 @@
       {% include "partials/nav-item.html" %}
     {% endfor %}
   </ul>
+  {% block google_translate %}
+    {% include "partials/integrations/google_translate.html" %}
+  {% endblock %}
 </nav>
