@@ -25,14 +25,14 @@
 }
 
 .slider:before {
-  bottom: 8px;
+  bottom: 4px;
   box-shadow: -10px 2px 0 0 currentColor;
   content: "";
-  height: 26px;
+  height: px2rem(26px);
   left: 16px;
   position: absolute;
   transition: 400ms;
-  width: px2rem(26px);
+  width: px2rem(28px);
 }
 
 input:checked + .slider {
@@ -40,9 +40,9 @@ input:checked + .slider {
 }
 
 input:checked + .slider:before {
-  transform: translateX(26px);
+  transform: translateX(px2rem(24px));
   box-shadow: 10px 2px 0 0 currentColor;
-  left: 0;
+  left: -6px;
 }
 
 .slider.round {
