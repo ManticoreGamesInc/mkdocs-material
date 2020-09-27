@@ -34,10 +34,10 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.2ff7ad30.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.69c3ab5e.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.62725d28.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.2b71ada5.min.css' | url }}">
         {% if palette.primary %}
           {% import "partials/palette.html" as map %}
           {% set primary = map.primary(
@@ -71,7 +71,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.cbc634e2.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.2693be28.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -208,8 +208,8 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/vendor.67753bc4.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.4fc1890e.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/vendor.d0204397.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.c419ac17.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
@@ -238,7 +238,7 @@
           base: "{{ base_url }}",
           features: {{ config.theme.features or [] | tojson }},
           search: Object.assign({
-            worker: "{{ 'assets/javascripts/worker/search.cbc634e2.min.js' | url }}"
+            worker: "{{ 'assets/javascripts/worker/search.2693be28.min.js' | url }}"
           }, typeof search !== "undefined" && search)
         })
       </script>
