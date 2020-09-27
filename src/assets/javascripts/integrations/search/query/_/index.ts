@@ -20,62 +20,73 @@
  * IN THE SOFTWARE.
  */
 
-import { Observable, OperatorFunction, pipe } from "rxjs"
-import {
-  distinctUntilKeyChanged,
-  map,
-  switchMap
-} from "rxjs/operators"
-
-import { Viewport, watchViewportAt } from "browser"
-
-import { Header } from "../../header"
-import { applyHero } from "../react"
-
 /* ----------------------------------------------------------------------------
  * Types
  * ------------------------------------------------------------------------- */
 
 /**
- * Hero
+ * Search query clause
  */
-export interface Hero {
-  hidden: boolean                      /* Whether the hero is hidden */
+export interface SearchQueryClause {
+  presence: lunr.Query.presence        /* Clause presence */
+  term: string                         /* Clause term */
 }
 
-/* ----------------------------------------------------------------------------
- * Helper types
- * ------------------------------------------------------------------------- */
+/* ------------------------------------------------------------------------- */
 
 /**
- * Mount options
+ * Search query terms
  */
-interface MountOptions {
-  header$: Observable<Header>          /* Header observable */
-  viewport$: Observable<Viewport>      /* Viewport observable */
-}
+export type SearchQueryTerms = Record<string, boolean>
 
 /* ----------------------------------------------------------------------------
  * Functions
  * ------------------------------------------------------------------------- */
 
 /**
- * Mount hero from source observable
+ * Parse a search query for analysis
  *
- * @param options - Options
+ * @param value - Query value
  *
- * @return Operator function
+ * @return Search query clauses
  */
-export function mountHero(
-  { header$, viewport$ }: MountOptions
-): OperatorFunction<HTMLElement, Hero> {
-  return pipe(
-    switchMap(el => watchViewportAt(el, { header$, viewport$ })
-      .pipe(
-        map(({ offset: { y } }) => ({ hidden: y >= 20 })),
-        distinctUntilKeyChanged("hidden"),
-        applyHero(el)
-      )
-    )
-  )
+export function parseSearchQuery(
+  value: string
+): SearchQueryClause[] {
+  const query  = new (lunr as any).Query(["title", "text"])
+  const parser = new (lunr as any).QueryParser(value, query)
+
+  /* Parse and return query clauses */
+  parser.parse()
+  return query.clauses
+}
+
+/**
+ * Analyze the search query clauses in regard to the search terms found
+ *
+ * @param query - Search query clauses
+ * @param terms - Search terms
+ *
+ * @return Search query terms
+ */
+export function getSearchQueryTerms(
+  query: SearchQueryClause[], terms: string[]
+): SearchQueryTerms {
+  const clauses = new Set<SearchQueryClause>(query)
+
+  /* Match query clauses against terms */
+  const result: SearchQueryTerms = {}
+  for (let t = 0; t < terms.length; t++)
+    for (const clause of clauses)
+      if (terms[t].startsWith(clause.term)) {
+        result[clause.term] = true
+        clauses.delete(clause)
+      }
+
+  /* Annotate unmatched query clauses */
+  for (const clause of clauses)
+    result[clause.term] = false
+
+  /* Return query terms */
+  return result
 }

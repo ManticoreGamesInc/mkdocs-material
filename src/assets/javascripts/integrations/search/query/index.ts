@@ -21,5 +21,4 @@
  */
 
 export * from "./_"
-export * from "./react"
-export * from "./set"
+export * from "./transform"

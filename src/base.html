@@ -22,13 +22,6 @@
 
 {% import "partials/language.html" as lang with context %}
 
-<!-- Theme options -->
-{% set palette = config.theme.palette %}
-{% if not palette is mapping %}
-  {% set palette = palette | first %}
-{% endif %}
-{% set font = config.theme.font %}
-
 <!doctype html>
 <html lang="{{ lang.t('language') }}" class="no-js">
   <head>
@@ -45,21 +38,8 @@
         <meta name="description" content="{{ config.site_description }}" />
       {% endif %}
 
-      <!-- Redirect -->
-      {% if page and page.meta and page.meta.redirect %}
-        <script>
-          var anchor = window.location.hash.substr(1)
-          location.href = '{{ page.meta.redirect }}' +
-            (anchor ? '#' + anchor : '')
-        </script>
-
-        <!-- Fallback in case JavaScript is not available -->
-        <meta http-equiv="refresh" content="0; url={{ page.meta.redirect }}" />
-        <meta name="robots" content="noindex" />
-        <link rel="canonical" href="{{ page.meta.redirect }}" />
-
       <!-- Canonical -->
-      {% elif page.canonical_url %}
+      {% if page.canonical_url %}
         <link rel="canonical" href="{{ page.canonical_url }}" />
       {% endif %}
 
@@ -96,20 +76,21 @@
       <link rel="stylesheet" href="{{ 'assets/stylesheets/main.css' | url }}" />
 
       <!-- Extra color palette -->
-      {% if palette.scheme or palette.primary or palette.accent %}
+      {% if config.theme.palette %}
+        {% set palette = config.theme.palette %}
         <link
           rel="stylesheet"
           href="{{ 'assets/stylesheets/palette.css' | url }}"
         />
-      {% endif %}
 
-      <!-- Theme-color meta tag for Android -->
-      {% if palette.primary %}
-        {% import "partials/palette.html" as map %}
-        {% set primary = map.primary(
-          palette.primary | replace(" ", "-") | lower
-        ) %}
-        <meta name="theme-color" content="#16191F" />
+        <!-- Theme-color meta tag for Android -->
+        {% if palette.primary %}
+          {% import "partials/palette.html" as map %}
+          {% set primary = map.primary(
+            palette.primary | replace(" ", "-") | lower
+          ) %}
+          <meta name="theme-color" content="#16191F" />
+        {% endif %}
       {% endif %}
     {% endblock %}
 
@@ -120,7 +101,8 @@
     {% block fonts %}
 
       <!-- Load fonts from Google -->
-      {% if font != false %}
+      {% if config.theme.font != false %}
+        {% set font = config.theme.font %}
         <link
           rel="preconnect"
           href="https://fonts.gstatic.com"
@@ -195,8 +177,12 @@
 
   <!-- Text direction and color palette, if defined -->
   {% set direction = config.theme.direction or lang.t('direction') %}
-  {% if palette.scheme or palette.primary or palette.accent %}
-    {% set scheme  = palette.scheme | lower %}
+  {% if config.theme.palette %}
+    {% set palette = config.theme.palette %}
+    {% if not palette is mapping %}
+      {% set palette = palette | first %}
+    {% endif %}
+    {% set scheme  = palette.scheme  | replace(" ", "-") | lower %}
     {% set primary = palette.primary | replace(" ", "-") | lower %}
     {% set accent  = palette.accent  | replace(" ", "-") | lower %}
     <body
@@ -205,18 +191,19 @@
       data-md-color-primary="{{ primary }}"
       data-md-color-accent="{{ accent }}"
     >
+
+      <!-- Experimental: set color scheme based on preference -->
+      {% if "preference" == scheme %}
+        <script>
+          if (matchMedia("(prefers-color-scheme: dark)").matches)
+            document.body.setAttribute("data-md-color-scheme", "slate")
+        </script>
+      {% endif %}
+
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
     <script type="text/javascript" src="{{ 'assets/javascripts/theme-switcher.js' | url }}"></script>
-
-    <!-- Experimental: set color scheme based on preference -->
-    {% if "preference" == palette.scheme %}
-      <script>
-        if (matchMedia("(prefers-color-scheme: dark)").matches)
-          document.body.setAttribute("data-md-color-scheme", "slate")
-      </script>
-    {% endif %}
 
     <!--
       State toggles - we need to set autocomplete="off" in order to reset the
@@ -259,15 +246,11 @@
     <div class="md-container" data-md-component="container">
 
       <!-- Hero teaser -->
-      {% block hero %}
-        {% if page and page.meta and page.meta.hero %}
-          {% include "partials/hero.html" with context %}
-        {% endif %}
-      {% endblock %}
+      {% block hero %}{% endblock %}
 
-      <!-- Tabs with outline -->
+      <!-- Tabs navigation -->
       {% block tabs %}
-        {% if "tabs" in config.theme.features %}
+        {% if "navigation.tabs" in config.theme.features %}
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
@@ -445,7 +428,10 @@
         "search.result.placeholder",
         "search.result.none",
         "search.result.one",
-        "search.result.other"
+        "search.result.other",
+        "search.result.more.one",
+        "search.result.more.other",
+        "search.result.term.missing"
       ] -%}
         {%- set _ = translations.update({ key: lang.t(key) }) -%}
       {%- endfor -%}
