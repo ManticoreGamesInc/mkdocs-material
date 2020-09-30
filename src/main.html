@@ -26,8 +26,6 @@
   <!-- Favicon -->
   <link rel="icon" type="image/png" sizes="512x512" href="{{ 'assets/icons/favicon-512x512.png' | url }}">
   <link rel="icon" type="image/png" sizes="192x192" href="{{ 'assets/icons/favicon-192x192.png' | url }}">
-  <link rel="icon" type="image/png" sizes="32x32" href="{{ 'assets/icons/favicon-32x32.png' | url }}">
-  <link rel="icon" type="image/png" sizes="16x16" href="{{ 'assets/icons/favicon-16x16.png' | url }}">
 
   <!-- PWA files integration -->
   {% include "partials/pwa-images.html" %}
@@ -35,9 +33,6 @@
   <!-- Lightgallery -->
   <link rel=preload as=style href="{{ 'assets/stylesheets/lightgallery.min.css' | url }}" onload="this.rel='stylesheet'">
   <link rel=preload as=style href="{{ 'assets/stylesheets/lg-transitions.min.css' | url }}" onload="this.rel='stylesheet'">
-
-  <meta name="msapplication-TileColor" content="#16191F">
-  <meta name="msapplication-config" content="{{ 'assets/icons/browserconfig.xml' | url }}">
 
   <!-- Service Worker -->
   {% block serviceworker %}
