@@ -17,8 +17,8 @@
       "type": "image/png"
     }
   ],
-  "name": "Core Creator Hub",
-  "short_name": "Core Hub",
+  "name": "Core Documentation",
+  "short_name": "Core Documentation",
   "orientation": "any",
   "display": "standalone",
   "start_url": "/?utm_source=web_app_manifest&utm_medium=web_app_manifest&utm_campaign=web_app_manifest",

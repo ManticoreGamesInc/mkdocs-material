@@ -428,3 +428,28 @@ video {
 #google_translate_element {
   margin-left: 15px;
 }
+
+// Download Button
+
+.download-button {
+  background: var(--core-color-orange);
+  border-radius: 2.5px;
+  font-family: var(--font-oswald);
+  color: #FFFFFF;
+  font-size: 18px;
+  font-weight: 400;
+  padding: 8px 10px;
+  text-decoration: none;
+  text-shadow: 0 0 2px rgba(0,0,0,0.5);
+  text-transform: uppercase;
+  display: inline-block;
+  cursor: pointer;
+  text-align: center;
+  margin-top: 8px;
+}
+
+.download-button:hover {
+  background: #f3b145;
+  border-radius: 2.5px;
+  text-decoration: none;
+}

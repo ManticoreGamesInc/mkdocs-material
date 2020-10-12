@@ -163,8 +163,8 @@ function config(args: Configuration): Configuration {
 
       new WebpackPwaManifest({
         filename: "manifest.json",
-        name: "Core Creator Hub",
-        short_name: "Core Hub",
+        name: "Core Documentation",
+        short_name: "Core Documentation",
         start_url: "/?utm_source=web_app_manifest&utm_medium=web_app_manifest&utm_campaign=web_app_manifest",
         display: "standalone",
         description: "Documentation for the Core Platform",
