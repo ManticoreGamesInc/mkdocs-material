@@ -144,4 +144,7 @@
   --md-code-hl-comment-color:        var(--md-default-fg-color--lighter);
   --md-code-hl-generic-color:        var(--md-default-fg-color--lighter);
   --md-code-hl-variable-color:       var(--md-default-fg-color--light);
+
+  // Prevent white flashes during rapid scrolling
+  background-color: var(--md-primary-bg-color);
 }
