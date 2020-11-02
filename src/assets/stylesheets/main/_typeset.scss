@@ -217,6 +217,12 @@ kbd {
     background-color: var(--md-code-bg-color);
     border-radius: px2rem(2px);
     box-decoration-break: clone;
+
+    // Disable focus indicator for pointer devices
+    &:not(.focus-visible) {
+      outline: none;
+      -webkit-tap-highlight-color: transparent;
+    }
   }
 
   // Disable containing block inside headlines
@@ -622,7 +628,8 @@ kbd {
       margin-left: 0.5em;
       vertical-align: sub;
       mask-repeat: no-repeat;
-      content: " ";
+      mask-size: contain;
+      content: "";
     }
 
     // Sort ascending
