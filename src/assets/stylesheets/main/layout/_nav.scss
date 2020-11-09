@@ -175,6 +175,7 @@
       display: flex;
       flex-direction: column;
       height: 100%;
+      background-color: var(--md-default-bg-color);
     }
 
     // Adjust styles for primary navigation
@@ -417,6 +418,11 @@
           }
         }
       }
+    }
+
+    // Adjust styles for secondary navigation
+    &--secondary {
+      background-color: transparent;
     }
 
     // Hide nested navigation by default
