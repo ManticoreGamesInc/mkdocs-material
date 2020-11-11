@@ -457,3 +457,15 @@ video {
   background: #E9A51D;
   text-decoration: none;
 }
+
+@media only screen and (max-width: 960px) {
+  .download-button {
+    display: none;
+  }
+}
+
+@media screen and (max-width: 1600px) {
+ .download-button {
+    margin-top: px2rem(4px);
+  }
+}
