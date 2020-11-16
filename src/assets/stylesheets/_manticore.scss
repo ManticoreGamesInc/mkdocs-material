@@ -445,27 +445,79 @@ video {
   display: inline-block;
   cursor: pointer;
   text-align: center;
-  margin-top: px2rem(8px);
+  margin-top: 8px;
 }
 
-.download-button:hover {
-  background: #FF8002;
+.download-button svg {
+  height: 22px;
+  margin-right: 2px;
+  vertical-align: text-bottom;
+}
+
+.core {
+  background: var(--core-color-orange);
+}
+
+.core:hover {
+  background: #ee8f00;
   text-decoration: none;
 }
 
-.download-button:active {
-  background: #E9A51D;
+.core:active {
+  background: #dd8500;
   text-decoration: none;
 }
 
-@media only screen and (max-width: 960px) {
+.twitch {
+  background: #9147ff;
+}
+
+.twitch:hover {
+  background: #8736ff;
+}
+
+.twitch:active {
+  background: #7d25ff;
+}
+
+.discord {
+  background: #7289DA;
+}
+
+.discord:hover {
+  background: #657ed6;
+}
+
+.discord:active {
+  background-color: #5772d3;
+}
+
+@media only screen and (max-width: 959px) {
   .download-button {
     display: none;
   }
 }
 
-@media screen and (max-width: 1600px) {
+@media screen and (min-width: 960px) and (max-width: 1219px) {
  .download-button {
-    margin-top: px2rem(4px);
+    margin-top: 4px;
+  }
+}
+
+@media screen and (min-width: 1220px) and (max-width: 1599px) {
+ .download-button {
+    margin-top: 4px;
+  }
+}
+
+@media screen and (min-width: 1600px) and (max-width: 1999px) {
+ .download-button {
+    margin-top: 6px;
+  }
+}
+
+@media screen and (min-width: 2000px) {
+ .download-button {
+    margin-top: 8x;
   }
 }

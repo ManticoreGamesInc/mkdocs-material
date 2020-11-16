@@ -75,10 +75,41 @@
       </ul>
     </div>
     -->
-    <!-- Download Button -->
+
+    <!-- Header Buttons -->
     <div class="md-header-social md-flex__cell--shrink">
       <ul>
-        <a class="download-button" href="https://www.coregames.com/?utm_source=documentation&utm_content=header" title="Download Core">Download Core</a>
+        <a
+          class="download-button discord"
+          href="https://www.discord.gg/core-creators"
+          title="Discord"
+          target="_blank"
+          rel="noopener"
+        >
+          {% set icon = "fontawesome/brands/discord" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+          Discord
+        </a>
+        <a
+          class="download-button twitch"
+          href="https://www.twitch.tv/CoreLive"
+          title="Twitch Channel"
+          target="_blank"
+          rel="noopener"
+        >
+          {% set icon = "fontawesome/brands/twitch" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+          Twitch</a>
+        <a
+          class="download-button core"
+          href="https://www.coregames.com/?utm_source=documentation&utm_content=header"
+          title="Download Core"
+          target="_blank"
+          rel="noopener"
+        >
+          {% set icon = "fontawesome/solid/download" %}
+          {% include ".icons/" ~ icon ~ ".svg" %}
+          Download</a>
       </ul>
     </div>
 
@@ -92,11 +123,11 @@
       {% include "partials/search.html" %}
     {% endif %}
 
-    <!-- Repository containing source -->
+    <!-- Repository containing source
     {% if config.repo_url %}
       <div class="md-header-nav__source">
         {% include "partials/source.html" %}
       </div>
-    {% endif %}
+    {% endif %} -->
   </nav>
 </header>
