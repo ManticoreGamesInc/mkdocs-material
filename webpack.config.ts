@@ -34,7 +34,7 @@ import { TsconfigPathsPlugin } from "tsconfig-paths-webpack-plugin"
 import { Configuration } from "webpack"
 import * as AssetsManifestPlugin from "webpack-assets-manifest"
 const WorkboxPlugin = require("workbox-webpack-plugin")
-const WebpackPwaManifest = require("webpack-pwa-manifest-contrib")
+const WebpackPwaManifest = require("webpack-pwa-manifest")
 
 /* ----------------------------------------------------------------------------
  * Helper functions
