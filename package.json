@@ -1,6 +1,6 @@
 {
   "name": "mkdocs-material",
-  "version": "6.1.5",
+  "version": "6.1.6",
   "description": "A Material Design theme for MkDocs",
   "keywords": [
     "mkdocs",
@@ -97,6 +97,6 @@
     "workbox-webpack-plugin": "6.0.0-rc.0"
   },
   "engines": {
-    "node": ">= 10"
+    "node": ">= 12"
   }
 }
