@@ -250,7 +250,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
 
       /* Plugins */
       plugins: [
-        ...base.plugins,
+        ...base.plugins || [],
 
         /* Copy and transform static assets */
         new CopyPlugin({
