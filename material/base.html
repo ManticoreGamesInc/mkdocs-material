@@ -39,7 +39,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.1fa9cc11.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.96650c80.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.9acdbcd4.min.css' | url }}">
@@ -76,7 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.4ac00218.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.8c7e0a7e.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -244,7 +244,7 @@
           base: "{{ base_url }}",
           features: {{ config.theme.features or [] | tojson }},
           search: Object.assign({
-            worker: "{{ 'assets/javascripts/worker/search.4ac00218.min.js' | url }}"
+            worker: "{{ 'assets/javascripts/worker/search.8c7e0a7e.min.js' | url }}"
           }, typeof search !== "undefined" && search)
         })
       </script>
