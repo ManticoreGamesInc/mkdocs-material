@@ -1,7 +1,7 @@
 {#-
   This file was automatically generated - do not edit
 -#}
-{% import "partials/partials/language.html" as lang with context %}
+{% import "partials/language.html" as lang with context %}
 <!doctype html>
 <html lang="{{ lang.t('language') }}" class="no-js">
   <head>
@@ -39,12 +39,12 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.0ea6277f.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.037dcf5d.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.90a661d2.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.fc6e670e.min.css' | url }}">
         {% if palette.primary %}
-          {% import "partials/partials/palette.html" as map %}
+          {% import "partials/palette.html" as map %}
           {% set primary = map.primary(
             palette.primary | replace(" ", "-") | lower
           ) %}
@@ -79,7 +79,7 @@
     <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.8c7e0a7e.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
-        {% include "partials/integrations/partials/integrations/analytipartials/language/cs.html" %}
+        {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
     {% block extrahead %}
@@ -101,7 +101,7 @@
   {% else %}
     <body dir="{{ direction }}">
   {% endif %}
-    <script src="{{ 'assets/javascripts/assets/javascripts/theme-switcher.js' | url }}"></script>
+    <script src="{{ 'assets/javascripts/theme-switcher.js' | url }}"></script>
     <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
     <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
     <label class="md-overlay" for="__drawer"></label>
@@ -114,13 +114,13 @@
       {% endif %}
     </div>
     {% block header %}
-      {% include "partials/partials/header.html" %}
+      {% include "partials/header.html" %}
     {% endblock %}
     <div class="md-container" data-md-component="container">
       {% block hero %}{% endblock %}
       {% block tabs %}
         {% if "navigation.tabs" in config.theme.features %}
-          {% include "partials/partials/tabs.html" %}
+          {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
       <div data-md-component="announce">
@@ -139,7 +139,7 @@
               <div class="md-sidebar md-sidebar--primary" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    {% include "partials/partials/nav.html" %}
+                    {% include "partials/nav.html" %}
                   </div>
                 </div>
               </div>
@@ -147,7 +147,7 @@
               <div class="md-sidebar md-sidebar--primary flag-hidden" data-md-component="navigation">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    {% include "partials/partials/nav.html" %}
+                    {% include "partials/nav.html" %}
                   </div>
                 </div>
               </div>
@@ -156,7 +156,7 @@
               <div class="md-sidebar md-sidebar--secondary" data-md-component="toc">
                 <div class="md-sidebar__scrollwrap">
                   <div class="md-sidebar__inner">
-                    {% include "partials/partials/toc.html" %}
+                    {% include "partials/toc.html" %}
                   </div>
                 </div>
               </div>
@@ -165,15 +165,15 @@
           <div class="md-content">
             <article class="md-content__inner md-typeset">
               {% block content %}
-                {% include "partials/integrations/partials/integrations/topscroller.html" %}
+                {% include "partials/integrations/topscroller.html" %}
                 {% if page.edit_url %}
                   <a href="{{ page.edit_url }}" title="{{ lang.t('edit.link.title') }}" aria-label="{{ lang.t('edit.link.title') }}" class="md-content__button md-icon" target="_blank" rel="noopener">
-                    {% include ".icons/material/.icons/material/pencil.svg" %}
+                    {% include ".icons/material/pencil.svg" %}
                   </a>
                 {% endif %}
                 {% if config.extra.feedback_url %}
                   <a href="{{ config.extra.feedback_url + '?labels=' + 'page-' + page.title|replace(' ', '-')|lower + '&title=' + page.title + ' Feedback' }}" title="Provide feedback about this page" aria-label="Provide feedback about this page" class="md-content__button md-icon" target="_blank" rel="noopener">
-                    {% include ".icons/material/.icons/material/comment-.icons/material/text.svg" %}
+                    {% include ".icons/material/comment-text.svg" %}
                   </a>
                 {% endif %}
                 {% block source %}
@@ -187,7 +187,7 @@
                 {% if not (page.is_homepage or page.meta.hide_tags) %}
                   {% for tag in page.meta.tags %}
                   <a href="{{ '/generated/tags' | url }}#{{ tag.lower() }}" title="{{ tag }}" class="md-tag">
-                    {% include ".icons/material/.icons/material/tag.svg" %}
+                    {% include ".icons/material/tag.svg" %}
                     {{ tag }}
                   </a>
                   {% endfor %}
@@ -197,26 +197,26 @@
                   {% if page.meta.git_revision_date_localized or
                         page.meta.revision_date
                   %}
-                    {% include "partials/partials/source-date.html" %}
+                    {% include "partials/source-date.html" %}
                   {% endif %}
                 {% endif %}
               {% endblock %}
               {% block disqus %}
-                {% include "partials/integrations/partials/integrations/disqus.html" %}
+                {% include "partials/integrations/disqus.html" %}
               {% endblock %}
             </article>
           </div>
         </div>
       </main>
       {% block footer %}
-        {% include "partials/partials/footer.html" %}
+        {% include "partials/footer.html" %}
       {% endblock %}
     </div>
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.08c56446.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/bundle.d8f9b679.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/assets/javascripts/lightgallery.min.js' | url }}"></script>
-      {% include "partials/integrations/partials/integrations/lightgallery.html" %}
+      <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
+      {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
       {%- for key in [
         "clipboard.copy",
