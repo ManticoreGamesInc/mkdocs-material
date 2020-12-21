@@ -126,7 +126,7 @@
       }
     }
 
-    // Build special keys with right icon
+    // Define keyboard keys with right icon
     @each $name, $code in (
       "tab":           "\21E5",
       "num-enter":     "\2324",

@@ -30,7 +30,7 @@ body {
   -moz-osx-font-smoothing: grayscale;
 }
 
-// Default fonts
+// Define default fonts
 body,
 input {
   color: var(--md-typeset-color);
@@ -52,25 +52,6 @@ input {
 
 ::-webkit-scrollbar-thumb:hover {
   background-color: var(--color-accent);
-}
-
-// Hack of the day to prevent jumping on scrollbar show/hide
-@media screen and (min-width: 960px) {
-  html {
-    margin-right: calc(100% - 100vw);
-  }
-
-  .md-header, .md-tabs {
-    margin-right: calc(100% - 100vw);
-  }
-
-  .md-tabs {
-    height: px2rem(48px)
-  }
-
-  body {
-    margin-right: calc(100vw - 100%);
-  }
 }
 
 // Proportionally spaced fonts
@@ -95,16 +76,14 @@ kbd {
 // ----------------------------------------------------------------------------
 
 // Content that is typeset - if possible, all margins, paddings and font sizes
-// should be set in ems, so nested blocks (e.g. admonitions) render correctly,
-// except headlines that should only appear on the top level and need to have
-// consistent spacing due to layout constraints.
+// should be set in ems, so nested blocks (e.g. admonitions) render correctly.
 .md-typeset {
   font-size: px2rem(16px);
   line-height: 1.6;
   color-adjust: exact;
 
-  // We'll use a smaller font-size for printing, so code examples don't break
-  // too early, and 16px looks too big anyway.
+  // [print]: We'll use a smaller `font-size` for printing, so code examples
+  // don't break too early, and `16px` looks too big anyway.
   @media print {
     font-size: px2rem(13.6px);
   }
@@ -113,11 +92,12 @@ kbd {
   p,
   ul,
   ol,
+  dl,
   blockquote {
     margin: 1em 0;
   }
 
-  // 1st level headline
+  // Headline on level 1
   h1 {
     margin: 0 0 px2em(40px, 32px);
     color: var(--md-default-fg-color--light);
@@ -127,7 +107,7 @@ kbd {
     letter-spacing: -0.01em;
   }
 
-  // 2nd level headline
+  // Headline on level 2
   h2 {
     margin: px2em(40px, 25px) 0 px2em(16px, 25px);
     font-weight: 300;
@@ -136,7 +116,7 @@ kbd {
     letter-spacing: -0.01em;
   }
 
-  // 3rd level headline
+  // Headline on level 3
   h3 {
     margin: px2em(32px, 20px) 0 px2em(16px, 20px);
     font-weight: 400;
@@ -145,19 +125,19 @@ kbd {
     letter-spacing: -0.01em;
   }
 
-  // 3rd level headline following an 2nd level headline
+  // Headline on level 3 following level 2
   h2 + h3 {
     margin-top: px2em(16px, 20px);
   }
 
-  // 4th level headline
+  // Headline on level 4
   h4 {
     margin: px2em(16px) 0;
     font-weight: 700;
     letter-spacing: -0.01em;
   }
 
-  // 5th and 6th level headline
+  // Headline on level 5-6
   h5,
   h6 {
     margin: px2em(16px, 12.8px) 0;
@@ -167,18 +147,18 @@ kbd {
     letter-spacing: -0.01em;
   }
 
-  // Overrides for 5th level headline
+  // Headline on level 5
   h5 {
     text-transform: uppercase;
   }
 
-  // Horizontal separators
+  // Horizontal separator
   hr {
     margin: 1.5em 0;
-    border-bottom: px2rem(1px) dotted var(--md-default-fg-color--lighter);
+    border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest);
   }
 
-  // Links
+  // Text link
   a {
     color: var(--core-color-blue);
     word-break: break-word;
@@ -189,7 +169,7 @@ kbd {
       transition: color 125ms;
     }
 
-    // Focused or hovered links
+    // Text link on focus/hover
     &:focus,
     &:hover {
       color: var(--md-accent-fg-color);
@@ -203,7 +183,7 @@ kbd {
     color: var(--md-code-fg-color);
     direction: ltr;
 
-    // Wrap text and hide scollbars
+    // [print]: Wrap text and hide scollbars
     @media print {
       white-space: pre-wrap;
     }
@@ -218,14 +198,14 @@ kbd {
     border-radius: px2rem(2px);
     box-decoration-break: clone;
 
-    // Disable focus indicator for pointer devices
+    // Hide outline for pointer devices
     &:not(.focus-visible) {
       outline: none;
       -webkit-tap-highlight-color: transparent;
     }
   }
 
-  // Disable containing block inside headlines
+  // Code block in headline
   h1 code,
   h2 code,
   h3 code,
@@ -243,13 +223,13 @@ kbd {
     color: currentColor;
   }
 
-  // Unformatted code blocks
+  // Unformatted content
   pre {
     position: relative;
     margin: 1em 0;
     line-height: 1.4;
 
-    // Actual container with code, overflowing
+    // Code block
     > code {
       display: block;
       margin: 0;
@@ -259,26 +239,25 @@ kbd {
       box-shadow: none;
       box-decoration-break: slice;
       touch-action: auto;
-      // Override Firefox scrollbar style
       scrollbar-width: thin;
       scrollbar-color: var(--md-default-fg-color--lighter) transparent;
 
-      // Override Firefox scrollbar hover color
+      // Code block on hover
       &:hover {
         scrollbar-color: var(--md-accent-fg-color) transparent;
       }
 
-      // Override native scrollbar styles
+      // Webkit scrollbar
       &::-webkit-scrollbar {
         width: px2rem(4px);
         height: px2rem(4px);
       }
 
-      // Scrollbar thumb
+      // Webkit scrollbar thumb
       &::-webkit-scrollbar-thumb {
         background-color: var(--md-default-fg-color--lighter);
 
-        // Hovered scrollbar thumb
+        // Webkit scrollbar thumb on hover
         &:hover {
           background-color: var(--md-accent-fg-color);
         }
@@ -286,14 +265,14 @@ kbd {
     }
   }
 
-  // [mobile -]: Stretch to whole width
+  // [mobile -]: Align with body copy
   @include break-to-device(mobile) {
 
-    // Stretch top-level containers
+    // Unformatted text
     > pre {
       margin: 1em px2rem(-16px);
 
-      // Remove rounded borders
+      // Code block
       code {
         border-radius: 0;
       }
@@ -323,13 +302,13 @@ kbd {
     box-decoration-break: clone;
   }
 
-  // Abbreviations
+  // Abbreviation
   abbr {
     text-decoration: none;
     border-bottom: px2rem(1px) dotted var(--md-default-fg-color--light);
     cursor: help;
 
-    // Render a tooltip for touch devices
+    // Show tooltip for touch devices
     @media (hover: none) {
       position: relative;
 
@@ -348,7 +327,7 @@ kbd {
         padding: px2rem(4px) px2rem(6px);
         color: var(--md-default-bg-color);
         font-size: px2rem(14px);
-        background: var(--md-default-fg-color);
+        background-color: var(--md-default-fg-color);
         border-radius: px2rem(2px);
         content: attr(title);
       }
@@ -397,7 +376,7 @@ kbd {
     list-style-type: disc;
   }
 
-  // Unordered and ordered lists
+  // Unordered and ordered list
   ul,
   ol {
     margin-left: px2em(10px);
@@ -409,7 +388,7 @@ kbd {
       margin-left: initial;
     }
 
-    // Nested ordered lists
+    // Nested ordered list
     ol {
       list-style-type: lower-alpha;
 
@@ -419,7 +398,7 @@ kbd {
       }
     }
 
-    // List elements
+    // List element
     li {
       margin-bottom: 0.5em;
       margin-left: px2em(20px);
@@ -430,18 +409,18 @@ kbd {
         margin-left: initial;
       }
 
-      // Decrease vertical spacing
+      // Adjust spacing
       p,
       blockquote {
         margin: 0.5em 0;
       }
 
-      // Remove margin on last element
+      // Adjust spacing on last child
       &:last-child {
         margin-bottom: 0;
       }
 
-      // Nested lists
+      // Nested list
       ul,
       ol {
         margin: 0.5em 0 0.5em px2em(10px);
@@ -455,7 +434,7 @@ kbd {
     }
   }
 
-  // Definition lists
+  // Definition list
   dd {
     margin: 1em 0 1.5em px2em(30px);
 
@@ -466,42 +445,47 @@ kbd {
     }
   }
 
-  // Limit width to container, scale height proportionally
+  // Image or icon
   img,
   svg {
     max-width: 100%;
     height: auto;
 
-    // Left-aligned
+    // Adjust spacing when left-aligned
     &[align="left"] {
       margin: 1em;
       margin-left: 0;
     }
 
-    // Right-aligned
+    // Adjust spacing when right-aligned
     &[align="right"] {
       margin: 1em;
       margin-right: 0;
     }
 
-    // Remove top spacing of sole children
+    // Adjust spacing when sole children
     &[align]:only-child {
       margin-top: 0;
     }
   }
 
-  // Figures
+  // Figure
   figure {
     width: fit-content;
     max-width: 100%;
     margin: 0 auto;
     text-align: center;
+
+    // Figure images
+    img {
+      display: block;
+    }
   }
 
-  // Figure captions
+  // Figure caption
   figcaption {
     max-width: px2rem(480px);
-    margin: 0.5em auto 2em;
+    margin: 1em auto 2em;
     font-style: italic;
   }
 
@@ -510,7 +494,7 @@ kbd {
     max-width: 100%;
   }
 
-  // Data tables
+  // Data table
   table:not([class]) {
     display: table;
     max-width: 100%;
@@ -525,7 +509,7 @@ kbd {
     table-layout: auto;
     touch-action: auto;
 
-    // Reset display mode so table header wraps correctly when printing
+    // [print]: Reset display mode so table header wraps when printing
     @media print {
       display: table;
     }
@@ -537,22 +521,22 @@ kbd {
       margin-top: 1.5em;
     }
 
-    // Elements inside cells
+    // Elements in table heading and cell
     th > *,
     td > * {
 
-      // Remove top spacing of first child
+      // Adjust spacing on first child
       &:first-child {
         margin-top: 0;
       }
 
-      // Remove bottom spacing of last child
+      // Adjust spacing on last child
       &:last-child {
         margin-bottom: 0;
       }
     }
 
-    // Table headings and cells
+    // Table heading and cell
     th:not([align]),
     td:not([align]) {
       text-align: left;
@@ -563,7 +547,7 @@ kbd {
       }
     }
 
-    // Table headings
+    // Table heading
     th {
       min-width: px2rem(100px);
       padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
@@ -579,24 +563,24 @@ kbd {
       }
     }
 
-    // Table cells
+    // Table cell
     td {
       padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
       vertical-align: top;
       border-top: px2rem(1px) solid var(--md-default-fg-color--lightest);
     }
 
-    // Table rows
+    // Table row
     tr {
       transition: background-color 125ms;
 
-      // Add background on hover
+      // Table row on hover
       &:hover {
         background-color: rgba(0, 0, 0, 0.035);
         box-shadow: 0 px2rem(1px) 0 var(--md-default-bg-color) inset;
       }
 
-      // Remove top border on first row
+      // Hide border on first table row
       &:first-child td {
         border-top: 0;
       }
@@ -610,13 +594,13 @@ kbd {
       }
     }
 
-    // Do not wrap links in tables
+    // Text link in table
     a {
       word-break: normal;
     }
   }
 
-  // Sortable tables
+  // Sortable table
   table th[role="columnheader"] {
     cursor: pointer;
 
@@ -645,7 +629,7 @@ kbd {
     }
   }
 
-  // Wrapper for scrolling on overflow
+  // Data table scroll wrapper
   &__scrollwrap {
     margin: 1em px2rem(-16px);
     overflow-x: auto;
@@ -659,12 +643,12 @@ kbd {
     margin-bottom: 0.5em;
     padding: 0 px2rem(16px);
 
-    // Reset display mode so table header wraps correctly when printing
+    // [print]: Reset display mode so table header wraps when printing
     @media print {
       display: block;
     }
 
-    // Data tables
+    // Data table
     html & table {
       display: table;
       width: 100%;
