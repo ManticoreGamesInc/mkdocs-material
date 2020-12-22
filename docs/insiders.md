@@ -14,8 +14,10 @@ to [get access to Insiders][2].
     <iframe src="https://streamable.com/e/b6ij21" allowfullscreen></iframe>
   </div>
   <figcaption markdown="1">
-    A demo is worth a thousand words — check it out at
-    [squidfunk.github.io/mkdocs-material-insiders][3]
+
+A demo is worth a thousand words — check it out at
+[squidfunk.github.io/mkdocs-material-insiders][3]
+
   </figcaption>
 </figure>
 
@@ -154,6 +156,7 @@ the public for general availability.
 
 - [x] [Sticky navigation tabs][18]
 - [x] [Remove generator notice][19]
+- [ ] Support for index pages
 
   [18]: setup/setting-up-navigation.md#sticky-navigation-tabs
   [19]: setup/setting-up-the-footer.md#remove-generator
