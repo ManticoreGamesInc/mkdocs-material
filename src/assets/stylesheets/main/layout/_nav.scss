@@ -43,6 +43,7 @@
     display: block;
     padding: 0 px2rem(12px);
     font-family: var(--font-oswald);
+    overflow: hidden;
     font-weight: 700;
     text-transform: uppercase;
     text-overflow: ellipsis;
@@ -84,7 +85,6 @@
   // Navigation item
   &__item {
     padding: 0 px2rem(12px);
-    user-select: none;
 
     // Navigation item on level 2
     & & {
@@ -118,10 +118,10 @@
       color: var(--core-color-orange);
     }
 
-    // Reset active color for nested list titles
-    // .md-nav__item--nested > & {
-    //   color: inherit;
-    // }
+    // Navigation link in nested list
+    .md-nav__item--nested > & {
+      color: inherit;
+    }
 
     // Navigation link on focus/hover
     &:focus,
@@ -244,20 +244,8 @@
 
         // Top-level navigation title
         &[for="__drawer"] {
-          position: relative;
           color: var(--core-color-orange);
           background-color: var(--core-color-black);
-
-          // Site logo
-          .md-nav__button {
-            position: absolute;
-            top: px2rem(4px);
-            left: px2rem(4px);
-            display: block;
-            margin: px2rem(4px);
-            padding: px2rem(8px);
-            font-size: px2rem(48px);
-          }
         }
 
         // Button with logo, pointing to `config.site_url`
@@ -491,8 +479,7 @@
       padding-right: px2rem(16px);
       padding-left: px2rem(48px);
     }
-
-    // Repository containing source
+    // Repository information container
     &__source {
       display: block;
       padding: 0 px2rem(4px);
