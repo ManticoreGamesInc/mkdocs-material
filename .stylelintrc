@@ -1,6 +1,9 @@
 {
   "extends": "stylelint-config-recommended",
-  "plugins": ["stylelint-scss"],
+  "plugins": [
+    "stylelint-order",
+    "stylelint-scss"
+  ],
   "rules": {
     "at-rule-empty-line-before": null,
     "at-rule-no-unknown": null,
@@ -20,7 +23,6 @@
       "ignore": ["stylelint-commands"]
     }],
     "font-family-name-quotes": "always-where-recommended",
-    "font-family-no-missing-generic-family-keyword": null,
     "font-weight-notation": "numeric",
     "function-url-quotes": "always",
     "no-descending-specificity": null,
