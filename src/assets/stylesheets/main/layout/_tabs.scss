@@ -29,7 +29,7 @@
   width: 100%;
   overflow: auto;
   color: $md-color-white;
-  background-color: #373C49;
+  background-color: var(--core-color-sec-nav);
   font-family: var(--font-oswald);
   text-transform: uppercase;
   transition: background 250ms;
@@ -80,7 +80,7 @@
     margin-top: px2rem(13px);
     font-size: px2rem(17px);
     // Hack: save a repaint when the tabs are appearing when scrolling up
-    backface-visibility: hidden;  
+    backface-visibility: hidden;
     opacity: 0.7;
     transition:
       transform 400ms cubic-bezier(0.1, 0.7, 0.1, 1),
