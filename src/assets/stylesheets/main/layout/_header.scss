@@ -70,19 +70,6 @@
       background-color 250ms,
       box-shadow       250ms;
   }
-
-  // Fake Bottom Border
-  &::after {
-    content: "";
-    background-color: var(--core-color-orange);
-    position: absolute;
-    display: block;
-    height: 4px;
-    top: px2rem(48px);
-    bottom: 0;
-    left: 0;
-    right: 0;
-  }
 }
 
 // Header navigation - if the header exceeds the default height of `48px`, i.e.

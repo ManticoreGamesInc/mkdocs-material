@@ -173,6 +173,7 @@ kbd {
     &:focus,
     &:hover {
       color: var(--md-accent-fg-color);
+      opacity: 0.7;
     }
   }
 

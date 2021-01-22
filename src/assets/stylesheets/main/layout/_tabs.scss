@@ -28,11 +28,24 @@
 .md-tabs {
   width: 100%;
   overflow: auto;
-  color: $md-color-white;
-  background-color: var(--core-color-sec-nav);
+  color: var(--md-accent-fg-color);
+  background-color: var(--core-color-black);
   font-family: var(--font-oswald);
   text-transform: uppercase;
   transition: background 250ms;
+
+  // Fake Bottom Border
+  &::before {
+    content: "";
+    background-color: var(--core-color-sec-nav);
+    position: relative;
+    display: block;
+    height: 4px;
+    top: px2rem(48px);
+    bottom: 0;
+    left: 0;
+    right: 0;
+  }
 
   // [print]: Hide tabs
   @media print {
@@ -69,19 +82,35 @@
   &__item {
     display: inline-block;
     height: px2rem(48px);
-    padding-right: px2rem(12px);
-    padding-left: px2rem(12px);
+    padding: 0px;
+    margin-left: -2px !important;
+    margin-right: -2px !important;
+
+    &::after {
+      content: "";
+      display: block;
+      position: relative;
+      height: 0px;
+      background-color: #FF9900;
+    }
+
+    // Active link and link on focus/hover
+    &:focus,
+    &:hover {
+      &::after {
+        height: 4px;
+      }
+    }
   }
 
   // Navigation tabs link - could be defined as block elements and aligned via
   // line height, but this would imply more repaints when scrolling
   &__link {
     display: block;
-    margin-top: px2rem(13px);
     font-size: px2rem(17px);
+    padding: 14px 12px 10px 12px;
     // Hack: save a repaint when the tabs are appearing when scrolling up
     backface-visibility: hidden;
-    opacity: 0.7;
     transition:
       transform 400ms cubic-bezier(0.1, 0.7, 0.1, 1),
       opacity   250ms;
@@ -90,8 +119,9 @@
     &--active,
     &:focus,
     &:hover {
-      color: var(--core-color-orange); // inherit;
-      opacity: 1;
+      color: #FFFFFF; // inherit;
+      transition: color 100ms;
+      border-bottom: 4px solid #FF9900;
     }
 
     // Delay transitions by a small amount
