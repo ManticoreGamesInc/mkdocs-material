@@ -39,10 +39,10 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.8e3507fb.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.1736c75d.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.48db7b0e.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.e6ac0b43.min.css' | url }}">
         {% if palette.primary %}
           {% import "partials/palette.html" as map %}
           {% set primary = map.primary(
@@ -220,8 +220,8 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/vendor.e3a55bfa.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.6449fb1d.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/vendor.53cc9318.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.e9c9f54f.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}
