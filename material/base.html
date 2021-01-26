@@ -39,7 +39,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.ded72717.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.b7149119.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.e6ac0b43.min.css' | url }}">
@@ -114,6 +114,15 @@
         </a>
       {% endif %}
     </div>
+    <div data-md-component="announce">
+      {% if self.announce() %}
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            {% block announce %}✨ Welcome, Jammers! Core has a category on Global Game Jam 2021. Head <a href="/tutorials/global_game_jam/" title="GGJ 2021">here</a> to get started. ✨{% endblock %}
+          </div>
+        </aside>
+      {% endif %}
+    </div>
     {% block header %}
       {% include "partials/header.html" %}
     {% endblock %}
@@ -124,15 +133,6 @@
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
-      <div data-md-component="announce">
-        {% if self.announce() %}
-          <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-              {% block announce %}{% endblock %}
-            </div>
-          </aside>
-        {% endif %}
-      </div>
       <main class="md-main" data-md-component="main">
         <div class="md-main__inner md-grid">
           {% block site_nav %}

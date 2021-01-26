@@ -27,7 +27,7 @@
 // Announcement bar
 .md-announce {
   overflow: auto;
-  background-color: var(--md-footer-bg-color);
+  background-color: var(--core-color-black);
 
   // [print]: Hide announcement bar
   @media print {

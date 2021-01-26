@@ -247,6 +247,17 @@
       {% endif %}
     </div>
 
+    <!-- Announcement bar -->
+    <div data-md-component="announce">
+      {% if self.announce() %}
+        <aside class="md-announce">
+          <div class="md-announce__inner md-grid md-typeset">
+            {% block announce %}✨ Welcome, Jammers! Core has a category on Global Game Jam 2021. Head <a href="/tutorials/global_game_jam/" title="GGJ 2021">here</a> to get started. ✨{% endblock %}
+          </div>
+        </aside>
+      {% endif %}
+    </div>
+
     <!-- Application header -->
     {% block header %}
       {% include "partials/header.html" %}
@@ -264,17 +275,6 @@
           {% include "partials/tabs.html" %}
         {% endif %}
       {% endblock %}
-
-      <!-- Announcement bar -->
-      <div data-md-component="announce">
-        {% if self.announce() %}
-          <aside class="md-announce">
-            <div class="md-announce__inner md-grid md-typeset">
-              {% block announce %}{% endblock %}
-            </div>
-          </aside>
-        {% endif %}
-      </div>
 
       <!-- Main area -->
       <main class="md-main" data-md-component="main">
