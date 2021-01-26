@@ -1,6 +1,3 @@
-// Manticore Additions
-
-// CSS Variables
 :root {
   // Fonts
   --font-oswald: "Oswald", sans-serif;
@@ -498,4 +495,10 @@ figure {
  .download-button {
     margin-top: 2px;
   }
+}
+
+// Google Translate Box
+.goog-te-gadget .goog-te-combo {
+  border-radius: 5px;
+  font-family: Roboto, sans-serif;
 }
