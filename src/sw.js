@@ -4,7 +4,7 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/5.1.4/workbox-sw.js")
+importScripts("https://storage.googleapis.com/workbox-cdn/releases/6.1.0/workbox-sw.js")
 
 workbox.precaching.cleanupOutdatedCaches()
 workbox.precaching.precacheAndRoute(self.__WB_MANIFEST)
