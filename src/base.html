@@ -177,9 +177,6 @@
       {% endif %}
     {% endblock %}
 
-    <!-- Algolia -->
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css" />
-
     <!-- Custom front matter -->
     {% block extrahead %}
     {% endblock %}
@@ -462,11 +459,7 @@
       </script>
 
       <!-- Application configuration -->
-      {% block config %}
-        <script>
-          var search = {}
-        </script>
-      {% endblock %}
+      {% block config %}{% endblock %}
 
       <!-- Application initialization -->
       <script>
@@ -483,14 +476,6 @@
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
-      <script type="text/javascript" src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-      <script type="text/javascript"> docsearch({
-      apiKey: '23ae9b1d043d872810ccd7614a6f88f9',
-      indexName: 'coregames',
-      inputSelector: '.md-search__input',
-      debug: false // Set debug to true if you want to inspect the dropdown
-      });
-      </script>
     {% endblock %}
   </body>
 </html>

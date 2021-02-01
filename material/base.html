@@ -82,7 +82,6 @@
         {% include "partials/integrations/analytics.html" %}
       {% endif %}
     {% endblock %}
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.css">
     {% block extrahead %}
     {% endblock %}
   </head>
@@ -246,9 +245,7 @@
       <script id="__lang" type="application/json">
         {{- translations | tojson -}}
       </script>
-      {% block config %}
-        <script>var search={}</script>
-      {% endblock %}
+      {% block config %}{% endblock %}
       <script>
         app = initialize({
           base: "{{ base_url }}",
@@ -261,8 +258,6 @@
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
-      <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-      <script>docsearch({apiKey:"23ae9b1d043d872810ccd7614a6f88f9",indexName:"coregames",inputSelector:".md-search__input",debug:!1})</script>
     {% endblock %}
   </body>
 </html>
