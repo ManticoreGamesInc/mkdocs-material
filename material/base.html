@@ -27,7 +27,7 @@
         <link rel="canonical" href="{{ page.canonical_url }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-6.2.7">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-6.2.8">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -39,10 +39,10 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.46a3872c.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.37eaf220.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.e6ac0b43.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.248df234.min.css' | url }}">
         {% if palette.primary %}
           {% import "partials/palette.html" as map %}
           {% set primary = map.primary(
@@ -65,7 +65,7 @@
             font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
             font.code | replace(' ', '+')
           }}%7COswald:300,400,400i,700&display=swap" crossorigin>
-        <style>body,input{font-family:"{{ font.text }}",-apple-system,BlinkMacSystemFont,Helvetica,Arial,sans-serif}code,kbd,pre{font-family:"{{ font.code }}",SFMono-Regular,Consolas,Menlo,monospace}</style>
+        <style>:root{--md-text-font-family:"{{ font.text }}",;--md-code-font-family:"{{ font.code }}",}</style>
       {% endif %}
     {% endblock %}
     {% if config.extra.manifest %}
@@ -221,8 +221,8 @@
       {% endblock %}
     </div>
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/vendor.18f0862e.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.994580cf.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/vendor.f03b12a7.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.d3f6ab33.min.js' | url }}"></script>
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
       {%- set translations = {} -%}

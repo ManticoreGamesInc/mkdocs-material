@@ -25,5 +25,6 @@ src/**/*.html
 
 # Don't lint shame
 src/assets/stylesheets/_shame.scss
-docs
-material
+
+# Prevent stylelint from constantly complaining
+webpack.config.ts
