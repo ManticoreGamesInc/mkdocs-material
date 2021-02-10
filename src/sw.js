@@ -4,22 +4,28 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
-importScripts("https://storage.googleapis.com/workbox-cdn/releases/6.1.0/workbox-sw.js")
+import { skipWaiting, clientsClaim } from "workbox-core"
+import {
+  cleanupOutdatedCaches,
+  precacheAndRoute,
+  matchPrecache,
+} from "workbox-precaching"
+import { setCatchHandler } from "workbox-routing"
+import { registerRoute } from "workbox-routing"
+import {
+  NetworkFirst,
+  StaleWhileRevalidate,
+  CacheFirst,
+} from "workbox-strategies"
+import { CacheableResponsePlugin } from "workbox-cacheable-response"
+import { ExpirationPlugin } from "workbox-expiration"
+import * as googleAnalytics from "workbox-google-analytics"
 
-workbox.precaching.cleanupOutdatedCaches()
-workbox.precaching.precacheAndRoute(self.__WB_MANIFEST)
-workbox.core.clientsClaim()
-workbox.googleAnalytics.initialize()
+googleAnalytics.initialize()
 
-workbox.routing.registerRoute(
-  /\.(?:js|json)$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: "js-cache",
-    fetchOptions: {
-      credentials: "include"
-    }
-  })
-)
+cleanupOutdatedCaches()
+precacheAndRoute(self.__WB_MANIFEST)
+clientsClaim()
 
 function cacheKeyWillBeUsed({ request }) {
   const url = new URL(request.url)
@@ -28,82 +34,107 @@ function cacheKeyWillBeUsed({ request }) {
   return url.href
 }
 
-const networkFirstStrategy = new workbox.strategies.NetworkFirst({
+const networkFirstStrategy = new NetworkFirst({
   cacheName: "docs-cache",
   fetchOptions: {
-    credentials: "include"
+    credentials: "include",
   },
-  plugins: [{ cacheKeyWillBeUsed }]
+  plugins: [{ cacheKeyWillBeUsed }],
 })
 
-const navigationRoute = new workbox.routing.NavigationRoute(networkFirstStrategy)
-workbox.routing.registerRoute(navigationRoute)
-workbox.routing.setCatchHandler(({ event }) => {
-  switch (event.request.destination) {
-    case "document":
-      return caches.match(workbox.precaching.createHandlerBoundToURL("offline.html"))
+// Cache page navigations (html) with a Network First strategy
+registerRoute(
+  // Check to see if the request is a navigation to a new page
+  ({ request }) => request.mode === 'navigate',
+  // Use a Network First caching strategy
+  new NetworkFirst({
+    // Put all cached files in a cache named 'pages'
+    cacheName: 'pages',
+    plugins: [
+      // Ensure that only requests that result in a 200 status are cached
+      new CacheableResponsePlugin({
+        statuses: [200],
+      }),
+      cacheKeyWillBeUsed
+    ],
+  }),
+);
 
-    default:
-      // If we don't have a fallback, just return an error response.
-      return Response.error()
-  }
-})
+// Cache CSS, JS, and Web Worker requests with a Stale While Revalidate strategy
+registerRoute(
+  // Check to see if the request's destination is style for stylesheets, script for JavaScript, or worker for web worker
+  ({ request }) =>
+    request.destination === 'style' ||
+    request.destination === 'script' ||
+    request.destination === 'worker',
+  // Use a Stale While Revalidate caching strategy
+  new StaleWhileRevalidate({
+    // Put all cached files in a cache named 'assets'
+    cacheName: 'assets',
+    plugins: [
+      // Ensure that only requests that result in a 200 status are cached
+      new CacheableResponsePlugin({
+        statuses: [200],
+      }),
+    ],
+  }),
+);
 
-workbox.routing.registerRoute(
-  /\.css$/,
-  // Use cache but update in the background.
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: "css-cache",
-    fetchOptions: {
-      credentials: "include"
-    }
-  })
-)
-
-workbox.routing.registerRoute(
+registerRoute(
   /\.(?:png|jpg|jpeg|svg|gif|ico|mp4)$/,
   // Use the cache if it's available.
-  new workbox.strategies.CacheFirst({
+  new CacheFirst({
     cacheName: "image-cache",
     fetchOptions: {
-      credentials: "include"
+      credentials: "include",
     },
     plugins: [
-      new workbox.expiration.ExpirationPlugin({
+      new ExpirationPlugin({
         // Cache only 50 images.
         maxEntries: 50,
         // Cache for a maximum of a day.
-        maxAgeSeconds: 24 * 60 * 60
-      })
-    ]
+        maxAgeSeconds: 24 * 60 * 60,
+      }),
+    ],
   })
 )
 
 // Cache the Google Fonts stylesheets with a stale-while-revalidate strategy.
-workbox.routing.registerRoute(/.*(?:googleapis)\.com.*$/,
-  new workbox.strategies.StaleWhileRevalidate({
-    cacheName: "googleapis-cache"
+registerRoute(
+  ({ url }) => url.origin === "https://fonts.googleapis.com",
+  new StaleWhileRevalidate({
+    cacheName: "google-fonts-stylesheets",
   })
 )
 
 // Cache the underlying font files with a cache-first strategy for 1 year.
-workbox.routing.registerRoute(
-  /^https:\/\/fonts\.gstatic\.com/,
-  new workbox.strategies.CacheFirst({
+registerRoute(
+  ({ url }) => url.origin === "https://fonts.gstatic.com",
+  new CacheFirst({
     cacheName: "google-fonts-webfonts",
     plugins: [
-      new workbox.cacheableResponse.CacheableResponsePlugin({
-        statuses: [0, 200]
+      new CacheableResponsePlugin({
+        statuses: [0, 200],
       }),
-      new workbox.expiration.ExpirationPlugin({
+      new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 365,
-        maxEntries: 30
-      })
-    ]
+        maxEntries: 30,
+      }),
+    ],
   })
 )
 
-addEventListener("message", event => {
+// Catch routing errors, like if the user is offline
+setCatchHandler(async ({ event }) => {
+  // Return the precached offline page if a document is being requested
+  if (event.request.destination === "document") {
+    return matchPrecache("/offline.html")
+  }
+
+  return Response.error()
+})
+
+addEventListener("message", (event) => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     skipWaiting()
   }

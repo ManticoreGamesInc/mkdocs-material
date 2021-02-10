@@ -304,7 +304,7 @@ export default (_env: never, args: Configuration): Configuration[] => {
         new WorkboxPlugin.InjectManifest({
           swSrc: "src/sw.js",
           include: ["assets"],
-          additionalManifestEntries: [ {url: "404.html", revision: "1" }, {url: "offline.html", revision: "1" } ]
+          additionalManifestEntries: [ {url: "404.html", revision: "2" }, {url: "offline.html", revision: "2" } ]
         }),
 
         /* Theme Switcher */
