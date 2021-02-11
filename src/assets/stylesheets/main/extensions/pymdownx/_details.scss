@@ -114,8 +114,7 @@
     }
 
     // Hide native details marker
-    &::marker,
-    &::-webkit-details-marker {
+    &::marker {
       display: none;
     }
   }
