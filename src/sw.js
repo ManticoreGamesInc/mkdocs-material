@@ -4,19 +4,11 @@
 /* eslint-disable no-underscore-dangle */
 /* eslint-disable no-undef */
 
+import { warmStrategyCache } from "workbox-recipes"
 import { skipWaiting, clientsClaim } from "workbox-core"
-import {
-  cleanupOutdatedCaches,
-  precacheAndRoute,
-  matchPrecache,
-} from "workbox-precaching"
-import { setCatchHandler } from "workbox-routing"
-import { registerRoute } from "workbox-routing"
-import {
-  NetworkFirst,
-  StaleWhileRevalidate,
-  CacheFirst,
-} from "workbox-strategies"
+import { cleanupOutdatedCaches, precacheAndRoute, matchPrecache } from "workbox-precaching"
+import { registerRoute, setCatchHandler } from "workbox-routing"
+import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from "workbox-strategies"
 import { CacheableResponsePlugin } from "workbox-cacheable-response"
 import { ExpirationPlugin } from "workbox-expiration"
 import * as googleAnalytics from "workbox-google-analytics"
@@ -31,26 +23,30 @@ function cacheKeyWillBeUsed({ request }) {
   const url = new URL(request.url)
   url.pathname = url.pathname.replace(/\/index\.html$/, "/")
   url.pathname = url.pathname.replace(/\.html$/, "/")
+  // Clear out all search params.
+  url.search = ''
   return url.href
 }
 
-// Cache page navigations (html) with a Network First strategy
+const navigationStrategy = new NetworkFirst({
+  cacheName: 'pages',
+  plugins: [
+    new CacheableResponsePlugin({
+      statuses: [200],
+    }),
+    cacheKeyWillBeUsed,
+  ],
+});
+
 registerRoute(
-  // Check to see if the request is a navigation to a new page
   ({ request }) => request.mode === 'navigate',
-  // Use a Network First caching strategy
-  new NetworkFirst({
-    // Put all cached files in a cache named 'pages'
-    cacheName: 'pages',
-    plugins: [
-      // Ensure that only requests that result in a 200 status are cached
-      new CacheableResponsePlugin({
-        statuses: [200],
-      }),
-      cacheKeyWillBeUsed
-    ],
-  }),
+  navigationStrategy
 );
+
+warmStrategyCache({
+  urls: ['/'],
+  strategy: navigationStrategy,
+});
 
 // Cache CSS, JS, and Web Worker requests with a Stale While Revalidate strategy
 registerRoute(
