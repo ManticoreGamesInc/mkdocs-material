@@ -34,14 +34,6 @@ function cacheKeyWillBeUsed({ request }) {
   return url.href
 }
 
-const networkFirstStrategy = new NetworkFirst({
-  cacheName: "docs-cache",
-  fetchOptions: {
-    credentials: "include",
-  },
-  plugins: [{ cacheKeyWillBeUsed }],
-})
-
 // Cache page navigations (html) with a Network First strategy
 registerRoute(
   // Check to see if the request is a navigation to a new page
