@@ -34,7 +34,7 @@ const navigationStrategy = new NetworkFirst({
     new CacheableResponsePlugin({
       statuses: [200],
     }),
-    cacheKeyWillBeUsed,
+    {cacheKeyWillBeUsed},
   ],
 });
 
