@@ -286,8 +286,8 @@
       &::placeholder {
         color: $md-color-white--light;
         font-family: var(--font-oswald);
-        text-transform: uppercase;
         line-height: 2;
+        text-transform: uppercase;
       }
 
       // Search input on hover
@@ -598,12 +598,13 @@
     }
 
     // Hide native details marker
-    &::marker {
+    &::marker,
+    &::-webkit-details-marker {
       display: none;
     }
 
     // Adjust transparency of less relevant results
-    & ~ * > * {
+    ~ * > * {
       opacity: 0.65;
     }
   }

@@ -42,14 +42,14 @@ input {
 
 // Custom ::-webkit-scrollbar
 ::-webkit-scrollbar {
-  background-color: var(--md-primary-bg-color);
   width: 10px;
+  background-color: var(--md-primary-bg-color);
 }
 
 ::-webkit-scrollbar-thumb {
-  box-shadow: inset 0 0 2px var(--md-primary-fg-color--light);
-  border-radius: px2rem(34px);
   background-color: var(--md-primary-fg-color--light);
+  border-radius: px2rem(34px);
+  box-shadow: inset 0 0 2px var(--md-primary-fg-color--light);
 }
 
 ::-webkit-scrollbar-thumb:hover {
@@ -337,7 +337,6 @@ kbd {
         content: attr(title);
       }
     }
-
   }
 
   // Small text
@@ -505,13 +504,13 @@ kbd {
     max-width: 100%;
     overflow: auto;
     font-size: px2rem(12.8px);
+    table-layout: auto;
     background: var(--md-default-bg-color);
-    border-radius: px2rem(4px);
     border-bottom: 2px solid var(--core-color-orange);
+    border-radius: px2rem(4px);
     box-shadow:
       0 px2rem(4px) px2rem(10px) hsla(0, 0%, 0%, 0.05),
       0 0           px2rem(1px)  hsla(0, 0%, 0%, 0.1);
-    table-layout: auto;
     touch-action: auto;
 
     // [print]: Reset display mode so table header wraps when printing
@@ -522,7 +521,7 @@ kbd {
     // Due to margin collapse because of the necessary inline-block hack, we
     // cannot increase the bottom margin on the table, so we just increase the
     // top margin on the following element
-    & + * {
+    + * {
       margin-top: 1.5em;
     }
 
@@ -557,10 +556,10 @@ kbd {
       min-width: px2rem(100px);
       padding: px2em(12px, 12.8px) px2em(16px, 12.8px);
       color: $md-color-white;
-      vertical-align: top;
-      border-bottom: 2px solid var(--core-color-orange);
-      background-color: var(--core-color-black);
       white-space: nowrap;
+      vertical-align: top;
+      background-color: var(--core-color-black);
+      border-bottom: 2px solid var(--core-color-orange);
 
       // Links in table headings
       a {
@@ -594,7 +593,7 @@ kbd {
         width: 250px;
       }
 
-      td.even-table:first-child  {
+      td.even-table:first-child {
         width: 50%;
       }
     }

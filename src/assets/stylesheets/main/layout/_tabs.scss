@@ -29,22 +29,22 @@
   width: 100%;
   overflow: auto;
   color: var(--md-accent-fg-color);
-  background-color: var(--core-color-black);
   font-family: var(--font-oswald);
   text-transform: uppercase;
+  background-color: var(--core-color-black);
   transition: background 250ms;
 
   // Fake Bottom Border
   &::before {
-    content: "";
-    background-color: var(--core-color-sec-nav);
     position: relative;
-    display: block;
-    height: 4px;
     top: px2rem(48px);
+    right: 0;
     bottom: 0;
     left: 0;
-    right: 0;
+    display: block;
+    height: 4px;
+    background-color: var(--core-color-sec-nav);
+    content: "";
   }
 
   // [print]: Hide tabs
@@ -82,16 +82,18 @@
   &__item {
     display: inline-block;
     height: px2rem(48px);
-    padding: 0px;
-    margin-left: -2px !important;
+    /* stylelint-disable */
     margin-right: -2px !important;
+    margin-left: -2px !important;
+    /* stylelint-enable */
+    padding: 0;
 
     &::after {
-      content: "";
-      display: block;
       position: relative;
-      height: 0px;
-      background-color: #FF9900;
+      display: block;
+      height: 0;
+      background-color: #ff9900;
+      content: "";
     }
 
     // Active link and link on focus/hover
@@ -107,8 +109,8 @@
   // line height, but this would imply more repaints when scrolling
   &__link {
     display: block;
-    font-size: px2rem(17px);
     padding: 14px 12px 10px 12px;
+    font-size: px2rem(17px);
     // Hack: save a repaint when the tabs are appearing when scrolling up
     backface-visibility: hidden;
     transition:
@@ -119,9 +121,9 @@
     &--active,
     &:focus,
     &:hover {
-      color: #FFFFFF; // inherit;
+      color: #ffffff; // inherit;
+      border-bottom: 4px solid #ff9900;
       transition: color 100ms;
-      border-bottom: 4px solid #FF9900;
     }
 
     // Delay transitions by a small amount

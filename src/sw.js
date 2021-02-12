@@ -1,3 +1,6 @@
+/* eslint-disable no-undef */
+/* eslint-disable no-underscore-dangle */
+
 import { CacheableResponsePlugin } from "workbox-cacheable-response"
 import { clientsClaim, skipWaiting } from "workbox-core"
 import { ExpirationPlugin } from "workbox-expiration"
@@ -26,21 +29,21 @@ const navigationStrategy = new NetworkFirst({
   cacheName: "pages",
   plugins: [
     new CacheableResponsePlugin({
-      statuses: [200],
+      statuses: [200]
     }),
-    {cacheKeyWillBeUsed},
-  ],
-});
+    {cacheKeyWillBeUsed}
+  ]
+})
 
 registerRoute(
   ({ request }) => request.mode === "navigate",
   navigationStrategy
-);
+)
 
 warmStrategyCache({
   urls: ["/"],
-  strategy: navigationStrategy,
-});
+  strategy: navigationStrategy
+})
 
 // Cache CSS, JS, and Web Worker requests with a Stale While Revalidate strategy
 registerRoute(
@@ -53,11 +56,11 @@ registerRoute(
     plugins: [
       // Ensure that only requests that result in a 200 status are cached
       new CacheableResponsePlugin({
-        statuses: [200],
-      }),
-    ],
+        statuses: [200]
+      })
+    ]
   }),
-);
+)
 
 registerRoute(
   /\.(?:png|jpg|jpeg|svg|gif|ico|mp4)$/,
@@ -65,16 +68,16 @@ registerRoute(
   new CacheFirst({
     cacheName: "image-cache",
     fetchOptions: {
-      credentials: "include",
+      credentials: "include"
     },
     plugins: [
       new ExpirationPlugin({
         // Cache only 50 images.
         maxEntries: 50,
         // Cache for a maximum of a day.
-        maxAgeSeconds: 24 * 60 * 60,
-      }),
-    ],
+        maxAgeSeconds: 24 * 60 * 60
+      })
+    ]
   })
 )
 
@@ -82,7 +85,7 @@ registerRoute(
 registerRoute(
   ({ url }) => url.origin === "https://fonts.googleapis.com",
   new StaleWhileRevalidate({
-    cacheName: "google-fonts-stylesheets",
+    cacheName: "google-fonts-stylesheets"
   })
 )
 
@@ -93,13 +96,13 @@ registerRoute(
     cacheName: "google-fonts-webfonts",
     plugins: [
       new CacheableResponsePlugin({
-        statuses: [0, 200],
+        statuses: [0, 200]
       }),
       new ExpirationPlugin({
         maxAgeSeconds: 60 * 60 * 24 * 365,
-        maxEntries: 30,
-      }),
-    ],
+        maxEntries: 30
+      })
+    ]
   })
 )
 
@@ -113,7 +116,7 @@ setCatchHandler(async ({ event }) => {
   return Response.error()
 })
 
-addEventListener("message", (event) => {
+addEventListener("message", event => {
   if (event.data && event.data.type === "SKIP_WAITING") {
     skipWaiting()
   }

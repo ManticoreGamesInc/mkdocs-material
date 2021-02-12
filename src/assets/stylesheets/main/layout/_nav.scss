@@ -42,12 +42,12 @@
   &__title {
     display: block;
     padding: 0 px2rem(12px);
-    font-family: var(--font-oswald);
     overflow: hidden;
+    color: var(--core-color-orange);
     font-weight: 700;
+    font-family: var(--font-oswald);
     text-transform: uppercase;
     text-overflow: ellipsis;
-    color: var(--core-color-orange);
 
     // Navigaton button
     .md-nav__button {
@@ -77,9 +77,9 @@
   // Navigation list
   &__list {
     margin: 0;
+    margin-bottom: 12px;
     padding: 0;
     list-style: none;
-    margin-bottom: 12px;
   }
 
   // Navigation item
@@ -143,7 +143,7 @@
       }
 
       // Hide table of contents
-      & ~ .md-nav {
+      ~ .md-nav {
         display: none;
       }
     }
@@ -156,8 +156,8 @@
 
   // [tablet -]: Layered navigation
   @include break-to-device(tablet) {
-    background-color: var(--md-default-bg-color);
     color: var(--md-primary-fg-color);
+    background-color: var(--md-default-bg-color);
 
     // Primary and nested navigation
     &--primary,
@@ -179,11 +179,11 @@
       // Navigation title and item
       .md-nav__title,
       .md-nav__item {
+        font-weight: 500;
         font-size: px2rem(18px);
         font-family: var(--font-oswald);
-        text-transform: uppercase;
-        font-weight: 500;
         line-height: 1.5;
+        text-transform: uppercase;
       }
 
       // Navigation title
@@ -220,10 +220,10 @@
             width: 100%;
             height: 100%;
             background-color: currentColor;
+            content: "";
             mask-image: var(--md-nav-icon--prev);
             mask-repeat: no-repeat;
             mask-size: contain;
-            content: "";
           }
         }
 
@@ -233,8 +233,8 @@
           background-color: var(--md-default-bg-color);
           box-shadow:
             0 px2rem(1px) 0 var(--md-default-fg-color--lightest) inset;
-          scroll-snap-type: y mandatory;
           touch-action: pan-y;
+          scroll-snap-type: y mandatory;
 
           // Omit border on first child
           > :first-child {
@@ -327,10 +327,10 @@
             width: 100%;
             height: 100%;
             background-color: currentColor;
+            content: "";
             mask-image: var(--md-nav-icon--next);
             mask-repeat: no-repeat;
             mask-size: contain;
-            content: "";
           }
         }
       }
@@ -465,7 +465,7 @@
       }
 
       // Show table of contents
-      & ~ .md-nav {
+      ~ .md-nav {
         display: flex;
       }
     }
@@ -514,7 +514,7 @@
       }
 
       // Show table of contents
-      & ~ .md-nav {
+      ~ .md-nav {
         display: flex;
       }
     }

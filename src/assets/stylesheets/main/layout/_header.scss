@@ -132,7 +132,7 @@
 
       // [no-js]: Hide button
       .no-js & {
-        display: none
+        display: none;
       }
 
       // Adjust for right-to-left languages
@@ -165,11 +165,11 @@
     position: absolute;
     display: flex;
     max-width: 100%;
+    font-family: var(--font-oswald);
+    text-transform: uppercase;
     transition:
       transform 400ms cubic-bezier(0.1, 0.7, 0.1, 1),
       opacity   150ms;
-    font-family: var(--font-oswald);
-    text-transform: uppercase;
 
     // Second header topic - title of the current page
     & + & {
@@ -213,7 +213,7 @@
       }
 
       // Second header topic - title of the current page
-      & + .md-header-nav__topic {
+      + .md-header-nav__topic {
         z-index: 0;
         transform: translateX(0);
         opacity: 1;

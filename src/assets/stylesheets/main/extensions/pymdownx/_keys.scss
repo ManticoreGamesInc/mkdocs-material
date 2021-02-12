@@ -45,9 +45,10 @@
 .md-typeset {
   kbd {
     background-color: var(--md-key-face-color);
-    box-shadow: 0 px2rem(2px) 0 px2rem(1px) var(--md-key-border-color),
-                0 px2rem(2px) 0 var(--md-key-border-color),
-                inset 0 px2rem(-2px) px2rem(4px) var(--md-key-accent-color);
+    box-shadow:
+      0 px2rem(2px) 0 px2rem(1px) var(--md-key-border-color),
+      0 px2rem(2px) 0 var(--md-key-border-color),
+      inset 0 px2rem(-2px) px2rem(4px) var(--md-key-accent-color);
   }
 
   .keys {

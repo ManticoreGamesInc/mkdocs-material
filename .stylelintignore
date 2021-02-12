@@ -25,6 +25,8 @@ src/**/*.html
 
 # Don't lint shame
 src/assets/stylesheets/_shame.scss
+src/assets/stylesheets/_manticore.scss
+src/assets/stylesheets/_config.scss
 
 # Prevent stylelint from constantly complaining
 webpack.config.ts
