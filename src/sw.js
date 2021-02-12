@@ -1,17 +1,11 @@
-/* eslint-disable require-jsdoc */
-/* eslint-disable no-unused-vars */
-/* eslint-disable array-callback-return */
-/* eslint-disable no-underscore-dangle */
-/* eslint-disable no-undef */
-
-import { warmStrategyCache } from "workbox-recipes"
-import { skipWaiting, clientsClaim } from "workbox-core"
-import { cleanupOutdatedCaches, precacheAndRoute, matchPrecache } from "workbox-precaching"
-import { registerRoute, setCatchHandler } from "workbox-routing"
-import { NetworkFirst, StaleWhileRevalidate, CacheFirst } from "workbox-strategies"
 import { CacheableResponsePlugin } from "workbox-cacheable-response"
+import { clientsClaim, skipWaiting } from "workbox-core"
 import { ExpirationPlugin } from "workbox-expiration"
 import * as googleAnalytics from "workbox-google-analytics"
+import { cleanupOutdatedCaches, matchPrecache, precacheAndRoute } from "workbox-precaching"
+import { warmStrategyCache } from "workbox-recipes"
+import { registerRoute, setCatchHandler } from "workbox-routing"
+import { CacheFirst, NetworkFirst, StaleWhileRevalidate } from "workbox-strategies"
 
 googleAnalytics.initialize()
 
@@ -24,12 +18,12 @@ function cacheKeyWillBeUsed({ request }) {
   url.pathname = url.pathname.replace(/\/index\.html$/, "/")
   url.pathname = url.pathname.replace(/\.html$/, "/")
   // Clear out all search params.
-  url.search = ''
+  url.search = ""
   return url.href
 }
 
 const navigationStrategy = new NetworkFirst({
-  cacheName: 'pages',
+  cacheName: "pages",
   plugins: [
     new CacheableResponsePlugin({
       statuses: [200],
@@ -39,26 +33,23 @@ const navigationStrategy = new NetworkFirst({
 });
 
 registerRoute(
-  ({ request }) => request.mode === 'navigate',
+  ({ request }) => request.mode === "navigate",
   navigationStrategy
 );
 
 warmStrategyCache({
-  urls: ['/'],
+  urls: ["/"],
   strategy: navigationStrategy,
 });
 
 // Cache CSS, JS, and Web Worker requests with a Stale While Revalidate strategy
 registerRoute(
-  // Check to see if the request's destination is style for stylesheets, script for JavaScript, or worker for web worker
   ({ request }) =>
-    request.destination === 'style' ||
-    request.destination === 'script' ||
-    request.destination === 'worker',
-  // Use a Stale While Revalidate caching strategy
+    request.destination === "style" ||
+    request.destination === "script" ||
+    request.destination === "worker",
   new StaleWhileRevalidate({
-    // Put all cached files in a cache named 'assets'
-    cacheName: 'assets',
+    cacheName: "assets",
     plugins: [
       // Ensure that only requests that result in a 200 status are cached
       new CacheableResponsePlugin({
