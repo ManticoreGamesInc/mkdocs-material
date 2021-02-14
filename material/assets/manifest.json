@@ -8,11 +8,5 @@
   "assets/stylesheets/main.css": "assets/stylesheets/main.21989fb1.min.css",
   "assets/stylesheets/main.css.map": "assets/stylesheets/main.21989fb1.min.css.map",
   "assets/stylesheets/palette.css": "assets/stylesheets/palette.cd202288.min.css",
-  "assets/stylesheets/palette.css.map": "assets/stylesheets/palette.cd202288.min.css.map",
-  "overrides/assets/javascripts/bundle.js": "overrides/assets/javascripts/bundle.c607e7b3.min.js",
-  "overrides/assets/javascripts/bundle.js.map": "overrides/assets/javascripts/bundle.c607e7b3.min.js.map",
-  "overrides/assets/javascripts/vendor.js": "overrides/assets/javascripts/vendor.1aa446d9.min.js",
-  "overrides/assets/javascripts/vendor.js.map": "overrides/assets/javascripts/vendor.1aa446d9.min.js.map",
-  "overrides/assets/stylesheets/main.css": "overrides/assets/stylesheets/main.d67efea2.min.css",
-  "overrides/assets/stylesheets/main.css.map": "overrides/assets/stylesheets/main.d67efea2.min.css.map"
+  "assets/stylesheets/palette.css.map": "assets/stylesheets/palette.cd202288.min.css.map"
 }
