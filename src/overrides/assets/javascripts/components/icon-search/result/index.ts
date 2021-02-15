@@ -53,7 +53,7 @@ import {
   watchElementThreshold
 } from "~/browser"
 
-import { renderIconSearchResult } from "../../../templates"
+import { Icon, renderIconSearchResult } from "../../../templates"
 import { Component } from "../../_"
 import { IconSearchIndex } from "../_"
 import { IconSearchQuery } from "../query"
@@ -66,12 +66,20 @@ import { IconSearchQuery } from "../query"
  * Icon search result
  */
 export interface IconSearchResult {
-  data: string[]                       /* Search result data */
+  data: Icon[]                         /* Search result data */
 }
 
 /* ----------------------------------------------------------------------------
  * Helper types
  * ------------------------------------------------------------------------- */
+
+/**
+ * Watch options
+ */
+interface WatchOptions {
+  index$: Observable<IconSearchIndex>  /* Search index observable */
+  query$: Observable<IconSearchQuery>  /* Search query observable */
+}
 
 /**
  * Mount options
@@ -84,6 +92,49 @@ interface MountOptions {
 /* ----------------------------------------------------------------------------
  * Functions
  * ------------------------------------------------------------------------- */
+
+/**
+ * Watch icon search result
+ *
+ * @param _el - Icon search result element
+ * @param options - Options
+ *
+ * @returns Icon search result observable
+ */
+export function watchIconSearchResult(
+  _el: HTMLElement, { index$, query$ }: WatchOptions
+): Observable<IconSearchResult> {
+  return combineLatest([
+    query$.pipe(distinctUntilKeyChanged("value")),
+    index$
+      .pipe(
+        map(({ icons, emojis }) => [
+          ...Object.keys(icons.data),
+          ...Object.keys(emojis.data)
+        ])
+      )
+  ])
+    .pipe(
+      map(([{ value }, data]) => search(data, value)),
+      switchMap(shortcodes => index$.pipe(
+        map(({ icons, emojis }) => ({
+          data: shortcodes.map<Icon>(shortcode => {
+            const category =
+              shortcode in icons.data
+                ? icons
+                : emojis
+            return {
+              shortcode,
+              url: [
+                category.base,
+                category.data[shortcode]
+              ].join("")
+            }
+          })
+        }))
+      ))
+    )
+}
 
 /**
  * Mount icon search result
@@ -138,12 +189,8 @@ export function mountIconSearchResult(
       })
 
   /* Create and return component */
-  return combineLatest([
-    index$,
-    query$.pipe(distinctUntilKeyChanged("value"))
-  ])
+  return watchIconSearchResult(el, { query$, index$ })
     .pipe(
-      map(([index, { value }]) => ({ data: search(index, value) })),
       tap(internal$),
       finalize(() => internal$.complete()),
       map(state => ({ ref: el, ...state }))

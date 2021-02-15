@@ -438,14 +438,42 @@ export default (_env: never, args: Configuration): Configuration[] => {
                 /* Save template with replaced assets */
                 fs.writeFileSync(file, template, "utf8")
               }
-            }
 
-            /* Build search index for bundled icons */
-            const index = await glob("**/*.svg", { cwd: "material/.icons" })
-            fs.writeFileSync(
-              "material/overrides/assets/javascripts/icons.json",
-              JSON.stringify(index)
-            )
+              /* Icon indexes */
+              const icons:  Record<string, string> = {}
+              const emojis: Record<string, string> = {}
+
+              /* Build search index for bundled icons */
+              for (const file of await glob("**/*.svg", {
+                cwd: "material/.icons"
+              })) {
+                const name = file.replace(/\.svg$/, "").replace(/\//g, "-")
+                icons[name] = file
+              }
+
+              /* Build search index for emojis (based on Twemoji) */
+              const [database] = await glob("venv/**/twemoji_db.py")
+              if (typeof database !== "undefined") {
+                const contents = fs.readFileSync(database, "utf8")
+                const [, content] = contents.match(/^emoji = ({.*})$.alias/ms)!
+                for (const [name, data] of toPairs(JSON.parse(content))) {
+                  emojis[name.replace(/(^:|:$)/g, "")] = `${data.unicode}.svg`
+                }
+              }
+              fs.writeFileSync(
+                "material/overrides/assets/javascripts/icon_search_index.json",
+                JSON.stringify({
+                  icons: {
+                    base: "https://raw.githubusercontent.com/squidfunk/mkdocs-material/master/material/.icons/",
+                    data: icons
+                  },
+                  emojis: {
+                    base: "https://raw.githubusercontent.com/twitter/twemoji/master/assets/svg/",
+                    data: emojis
+                  }
+                })
+              )
+            }
           }
         }),
 

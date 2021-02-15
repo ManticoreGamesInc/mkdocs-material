@@ -26,42 +26,31 @@ import { translation } from "~/_"
 import { h } from "~/utilities"
 
 /* ----------------------------------------------------------------------------
- * Data
+ * Types
  * ------------------------------------------------------------------------- */
 
 /**
- * Icon CDN URL
+ * Icon
  */
-const base =
-  "https://raw.githubusercontent.com/" +
-  "squidfunk/mkdocs-material/" +
-  "master/material/.icons/"
+export interface Icon {
+  shortcode: string                    /* Icon shortcode */
+  url: string                          /* Icon URL */
+}
 
 /* ----------------------------------------------------------------------------
  * Helper functions
  * ------------------------------------------------------------------------- */
 
 /**
- * Convert icon search result to shortcode
- *
- * @param value - Icon search result
- *
- * @returns Shortcode
- */
-function shortcode(value: string): string {
-  return `:${value.replace(/\.svg$/, "").replace(/\//g, "-")}:`
-}
-
-/**
  * Highlight an icon search result
  *
- * @param value - Icon search result
- * @param query - Icon search query
+ * @param icon - Icon
+ * @param query - Search query
  *
  * @returns Highlighted result
  */
-function highlight(value: string, query: string) {
-  return wrap(shortcode(value), query, {
+function highlight(icon: Icon, query: string) {
+  return wrap(icon.shortcode, query, {
     wrap: {
       tagOpen: "<b>",
       tagClose: "</b>"
@@ -76,25 +65,25 @@ function highlight(value: string, query: string) {
 /**
  * Render an icon search result
  *
- * @param value - Icon search result
- * @param query - Icon search query
+ * @param icon - Icon
+ * @param query - Search query
  *
  * @returns Element
  */
 export function renderIconSearchResult(
-  value: string, query: string
+  icon: Icon, query: string
 ): HTMLElement {
   return (
     <li class="mdx-icon-search-result__item">
       <span class="twemoji">
-        <img src={base + value} />
+        <img src={icon.url} />
       </span>
       <button
         class="md-clipboard--inline"
         title={translation("clipboard.copy")}
-        data-clipboard-text={shortcode(value)}
+        data-clipboard-text={`:${icon.shortcode}:`}
       >
-        <code>{highlight(value, query)}</code>
+        <code>{`:${highlight(icon, query)}:`}</code>
       </button>
     </li>
   )
