@@ -27,7 +27,7 @@
         <link rel="canonical" href="{{ page.canonical_url }}">
       {% endif %}
       <link rel="shortcut icon" href="{{ config.theme.favicon | url }}">
-      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-7.0.0b1">
+      <meta name="generator" content="mkdocs-{{ mkdocs_version }}, mkdocs-material-7.0.0b2">
     {% endblock %}
     {% block htmltitle %}
       {% if page and page.meta and page.meta.title %}
@@ -39,10 +39,10 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.b062288a.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.0ab8907a.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.cd202288.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.d00272c8.min.css' | url }}">
         {% if palette.primary %}
           {% import "partials/palette.html" as map %}
           {% set primary = map.primary(
@@ -76,7 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.b9424174.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.3f4c5856.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -228,7 +228,7 @@
         "base": base_url,
         "features": features,
         "translations": {},
-        "search": "assets/javascripts/worker/search.b9424174.min.js" | url,
+        "search": "assets/javascripts/worker/search.3f4c5856.min.js" | url,
       } -%}
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
@@ -256,7 +256,7 @@
     {% endblock %}
     {% block scripts %}
       <script src="{{ 'assets/javascripts/vendor.00ecb175.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.3e5f7fbe.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.fbcb1fc3.min.js' | url }}"></script>
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
