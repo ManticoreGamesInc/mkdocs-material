@@ -480,6 +480,9 @@
       apiKey: '23ae9b1d043d872810ccd7614a6f88f9',
       indexName: 'coregames',
       inputSelector: '.md-search__input',
+      algoliaOptions: {
+        'facetFilters': ["tags:{{ page.meta.tags[0] if (page.meta and page.meta.tags) }}"]
+      },
       debug: false // Set debug to true if you want to inspect the dropdown
       });
       </script>
