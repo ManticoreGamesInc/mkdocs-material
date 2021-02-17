@@ -260,7 +260,26 @@
         <script src="{{ path | url }}"></script>
       {% endfor %}
       <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-      <script>docsearch({apiKey:"88104aacf66e58eb1dde0a61f347edf5",appId:"6MVAWK62LQ",indexName:"coregames",inputSelector:".md-search__input",algoliaOptions:{facetFilters:["tags:{{ page.meta.tags[0] if (page.meta and page.meta.tags) }}"]},debug:!1})</script>
+      <script>
+        let facetFilters = []
+        document$.subscribe(() => {
+          var pageTag = document.querySelector("a.md-tag")
+          if (pageTag) {
+            let pageTagTitle = pageTag.getAttribute("title").toLowerCase()
+            facetFilters = [`tags:${pageTagTitle}`];
+          }
+        })
+        docsearch({
+          apiKey: '88104aacf66e58eb1dde0a61f347edf5',
+          appId: '6MVAWK62LQ',
+          indexName: 'coregames',
+          inputSelector: '.md-search__input',
+          algoliaOptions: {
+            facetFilters
+          },
+          debug: false
+        });
+      </script>
     {% endblock %}
   </body>
 </html>
