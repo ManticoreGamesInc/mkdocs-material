@@ -223,6 +223,10 @@ kbd {
     box-shadow: none;
   }
 
+  td code {
+    padding: 0;
+  }
+
   // Ensure link color in code blocks
   a > code {
     color: currentColor;
