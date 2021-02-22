@@ -36,6 +36,7 @@ site
 # Configuration
 typings
 webpack.config.ts
+workbox-config.js
 
 # Distribution files
 dist

@@ -28,39 +28,4 @@
     </div>
   </div>
 </div>
-<script>
-var netlifyForm = document.querySelector("#netlify-form")
-var modal = document.querySelector(".modal")
-var trigger = document.querySelector(".trigger")
-var closeButton = document.querySelector(".close-button")
-function toggleModal() {
-  modal.classList.toggle("show-modal")
-}
-function windowOnClick(event) {
-  if (event.target === modal) {
-    toggleModal()
-  }
-}
-netlifyForm.addEventListener('submit', e => {
-  e.preventDefault()
-  e.submitter.disabled = true
-  e.submitter.textContent = "Submitted"
-  e.submitter.classList.toggle("disabled")
-  const formData = new FormData(netlifyForm)
-  fetch(netlifyForm.getAttribute('action'), {
-    method: 'POST',
-    headers: {
-      'Accept': 'application/x-www-form-urlencoded;charset=UTF-8',
-      'Content-Type': 'application/x-www-form-urlencoded;charset=UTF-8'
-    },
-    body: new URLSearchParams(formData).toString()
-  })
-  .then(res => {
-    if (res) {
-      toggleModal()
-    }
-  })
-})
-window.addEventListener("click", windowOnClick)
-closeButton.addEventListener("click", toggleModal)
-</script>
+<script>var netlifyForm=document.querySelector("#netlify-form"),modal=document.querySelector(".modal"),trigger=document.querySelector(".trigger"),closeButton=document.querySelector(".close-button");function toggleModal(){modal.classList.toggle("show-modal")}function windowOnClick(e){e.target===modal&&toggleModal()}netlifyForm.addEventListener("submit",e=>{e.preventDefault(),e.submitter.disabled=!0,e.submitter.textContent="Submitted",e.submitter.classList.toggle("disabled");e=new FormData(netlifyForm);fetch(netlifyForm.getAttribute("action"),{method:"POST",headers:{Accept:"application/x-www-form-urlencoded;charset=UTF-8","Content-Type":"application/x-www-form-urlencoded;charset=UTF-8"},body:new URLSearchParams(e).toString()}).then(e=>{e&&toggleModal()})}),window.addEventListener("click",windowOnClick),closeButton.addEventListener("click",toggleModal)</script>

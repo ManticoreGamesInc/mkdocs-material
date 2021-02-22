@@ -39,10 +39,10 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.456a63c1.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.b8f1356e.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
-        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.d00272c8.min.css' | url }}">
+        <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.7b4eb923.min.css' | url }}">
         {% if palette.primary %}
           {% import "partials/palette.html" as map %}
           {% set primary = map.primary(
@@ -65,7 +65,7 @@
             font.text | replace(' ', '+') + ':300,400,400i,700%7C' +
             font.code | replace(' ', '+')
           }}%7COswald:300,400,400i,700&display=swap" crossorigin>
-        <style>:root{--md-text-font-family:"{{ font.text }}",;--md-code-font-family:"{{ font.code }}",}</style>
+        <style>:root{--md-text-font-family:"{{ font.text }}";--md-code-font-family:"{{ font.code }}"}</style>
       {% endif %}
     {% endblock %}
     {% if config.extra.manifest %}
@@ -76,7 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/worker/search.3f4c5856.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/workers/search.217ffd95.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -227,7 +227,7 @@
         "base": base_url,
         "features": features,
         "translations": {},
-        "search": "assets/javascripts/worker/search.3f4c5856.min.js" | url,
+        "search": "assets/javascripts/workers/search.217ffd95.min.js" | url,
       } -%}
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
@@ -254,32 +254,12 @@
       </script>
     {% endblock %}
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/vendor.00ecb175.min.js' | url }}"></script>
-      <script src="{{ 'assets/javascripts/bundle.e8ecd72e.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.be39d00c.min.js' | url }}"></script>
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
       <script src="https://cdn.jsdelivr.net/npm/docsearch.js@2/dist/cdn/docsearch.min.js"></script>
-      <script>
-        let facetFilters = []
-        document$.subscribe(() => {
-          var pageTag = document.querySelector("a.md-tag")
-          if (pageTag) {
-            let pageTagTitle = pageTag.getAttribute("title").toLowerCase()
-            facetFilters = [`tags:${pageTagTitle}`];
-          }
-        })
-        docsearch({
-          apiKey: '88104aacf66e58eb1dde0a61f347edf5',
-          appId: '6MVAWK62LQ',
-          indexName: 'coregames',
-          inputSelector: '.md-search__input',
-          algoliaOptions: {
-            facetFilters
-          },
-          debug: false
-        });
-      </script>
+      <script>let facetFilters=[];document$.subscribe(()=>{var e=document.querySelector("a.md-tag");e&&(e=e.getAttribute("title").toLowerCase(),facetFilters=[`tags:${e}`])}),docsearch({apiKey:"88104aacf66e58eb1dde0a61f347edf5",appId:"6MVAWK62LQ",indexName:"coregames",inputSelector:".md-search__input",algoliaOptions:{facetFilters:facetFilters},debug:!1})</script>
     {% endblock %}
   </body>
 </html>
