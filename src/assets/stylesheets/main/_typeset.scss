@@ -98,6 +98,7 @@ kbd {
   ol,
   dl,
   blockquote {
+    display: flow-root;
     margin: 1em 0;
   }
 
@@ -158,6 +159,7 @@ kbd {
 
   // Horizontal separator
   hr {
+    display: flow-root;
     margin: 1.5em 0;
     border-bottom: px2rem(1px) solid var(--md-default-fg-color--lightest);
   }
@@ -235,6 +237,7 @@ kbd {
   // Unformatted content
   pre {
     position: relative;
+    display: flow-root;
     margin: 1em 0;
     line-height: 1.4;
 

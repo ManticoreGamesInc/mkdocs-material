@@ -51,9 +51,11 @@
 @import "main/layout/footer";
 @import "main/layout/nav";
 @import "main/layout/search";
+@import "main/layout/select";
 @import "main/layout/sidebar";
 @import "main/layout/source";
 @import "main/layout/tabs";
+@import "main/layout/version";
 
 @import "main/extensions/markdown/admonition";
 @import "main/extensions/markdown/footnotes";
@@ -68,6 +70,7 @@
 @import "main/extensions/pymdownx/tabbed";
 @import "main/extensions/pymdownx/tasklist";
 
+@import "main/modifiers";
 @import "main/shame";
 @import "theme-switcher";
 @import "manticore";

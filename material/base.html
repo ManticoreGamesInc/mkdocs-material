@@ -39,7 +39,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.b8f1356e.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.f94e6fed.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.7b4eb923.min.css' | url }}">
@@ -228,6 +228,7 @@
         "features": features,
         "translations": {},
         "search": "assets/javascripts/workers/search.217ffd95.min.js" | url,
+        "version": config.extra.version or None
       } -%}
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
       {% include "partials/integrations/lightgallery.html" %}
@@ -254,7 +255,7 @@
       </script>
     {% endblock %}
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/bundle.be39d00c.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.d663aa10.min.js' | url }}"></script>
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
