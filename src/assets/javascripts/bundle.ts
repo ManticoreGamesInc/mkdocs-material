@@ -23,6 +23,7 @@
 import "focus-visible"
 import { Subject, defer, merge } from "rxjs"
 import {
+  delay,
   filter,
   map,
   mergeWith,
@@ -64,7 +65,8 @@ import {
 } from "./integrations"
 import {
   patchIndeterminate,
-  patchScrollfix
+  patchScrollfix,
+  patchScrolllock
 } from "./patches"
 
 /* ----------------------------------------------------------------------------
@@ -95,9 +97,15 @@ setupClipboardJS({ alert$ })
 if (feature("navigation.instant"))
   setupInstantLoading({ document$, location$, viewport$ })
 
-/* Always close drawer on navigation */
+/* Always close drawer and search on navigation */
 merge(location$, target$)
-  .subscribe(() => setToggle("drawer", false))
+  .pipe(
+    delay(125)
+  )
+    .subscribe(() => {
+      setToggle("drawer", false)
+      setToggle("search", false)
+    })
 
 /* Set up global keyboard handlers */
 keyboard$
@@ -128,6 +136,7 @@ keyboard$
 /* Set up patches */
 patchIndeterminate({ document$ })
 patchScrollfix({ document$ })
+patchScrolllock({ viewport$, tablet$ })
 
 /* Set up header and main area observable */
 const header$ = watchHeader(getComponentElement("header"), { viewport$ })
@@ -208,4 +217,5 @@ window.viewport$  = viewport$          /* Viewport observable */
 window.tablet$    = tablet$            /* Tablet observable */
 window.screen$    = screen$            /* Screen observable */
 window.print$     = print$             /* Print mode observable */
+window.alert$     = alert$             /* Alert subject */
 window.component$ = component$         /* Component observable */
