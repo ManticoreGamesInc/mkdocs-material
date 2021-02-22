@@ -163,6 +163,7 @@ export function transformScript(
     entryPoints: [options.from],
     write: false,
     bundle: true,
+    define: { "process.env.NODE_ENV": "'production'"},
     sourcemap: true,
     minify: process.argv.includes("--optimize")
   }))

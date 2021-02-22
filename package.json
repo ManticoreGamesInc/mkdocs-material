@@ -27,7 +27,6 @@
     "build": "run-s build:*",
     "build:clean": "rimraf material",
     "build:tools": "ts-node -T tools/build --optimize",
-    "build:sw": "ts-node workbox-config.js",
     "clean": "rimraf material",
     "lint": "npm run lint:scss && npm run lint:ts",
     "lint:scss": "stylelint \"src/assets/**/*.scss\" --syntax \"scss\"",

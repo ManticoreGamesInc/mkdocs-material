@@ -28,7 +28,8 @@ import {
   concatMap,
   map,
   reduce,
-  switchMap
+  switchMap,
+  tap
 } from "rxjs/operators"
 import {
   extendDefaultPlugins,
@@ -43,6 +44,8 @@ import {
   transformScript,
   transformStyle
 } from "./transform"
+
+const {injectManifest} = require("workbox-build")
 
 /* ----------------------------------------------------------------------------
  * Helper types
@@ -206,14 +209,41 @@ const stylesheets$ = resolve("**/[!_]*.scss", { cwd: "src" })
     )
   )
 
+/* Create service worker */
+const serviceworker$ = resolve("sw.js", { cwd: "src" })
+  .pipe(
+    concatMap(file => injectManifest({
+        swSrc: path.resolve(path.join("src"), file),
+        swDest: path.resolve(path.join("src"), "raw" + file),
+        globDirectory: path.resolve("material"),
+        globPatterns: ["assets/**"],
+        additionalManifestEntries: [{url: "404.html", revision: "2" }, {url: "offline.html", revision: "2" }]
+      }).then(({count, size}) => {
+        console.log(`Generated ${file}, which will precache ${count} files, totaling ${size} bytes.`)
+      })
+    )
+  )
+
+// /* Transform service worker */
+// const serviceworker_transform$ = resolve("rawsw.js", { cwd: "src" })
+//   .pipe(
+//     concatMap(file => zip(
+//       of(ext(file, ".js")),
+//       transformScript({
+//         from: `src/${file}`,
+//         to: `${base}/sw.js`
+//       }))
+//     )
+//   )
+
 /* Transform scripts */
-const javascripts$ = resolve("**/{bundle,search}.ts", { cwd: "src" })
+const javascripts$ = merge(resolve("**/{bundle,search}.ts", { cwd: "src" }), resolve("rawsw.js", { cwd: "src" }))
   .pipe(
     concatMap(file => zip(
       of(ext(file, ".js")),
       transformScript({
         from: `src/${file}`,
-        to: ext(`${base}/${file}`, ".js")
+        to: ext(`${base}/${file.replace("raw", "")}`, ".js")
       }))
     )
   )
@@ -326,6 +356,7 @@ const index$ = zip(icons$, emojis$)
 /* Put everything together */
 concat(
   assets$,
+  serviceworker$,
   merge(
     templates$,
     index$
