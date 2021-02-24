@@ -310,8 +310,8 @@ const templates$ = manifest$
 const icons$ = defer(() => resolve("**/*.svg", { cwd: "material/.icons" }))
   .pipe(
     reduce((index, file) => index.set(
-      file,
-      file.replace(/\.svg$/, "").replace(/\//g, "-")
+      file.replace(/\.svg$/, "").replace(/\//g, "-"),
+      file
     ), new Map<string, string>())
   )
 
@@ -346,7 +346,7 @@ const index$ = zip(icons$, emojis$)
       } as IconSearchIndex
     }),
     switchMap(data => fs.writeFile(
-      `${base}/overrides/assets/javascripts/icon_search_index.json`,
+      `${base}/overrides/assets/javascripts/iconsearch_index.json`,
       JSON.stringify(data)
     ))
   )

@@ -20,7 +20,7 @@
  * IN THE SOFTWARE.
  */
 
-import { BehaviorSubject, Subject } from "rxjs"
+import { Subject } from "rxjs"
 
 /* ----------------------------------------------------------------------------
  * Functions
@@ -29,10 +29,10 @@ import { BehaviorSubject, Subject } from "rxjs"
 /**
  * Retrieve location
  *
- * This function will return a `URL` object (and not `Location`) in order to
- * normalize typings across the application. Furthermore, locations need to be
- * tracked without setting them and `Location` is a singleton which represents
- * the current location.
+ * This function returns a `URL` object (and not `Location`) to normalize the
+ * typings across the application. Furthermore, locations need to be tracked
+ * without setting them and `Location` is a singleton which represents the
+ * current location.
  *
  * @returns URL
  */
@@ -57,5 +57,5 @@ export function setLocation(url: URL): void {
  * @returns Location subject
  */
 export function watchLocation(): Subject<URL> {
-  return new BehaviorSubject<URL>(getLocation())
+  return new Subject<URL>()
 }
