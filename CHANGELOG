@@ -1,3 +1,13 @@
+mkdocs-material-7.0.2 (2021-02-25)
+
+  * Fixed #2343: Invalid source map URLs for JS and CSS files
+  * Fixed #2347: Version selector missing when using versioning
+
+mkdocs-material-7.0.1+insiders-2.0.0 (2021-02-24)
+
+  * Migrated Insiders to the new architecture
+  * Swapped color palette toggle configuration
+
 mkdocs-material-7.0.1 (2021-02-24)
 
   * Fixed #2334: Google Analytics triggers page view twice (7.0.0 regression)
