@@ -35,6 +35,7 @@ export type Flag =
   | "navigation.instant"               /* Instant loading */
   | "navigation.sections"              /* Sections navigation */
   | "navigation.tabs"                  /* Tabs navigation */
+  | "navigation.tracking"              /* Anchor tracking */
   | "toc.integrate"                    /* Integrated table of contents */
 
 /* ------------------------------------------------------------------------- */
