@@ -112,11 +112,13 @@ The following features are currently exclusively available to sponsors:
 
 <div class="mdx-columns" markdown="1">
 
-- [x] [Section index pages :material-new-box:][21]
+- [x] [Code block annotations :material-new-box:][24]
+- [x] [Anchor tracking :material-new-box:][23]
+- [x] [Section index pages][21]
 - [x] [Latest release tag][15]
 - [x] [Color palette toggle][16]
 - [x] [Sticky navigation tabs][20]
-- [x] [Native Mermaid.js integration][23]
+- [x] [Mermaid.js integration][24]
 - [x] [Search suggestions][17]
 - [x] [Search highlighting][18]
 - [x] [Search sharing][19]
@@ -167,26 +169,41 @@ the public for general availability.
   [21]: setup/setting-up-navigation.md#section-index-pages
   [22]: setup/setting-up-the-footer.md#remove-generator
 
+#### $ 4,000 – Ghost Pepper
+
+- [x] [Anchor tracking][23]
+- [x] [Code block annotations][24]
+- [ ] Back-to-top button
+
+[23]: setup/setting-up-navigation.md#anchor-tracking
+[24]: reference/code-blocks.md#adding-annotations
 
 #### $ 5,000 – Aji Panca
 
-- [x] [Native Mermaid.js integration][23]
+- [x] [Mermaid.js integration][25]
+- [ ] List of last searches
+- [ ] Advanced routing for versioning
 
-  [23]: reference/diagrams.md
+  [25]: reference/diagrams.md
+
+#### $ 6,000 – Trinidad Scorpion
+
+- [ ] Improved search result summaries
+- [ ] Table of contents shows which sections have search results
+- [ ] Advanced routing for multi-language sites
+
+#### $ 7,000 – Royal Gold
+
+- [ ] Table of contents auto-collapse
+- [ ] Table of contents follows active anchor
+- [ ] Native lightbox integration
 
 #### Future
 
-- [ ] [Material for MkDocs Live Edit][24]
-- [ ] Improved search result summaries
-- [ ] List of last searches
-- [ ] Table of contents follows active anchor
-- [ ] Table of contents auto-collapse
-- [ ] Table of contents shows which sections have search results
-- [ ] Native lightbox for (inline) images
-- [ ] New layouts and styles (e.g. vertical)
-- [ ] ... and much more ...
+- [ ] [Material for MkDocs Live Edit][26]
+- [ ] New layouts and styles
 
-  [24]: https://twitter.com/squidfunk/status/1338252230265360391
+  [26]: https://twitter.com/squidfunk/status/1338252230265360391
 
 ### Goals completed
 
@@ -232,10 +249,10 @@ implemented behind feature flags; all configuration changes are
 backward-compatible. This means that your users will be able to build the
 documentation locally with Material for MkDocs and when they push their changes,
 it can be built with Insiders (e.g. as part of GitHub Actions). Thus, it's
-recommended to [install Insiders][25] only in CI, as you don't want to expose
+recommended to [install Insiders][27] only in CI, as you don't want to expose
 your `GH_TOKEN` to users.
 
-  [25]: publishing-your-site.md#github-pages
+  [27]: publishing-your-site.md#github-pages
 
 ### Terms
 
@@ -244,7 +261,7 @@ commercial project. Can we use Insiders under the same terms and conditions?_
 
 Yes. Whether you're an individual or a company, you may use _Material for MkDocs
 Insiders_ precisely under the same terms as Material for MkDocs, which are given
-by the [MIT license][26]. However, we kindly ask you to respect the following
+by the [MIT license][28]. However, we kindly ask you to respect the following
 guidelines:
 
 - Please __don't distribute the source code__ of Insiders. You may freely use
@@ -255,7 +272,7 @@ guidelines:
 - If you cancel your subscription, you're removed as a collaborator and will
   miss out on future updates of Insiders. However, you may __use the latest
   version__ that's available to you __as long as you like__. Just remember that
-  [GitHub deletes private forks][27].
+  [GitHub deletes private forks][29].
 
-  [26]: license.md
-  [27]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/removing-a-collaborator-from-a-personal-repository
+  [28]: license.md
+  [29]: https://docs.github.com/en/github/setting-up-and-managing-your-github-user-account/removing-a-collaborator-from-a-personal-repository

@@ -39,7 +39,7 @@
       {% endif %}
     {% endblock %}
     {% block styles %}
-      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.bfcba49a.min.css' | url }}">
+      <link rel="stylesheet" href="{{ 'assets/stylesheets/main.ccdc068a.min.css' | url }}">
       {% if config.theme.palette %}
         {% set palette = config.theme.palette %}
         <link rel="stylesheet" href="{{ 'assets/stylesheets/palette.7b4eb923.min.css' | url }}">
@@ -76,7 +76,7 @@
     {% for path in config["extra_css"] %}
       <link rel="stylesheet" href="{{ path | url }}">
     {% endfor %}
-    <link rel="prefetch" href="{{ 'assets/javascripts/workers/search.31ff4e5f.min.js' | url }}" as="script">
+    <link rel="prefetch" href="{{ 'assets/javascripts/workers/search.fb4a9340.min.js' | url }}" as="script">
     {% block analytics %}
       {% if config.google_analytics %}
         {% include "partials/integrations/analytics.html" %}
@@ -227,7 +227,7 @@
         "base": base_url,
         "features": features,
         "translations": {},
-        "search": "assets/javascripts/workers/search.31ff4e5f.min.js" | url,
+        "search": "assets/javascripts/workers/search.fb4a9340.min.js" | url,
         "version": config.extra.version or None
       } -%}
       <script src="{{ 'assets/javascripts/lightgallery.min.js' | url }}"></script>
@@ -255,7 +255,7 @@
       </script>
     {% endblock %}
     {% block scripts %}
-      <script src="{{ 'assets/javascripts/bundle.216d634c.min.js' | url }}"></script>
+      <script src="{{ 'assets/javascripts/bundle.503ede07.min.js' | url }}"></script>
       {% for path in config["extra_javascript"] %}
         <script src="{{ path | url }}"></script>
       {% endfor %}
