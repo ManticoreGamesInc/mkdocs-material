@@ -6,9 +6,18 @@ template: overrides/main.html
 
 ## Material for MkDocs
 
+### 7.0.5 <small>_ March 7, 2021</small>
+
+- Added `extracopyright` block to allow for custom copyright info
+- Fixed evaluation of third-party scripts when using instant loading
+- Fixed edge cases when using instant loading without directory URLs
+- Fixed handling of version selector when using instant loading
+- Fixed regression with header title not being updated correctly
+- Fixed expanded sections not opening on first click (7.0.4 regression)
+
 ### 7.0.4 <small>_ March 4, 2021</small>
 
-- Added Islandic translations
+- Added Icelandic translations
 - Fixed #2386: Section close requires two clicks (navigation expansion)
 - Fixed console error when search is disabled (7.0.0 regression)
 - Fixed localsearch integration (7.0.0 regression)
